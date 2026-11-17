@@ -624,5 +624,78 @@
     "resume": "Dossier sur l'inceste : ce qu'il recouvre (y compris le climat incestuel et la famille élargie), le stress post-traumatique et le trauma complexe, pourquoi on parle souvent tard, et comment se rétablir.",
     "intensite": 2,
     "lien": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+  },
+  {
+    "id": "art-salmona-mukwege",
+    "titre": "Le psychotraumatisme du viol : des conséquences majeures à long terme sur la vie et la santé des enfants victimes",
+    "auteur": "Dre Muriel Salmona (Mémoire Traumatique et Victimologie)",
+    "annee": 2019,
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "mémoire traumatique",
+      "enfance"
+    ],
+    "resume": "Conférence au congrès de la chaire internationale Mukwege. Explique comment le cerveau « disjoncte » face aux violences, ce qu'est la mémoire traumatique, pourquoi apparaissent les conduites dissociantes, et réunit de nombreux chiffres sur les violences sexuelles faites aux enfants.",
+    "intensite": 2,
+    "lien": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2020-psychotraumatisme-du-viol-chaire-Mukwege.pdf"
+  },
+  {
+    "id": "art-salmona-dissociation",
+    "titre": "Dissociation, mémoire traumatique et violences sexuelles : des conséquences graves sur la santé à soigner",
+    "auteur": "Dre Muriel Salmona (Mémoire Traumatique et Victimologie)",
+    "annee": 2009,
+    "categorie": "article",
+    "themes": [
+      "dissociation",
+      "mémoire traumatique",
+      "soins"
+    ],
+    "resume": "Court document qui explique la dissociation (anesthésie émotionnelle, impression d'être spectateur·rice de sa vie), la mémoire traumatique et les conduites dissociantes, pourquoi elles sont souvent mal comprises, et ce qui aide à aller mieux.",
+    "intensite": 1,
+    "lien": "https://www.memoiretraumatique.org/assets/files/v1/doc_violences_sex/dissociation_violences_sexuelle.pdf"
+  },
+  {
+    "id": "art-lopez-clinique",
+    "titre": "Clinique et prise en charge des adultes victimes d'agressions sexuelles",
+    "auteur": "Gérard Lopez (EMC Psychiatrie)",
+    "annee": 2012,
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "trauma complexe",
+      "soins"
+    ],
+    "resume": "Article médical de référence : effets des agressions sexuelles sur les croyances fondamentales (confiance, contrôle, estime de soi), stress post-traumatique, trauma complexe après des violences répétées dans l'enfance, et principes de soin. Texte destiné aux professionnel·les.",
+    "intensite": 2,
+    "lien": "https://fr.ap-hm.fr/sites/default/files/blachere_-_biblio_2_0.pdf"
+  },
+  {
+    "id": "art-uqam-consequences",
+    "titre": "Conséquences du sexisme et des violences à caractère sexuel",
+    "auteur": "UQAM, Bureau du respect des personnes",
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "études et travail"
+    ],
+    "resume": "Page synthétique sur les conséquences physiques, psychologiques, sexuelles, sociales et économiques, et sur les trois périodes qui suivent souvent une agression récente : le choc, le réajustement, l'intégration.",
+    "intensite": 1,
+    "lien": "https://respect.uqam.ca/sexisme-et-violences-a-caractere-sexuel/consequences/"
+  },
+  {
+    "id": "art-stauffer-consequences",
+    "titre": "Les conséquences psychologiques des abus sexuels pour les victimes et des interstices avec la justice",
+    "auteur": "Sarah Stauffer, ESPAS (Suisse)",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "enfance",
+      "emprise",
+      "psychotraumatisme"
+    ],
+    "resume": "Diaporama présenté au réseau valaisan contre les violences domestiques (Sion, avril 2025) : pourquoi un enfant se tait, emprise violente et séductrice, les quatre mécanismes qui rendent les abus sexuels traumatisants, signes possibles chez l'enfant, et besoins des victimes.",
+    "intensite": 2,
+    "lien": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
   }
 ]

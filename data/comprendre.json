@@ -171,14 +171,25 @@
       }
     },
     {
+      "id": "memoire-traumatique",
+      "terme": "Mémoire traumatique",
+      "theme": "Les effets sur le corps et l'esprit",
+      "court": "Un souvenir « piégé » qui fait revivre les violences à l'identique, comme une machine à remonter le temps.",
+      "texte": "Face à une violence extrême, une alarme se déclenche dans le cerveau (l'amygdale) et inonde le corps d'hormones de stress. Si la personne est sidérée et ne peut ni fuir ni se défendre, ce stress devient dangereux pour le cœur et le cerveau. Le cerveau « disjoncte » alors, comme un circuit électrique, en libérant des substances qui anesthésient : c'est la dissociation.\n\nConséquence : le souvenir n'est pas rangé comme un souvenir normal. Il reste piégé, brut, avec toutes ses sensations et émotions. Un bruit, une odeur, un geste, une date peuvent le réactiver : la personne revit alors les violences comme si elles se reproduisaient (flashbacks, cauchemars, attaques de panique), sans toujours comprendre pourquoi.\n\nCe mécanisme se soigne : une prise en charge adaptée permet de transformer cette mémoire traumatique en souvenir « ordinaire », qui ne fait plus revivre les faits.",
+      "source": {
+        "label": "M. Salmona, « Le psychotraumatisme du viol » (2019)",
+        "url": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2020-psychotraumatisme-du-viol-chaire-Mukwege.pdf"
+      }
+    },
+    {
       "id": "amnesie-traumatique",
       "terme": "Amnésie traumatique",
       "theme": "Les effets sur le corps et l'esprit",
       "court": "Oublier tout ou partie de violences subies, parfois pendant des années.",
-      "texte": "Après des violences, surtout dans l'enfance, une partie ou la totalité des souvenirs peut devenir inaccessible pendant des mois ou des années. Ils peuvent revenir brusquement, par bribes, à l'occasion d'un événement, d'une odeur, d'une naissance… C'est un mécanisme de survie connu. Beaucoup de victimes de violences sexuelles dans l'enfance ont connu une période d'amnésie.",
+      "texte": "Après des violences, surtout dans l'enfance, une partie ou la totalité des souvenirs peut devenir inaccessible pendant des mois ou des années. Ils peuvent revenir brusquement, par bribes, à l'occasion d'un événement, d'une odeur, d'une naissance… C'est un mécanisme de survie connu. Beaucoup de victimes de violences sexuelles dans l'enfance ont connu une période d'amnésie : selon les études citées par la Dre Muriel Salmona, environ 40 % des enfants victimes connaissent une amnésie totale des faits pendant un temps, et près de 60 % une amnésie partielle.",
       "source": {
-        "label": "Mémoire Traumatique et Victimologie",
-        "url": "https://www.memoiretraumatique.org"
+        "label": "M. Salmona, « Le psychotraumatisme du viol » (2019)",
+        "url": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2020-psychotraumatisme-du-viol-chaire-Mukwege.pdf"
       }
     },
     {
@@ -186,10 +197,10 @@
       "terme": "Emprise",
       "theme": "Les effets sur le corps et l'esprit",
       "court": "Une domination psychologique qui fait perdre ses repères et sa liberté de dire non.",
-      "texte": "L'emprise s'installe souvent peu à peu : la personne qui agresse isole, valorise puis dévalorise, alterne gentillesse et menaces, fait croire que c'est « normal » ou que c'est « notre secret ». La victime peut alors avoir du mal à voir la violence, à la nommer, ou à partir. L'emprise explique pourquoi une victime peut garder des liens avec son agresseur.",
+      "texte": "L'emprise s'installe souvent peu à peu : la personne qui agresse isole, valorise puis dévalorise, alterne gentillesse et menaces, fait croire que c'est « normal » ou que c'est « notre secret ». La victime peut alors avoir du mal à voir la violence, à la nommer, ou à partir. L'emprise explique pourquoi une victime peut garder des liens avec son agresseur.\n\nOn distingue deux formes d'emprise, qui se mélangent souvent. L'emprise violente passe par les coups, les menaces, le dénigrement : elle provoque la peur. L'emprise séductrice passe par des mots doux, des gestes « tendres », de l'attention : elle provoque la confusion et la honte, et rend la violence encore plus difficile à nommer.",
       "source": {
-        "label": "Mémoire Traumatique et Victimologie",
-        "url": "https://www.memoiretraumatique.org"
+        "label": "S. Stauffer, ESPAS (2025)",
+        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
       }
     },
     {
@@ -201,6 +212,39 @@
       "source": {
         "label": "Info-aide violence sexuelle (Québec)",
         "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+      }
+    },
+    {
+      "id": "agression-recente",
+      "terme": "Après une agression récente : trois périodes",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Le choc, le réajustement, puis l'intégration : un chemin qui prend du temps.",
+      "texte": "Après une agression récente, beaucoup de personnes traversent trois périodes, de durée très variable : d'abord le choc (sidération, incrédulité, émotions intenses ou au contraire engourdissement), puis une période de réajustement où l'on essaie de reprendre le cours de sa vie, parfois en évitant d'y penser, et enfin une période d'intégration, où l'événement trouve sa place dans son histoire sans tout envahir.\n\nLes conséquences touchent aussi la vie quotidienne : difficultés dans les études ou au travail, arrêts, perte de revenus, isolement, rejet de certains proches. Les démarches judiciaires peuvent elles aussi être sources d'angoisse : il est utile de se faire accompagner.",
+      "source": {
+        "label": "UQAM, Bureau du respect des personnes",
+        "url": "https://respect.uqam.ca/sexisme-et-violences-a-caractere-sexuel/consequences/"
+      }
+    },
+    {
+      "id": "pourquoi-si-blessant",
+      "terme": "Pourquoi les violences sexuelles blessent autant",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Elles touchent la confiance, le corps, l'estime de soi et le sentiment de pouvoir agir sur sa vie.",
+      "texte": "Les violences sexuelles ont souvent des conséquences plus fréquentes et plus graves que d'autres événements traumatiques. Elles abîment des repères essentiels : le sentiment de contrôler sa vie, la confiance dans les autres, l'estime de soi, l'intimité. Le monde peut alors paraître dangereux.\n\nLes chercheurs David Finkelhor et Angela Browne décrivent quatre mécanismes, surtout quand les violences ont lieu dans l'enfance :\n• La trahison : la personne censée protéger est celle qui fait du mal.\n• L'impuissance : ne pas pouvoir faire cesser ce qui arrive.\n• La stigmatisation : la honte, la culpabilité, le sentiment d'être « sali·e » ou différent·e.\n• La sexualisation traumatique : un rapport au corps et à la sexualité façonné trop tôt, par la violence.\n\nComprendre ces mécanismes aide à voir que ses difficultés ont une cause.",
+      "source": {
+        "label": "S. Stauffer, ESPAS (2025)",
+        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
+      }
+    },
+    {
+      "id": "lopez-vision-monde",
+      "terme": "Ce que l'agression change dans la façon de voir le monde",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Se sentir en danger partout, perdre confiance, avoir l'impression de n'avoir plus aucun contrôle.",
+      "texte": "Une agression sexuelle bouscule les croyances sur lesquelles on s'appuie : « le monde est assez sûr », « je peux faire confiance », « j'ai de la valeur », « je contrôle ce qui m'arrive ». Après, le monde et les autres peuvent sembler dangereux.\n\nL'évitement lié au stress post-traumatique peut durablement toucher la sexualité, et les états dépressifs concernent environ la moitié des victimes. Quand les violences ont été répétées dans l'enfance, elles peuvent aussi rendre difficile la gestion des émotions et la construction de l'identité. Ces difficultés se soignent, notamment avec un travail qui passe d'abord par le corps puis par la relation thérapeutique.",
+      "source": {
+        "label": "G. Lopez, « Clinique et prise en charge des adultes victimes d'agressions sexuelles » (2012)",
+        "url": "https://fr.ap-hm.fr/sites/default/files/blachere_-_biblio_2_0.pdf"
       }
     },
     {
@@ -274,10 +318,10 @@
       "terme": "Addictions, troubles alimentaires, automutilation",
       "theme": "Après les violences : des réactions normales",
       "court": "Des façons de survivre à une douleur trop forte, pas des preuves de faiblesse.",
-      "texte": "Alcool, drogues, troubles alimentaires (anorexie, boulimie, hyperphagie), automutilation, prises de risque… Ces comportements sont fréquents après des violences sexuelles, à l'adolescence comme à l'âge adulte. Ils servent souvent à calmer ou à anesthésier une souffrance et des souvenirs insupportables.\n\nIls ne disent rien de votre valeur, et ils peuvent diminuer quand le traumatisme est soigné. Si vous avez des idées suicidaires, appelez le 3114, numéro national de prévention du suicide, gratuit, 24h/24.",
+      "texte": "Alcool, drogues, troubles alimentaires (anorexie, boulimie, hyperphagie), automutilation, prises de risque… Ces comportements sont fréquents après des violences sexuelles, à l'adolescence comme à l'âge adulte. Ils servent souvent à calmer ou à anesthésier une souffrance et des souvenirs insupportables. La Dre Muriel Salmona parle de « conduites dissociantes » : en se mettant en danger, le cerveau provoque à nouveau la « disjonction » qui anesthésie la douleur. C'est un soulagement réel mais de courte durée, qui ne dit rien de la valeur de la personne. Ces conduites sont souvent incomprises, et reprochées à tort aux victimes.\n\nIls ne disent rien de votre valeur, et ils peuvent diminuer quand le traumatisme est soigné. Si vous avez des idées suicidaires, appelez le 3114, numéro national de prévention du suicide, gratuit, 24h/24.",
       "source": {
-        "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
-        "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
+        "label": "M. Salmona, « Dissociation, mémoire traumatique et violences sexuelles » (2009)",
+        "url": "https://www.memoiretraumatique.org/assets/files/v1/doc_violences_sex/dissociation_violences_sexuelle.pdf"
       }
     },
     {
@@ -300,6 +344,17 @@
       "source": {
         "label": "Cn2r : inceste et psychotraumatisme",
         "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      }
+    },
+    {
+      "id": "silence-enfant",
+      "terme": "Le silence des enfants",
+      "theme": "Après les violences : des réactions normales",
+      "court": "« C'est normal », « c'est ma faute », « je ne dois pas dire » : ce qui empêche un enfant de parler.",
+      "texte": "Un enfant victime se tait rarement par choix. Il peut croire que « c'est normal », surtout s'il n'a jamais connu autre chose ; penser que « c'est de sa faute » ; ne pas avoir les mots ; avoir peur des menaces de l'agresseur ; être pris dans l'emprise ; ou ne plus se souvenir, à cause de l'amnésie et de la dissociation. Quand l'agresseur est un parent, parler, c'est risquer de perdre une personne dont l'enfant dépend pour vivre.\n\nIl n'existe pas de signe propre aux violences sexuelles : un enfant victime peut sembler aller bien et ne montrer aucun symptôme. Pas de symptôme ne veut pas dire pas de violence. Ce dont il a besoin : être en sécurité, être écouté, cru, et pris au sérieux.",
+      "source": {
+        "label": "S. Stauffer, ESPAS (2025)",
+        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
       }
     },
     {
