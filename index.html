@@ -69,6 +69,23 @@
       <ul id="event-list" class="cards"></ul>
     </section>
 
+    <!-- Comprendre -->
+    <section id="view-learn" class="view" aria-label="Comprendre">
+      <h2 class="view-title">Comprendre</h2>
+      <p class="hint">Les mots pour dire ce qui s'est passé, ce que dit la loi, et les réactions du corps et de l'esprit.</p>
+      <button class="learn-cta" type="button" data-quiz-open>
+        <strong>Faire le point sur ce que j'ai vécu</strong>
+        <span>Quelques questions pour mettre des mots sur votre situation. Rien n'est enregistré.</span>
+      </button>
+      <div class="search-wrap">
+        <input id="learn-search" type="search" placeholder="Chercher un mot : inceste, consentement…" autocomplete="off" aria-label="Chercher une définition">
+      </div>
+      <h3 class="section-title">Questions fréquentes</h3>
+      <div id="faq-list" class="acc-list"></div>
+      <div id="def-list"></div>
+      <p class="hint small-print">Textes de loi vérifiés en <span id="learn-maj"></span>. Ces informations ne remplacent pas l'avis d'un·e professionnel·le.</p>
+    </section>
+
     <!-- Favoris -->
     <section id="view-favorites" class="view" aria-label="Favoris">
       <h2 class="view-title">Mes favoris</h2>
@@ -214,13 +231,22 @@
     <button class="tab active" data-view="library" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 0 6 21h13"/><path d="M9 7h6"/></svg>Bibliothèque</button>
     <button class="tab" data-view="events" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13.5h2M14 13.5h2M8 17h2"/></svg>Agenda</button>
     <button class="tab" data-view="favorites" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Favoris</button>
-    <button class="tab" data-view="suggest" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 8v8M8 12h8"/></svg>Proposer</button>
+    <button class="tab" data-view="learn" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.4v.6"/><path d="M12 16.6h.01"/></svg>Comprendre</button>
     <button class="tab" data-view="help" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Aide</button>
   </nav>
 
   <!-- Fiche détaillée -->
   <dialog id="detail" class="sheet" aria-labelledby="detail-title">
     <div class="sheet-body"></div>
+  </dialog>
+
+  <!-- Questionnaire « Faire le point » -->
+  <dialog id="quiz" class="sheet" aria-labelledby="quiz-title">
+    <div class="sheet-body">
+      <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
+      <h2 id="quiz-title">Faire le point</h2>
+      <div id="quiz-body"></div>
+    </div>
   </dialog>
 
   <!-- Scan du code-barres -->

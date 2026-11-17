@@ -494,3 +494,39 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .list-head .count { white-space: nowrap; }
 .form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .form-pair label { min-width: 0; }
+
+/* Comprendre */
+.learn-cta {
+  display: grid; gap: 4px; width: 100%; text-align: left; cursor: pointer; font: inherit;
+  margin: 4px 0 14px; padding: 14px 16px; border: 0; border-radius: var(--radius);
+  background: var(--accent); color: var(--on-accent);
+}
+.learn-cta strong { font-size: 1.05rem; }
+.learn-cta span { font-size: .88rem; opacity: .92; }
+.acc-list { display: grid; gap: 8px; }
+.acc { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.acc summary { cursor: pointer; padding: 12px 14px; display: grid; gap: 2px; list-style: none; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary strong::after { content: " ＋"; color: var(--accent); font-weight: 400; }
+.acc[open] summary strong::after { content: " －"; }
+.acc summary span { color: var(--muted); font-size: .88rem; }
+.acc-body { padding: 0 14px 12px; font-size: .95rem; }
+.acc-body p { margin: 0 0 10px; }
+.acc-source { color: var(--muted); font-size: .82rem; }
+.acc-source a { color: var(--accent); }
+.small-print { font-size: .78rem; margin-top: 16px; }
+/* Questionnaire */
+.quiz-progress { color: var(--muted); font-size: .85rem; margin: 0 0 6px; }
+.quiz-bar { height: 6px; background: var(--accent-soft); border-radius: 999px; overflow: hidden; }
+.quiz-bar span { display: block; height: 100%; background: var(--accent); }
+.quiz-question { font-size: 1.12rem; font-weight: 600; margin: 18px 0; line-height: 1.4; }
+.quiz-answers { display: grid; gap: 8px; }
+.quiz-answer { text-align: left; padding: 14px 16px; }
+.quiz-answer.selected { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.quiz-nav { display: flex; justify-content: space-between; margin-top: 16px; font-size: .9rem; }
+.quiz-result { background: var(--accent-soft); border-radius: 12px; padding: 12px 14px; }
+.quiz-result p { margin: 0 0 8px; }
+.quiz-message { font-weight: 600; font-size: 1.02rem; }
+.chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.help-list.compact li { padding: 10px 12px; }
+.chips-wrap .chip { flex: 0 1 auto; white-space: normal; text-align: left; max-width: 100%; }

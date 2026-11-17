@@ -108,6 +108,16 @@ Si l'image trouvée n'est pas la bonne (mauvaise édition…), ajoutez à la fic
 
 Les affiches et couvertures restent la propriété de leurs auteurs et éditeurs. Leur usage en petite taille pour présenter une œuvre est courant, mais ce n'est pas un droit automatique : en cas de demande d'un ayant droit, retirez l'image (supprimez `image` de la fiche).
 
+## Onglet « Comprendre » (définitions et questionnaire)
+
+Le contenu est dans `data/comprendre.json` :
+
+- `questions_frequentes` : questions et réponses (par exemple « Inceste et pédocriminalité : quelle différence ? ») ;
+- `definitions` : chaque terme avec un résumé, un texte et sa **source officielle** (Légifrance, service-public…) ;
+- `questionnaire` : le texte des questions de « Faire le point ».
+
+Les définitions juridiques suivent le Code pénal en vigueur (vérifié en novembre 2026, après la loi du 6 novembre 2025 sur le consentement). Mettez à jour `maj` et les textes à chaque changement de loi. Le questionnaire ne garde aucune réponse : elles sont effacées à la fin ou à la fermeture.
+
 ## Compléter l'annuaire d'aide
 
 Il est dans `data/aide.json`. Chaque entrée a une catégorie (`ecoute`, `jeunes`, `groupes`, `associations`, `soins`, `demarches`, `prevention`, `infos`), une ville ou zone, une description, des horaires facultatifs et des contacts :

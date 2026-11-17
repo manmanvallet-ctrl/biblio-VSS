@@ -55,6 +55,7 @@
     items: [], lists: [], list: null, category: "tout", theme: "", query: "", gentle: false,
     events: [], eventCity: store0("biblio-vss:ville"), eventType: "",
     aide: [], aideCat: "tout", aideQuery: "",
+    learn: null, learnQuery: "",
   };
   function store0(key) { try { return JSON.parse(localStorage.getItem(key)) || ""; } catch { return ""; } }
 
@@ -439,6 +440,160 @@
         <p class="help-desc">${escapeHtml(a.description)}</p>
         <div class="contacts">${(a.contacts || []).map(contactHtml).join("")}</div>
       </li>`).join("") : `<li class="empty">Aucun résultat dans l'annuaire.</li>`;
+  }
+
+  // ---------- Comprendre : définitions et questions fréquentes ----------
+  const paragraphs = (t) => String(t || "").split(/\n\n+/)
+    .map((p) => `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`).join("");
+
+  function defHtml(d) {
+    const src = d.source && safeUrl(d.source.url);
+    return `<details class="acc" id="def-${escapeHtml(d.id)}" data-def="${escapeHtml(d.id)}">
+        <summary><strong>${escapeHtml(d.terme)}</strong><span>${escapeHtml(d.court)}</span></summary>
+        <div class="acc-body">${paragraphs(d.texte)}
+          ${src ? `<p class="acc-source">Source : <a href="${escapeHtml(src)}" target="_blank" rel="noopener">${escapeHtml(d.source.label)} ↗</a></p>` : ""}
+        </div>
+      </details>`;
+  }
+
+  function renderLearn() {
+    const L = state.learn;
+    if (!L) return;
+    $("#learn-maj").textContent = (() => {
+      const m = /^(\d{4})-(\d{2})$/.exec(L.maj || "");
+      return m ? new Date(+m[1], +m[2] - 1, 1).toLocaleDateString("fr-FR", { month: "long", year: "numeric" }) : "";
+    })();
+    const q = normalize(state.learnQuery.trim());
+    const match = (...parts) => !q || q.split(/\s+/).every((w) => normalize(parts.join(" ")).includes(w));
+    const faqs = L.questions_frequentes.filter((f) => match(f.question, f.reponse));
+    const byId = new Map(L.definitions.map((d) => [d.id, d]));
+    $("#faq-list").innerHTML = faqs.length ? faqs.map((f) => `<details class="acc">
+        <summary><strong>${escapeHtml(f.question)}</strong></summary>
+        <div class="acc-body">${paragraphs(f.reponse)}
+          ${(f.voir || []).filter((id) => byId.has(id)).length ? `<p class="acc-source">Voir aussi : ${f.voir.filter((id) => byId.has(id))
+            .map((id) => `<button class="link-btn" type="button" data-def-open="${escapeHtml(id)}">${escapeHtml(byId.get(id).terme)}</button>`).join(", ")}</p>` : ""}
+        </div>
+      </details>`).join("") : `<p class="hint">Aucune question ne correspond.</p>`;
+    const defs = L.definitions.filter((d) => match(d.terme, d.court, d.texte));
+    const themes = [...new Set(defs.map((d) => d.theme))];
+    $("#def-list").innerHTML = themes.map((t) => `<h3 class="section-title">${escapeHtml(t)}</h3>
+      <div class="acc-list">${defs.filter((d) => d.theme === t).map(defHtml).join("")}</div>`).join("")
+      || `<p class="hint">Aucune définition ne correspond à « ${escapeHtml(state.learnQuery)} ».</p>`;
+  }
+
+  function openDefinition(id) {
+    if (state.learnQuery) { state.learnQuery = ""; $("#learn-search").value = ""; renderLearn(); }
+    document.querySelectorAll("dialog[open]").forEach((d) => d.close());
+    showView("learn");
+    const el = document.getElementById(`def-${id}`);
+    if (el) { el.open = true; setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50); }
+  }
+
+  // ---------- Questionnaire « Faire le point » ----------
+  // Les réponses restent en mémoire le temps du questionnaire, puis sont effacées.
+  const quiz = { step: -1, answers: {} };
+  const ANSWERS = [["oui", "Oui"], ["non", "Non"], ["nsp", "Je ne sais pas"]];
+
+  function quizQuestions() {
+    // Si moins de 15 ans, inutile de demander « moins de 18 ans »
+    return state.learn.questionnaire.questions.filter((q) => !(q.id === "moins18" && quiz.answers.moins15 === "oui"));
+  }
+
+  function renderQuiz() {
+    const Q = state.learn.questionnaire;
+    const body = $("#quiz-body");
+    const qs = quizQuestions();
+    if (quiz.step < 0) {
+      body.innerHTML = `<div class="warning">${escapeHtml(Q.intro)}</div>
+        <p class="hint">${escapeHtml(Q.avertissement)}</p>
+        <div class="btn-row"><button class="btn primary" type="button" data-quiz-next>Commencer</button></div>
+        <div class="btn-row"><button class="btn" type="button" data-quiz-close>Pas maintenant</button></div>`;
+      return;
+    }
+    if (quiz.step >= qs.length) { renderQuizResult(); return; }
+    const q = qs[quiz.step];
+    const cur = quiz.answers[q.id];
+    body.innerHTML = `<p class="quiz-progress">Question ${quiz.step + 1} sur ${qs.length}</p>
+      <div class="quiz-bar"><span style="width:${Math.round((quiz.step / qs.length) * 100)}%"></span></div>
+      <p class="quiz-question">${escapeHtml(q.texte)}</p>
+      <div class="quiz-answers">${ANSWERS.map(([v, l]) =>
+        `<button class="btn quiz-answer${cur === v ? " selected" : ""}" type="button" data-quiz-answer="${v}">${l}</button>`).join("")}
+      </div>
+      <div class="quiz-nav">
+        <button class="link-btn" type="button" data-quiz-back>${quiz.step === 0 ? "Retour" : "← Question précédente"}</button>
+        <button class="link-btn" type="button" data-quiz-skip>Passer cette question</button>
+      </div>`;
+  }
+
+  function renderQuizResult() {
+    const a = quiz.answers;
+    const yes = (k) => a[k] === "oui";
+    const maybe = (k) => a[k] === "oui" || a[k] === "nsp";
+    const acte = maybe("penetration") || maybe("attouchements");
+    // Absence d'accord claire (non, incapacité, pression) ou simple doute (« je ne sais pas »)
+    const pasConsentClair = a.envie === "non" || maybe("incapable") || maybe("pression");
+    const doute = a.envie === "nsp";
+    const pasConsent = pasConsentClair || doute;
+    const moins15 = yes("moins15");
+    const mineur = moins15 || yes("moins18");
+    const famille = maybe("famille");
+    const sansAccordPossible = pasConsent || moins15 || (mineur && famille);
+    const sansAccordClair = pasConsentClair || moins15 || (mineur && famille);
+    const mots = [];
+    const add = (id) => { if (!mots.includes(id)) mots.push(id); };
+    if (maybe("penetration") && sansAccordPossible) add("viol");
+    if (maybe("attouchements") && sansAccordPossible) add("agression-sexuelle");
+    if (moins15 && acte) add("mineur-15-ans");
+    if (famille && acte) add("inceste");
+    if (mineur && acte) add("pedocriminalite");
+    if (pasConsent) add("consentement");
+    if (maybe("incapable")) { add("sidération"); add("soumission-chimique"); }
+    if (maybe("memoire")) { add("amnesie-traumatique"); add("dissociation"); }
+    if (acte) { add("plainte"); add("prescription"); }
+
+    let message;
+    if (acte && sansAccordClair) {
+      message = "Ce que vous décrivez peut correspondre à des violences sexuelles. Ce n'est pas de votre faute, et vous avez le droit d'être écouté·e et aidé·e.";
+    } else if (acte && doute) {
+      message = "Vous ne savez pas si vous étiez vraiment d'accord. Ce doute est fréquent, et il est important : le consentement doit être libre, éclairé et donné pour chaque acte. Lire la définition ci-dessous, ou en parler à quelqu'un de confiance ou à une ligne d'écoute, peut vous aider à y voir plus clair.";
+    } else if (acte) {
+      message = "Vos réponses ne disent pas clairement si vous étiez d'accord. Si vous vous posez la question, c'est que quelque chose vous a mis·e mal à l'aise : cela mérite d'être entendu par quelqu'un de confiance ou un·e professionnel·le.";
+    } else {
+      message = "Vos réponses ne correspondent pas aux situations décrites ici. Mais les violences prennent beaucoup de formes, et votre ressenti compte : si quelque chose vous pèse, vous pouvez en parler.";
+    }
+    const extras = [];
+    if (yes("couple") && acte) extras.push("Être en couple, même marié·e, ne veut jamais dire avoir donné son accord : la loi le précise.");
+    if (famille && acte) extras.push("Si la personne est un·e cousin·e, le mot « inceste » ne s'applique pas juridiquement, mais ce sont bien des violences sexuelles, punies par la loi.");
+    if (maybe("incapable")) extras.push("Si cela vient d'arriver et que vous pensez avoir été drogué·e, allez vite aux urgences : certaines substances disparaissent en quelques heures.");
+
+    const byId = new Map(state.learn.definitions.map((d) => [d.id, d]));
+    $("#quiz-body").innerHTML = `<div class="quiz-result">
+        <p class="quiz-message">${escapeHtml(message)}</p>
+        ${extras.map((t) => `<p>${escapeHtml(t)}</p>`).join("")}
+      </div>
+      ${mots.some((id) => byId.has(id)) ? `<h3 class="section-title">Des mots qui peuvent vous aider</h3>
+      <div class="chips-wrap">${mots.filter((id) => byId.has(id)).map((id) =>
+        `<button class="chip" type="button" data-def-open="${escapeHtml(id)}">${escapeHtml(byId.get(id).terme)}</button>`).join("")}</div>`
+        : `<p><button class="link-btn" type="button" data-goto="learn">Parcourir toutes les définitions</button></p>`}
+      <h3 class="section-title">En parler, gratuitement et anonymement</h3>
+      <ul class="help-list compact">
+        ${mineur ? `<li><a href="tel:119"><strong>119</strong> Allô Enfance en Danger</a><small>Si vous avez moins de 18 ans, 24h/24</small></li>` : ""}
+        <li><a href="tel:0800059595"><strong>0 800 05 95 95</strong> Viols Femmes Informations</a><small>Pour toutes les victimes de violences sexuelles</small></li>
+        <li><a href="tel:3919"><strong>3919</strong> Violences Femmes Info</a><small>24h/24, 7j/7</small></li>
+        <li><a href="tel:116006"><strong>116 006</strong> France Victimes</a><small>Démarches, plainte, accompagnement</small></li>
+      </ul>
+      <p class="hint">En danger maintenant : appelez le <a href="tel:17">17</a> ou envoyez un SMS au <a href="sms:114">114</a>. D'autres contacts, associations et groupes de parole sont dans l'onglet Aide.</p>
+      <p class="hint small-print">${escapeHtml(state.learn.questionnaire.avertissement)} Vos réponses viennent d'être effacées.</p>
+      <div class="btn-row"><button class="btn" type="button" data-goto="help">Voir toute l'aide</button>
+        <button class="btn primary" type="button" data-quiz-close>Fermer</button></div>`;
+    quiz.answers = {}; // rien n'est conservé
+  }
+
+  function openQuiz() {
+    if (!state.learn) return;
+    quiz.step = -1; quiz.answers = {};
+    renderQuiz();
+    $("#quiz").showModal();
   }
 
   // ---------- Remplissage automatique depuis un lien ----------
@@ -988,6 +1143,19 @@
   document.addEventListener("click", (e) => {
     if (e.target.closest("[data-exit]")) { quickExit(); return; }
 
+    if (e.target.closest("[data-quiz-open]")) { openQuiz(); return; }
+    if (e.target.closest("[data-quiz-close]")) { quiz.answers = {}; $("#quiz").close(); return; }
+    const qa = e.target.closest("[data-quiz-answer]");
+    if (qa) {
+      const qs = quizQuestions();
+      quiz.answers[qs[quiz.step].id] = qa.dataset.quizAnswer;
+      quiz.step++; renderQuiz(); return;
+    }
+    if (e.target.closest("[data-quiz-next]") || e.target.closest("[data-quiz-skip]")) { quiz.step++; renderQuiz(); return; }
+    if (e.target.closest("[data-quiz-back]")) { quiz.step = Math.max(-1, quiz.step - 1); renderQuiz(); return; }
+    const defOpen = e.target.closest("[data-def-open]");
+    if (defOpen) { openDefinition(defOpen.dataset.defOpen); return; }
+
     const fav = e.target.closest("[data-fav]");
     if (fav) { e.stopPropagation(); toggleFavorite(fav.dataset.fav); return; }
 
@@ -1002,6 +1170,7 @@
 
     const go = e.target.closest("[data-goto]");
     if (go) {
+      document.querySelectorAll("dialog[open]").forEach((d) => { if (d.id === "quiz") { quiz.answers = {}; d.close(); } });
       const type = go.dataset.suggestType || (go.dataset.goto === "suggest" ? libraryType() : "");
       if (type) $("#suggest-form").setType(type);
       showView(go.dataset.goto);
@@ -1053,6 +1222,8 @@
     renderEvents();
   });
   $("#event-type").addEventListener("change", (e) => { state.eventType = e.target.value; renderEvents(); });
+  $("#learn-search").addEventListener("input", (e) => { state.learnQuery = e.target.value; renderLearn(); });
+  $("#quiz").addEventListener("close", () => { quiz.answers = {}; });
   $("#aide-search").addEventListener("input", (e) => { state.aideQuery = e.target.value; renderAide(); });
 
   function showView(name) {
@@ -1072,12 +1243,15 @@
   }
 
   async function init() {
-    const [items, lists, events, aide] = await Promise.all([
+    const [items, lists, events, aide, learn] = await Promise.all([
       loadJson("data/ressources.json", null),
       loadJson("data/listes.json", []),
       loadJson("data/evenements.json", []),
       loadJson("data/aide.json", []),
+      loadJson("data/comprendre.json", null),
     ]);
+    state.learn = learn && learn.definitions ? learn : null;
+    renderLearn();
     state.events = Array.isArray(events) ? events : [];
     state.aide = Array.isArray(aide) ? aide : [];
     renderEventFilters();
