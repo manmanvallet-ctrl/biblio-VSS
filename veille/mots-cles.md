@@ -20,6 +20,8 @@ Modifiez librement les listes ci-dessous (une ligne = un élément).
 - groupe de parole
 - conférence
 - table ronde
+- pièce de théâtre
+- spectacle
 - projection-débat
 - ciné-débat
 - marche

@@ -470,6 +470,13 @@
       if (parts[0] === "series") out.categorie = "serie";
     } else if (host === "babelio.com" && parts[0] === "livres") {
       out.categorie = "livre";
+    } else if (/(^|\.)(helloasso\.com|openagenda\.com|eventbrite\.(fr|com)|billetreduc\.com|weezevent\.com|festik\.net|shotgun\.live|billetweb\.fr|fnacspectacles\.com|ticketmaster\.fr)$/.test(host)
+      || (host === "facebook.com" && parts[0] === "events")) {
+      out.categorie = "evenement";
+      // Titre lisible dans l'adresse (HelloAsso, Eventbrite)
+      const slug = host === "helloasso.com" && parts[2] === "evenements" ? parts[3]
+        : /eventbrite/.test(host) && parts[0] === "e" ? (parts[1] || "").replace(/-(tickets|billets)-\d+$/, "") : "";
+      if (slug) out.titre = capitalize(decodeURIComponent(slug).replace(/-/g, " "));
     }
     return out;
   }
@@ -508,9 +515,63 @@
     } catch { return null; } finally { clearTimeout(timer); }
   }
 
-  async function fetchMetadata(url) {
-    const json = await getJson(METADATA_API + encodeURIComponent(url));
+  async function fetchMetadata(url, withJsonLd) {
+    // withJsonLd : demande aussi les blocs schema.org de la page (date, lieu d'un événement)
+    const rule = withJsonLd ? "&data.jsonld.selectorAll=" + encodeURIComponent('script[type="application/ld+json"]') + "&data.jsonld.attr=text" : "";
+    let json = await getJson(METADATA_API + encodeURIComponent(url) + rule);
+    if (withJsonLd && !(json && json.status === "success")) json = await getJson(METADATA_API + encodeURIComponent(url));
     return json && json.status === "success" ? json.data : null;
+  }
+
+  // ---------- Événements : lecture des données schema.org « Event » ----------
+  const EVENT_TYPES = [
+    [/groupe[s]? de parole/i, "Groupe de parole"],
+    [/table[- ]ronde/i, "Table ronde"],
+    [/conf[ée]rence/i, "Conférence"],
+    [/projection|cin[ée][- ]d[ée]bat|ScreeningEvent/i, "Projection"],
+    [/th[ée][âa]tre|spectacle|pi[èe]ce|TheaterEvent|seule? en sc[èe]ne/i, "Spectacle / théâtre"],
+    [/marche/i, "Marche"],
+    [/rassemblement/i, "Rassemblement"],
+    [/atelier/i, "Atelier"],
+    [/exposition|ExhibitionEvent/i, "Exposition"],
+    [/formation|EducationEvent/i, "Formation"],
+  ];
+  const decodeEntities = (t) => { const el = document.createElement("textarea"); el.innerHTML = String(t || ""); return el.value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(); };
+
+  function parseEventJsonLd(blocks) {
+    const nodes = [];
+    for (const raw of [].concat(blocks || [])) {
+      let d;
+      try { d = typeof raw === "string" ? JSON.parse(raw) : raw; } catch { continue; }
+      const walk = (n) => {
+        if (!n || typeof n !== "object") return;
+        if (Array.isArray(n)) { n.forEach(walk); return; }
+        nodes.push(n);
+        if (n["@graph"]) walk(n["@graph"]);
+      };
+      walk(d);
+    }
+    const ev = nodes.find((n) => [].concat(n["@type"] || []).some((t) => /Event$/.test(t)) && n.startDate);
+    if (!ev) return null;
+    const out = { categorie: "evenement" };
+    if (ev.name) out.titre = decodeEntities(ev.name);
+    const m = /^(\d{4}-\d{2}-\d{2})(?:T(\d{2}:\d{2}))?/.exec(String(ev.startDate));
+    if (m) { out.date = m[1]; if (m[2] && m[2] !== "00:00") out.heure = m[2]; }
+    const loc = [].concat(ev.location || [])[0];
+    if (loc && typeof loc === "object") {
+      if (loc.name) out.lieu = decodeEntities(loc.name);
+      const addr = loc.address;
+      if (addr && typeof addr === "object") {
+        if (addr.addressLocality) out.ville = decodeEntities(addr.addressLocality);
+        if (addr.streetAddress && out.lieu) out.lieu += `, ${decodeEntities(addr.streetAddress)}`;
+      } else if (typeof addr === "string") out.lieu = [out.lieu, decodeEntities(addr)].filter(Boolean).join(", ");
+    }
+    const org = [].concat(ev.organizer || [])[0];
+    if (org) out.organisateur = decodeEntities(typeof org === "string" ? org : org.name);
+    const hay = `${[].concat(ev["@type"]).join(" ")} ${ev.name || ""} ${decodeEntities(ev.description || "").slice(0, 300)}`;
+    const t = EVENT_TYPES.find(([re]) => re.test(hay));
+    if (t) out.type_evenement = t[1];
+    return out;
   }
 
   // Wikidata : base de données ouverte de Wikipédia (titre exact, auteur·rice, année).
@@ -590,7 +651,7 @@
   }
 
   // Combine les sources, de la plus fiable à la plus générale.
-  async function resolveUrl(url) {
+  async function resolveUrl(url, wantEvent) {
     const guess = guessFromUrl(url) || {};
     let found = { ...guess };
     const podcast = await fromPodcastUrl(url);
@@ -598,10 +659,14 @@
     const host = new URL(url).hostname.replace(/^www\./, "");
     if (!podcast && host !== "senscritique.com") {
       // SensCritique bloque les lecteurs automatiques : on passe directement à Wikidata.
-      const meta = await fetchMetadata(url);
-      if (meta) found = { ...found, ...parseMetadata(url, meta) };
+      const maybeEvent = !found.categorie || found.categorie === "evenement" || wantEvent;
+      const meta = await fetchMetadata(url, maybeEvent);
+      if (meta) {
+        const ev = maybeEvent && parseEventJsonLd(meta.jsonld);
+        found = ev ? { ...found, ...ev } : { ...found, ...parseMetadata(url, meta) };
+      }
     }
-    if (found.titre && found.categorie && (!found.auteur || !found.annee || host === "senscritique.com")) {
+    if (found.titre && WD_DESC[found.categorie] && (!found.auteur || !found.annee || host === "senscritique.com")) {
       const wd = await fromWikidata(found.titre, found.categorie);
       if (wd) {
         // Le titre Wikidata a les accents corrects ; pour le reste, on complète.
@@ -616,7 +681,8 @@
     const input = form.lien;
     const btn = $("#url-fill-btn");
     let lastUrl = "";
-    const LABELS = { categorie: "type", titre: "titre", auteur: "auteur", annee: "année" };
+    const LABELS = { categorie: "type", titre: "titre", auteur: "auteur", annee: "année",
+      date: "date", heure: "heure", ville: "ville", lieu: "lieu", organisateur: "organisateur", type_evenement: "type d'événement" };
 
     async function fill() {
       const url = input.value.trim();
@@ -626,19 +692,22 @@
       btn.disabled = true;
       say("Lecture de la page…");
       let found = {};
-      try { found = await resolveUrl(url); } catch { found = guessFromUrl(url) || {}; }
+      try { found = await resolveUrl(url, form.categorie.value === "evenement"); } catch { found = guessFromUrl(url) || {}; }
       const filled = [];
       if (found.categorie && form.categorie.value !== found.categorie) {
         form.categorie.value = found.categorie;
         syncFields();
       }
       if (found.categorie) filled.push(LABELS.categorie);
-      for (const k of ["titre", "auteur", "annee"]) {
+      for (const k of ["titre", "auteur", "annee", "date", "heure", "ville", "lieu", "organisateur", "type_evenement"]) {
         // On ne remplace jamais ce que la personne a déjà écrit.
         if (found[k] && form[k] && !form[k].value.trim()) { form[k].value = found[k]; filled.push(LABELS[k]); }
       }
       btn.disabled = false;
-      if (filled.length) say(`Rempli à partir du lien : ${filled.join(", ")}. Vérifiez avant d'envoyer.`, "ok");
+      const past = form.categorie.value === "evenement" && validDate(form.date.value) && form.date.value < todayIso();
+      if (filled.length && past) say(`Rempli à partir du lien, mais attention : cet événement semble déjà passé (${form.date.value.split("-").reverse().join("/")}).`, "error");
+      else if (filled.length) say(`Rempli à partir du lien : ${filled.join(", ")}. Vérifiez avant d'envoyer.`, "ok");
+      else if (form.categorie.value === "evenement") say("Impossible de lire cette page, mais le lien sera envoyé avec votre proposition. Complétez ce que vous pouvez.", "ok");
       else say("Impossible de lire cette page. Complétez les champs à la main.", "error");
     }
 
@@ -857,7 +926,10 @@
         `Type : ${data.categorie}`,
         `Titre / nom : ${data.titre}`,
         ...(isPlace
-          ? [`Date : ${data.date || "-"}`, `Ville : ${data.ville || "-"}`]
+          ? (data.categorie === "evenement"
+            ? [`Type d'événement : ${data.type_evenement || "-"}`, `Date : ${data.date || "-"}${data.heure ? " à " + data.heure : ""}`,
+               `Lieu : ${data.lieu || "-"}`, `Ville : ${data.ville || "-"}`, `Organisateur : ${data.organisateur || "-"}`]
+            : [`Ville : ${data.ville || "-"}`])
           : [`Auteur·rice : ${data.auteur || "-"}`, `Année : ${data.annee || "-"}`, ...(data.isbn ? [`ISBN : ${data.isbn}`] : [])]),
         `Lien : ${data.lien || "-"}`,
         "",

@@ -71,6 +71,7 @@ Dans `data/evenements.json` (vide au départ) :
 }
 ```
 
+- `type` : Groupe de parole, Conférence, Table ronde, Projection, Spectacle / théâtre, Marche, Rassemblement, Atelier, Exposition, Formation.
 - `date` au format `AAAA-MM-JJ` ; `heure` (`HH:MM`) et `fin` (date de fin, pour un événement sur plusieurs jours) sont facultatifs.
 - Les événements passés disparaissent tout seuls. La liste des villes du filtre se construit automatiquement.
 - Écrivez toujours la ville de la même façon (« Lyon », pas « lyon »), sinon elle apparaîtra deux fois.

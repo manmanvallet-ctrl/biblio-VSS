@@ -62,7 +62,10 @@
           <option value="">Tous les types</option>
         </select>
       </div>
-      <p id="event-count" class="count" aria-live="polite"></p>
+      <div class="list-head">
+        <p id="event-count" class="count" aria-live="polite"></p>
+        <button class="btn btn-small" type="button" data-goto="suggest" data-suggest-type="evenement">＋ Proposer un événement</button>
+      </div>
       <ul id="event-list" class="cards"></ul>
     </section>
 
@@ -96,10 +99,10 @@
           <label for="suggest-lien">Lien de la page (facultatif)</label>
           <div class="url-row">
             <input id="suggest-lien" name="lien" type="url" inputmode="url" maxlength="500" autocomplete="off"
-              placeholder="Collez un lien SensCritique, Spotify, Babelio…">
+              placeholder="Lien SensCritique, Spotify, billetterie…">
             <button class="btn" type="button" id="url-fill-btn">Remplir</button>
           </div>
-          <small class="hint-small">Collez un lien : le titre, l'auteur et l'année se remplissent tout seuls. Vérifiez-les avant d'envoyer.</small>
+          <small class="hint-small">Collez un lien : l'application remplit ce qu'elle peut lire (titre, auteur, date, lieu…). Vérifiez avant d'envoyer.</small>
         </div>
         <div class="url-fill" data-only="livre bd">
           <label for="suggest-isbn">Ou le code-barres du livre (ISBN)</label>
@@ -112,11 +115,38 @@
         <label><span id="titre-label">Titre</span> <span class="req">*</span>
           <input name="titre" required maxlength="200" autocomplete="off">
         </label>
-        <label data-only="evenement">Date
-          <input name="date" type="date">
+        <label data-only="evenement">Type d'événement
+          <select name="type_evenement">
+            <option value="">Choisir…</option>
+            <option>Groupe de parole</option>
+            <option>Conférence</option>
+            <option>Table ronde</option>
+            <option>Projection</option>
+            <option>Spectacle / théâtre</option>
+            <option>Marche</option>
+            <option>Rassemblement</option>
+            <option>Atelier</option>
+            <option>Exposition</option>
+            <option>Formation</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <div class="form-pair" data-only="evenement">
+          <label>Date
+            <input name="date" type="date">
+          </label>
+          <label>Heure
+            <input name="heure" type="time">
+          </label>
+        </div>
+        <label data-only="evenement">Lieu
+          <input name="lieu" maxlength="150" autocomplete="off" placeholder="Salle, adresse…">
         </label>
         <label data-only="evenement association">Ville
           <input name="ville" maxlength="100" autocomplete="off">
+        </label>
+        <label data-only="evenement">Organisateur
+          <input name="organisateur" maxlength="150" autocomplete="off">
         </label>
         <label data-not="evenement association">Auteur·rice ou réalisateur·rice
           <input name="auteur" maxlength="200" autocomplete="off">

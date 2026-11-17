@@ -492,3 +492,5 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .scan-photo { display: block; text-align: center; margin-top: 4px; }
 .list-head .suggest-cta { width: auto; margin-top: 0; flex: none; }
 .list-head .count { white-space: nowrap; }
+.form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-pair label { min-width: 0; }
