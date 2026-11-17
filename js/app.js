@@ -55,7 +55,7 @@
     items: [], lists: [], list: null, category: "tout", theme: "", query: "", gentle: false,
     events: [], eventCity: store0("biblio-vss:ville"), eventType: "",
     aide: [], aideCat: "tout", aideQuery: "",
-    learn: null, learnQuery: "",
+    learn: null, learnQuery: "", learnRub: "",
   };
   function store0(key) { try { return JSON.parse(localStorage.getItem(key)) || ""; } catch { return ""; } }
 
@@ -457,14 +457,83 @@
   const paragraphs = (t) => String(t || "").split(/\n\n+/)
     .map((p) => `<p>${escapeHtml(p).replace(/\n/g, "<br>")}</p>`).join("");
 
-  function defHtml(d) {
+  // Icônes au trait des rubriques et des tuiles
+  const ICONS = {
+    balance: '<path d="M12 4v16M7 20h10M5 8h14M5 8l-2.5 6a3 3 0 0 0 5 0L5 8zM19 8l-2.5 6a3 3 0 0 0 5 0L19 8z"/>',
+    cerveau: '<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a2 2 0 0 0-3-1zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/>',
+    coeur: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    enfant: '<circle cx="12" cy="6" r="2.5"/><path d="M8 21v-6l-2-3 3-3h6l3 3-2 3v6M10 21v-4h4v4"/>',
+    soleil: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    document: '<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9.5 12h6M9.5 16h6"/>',
+    bulle: '<path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M10 9.2a2 2 0 1 1 2.6 1.9c-.4.2-.6.5-.6.9M12 14h.01"/>',
+    temps: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+    oeil: '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>',
+    corps: '<circle cx="12" cy="4.5" r="2"/><path d="M12 7v7M7 9.5h10M12 14l-3 7M12 14l3 7"/>',
+    intime: '<path d="M8 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM16 19a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>',
+    liens: '<circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><path d="M3 19a4 4 0 0 1 8 0M13 19a4 4 0 0 1 8 0"/>',
+    bouclier: '<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/>',
+    fil: '<path d="M4 18c3-6 6 0 9-6s5-4 7-6"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="6" r="1.5"/>',
+    cercle: '<path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"/>',
+  };
+  const icon = (name, cls = "rub-icon") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ICONS.bulle}</svg>`;
+
+  const reflexionHtml = (d) => d.reflexion ? `<div class="reflexion">
+      <p class="reflexion-title">${icon("bulle", "inline-icon")} Pour réfléchir ou en parler</p>
+      ${d.reflexion.parties.map((pt) => `<p class="reflexion-part">${escapeHtml(pt.titre)}</p>
+        <ul>${pt.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join("")}</ul>`).join("")}
+      <p class="reflexion-note">${escapeHtml(d.reflexion.origine || "")} Prenez-les à votre rythme : vous pouvez y répondre sur papier, ou en parler avec quelqu'un de confiance ou en groupe de parole. Rien n'est enregistré dans l'application.</p>
+    </div>` : "";
+
+  const defBody = (d) => {
     const src = d.source && safeUrl(d.source.url);
+    return `${paragraphs(d.texte)}${reflexionHtml(d)}
+      ${src ? `<p class="acc-source">Source : <a href="${escapeHtml(src)}" target="_blank" rel="noopener">${escapeHtml(d.source.label)} ↗</a></p>` : ""}`;
+  };
+
+  function defHtml(d) {
     return `<details class="acc" id="def-${escapeHtml(d.id)}" data-def="${escapeHtml(d.id)}">
-        <summary><strong>${escapeHtml(d.terme)}</strong><span>${escapeHtml(d.court)}</span></summary>
-        <div class="acc-body">${paragraphs(d.texte)}
-          ${src ? `<p class="acc-source">Source : <a href="${escapeHtml(src)}" target="_blank" rel="noopener">${escapeHtml(d.source.label)} ↗</a></p>` : ""}
-        </div>
+        <summary><strong>${escapeHtml(d.terme)}</strong><span>${escapeHtml(d.court)}</span>${d.reflexion ? `<em class="acc-badge">Questions pour réfléchir</em>` : ""}</summary>
+        <div class="acc-body">${defBody(d)}</div>
       </details>`;
+  }
+
+  // Schéma en étapes, à faire défiler
+  const stepsHtml = (r) => !r.etapes ? "" : `<div class="steps" data-steps>
+      <div class="steps-track">${r.etapes.map((e, i) => `<div class="step">
+          <span class="step-num">${i + 1} / ${r.etapes.length}</span>
+          <p class="step-title">${escapeHtml(e.titre)}</p>
+          <p>${escapeHtml(e.texte)}</p>
+        </div>`).join("")}</div>
+      <div class="steps-nav">
+        <button class="btn btn-small" type="button" data-step="-1" aria-label="Étape précédente">←</button>
+        <span class="steps-dots">${r.etapes.map((_, i) => `<i${i === 0 ? ' class="on"' : ""}></i>`).join("")}</span>
+        <button class="btn btn-small" type="button" data-step="1" aria-label="Étape suivante">→</button>
+      </div>
+      ${r.etapes_source && safeUrl(r.etapes_source.url) ? `<p class="acc-source"><a href="${escapeHtml(r.etapes_source.url)}" target="_blank" rel="noopener">${escapeHtml(r.etapes_source.label)} ↗</a></p>` : ""}
+    </div>`;
+
+  function renderRubrique(r) {
+    const L = state.learn;
+    const defs = L.definitions.filter((d) => d.rubrique === r.id);
+    let content;
+    if (r.format === "tuiles") {
+      content = `<div class="tiles">${defs.map((d) => `<button class="tile" type="button" data-def-sheet="${escapeHtml(d.id)}">
+          ${icon(d.icone || "coeur", "tile-icon")}<strong>${escapeHtml(d.terme)}</strong><span>${escapeHtml(d.court)}</span>
+        </button>`).join("")}</div>`;
+    } else if (r.format === "reflexion") {
+      const sets = L.definitions.filter((d) => d.reflexion);
+      content = `<div class="acc-list">${sets.map((d) => `<div class="reflexion-card">
+          <p class="step-title">${escapeHtml(d.terme)}</p>${reflexionHtml(d)}
+          <button class="link-btn" type="button" data-def-open="${escapeHtml(d.id)}">Lire la fiche « ${escapeHtml(d.terme)} »</button>
+        </div>`).join("")}</div>
+        <p class="hint">D'autres séries de questions pourront être ajoutées au fil des ateliers.</p>`;
+    } else {
+      content = `<div class="acc-list">${defs.map(defHtml).join("")}</div>`;
+    }
+    const extra = r.id === "mieux" ? `<p><button class="btn" type="button" data-goto="help">Trouver de l'aide et des soins</button></p>` : "";
+    $("#learn-rub").innerHTML = `<button class="link-btn back-link" type="button" data-rub-back>← Comprendre</button>
+      <div class="rub-head">${icon(r.icone)}<div><h3>${escapeHtml(r.titre)}</h3><p class="hint">${escapeHtml(r.description)}</p></div></div>
+      ${stepsHtml(r)}${content}${extra}`;
   }
 
   function renderLearn() {
@@ -476,8 +545,16 @@
     })();
     const q = normalize(state.learnQuery.trim());
     const match = (...parts) => !q || q.split(/\s+/).every((w) => normalize(parts.join(" ")).includes(w));
-    const faqs = L.questions_frequentes.filter((f) => match(f.question, f.reponse));
     const byId = new Map(L.definitions.map((d) => [d.id, d]));
+    const rub = state.learnRub && L.rubriques.find((r) => r.id === state.learnRub);
+
+    // Page d'une rubrique
+    $("#learn-top").hidden = !!rub && !q;
+    $("#learn-rub").hidden = !rub || !!q;
+    if (rub && !q) { renderRubrique(rub); $("#def-list").innerHTML = ""; return; }
+
+    // Questions fréquentes
+    const faqs = L.questions_frequentes.filter((f) => match(f.question, f.reponse));
     $("#faq-list").innerHTML = faqs.length ? faqs.map((f) => `<details class="acc">
         <summary><strong>${escapeHtml(f.question)}</strong></summary>
         <div class="acc-body">${paragraphs(f.reponse)}
@@ -485,17 +562,55 @@
             .map((id) => `<button class="link-btn" type="button" data-def-open="${escapeHtml(id)}">${escapeHtml(byId.get(id).terme)}</button>`).join(", ")}</p>` : ""}
         </div>
       </details>`).join("") : `<p class="hint">Aucune question ne correspond.</p>`;
-    const defs = L.definitions.filter((d) => match(d.terme, d.court, d.texte));
-    const themes = [...new Set(defs.map((d) => d.theme))];
-    $("#def-list").innerHTML = themes.map((t) => `<h3 class="section-title">${escapeHtml(t)}</h3>
-      <div class="acc-list">${defs.filter((d) => d.theme === t).map(defHtml).join("")}</div>`).join("")
-      || `<p class="hint">Aucune définition ne correspond à « ${escapeHtml(state.learnQuery)} ».</p>`;
+
+    // Recherche : résultats à plat ; sinon, sommaire des rubriques
+    $("#learn-home").hidden = !!q;
+    $("#learn-home").previousElementSibling.hidden = !!q;
+    if (q) {
+      const defs = L.definitions.filter((d) => match(d.terme, d.court, d.texte, JSON.stringify(d.reflexion || "")));
+      $("#def-list").innerHTML = defs.length ? `<h3 class="section-title">Définitions</h3><div class="acc-list">${defs.map(defHtml).join("")}</div>`
+        : `<p class="hint">Aucune définition ne correspond à « ${escapeHtml(state.learnQuery)} ».</p>`;
+      return;
+    }
+    $("#def-list").innerHTML = "";
+    $("#learn-home").innerHTML = L.rubriques.map((r) => {
+      const n = r.format === "reflexion" ? L.definitions.filter((d) => d.reflexion).length : L.definitions.filter((d) => d.rubrique === r.id).length;
+      return `<button class="rub-tile" type="button" data-rub="${escapeHtml(r.id)}">
+          ${icon(r.icone)}<strong>${escapeHtml(r.titre)}</strong>
+          <span>${r.format === "reflexion" ? `${n} série${n > 1 ? "s" : ""} de questions` : `${n} fiche${n > 1 ? "s" : ""}`}${r.etapes ? " · schéma" : ""}</span>
+        </button>`;
+    }).join("");
+  }
+
+  function openRubrique(id) {
+    state.learnRub = id;
+    if (state.learnQuery) { state.learnQuery = ""; $("#learn-search").value = ""; }
+    renderLearn();
+    window.scrollTo(0, 0);
+  }
+
+  // Fiche en panneau (format « tuiles »)
+  function openDefSheet(id) {
+    const d = state.learn.definitions.find((x) => x.id === id);
+    if (!d) return;
+    const dlg = $("#detail");
+    dlg.querySelector(".sheet-body").innerHTML = `
+      <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
+      <div class="rub-head">${icon(d.icone || "coeur")}<h2 id="detail-title">${escapeHtml(d.terme)}</h2></div>
+      <p class="hint">${escapeHtml(d.court)}</p>
+      <div class="sheet-text">${defBody(d)}</div>
+      <div class="btn-row"><button class="btn primary" type="button" data-close>Fermer</button></div>`;
+    if (!dlg.open) dlg.showModal();
   }
 
   function openDefinition(id) {
-    if (state.learnQuery) { state.learnQuery = ""; $("#learn-search").value = ""; renderLearn(); }
-    document.querySelectorAll("dialog[open]").forEach((d) => d.close());
+    const d = state.learn && state.learn.definitions.find((x) => x.id === id);
+    if (!d) return;
+    document.querySelectorAll("dialog[open]").forEach((x) => x.close());
     showView("learn");
+    const rub = state.learn.rubriques.find((r) => r.id === d.rubrique);
+    openRubrique(d.rubrique);
+    if (rub && rub.format === "tuiles") { openDefSheet(id); return; }
     const el = document.getElementById(`def-${id}`);
     if (el) { el.open = true; setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 50); }
   }
@@ -1164,6 +1279,17 @@
     }
     if (e.target.closest("[data-quiz-next]") || e.target.closest("[data-quiz-skip]")) { quiz.step++; renderQuiz(); return; }
     if (e.target.closest("[data-quiz-back]")) { quiz.step = Math.max(-1, quiz.step - 1); renderQuiz(); return; }
+    const rubBtn = e.target.closest("[data-rub]");
+    if (rubBtn) { openRubrique(rubBtn.dataset.rub); return; }
+    if (e.target.closest("[data-rub-back]")) { state.learnRub = ""; renderLearn(); window.scrollTo(0, 0); return; }
+    const sheetBtn = e.target.closest("[data-def-sheet]");
+    if (sheetBtn) { openDefSheet(sheetBtn.dataset.defSheet); return; }
+    const stepBtn = e.target.closest("[data-step]");
+    if (stepBtn) {
+      const track = stepBtn.closest("[data-steps]").querySelector(".steps-track");
+      track.scrollBy({ left: Number(stepBtn.dataset.step) * track.clientWidth, behavior: "smooth" });
+      return;
+    }
     const defOpen = e.target.closest("[data-def-open]");
     if (defOpen) { openDefinition(defOpen.dataset.defOpen); return; }
 
@@ -1206,6 +1332,7 @@
 
     const tab = e.target.closest(".tab");
     if (tab) {
+      if (tab.dataset.view === "learn" && state.learnRub) { state.learnRub = ""; renderLearn(); }
       if (tab.dataset.view === "suggest" && libraryType()) $("#suggest-form").setType(libraryType());
       showView(tab.dataset.view);
     }
@@ -1234,6 +1361,12 @@
   });
   $("#event-type").addEventListener("change", (e) => { state.eventType = e.target.value; renderEvents(); });
   $("#learn-search").addEventListener("input", (e) => { state.learnQuery = e.target.value; renderLearn(); });
+  document.addEventListener("scroll", (e) => {
+    const track = e.target.classList && e.target.classList.contains("steps-track") ? e.target : null;
+    if (!track) return;
+    const i = Math.round(track.scrollLeft / track.clientWidth);
+    track.parentNode.querySelectorAll(".steps-dots i").forEach((dot, k) => dot.classList.toggle("on", k === i));
+  }, true);
   $("#quiz").addEventListener("close", () => { quiz.answers = {}; });
   $("#aide-search").addEventListener("input", (e) => { state.aideQuery = e.target.value; renderAide(); });
 

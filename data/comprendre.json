@@ -63,332 +63,362 @@
     {
       "id": "consentement",
       "terme": "Consentement",
-      "theme": "Les mots de la loi",
       "court": "Un accord libre, éclairé, donné avant chaque acte, et qu'on peut retirer à tout moment.",
       "texte": "Depuis la loi du 6 novembre 2025, le Code pénal définit le consentement : il est « libre et éclairé, spécifique, préalable et révocable ».\n\n• Libre : sans pression, sans peur, sans chantage.\n• Éclairé : en ayant toute sa conscience (pas endormi·e, ivre ou drogué·e).\n• Spécifique : dire oui à un acte n'est pas dire oui à tout.\n• Préalable : donné avant, pas déduit après coup.\n• Révocable : on peut changer d'avis à tout moment, même pendant.\n\nIl ne peut pas être déduit du silence ou de l'absence de réaction. Et il n'y a pas de consentement en cas de violence, contrainte, menace ou surprise.",
       "source": {
         "label": "Code pénal, article 222-22",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000052535583"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "viol",
       "terme": "Viol",
-      "theme": "Les mots de la loi",
       "court": "Toute pénétration sexuelle, ou tout acte bouche-sexe ou bouche-anus, sans consentement.",
       "texte": "Le viol est tout acte de pénétration sexuelle, de quelque nature qu'il soit (avec le sexe, un doigt, un objet…), ou tout acte bucco-génital ou bucco-anal, commis sans consentement : par violence, contrainte, menace ou surprise.\n\nIl peut être commis sur la victime, ou en obligeant la victime à le faire sur l'agresseur. C'est un crime, puni de 15 ans de réclusion criminelle, et plus dans certaines circonstances. Il existe aussi dans un couple, y compris marié.",
       "source": {
         "label": "Code pénal, articles 222-22 et 222-23",
         "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165281/"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "agression-sexuelle",
       "terme": "Agression sexuelle",
-      "theme": "Les mots de la loi",
       "court": "Tout acte sexuel non consenti, sans pénétration : par exemple des attouchements.",
       "texte": "Une agression sexuelle est « tout acte sexuel non consenti » commis sur une personne. Quand il n'y a pas de pénétration, on parle d'agression sexuelle : par exemple toucher le sexe, les fesses, les seins, la bouche ou l'intérieur des cuisses, ou forcer quelqu'un à toucher ces parties.\n\nC'est aussi une agression sexuelle d'obliger quelqu'un à subir des gestes sexuels d'une autre personne, ou à se les faire à soi-même.",
       "source": {
         "label": "Code pénal, articles 222-22 et 222-22-2",
         "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165281/"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "mineur-15-ans",
       "terme": "Violences sur un·e enfant de moins de 15 ans",
-      "theme": "Les mots de la loi",
       "court": "Avant 15 ans, si l'adulte a au moins 5 ans de plus, il n'y a pas à prouver l'absence de consentement.",
       "texte": "Depuis 2021, tout acte de pénétration sexuelle, ou tout acte bouche-sexe ou bouche-anus, commis par un adulte sur un enfant de moins de 15 ans est un viol, si l'adulte a au moins 5 ans de plus que l'enfant. La question du consentement de l'enfant ne se pose pas.\n\nDe la même façon, tout autre acte sexuel commis par un adulte sur un enfant de moins de 15 ans, avec au moins 5 ans d'écart, est une agression sexuelle.",
       "source": {
         "label": "Code pénal, articles 222-23-1 et 222-29-2",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000052535506"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "inceste",
       "terme": "Inceste",
-      "theme": "Les mots de la loi",
       "court": "Des violences sexuelles commises par un membre de la famille.",
       "texte": "La loi qualifie d'incestueux un viol ou une agression sexuelle commis par :\n• un ascendant (parent, grand-parent…) ;\n• un frère, une sœur, un oncle, une tante, un grand-oncle, une grand-tante, un neveu ou une nièce ;\n• le conjoint, concubin ou partenaire de PACS d'une de ces personnes, s'il a une autorité sur la victime (un beau-père, une belle-mère…).\n\nQuand la victime a moins de 18 ans et que l'agresseur est un adulte de cette liste, tout acte sexuel est un viol ou une agression sexuelle incestueux : il n'y a pas à prouver l'absence de consentement.\n\nLes cousin·es ne figurent pas dans cette liste. Des violences commises par un cousin restent des violences sexuelles, punies par la loi, même si le mot « incestueux » ne s'applique pas juridiquement.",
       "source": {
         "label": "Code pénal, articles 222-22-3 et 222-23-2",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043405007"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "pedocriminalite",
       "terme": "Pédocriminalité",
-      "theme": "Les mots de la loi",
       "court": "L'ensemble des violences sexuelles commises sur des enfants et adolescent·es.",
       "texte": "La pédocriminalité désigne toutes les violences sexuelles commises sur des personnes mineures : viols, agressions sexuelles, mais aussi exposition à la pornographie, images d'abus sexuels d'enfants, propositions sexuelles en ligne, prostitution de mineur·es…\n\nCe n'est pas un terme du Code pénal, qui parle d'infractions précises, mais il permet de nommer l'ensemble de ces violences. On le préfère au mot « pédophilie », qui désigne une attirance et non un acte, et qui contient l'idée d'« aimer » les enfants.",
       "source": {
         "label": "Service-public : mineur victime d'infraction sexuelle",
         "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2274"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "harcelement-sexuel",
       "terme": "Harcèlement sexuel",
-      "theme": "Les mots de la loi",
       "court": "Des propos ou comportements sexuels ou sexistes imposés de façon répétée, ou une pression grave pour obtenir un acte sexuel.",
       "texte": "Le harcèlement sexuel, c'est imposer à quelqu'un, de façon répétée, des propos ou comportements à connotation sexuelle ou sexiste qui portent atteinte à sa dignité ou créent une situation intimidante, hostile ou offensante. Un seul acte suffit quand il s'agit d'une pression grave pour obtenir un acte sexuel (par exemple en échange d'un emploi ou d'une note).",
       "source": {
         "label": "Code pénal, article 222-33",
         "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165281/"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "soumission-chimique",
       "terme": "Soumission chimique",
-      "theme": "Les mots de la loi",
       "court": "Droguer quelqu'un à son insu pour commettre une agression sexuelle.",
       "texte": "La soumission chimique consiste à faire prendre à une personne, sans qu'elle le sache, une substance (médicament, drogue, alcool) qui altère son discernement ou le contrôle de ses actes, afin de commettre sur elle un viol ou une agression sexuelle. C'est puni en soi, même si l'agression n'a pas lieu.\n\nSi vous pensez avoir été drogué·e : allez vite aux urgences ou dans une unité médico-judiciaire. Certaines substances disparaissent en quelques heures. Gardez vos urines dans un flacon propre si vous le pouvez.",
       "source": {
         "label": "Code pénal, article 222-30-1",
         "url": "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165281/"
-      }
+      },
+      "rubrique": "loi"
     },
     {
       "id": "sidération",
       "terme": "Sidération",
-      "theme": "Les effets sur le corps et l'esprit",
       "court": "Rester figé·e, sans pouvoir bouger ni crier : une réaction automatique du cerveau.",
       "texte": "Face à un danger extrême, le cerveau peut se « bloquer » : la personne ne peut plus bouger, crier ou se défendre. Ce n'est pas un choix et ce n'est pas un accord. La sidération est très fréquente pendant les violences sexuelles, et c'est l'une des raisons pour lesquelles beaucoup de victimes s'en veulent à tort de « ne pas avoir réagi ».",
       "source": {
         "label": "Mémoire Traumatique et Victimologie",
         "url": "https://www.memoiretraumatique.org"
-      }
+      },
+      "rubrique": "cerveau"
     },
     {
       "id": "dissociation",
       "terme": "Dissociation",
-      "theme": "Les effets sur le corps et l'esprit",
       "court": "Se sentir détaché·e de soi, comme spectateur ou spectatrice de ce qui arrive.",
       "texte": "Pour se protéger d'une souffrance trop forte, le cerveau peut « déconnecter » les émotions : la personne se sent anesthésiée, loin de son corps, comme dans un film. Cela peut arriver pendant les violences et continuer longtemps après. C'est pour cela que certaines victimes racontent ce qu'elles ont vécu avec un grand calme, ce qui ne veut pas dire que cela ne les touche pas.",
       "source": {
         "label": "Mémoire Traumatique et Victimologie",
         "url": "https://www.memoiretraumatique.org"
+      },
+      "rubrique": "cerveau",
+      "reflexion": {
+        "origine": "Questions proposées lors d'un atelier de groupe de parole.",
+        "parties": [
+          {
+            "titre": "Première partie",
+            "questions": [
+              "Comment la définiriez-vous avec vos mots, votre vécu ?",
+              "Comment s'est-elle manifestée, avec quels symptômes ?",
+              "Quand en avez-vous pris conscience, comment, avec quelles conséquences sur votre vie émotionnelle, relationnelle, dans votre vie intime, familiale, professionnelle ?"
+            ]
+          },
+          {
+            "titre": "Deuxième partie",
+            "questions": [
+              "Quelle place tient la dissociation dans votre vie aujourd'hui ?",
+              "Comment l'avez-vous gérée, la gérez-vous encore ?",
+              "Qu'est-ce qui vous a aidé, vous aiderait ?"
+            ]
+          }
+        ]
       }
     },
     {
       "id": "memoire-traumatique",
       "terme": "Mémoire traumatique",
-      "theme": "Les effets sur le corps et l'esprit",
       "court": "Un souvenir « piégé » qui fait revivre les violences à l'identique, comme une machine à remonter le temps.",
       "texte": "Face à une violence extrême, une alarme se déclenche dans le cerveau (l'amygdale) et inonde le corps d'hormones de stress. Si la personne est sidérée et ne peut ni fuir ni se défendre, ce stress devient dangereux pour le cœur et le cerveau. Le cerveau « disjoncte » alors, comme un circuit électrique, en libérant des substances qui anesthésient : c'est la dissociation.\n\nConséquence : le souvenir n'est pas rangé comme un souvenir normal. Il reste piégé, brut, avec toutes ses sensations et émotions. Un bruit, une odeur, un geste, une date peuvent le réactiver : la personne revit alors les violences comme si elles se reproduisaient (flashbacks, cauchemars, attaques de panique), sans toujours comprendre pourquoi.\n\nCe mécanisme se soigne : une prise en charge adaptée permet de transformer cette mémoire traumatique en souvenir « ordinaire », qui ne fait plus revivre les faits.",
       "source": {
         "label": "M. Salmona, « Le psychotraumatisme du viol » (2019)",
         "url": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2020-psychotraumatisme-du-viol-chaire-Mukwege.pdf"
-      }
+      },
+      "rubrique": "cerveau"
     },
     {
       "id": "amnesie-traumatique",
       "terme": "Amnésie traumatique",
-      "theme": "Les effets sur le corps et l'esprit",
       "court": "Oublier tout ou partie de violences subies, parfois pendant des années.",
       "texte": "Après des violences, surtout dans l'enfance, une partie ou la totalité des souvenirs peut devenir inaccessible pendant des mois ou des années. Ils peuvent revenir brusquement, par bribes, à l'occasion d'un événement, d'une odeur, d'une naissance… C'est un mécanisme de survie connu. Beaucoup de victimes de violences sexuelles dans l'enfance ont connu une période d'amnésie : selon les études citées par la Dre Muriel Salmona, environ 40 % des enfants victimes connaissent une amnésie totale des faits pendant un temps, et près de 60 % une amnésie partielle.",
       "source": {
         "label": "M. Salmona, « Le psychotraumatisme du viol » (2019)",
         "url": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2020-psychotraumatisme-du-viol-chaire-Mukwege.pdf"
-      }
-    },
-    {
-      "id": "emprise",
-      "terme": "Emprise",
-      "theme": "Les effets sur le corps et l'esprit",
-      "court": "Une domination psychologique qui fait perdre ses repères et sa liberté de dire non.",
-      "texte": "L'emprise s'installe souvent peu à peu : la personne qui agresse isole, valorise puis dévalorise, alterne gentillesse et menaces, fait croire que c'est « normal » ou que c'est « notre secret ». La victime peut alors avoir du mal à voir la violence, à la nommer, ou à partir. L'emprise explique pourquoi une victime peut garder des liens avec son agresseur.\n\nOn distingue deux formes d'emprise, qui se mélangent souvent. L'emprise violente passe par les coups, les menaces, le dénigrement : elle provoque la peur. L'emprise séductrice passe par des mots doux, des gestes « tendres », de l'attention : elle provoque la confusion et la honte, et rend la violence encore plus difficile à nommer.",
-      "source": {
-        "label": "S. Stauffer, ESPAS (2025)",
-        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
-      }
-    },
-    {
-      "id": "reactions-normales",
-      "terme": "Des réactions normales à une situation anormale",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Il n'y a pas de « bonne » façon de réagir. Vos réactions ont une cause.",
-      "texte": "Chaque personne réagit à sa façon. Beaucoup ne crient pas et ne se débattent pas : rester figé·e ou paraître calme est une réaction très fréquente face au danger.\n\nLes effets peuvent apparaître tout de suite, ou des années, voire des décennies plus tard. Ils dépendent de nombreux éléments : la forme des violences, leur durée, l'âge au moment des faits, le lien avec l'agresseur, et surtout la façon dont l'entourage a réagi.\n\nSi le corps a réagi (excitation, sensation agréable), ce n'est jamais un consentement : c'est une réaction physiologique automatique, y compris chez les enfants.\n\nComprendre d'où viennent certaines difficultés aide souvent à ne plus se sentir « anormal·e » : ce sont des conséquences de ce que vous avez subi, pas des défauts.",
-      "source": {
-        "label": "Info-aide violence sexuelle (Québec)",
-        "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
-      }
-    },
-    {
-      "id": "agression-recente",
-      "terme": "Après une agression récente : trois périodes",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Le choc, le réajustement, puis l'intégration : un chemin qui prend du temps.",
-      "texte": "Après une agression récente, beaucoup de personnes traversent trois périodes, de durée très variable : d'abord le choc (sidération, incrédulité, émotions intenses ou au contraire engourdissement), puis une période de réajustement où l'on essaie de reprendre le cours de sa vie, parfois en évitant d'y penser, et enfin une période d'intégration, où l'événement trouve sa place dans son histoire sans tout envahir.\n\nLes conséquences touchent aussi la vie quotidienne : difficultés dans les études ou au travail, arrêts, perte de revenus, isolement, rejet de certains proches. Les démarches judiciaires peuvent elles aussi être sources d'angoisse : il est utile de se faire accompagner.",
-      "source": {
-        "label": "UQAM, Bureau du respect des personnes",
-        "url": "https://respect.uqam.ca/sexisme-et-violences-a-caractere-sexuel/consequences/"
-      }
-    },
-    {
-      "id": "pourquoi-si-blessant",
-      "terme": "Pourquoi les violences sexuelles blessent autant",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Elles touchent la confiance, le corps, l'estime de soi et le sentiment de pouvoir agir sur sa vie.",
-      "texte": "Les violences sexuelles ont souvent des conséquences plus fréquentes et plus graves que d'autres événements traumatiques. Elles abîment des repères essentiels : le sentiment de contrôler sa vie, la confiance dans les autres, l'estime de soi, l'intimité. Le monde peut alors paraître dangereux.\n\nLes chercheurs David Finkelhor et Angela Browne décrivent quatre mécanismes, surtout quand les violences ont lieu dans l'enfance :\n• La trahison : la personne censée protéger est celle qui fait du mal.\n• L'impuissance : ne pas pouvoir faire cesser ce qui arrive.\n• La stigmatisation : la honte, la culpabilité, le sentiment d'être « sali·e » ou différent·e.\n• La sexualisation traumatique : un rapport au corps et à la sexualité façonné trop tôt, par la violence.\n\nComprendre ces mécanismes aide à voir que ses difficultés ont une cause.",
-      "source": {
-        "label": "S. Stauffer, ESPAS (2025)",
-        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
-      }
-    },
-    {
-      "id": "lopez-vision-monde",
-      "terme": "Ce que l'agression change dans la façon de voir le monde",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Se sentir en danger partout, perdre confiance, avoir l'impression de n'avoir plus aucun contrôle.",
-      "texte": "Une agression sexuelle bouscule les croyances sur lesquelles on s'appuie : « le monde est assez sûr », « je peux faire confiance », « j'ai de la valeur », « je contrôle ce qui m'arrive ». Après, le monde et les autres peuvent sembler dangereux.\n\nL'évitement lié au stress post-traumatique peut durablement toucher la sexualité, et les états dépressifs concernent environ la moitié des victimes. Quand les violences ont été répétées dans l'enfance, elles peuvent aussi rendre difficile la gestion des émotions et la construction de l'identité. Ces difficultés se soignent, notamment avec un travail qui passe d'abord par le corps puis par la relation thérapeutique.",
-      "source": {
-        "label": "G. Lopez, « Clinique et prise en charge des adultes victimes d'agressions sexuelles » (2012)",
-        "url": "https://fr.ap-hm.fr/sites/default/files/blachere_-_biblio_2_0.pdf"
-      }
+      },
+      "rubrique": "cerveau"
     },
     {
       "id": "tspt",
       "terme": "Trouble de stress post-traumatique (TSPT)",
-      "theme": "Après les violences : des réactions normales",
       "court": "Revivre, éviter, être sans cesse en alerte, se sentir coupable ou déconnecté·e.",
       "texte": "Le trouble de stress post-traumatique peut apparaître après une agression, parfois des mois ou des années plus tard. On le reconnaît à quatre grandes familles de signes :\n\n• Revivre : souvenirs qui s'imposent, flashbacks, cauchemars, avec les mêmes émotions qu'au moment des faits.\n• Éviter : des lieux, des personnes, des situations, ou même d'y penser et d'en parler.\n• Être en alerte : sursauter au moindre bruit, mal dormir, être irritable, avoir du mal à se concentrer.\n• Des pensées et émotions difficiles : honte, culpabilité, colère, se sentir détaché·e des autres, trous de mémoire.\n\nCe n'est pas une faiblesse. Seul·e un·e professionnel·le formé·e au psychotrauma peut poser le diagnostic, et il existe des soins efficaces.",
       "source": {
         "label": "Cn2r : inceste et psychotraumatisme",
         "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
-      }
+      },
+      "rubrique": "cerveau"
     },
     {
       "id": "trauma-complexe",
       "terme": "Trauma complexe",
-      "theme": "Après les violences : des réactions normales",
       "court": "Quand les violences sont répétées et viennent d'un proche, comme dans l'inceste.",
       "texte": "L'inceste est rarement un événement isolé : il se répète, dans un climat d'emprise et de secret, et il est commis par quelqu'un qui devait protéger. L'enfant grandit dans un danger quotidien dont il ne peut pas s'échapper.\n\nCela peut entraîner, en plus des signes du stress post-traumatique : des émotions difficiles à réguler, une dissociation fréquente, une image de soi abîmée (honte, culpabilité, sentiment de ne rien valoir) et des difficultés durables dans les relations (peur de l'intimité, relations instables, dépendance ou isolement). L'enfant finit aussi souvent par croire les phrases de l'agresseur (« c'est de ta faute »).",
       "source": {
         "label": "Cn2r : inceste et psychotraumatisme",
         "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
-      }
+      },
+      "rubrique": "cerveau"
     },
     {
-      "id": "climat-incestuel",
-      "terme": "Climat incestuel",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Une famille où les limites entre adultes et enfants sont brouillées, même sans acte sexuel.",
-      "texte": "On parle de climat incestuel quand, sans passage à l'acte sexuel direct, les frontières entre adultes et enfants sont brouillées : regards ou paroles sexualisés, absence d'intimité pour la toilette, confidences d'un parent sur sa vie sexuelle, enfant qui dort dans le lit parental, enfant devenu le « confident » ou le soutien affectif d'un parent…\n\nCe climat est déjà une violence psychique : il empêche l'enfant de grandir en sécurité, mélange amour, sexualité et pouvoir, et peut laisser des traces à l'âge adulte.",
+      "id": "pourquoi-si-blessant",
+      "terme": "Pourquoi les violences sexuelles blessent autant",
+      "court": "Elles touchent la confiance, le corps, l'estime de soi et le sentiment de pouvoir agir sur sa vie.",
+      "texte": "Les violences sexuelles ont souvent des conséquences plus fréquentes et plus graves que d'autres événements traumatiques. Elles abîment des repères essentiels : le sentiment de contrôler sa vie, la confiance dans les autres, l'estime de soi, l'intimité. Le monde peut alors paraître dangereux.\n\nLes chercheurs David Finkelhor et Angela Browne décrivent quatre mécanismes, surtout quand les violences ont lieu dans l'enfance :\n• La trahison : la personne censée protéger est celle qui fait du mal.\n• L'impuissance : ne pas pouvoir faire cesser ce qui arrive.\n• La stigmatisation : la honte, la culpabilité, le sentiment d'être « sali·e » ou différent·e.\n• La sexualisation traumatique : un rapport au corps et à la sexualité façonné trop tôt, par la violence.\n\nComprendre ces mécanismes aide à voir que ses difficultés ont une cause.",
       "source": {
-        "label": "Cn2r : inceste et psychotraumatisme",
-        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
-      }
+        "label": "S. Stauffer, ESPAS (2025)",
+        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
+      },
+      "rubrique": "cerveau"
+    },
+    {
+      "id": "reactions-normales",
+      "terme": "Des réactions normales à une situation anormale",
+      "court": "Il n'y a pas de « bonne » façon de réagir. Vos réactions ont une cause.",
+      "texte": "Chaque personne réagit à sa façon. Beaucoup ne crient pas et ne se débattent pas : rester figé·e ou paraître calme est une réaction très fréquente face au danger.\n\nLes effets peuvent apparaître tout de suite, ou des années, voire des décennies plus tard. Ils dépendent de nombreux éléments : la forme des violences, leur durée, l'âge au moment des faits, le lien avec l'agresseur, et surtout la façon dont l'entourage a réagi.\n\nSi le corps a réagi (excitation, sensation agréable), ce n'est jamais un consentement : c'est une réaction physiologique automatique, y compris chez les enfants.\n\nComprendre d'où viennent certaines difficultés aide souvent à ne plus se sentir « anormal·e » : ce sont des conséquences de ce que vous avez subi, pas des défauts.",
+      "source": {
+        "label": "Info-aide violence sexuelle (Québec)",
+        "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+      },
+      "rubrique": "quotidien",
+      "icone": "coeur"
+    },
+    {
+      "id": "agression-recente",
+      "terme": "Après une agression récente : trois périodes",
+      "court": "Le choc, le réajustement, puis l'intégration : un chemin qui prend du temps.",
+      "texte": "Après une agression récente, beaucoup de personnes traversent trois périodes, de durée très variable : d'abord le choc (sidération, incrédulité, émotions intenses ou au contraire engourdissement), puis une période de réajustement où l'on essaie de reprendre le cours de sa vie, parfois en évitant d'y penser, et enfin une période d'intégration, où l'événement trouve sa place dans son histoire sans tout envahir.\n\nLes conséquences touchent aussi la vie quotidienne : difficultés dans les études ou au travail, arrêts, perte de revenus, isolement, rejet de certains proches. Les démarches judiciaires peuvent elles aussi être sources d'angoisse : il est utile de se faire accompagner.",
+      "source": {
+        "label": "UQAM, Bureau du respect des personnes",
+        "url": "https://respect.uqam.ca/sexisme-et-violences-a-caractere-sexuel/consequences/"
+      },
+      "rubrique": "quotidien",
+      "icone": "temps"
+    },
+    {
+      "id": "lopez-vision-monde",
+      "terme": "Ce que l'agression change dans la façon de voir le monde",
+      "court": "Se sentir en danger partout, perdre confiance, avoir l'impression de n'avoir plus aucun contrôle.",
+      "texte": "Une agression sexuelle bouscule les croyances sur lesquelles on s'appuie : « le monde est assez sûr », « je peux faire confiance », « j'ai de la valeur », « je contrôle ce qui m'arrive ». Après, le monde et les autres peuvent sembler dangereux.\n\nL'évitement lié au stress post-traumatique peut durablement toucher la sexualité, et les états dépressifs concernent environ la moitié des victimes. Quand les violences ont été répétées dans l'enfance, elles peuvent aussi rendre difficile la gestion des émotions et la construction de l'identité. Ces difficultés se soignent, notamment avec un travail qui passe d'abord par le corps puis par la relation thérapeutique.",
+      "source": {
+        "label": "G. Lopez, « Clinique et prise en charge des adultes victimes d'agressions sexuelles » (2012)",
+        "url": "https://fr.ap-hm.fr/sites/default/files/blachere_-_biblio_2_0.pdf"
+      },
+      "rubrique": "quotidien",
+      "icone": "oeil"
     },
     {
       "id": "consequences-corps",
       "terme": "Les effets sur le corps",
-      "theme": "Après les violences : des réactions normales",
       "court": "Douleurs, fatigue, troubles du sommeil ou digestifs : le trauma s'inscrit aussi dans le corps.",
       "texte": "Les violences sexuelles laissent souvent des traces physiques, parfois longtemps après : douleurs chroniques, maux de tête ou de ventre, troubles digestifs, troubles du sommeil, fatigue, douleurs gynécologiques. Les études menées au Québec et au Canada montrent aussi un risque plus élevé de plusieurs maladies chroniques chez les personnes agressées dans l'enfance.\n\nCes symptômes ne sont pas « dans la tête » : le stress traumatique agit sur tout l'organisme. Le dire à son médecin peut aider à mieux les comprendre et les soigner. Une grossesse, un accouchement ou un examen gynécologique peuvent aussi réveiller des souvenirs : on peut en parler à l'avance au soignant.",
       "source": {
         "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
         "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
-      }
+      },
+      "rubrique": "quotidien",
+      "icone": "corps"
     },
     {
       "id": "consequences-sexualite",
       "terme": "Sexualité et intimité",
-      "theme": "Après les violences : des réactions normales",
       "court": "Douleurs, perte de désir ou au contraire hypersexualité, peur de l'intimité : c'est fréquent.",
       "texte": "Une violence sexuelle est aussi une violence faite à l'intimité. Le rapport au corps et à la sexualité peut en être bouleversé : douleurs pendant les rapports, difficultés d'érection ou de lubrification, peur de l'intimité, baisse du désir ou au contraire hypersexualité, prises de risque, questions sur son orientation sexuelle ou son identité de genre.\n\nCela concerne les femmes, les hommes et les personnes non binaires. Les hommes victimes, en particulier, sont souvent confrontés à des troubles sexuels et à des questionnements sur leur orientation. Des sexologues et des psychologues formé·es au psychotrauma peuvent accompagner.",
       "source": {
         "label": "Info-aide violence sexuelle (Québec)",
         "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
-      }
+      },
+      "rubrique": "quotidien",
+      "icone": "intime"
     },
     {
       "id": "consequences-relations",
       "terme": "Les relations avec les autres",
-      "theme": "Après les violences : des réactions normales",
       "court": "Perte de confiance, difficulté à poser ses limites, peur du rejet ou isolement.",
       "texte": "Avoir subi des violences, surtout de la part d'un proche, peut abîmer la confiance envers les autres. On peut avoir du mal à distinguer une relation saine d'une relation malsaine, à dire non, à poser ses limites ; chercher à plaire à tout prix par peur du rejet ; avoir du mal à s'attacher ; ou au contraire s'isoler et se sentir incompris·e.",
       "source": {
         "label": "Info-aide violence sexuelle (Québec)",
         "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
-      }
+      },
+      "rubrique": "quotidien",
+      "icone": "liens"
     },
     {
       "id": "conduites-survie",
       "terme": "Addictions, troubles alimentaires, automutilation",
-      "theme": "Après les violences : des réactions normales",
       "court": "Des façons de survivre à une douleur trop forte, pas des preuves de faiblesse.",
       "texte": "Alcool, drogues, troubles alimentaires (anorexie, boulimie, hyperphagie), automutilation, prises de risque… Ces comportements sont fréquents après des violences sexuelles, à l'adolescence comme à l'âge adulte. Ils servent souvent à calmer ou à anesthésier une souffrance et des souvenirs insupportables. La Dre Muriel Salmona parle de « conduites dissociantes » : en se mettant en danger, le cerveau provoque à nouveau la « disjonction » qui anesthésie la douleur. C'est un soulagement réel mais de courte durée, qui ne dit rien de la valeur de la personne. Ces conduites sont souvent incomprises, et reprochées à tort aux victimes.\n\nIls ne disent rien de votre valeur, et ils peuvent diminuer quand le traumatisme est soigné. Si vous avez des idées suicidaires, appelez le 3114, numéro national de prévention du suicide, gratuit, 24h/24.",
       "source": {
         "label": "M. Salmona, « Dissociation, mémoire traumatique et violences sexuelles » (2009)",
         "url": "https://www.memoiretraumatique.org/assets/files/v1/doc_violences_sex/dissociation_violences_sexuelle.pdf"
-      }
+      },
+      "rubrique": "quotidien",
+      "icone": "bouclier"
+    },
+    {
+      "id": "emprise",
+      "terme": "Emprise",
+      "court": "Une domination psychologique qui fait perdre ses repères et sa liberté de dire non.",
+      "texte": "L'emprise s'installe souvent peu à peu : la personne qui agresse isole, valorise puis dévalorise, alterne gentillesse et menaces, fait croire que c'est « normal » ou que c'est « notre secret ». La victime peut alors avoir du mal à voir la violence, à la nommer, ou à partir. L'emprise explique pourquoi une victime peut garder des liens avec son agresseur.\n\nOn distingue deux formes d'emprise, qui se mélangent souvent. L'emprise violente passe par les coups, les menaces, le dénigrement : elle provoque la peur. L'emprise séductrice passe par des mots doux, des gestes « tendres », de l'attention : elle provoque la confusion et la honte, et rend la violence encore plus difficile à nommer.",
+      "source": {
+        "label": "S. Stauffer, ESPAS (2025)",
+        "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
+      },
+      "rubrique": "quotidien",
+      "icone": "fil"
     },
     {
       "id": "revictimisation",
       "terme": "Revictimisation",
-      "theme": "Après les violences : des réactions normales",
       "court": "Subir à nouveau des violences plus tard n'est jamais de votre faute.",
       "texte": "Les personnes qui ont subi des violences sexuelles, surtout dans l'enfance, ont plus de risques d'en subir à nouveau, y compris dans le couple. Ce n'est pas parce qu'elles « attirent » la violence.\n\nLe trauma peut abîmer l'estime de soi, brouiller la frontière entre amour et domination et rendre plus difficile de repérer le danger ou de poser ses limites. La responsabilité reste toujours celle de l'agresseur. Un accompagnement formé au psychotrauma aide à briser ce cercle.",
       "source": {
         "label": "125 et après : psychotrauma et conséquences à long terme",
         "url": "https://www.125etapres.org/post/psychotrauma-viol-consequences-long-terme-revictimisation"
-      }
-    },
-    {
-      "id": "parler-tard",
-      "terme": "Pourquoi on parle souvent des années plus tard",
-      "theme": "Après les violences : des réactions normales",
-      "court": "Peur, honte, secret de famille, manque de mots, amnésie : parler prend du temps.",
-      "texte": "Beaucoup de victimes, en particulier d'inceste, ne parlent que des années ou des décennies après. Les raisons sont nombreuses : la peur de l'agresseur, surtout quand on dépend de lui ; la honte et la culpabilité, souvent semées par l'agresseur (« personne ne te croira ») ; le poids du secret et la peur de « détruire » la famille ; le manque de mots quand on est enfant ; l'amnésie traumatique ; et parfois un premier dévoilement accueilli par le silence ou le déni.\n\nIl n'y a pas de « bon moment » pour parler, et il n'est jamais trop tard pour être aidé·e.",
-      "source": {
-        "label": "Cn2r : inceste et psychotraumatisme",
-        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
-      }
+      },
+      "rubrique": "quotidien",
+      "icone": "cercle"
     },
     {
       "id": "silence-enfant",
       "terme": "Le silence des enfants",
-      "theme": "Après les violences : des réactions normales",
       "court": "« C'est normal », « c'est ma faute », « je ne dois pas dire » : ce qui empêche un enfant de parler.",
       "texte": "Un enfant victime se tait rarement par choix. Il peut croire que « c'est normal », surtout s'il n'a jamais connu autre chose ; penser que « c'est de sa faute » ; ne pas avoir les mots ; avoir peur des menaces de l'agresseur ; être pris dans l'emprise ; ou ne plus se souvenir, à cause de l'amnésie et de la dissociation. Quand l'agresseur est un parent, parler, c'est risquer de perdre une personne dont l'enfant dépend pour vivre.\n\nIl n'existe pas de signe propre aux violences sexuelles : un enfant victime peut sembler aller bien et ne montrer aucun symptôme. Pas de symptôme ne veut pas dire pas de violence. Ce dont il a besoin : être en sécurité, être écouté, cru, et pris au sérieux.",
       "source": {
         "label": "S. Stauffer, ESPAS (2025)",
         "url": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
-      }
+      },
+      "rubrique": "enfants"
+    },
+    {
+      "id": "parler-tard",
+      "terme": "Pourquoi on parle souvent des années plus tard",
+      "court": "Peur, honte, secret de famille, manque de mots, amnésie : parler prend du temps.",
+      "texte": "Beaucoup de victimes, en particulier d'inceste, ne parlent que des années ou des décennies après. Les raisons sont nombreuses : la peur de l'agresseur, surtout quand on dépend de lui ; la honte et la culpabilité, souvent semées par l'agresseur (« personne ne te croira ») ; le poids du secret et la peur de « détruire » la famille ; le manque de mots quand on est enfant ; l'amnésie traumatique ; et parfois un premier dévoilement accueilli par le silence ou le déni.\n\nIl n'y a pas de « bon moment » pour parler, et il n'est jamais trop tard pour être aidé·e.",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      },
+      "rubrique": "enfants"
+    },
+    {
+      "id": "climat-incestuel",
+      "terme": "Climat incestuel",
+      "court": "Une famille où les limites entre adultes et enfants sont brouillées, même sans acte sexuel.",
+      "texte": "On parle de climat incestuel quand, sans passage à l'acte sexuel direct, les frontières entre adultes et enfants sont brouillées : regards ou paroles sexualisés, absence d'intimité pour la toilette, confidences d'un parent sur sa vie sexuelle, enfant qui dort dans le lit parental, enfant devenu le « confident » ou le soutien affectif d'un parent…\n\nCe climat est déjà une violence psychique : il empêche l'enfant de grandir en sécurité, mélange amour, sexualité et pouvoir, et peut laisser des traces à l'âge adulte.",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      },
+      "rubrique": "enfants"
     },
     {
       "id": "ce-qui-aide",
       "terme": "Ce qui aide à aller mieux",
-      "theme": "Après les violences : des réactions normales",
       "court": "Être cru·e, être soutenu·e, et se faire soigner par des personnes formées.",
       "texte": "Les recherches montrent qu'être cru·e et soutenu·e quand on parle est l'un des éléments qui protègent le plus, en particulier pour les enfants. Écouter ses besoins, prendre soin de soi et demander de l'aide sont des premiers pas.\n\nLe psychotraumatisme se soigne : les centres régionaux du psychotraumatisme, les associations et des professionnel·les formé·es peuvent accompagner (voir l'onglet Aide). Un traumatisme ne s'efface pas, mais il peut être apaisé et intégré.",
       "source": {
         "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
         "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
-      }
+      },
+      "rubrique": "mieux"
     },
     {
       "id": "plainte",
       "terme": "Porter plainte",
-      "theme": "Les démarches",
       "court": "Signaler les faits à la justice, au commissariat, à la gendarmerie ou par courrier au procureur.",
       "texte": "On peut porter plainte dans n'importe quel commissariat ou gendarmerie, qui ne peuvent pas refuser de l'enregistrer, ou par courrier adressé au procureur de la République. Vous pouvez être accompagné·e par une association d'aide aux victimes (116 006) ou un·e avocat·e.\n\nLa « main courante » n'est qu'une déclaration : elle ne déclenche pas de poursuites. Et si vous n'êtes pas prêt·e à porter plainte, certains hôpitaux proposent de garder des preuves (voir « Recueil de preuves sans plainte » dans l'onglet Aide).",
       "source": {
         "label": "Service-public : porter plainte",
         "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1435"
-      }
+      },
+      "rubrique": "demarches"
     },
     {
       "id": "prescription",
       "terme": "Prescription",
-      "theme": "Les démarches",
       "court": "Le délai après lequel la justice ne peut plus poursuivre. Il est plus long pour les victimes mineures.",
       "texte": "Victime mineure au moment des faits : le délai commence à 18 ans. Viol : 30 ans, donc plainte possible jusqu'à 48 ans. Agression sexuelle : 10 ans (20 ans dans certains cas aggravés). Si l'agresseur commet des faits similaires sur un autre enfant pendant ce délai, le délai est prolongé (« prescription glissante »).\n\nVictime majeure : 20 ans pour un viol, 6 ans pour une agression sexuelle, à partir des faits.\n\nCes règles sont complexes : faites le point avec le 116 006 ou un·e avocat·e. Même pour des faits anciens, une plainte reste possible.",
       "source": {
         "label": "Service-public : délais de prescription",
         "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31982"
-      }
+      },
+      "rubrique": "demarches"
     }
   ],
   "questionnaire": {
@@ -436,5 +466,108 @@
         "texte": "Avez-vous des trous de mémoire, des souvenirs flous ou qui reviennent par moments ?"
       }
     ]
-  }
+  },
+  "rubriques": [
+    {
+      "id": "loi",
+      "titre": "Les mots de la loi",
+      "description": "Ce que disent les textes : consentement, viol, inceste, pédocriminalité…",
+      "icone": "balance",
+      "format": "liste"
+    },
+    {
+      "id": "cerveau",
+      "titre": "Ce qui se passe dans le cerveau",
+      "description": "Sidération, dissociation, mémoire traumatique : pourquoi on réagit comme ça.",
+      "icone": "cerveau",
+      "format": "liste",
+      "etapes": [
+        {
+          "titre": "L'alarme",
+          "texte": "Face au danger, une petite zone du cerveau (l'amygdale) déclenche une alarme. Le corps est inondé d'hormones de stress pour fuir ou se défendre."
+        },
+        {
+          "titre": "La sidération",
+          "texte": "Mais face à une violence impensable, la pensée se bloque : impossible de bouger, de crier, de réfléchir. Ce n'est pas un choix, et ce n'est pas un accord."
+        },
+        {
+          "titre": "La disjonction",
+          "texte": "L'alarme ne s'éteint pas et le stress devient dangereux pour le cœur et le cerveau. Le cerveau « disjoncte », comme un circuit électrique, et libère des substances qui anesthésient."
+        },
+        {
+          "titre": "La dissociation",
+          "texte": "La personne se sent coupée de ses émotions et de son corps, comme spectatrice. La douleur est atténuée, mais le souvenir n'est pas rangé normalement."
+        },
+        {
+          "titre": "Le souvenir piégé",
+          "texte": "Le souvenir reste brut, avec ses sensations. Plus tard, un bruit, une odeur ou un geste peuvent le réactiver et faire revivre les faits. Cela se soigne."
+        }
+      ],
+      "etapes_source": {
+        "label": "D'après la Dre Muriel Salmona",
+        "url": "https://www.memoiretraumatique.org"
+      }
+    },
+    {
+      "id": "quotidien",
+      "titre": "Les effets au quotidien",
+      "description": "Corps, sexualité, relations, comportements : des conséquences fréquentes, pas des défauts.",
+      "icone": "coeur",
+      "format": "tuiles"
+    },
+    {
+      "id": "enfants",
+      "titre": "Les enfants",
+      "description": "Pourquoi un enfant se tait, le climat incestuel, parler des années après.",
+      "icone": "enfant",
+      "format": "liste"
+    },
+    {
+      "id": "mieux",
+      "titre": "Aller mieux",
+      "description": "Ce qui aide vraiment, et où trouver des soins.",
+      "icone": "soleil",
+      "format": "liste",
+      "etapes": [
+        {
+          "titre": "Être en sécurité",
+          "texte": "La première étape est que les violences s'arrêtent, et de retrouver un endroit où l'on se sent en sécurité."
+        },
+        {
+          "titre": "Être cru·e",
+          "texte": "Être écouté·e, cru·e et pris·e au sérieux protège énormément. Si un proche n'a pas su l'entendre, d'autres personnes le peuvent : lignes d'écoute, associations, groupes de parole."
+        },
+        {
+          "titre": "Comprendre",
+          "texte": "Mettre des mots sur ce qui s'est passé et sur ses réactions aide à se sentir moins seul·e et moins « anormal·e »."
+        },
+        {
+          "titre": "Se faire soigner",
+          "texte": "Le psychotraumatisme se soigne avec des professionnel·les formé·es : centres régionaux du psychotraumatisme, psychologues, médecins."
+        },
+        {
+          "titre": "Reprendre sa vie",
+          "texte": "Un traumatisme ne s'efface pas, mais il peut être apaisé. Vous êtes bien plus que ce qui vous est arrivé."
+        }
+      ],
+      "etapes_source": {
+        "label": "D'après l'INSPQ et S. Stauffer (ESPAS)",
+        "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
+      }
+    },
+    {
+      "id": "demarches",
+      "titre": "Les démarches",
+      "description": "Porter plainte, délais de prescription.",
+      "icone": "document",
+      "format": "liste"
+    },
+    {
+      "id": "reflexion",
+      "titre": "Pour réfléchir ensemble",
+      "description": "Des questions d'atelier pour se poser des questions, seul·e ou en groupe de parole.",
+      "icone": "bulle",
+      "format": "reflexion"
+    }
+  ]
 }

@@ -538,3 +538,38 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .form textarea { resize: vertical; min-height: 96px; max-width: 100%; field-sizing: content; max-height: 60vh; }
 .form [type="submit"] { align-self: start; height: auto; }
 .acc { scroll-margin-top: 84px; }
+
+/* Comprendre : sommaire, rubriques, tuiles, étapes, réflexion */
+.rub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rub-tile, .tile {
+  display: grid; gap: 6px; align-content: start; text-align: left; cursor: pointer; font: inherit; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 12px;
+}
+.rub-tile strong, .tile strong { font-size: .95rem; line-height: 1.25; }
+.rub-tile span, .tile span { color: var(--muted); font-size: .8rem; line-height: 1.35; }
+.rub-icon, .tile-icon { width: 30px; height: 30px; color: var(--accent); }
+.inline-icon { width: 18px; height: 18px; vertical-align: -3px; color: var(--accent); }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.back-link { margin: 4px 0 10px; font-size: .95rem; }
+.rub-head { display: flex; gap: 12px; align-items: center; margin-bottom: 4px; }
+.rub-head h3, .rub-head h2 { margin: 0; }
+.rub-head .rub-icon { width: 36px; height: 36px; flex: none; }
+.acc-badge { display: inline-block; justify-self: start; font-style: normal; font-size: .72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 7px; margin-top: 4px; }
+.steps { margin: 6px 0 16px; }
+.steps-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; scrollbar-width: none; border-radius: var(--radius); }
+.steps-track::-webkit-scrollbar { display: none; }
+.step { flex: 0 0 100%; scroll-snap-align: start; background: var(--accent-soft); padding: 16px; box-sizing: border-box; }
+.step p { margin: 0; }
+.step-num { font-size: .78rem; font-weight: 700; color: var(--accent); letter-spacing: .04em; }
+.step-title { font-weight: 700; font-size: 1.05rem; margin: 4px 0 6px !important; }
+.steps-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+.steps-dots { display: flex; gap: 6px; }
+.steps-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.steps-dots i.on { background: var(--accent); }
+.reflexion { margin: 12px 0; padding: 12px 14px; border-radius: 12px; border: 1px dashed var(--accent); background: var(--surface); }
+.reflexion-title { font-weight: 700; margin: 0 0 6px !important; color: var(--accent); }
+.reflexion-part { font-weight: 600; margin: 8px 0 2px !important; font-size: .9rem; }
+.reflexion ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.reflexion-note { color: var(--muted); font-size: .8rem; margin: 10px 0 0 !important; }
+.reflexion-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.sheet-text p { margin: 0 0 10px; }
