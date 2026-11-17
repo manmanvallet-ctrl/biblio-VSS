@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Biblio VSS</title>
+  <meta name="description" content="Bibliothèque de films, livres, documentaires, podcasts et articles sur l'inceste, le viol et les violences sexuelles, avec ressources d'aide.">
+  <meta name="theme-color" content="#5b3a8c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Biblio VSS">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="brand">Biblio <span>VSS</span></h1>
+    <button id="quick-exit" class="quick-exit" type="button" aria-label="Quitter rapidement l'application">
+      Sortie rapide
+    </button>
+  </header>
+
+  <main id="app">
+    <!-- Bibliothèque -->
+    <section id="view-library" class="view active" aria-label="Bibliothèque">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Rechercher un titre, un auteur, un thème…" autocomplete="off" aria-label="Rechercher">
+      </div>
+      <nav id="categories" class="chips" aria-label="Catégories"></nav>
+      <div class="filter-row">
+        <select id="theme-filter" aria-label="Filtrer par thème">
+          <option value="">Tous les thèmes</option>
+        </select>
+        <label class="toggle">
+          <input id="gentle" type="checkbox">
+          <span>Contenus moins durs</span>
+        </label>
+      </div>
+      <p id="count" class="count" aria-live="polite"></p>
+      <ul id="list" class="cards"></ul>
+    </section>
+
+    <!-- Favoris -->
+    <section id="view-favorites" class="view" aria-label="Favoris">
+      <h2 class="view-title">Mes favoris</h2>
+      <p class="hint">Vos favoris restent uniquement sur cet appareil.</p>
+      <ul id="fav-list" class="cards"></ul>
+    </section>
+
+    <!-- Aide -->
+    <section id="view-help" class="view" aria-label="Aide">
+      <h2 class="view-title">Besoin d'aide ?</h2>
+      <p class="hint">Vous n'êtes pas seul·e. Ces services sont gratuits et confidentiels.</p>
+      <ul class="help-list">
+        <li class="urgent">
+          <a href="tel:17"><strong>17</strong> Police / Gendarmerie</a>
+          <small>En cas de danger immédiat</small>
+        </li>
+        <li class="urgent">
+          <a href="sms:114"><strong>114</strong> Urgence par SMS</a>
+          <small>Si vous ne pouvez pas parler</small>
+        </li>
+        <li>
+          <a href="tel:3919"><strong>3919</strong> Violences Femmes Info</a>
+          <small>Écoute anonyme, 24h/24, 7j/7</small>
+        </li>
+        <li>
+          <a href="tel:119"><strong>119</strong> Allô Enfance en Danger</a>
+          <small>Enfants, ados et adultes inquiets pour un enfant, 24h/24</small>
+        </li>
+        <li>
+          <a href="tel:0800059595"><strong>0 800 05 95 95</strong> Viols Femmes Informations</a>
+          <small>Collectif Féministe Contre le Viol, appel gratuit</small>
+        </li>
+        <li>
+          <a href="https://arretonslesviolences.gouv.fr" target="_blank" rel="noopener">arretonslesviolences.gouv.fr</a>
+          <small>Signaler en ligne et discuter avec un·e policier·e ou un·e gendarme</small>
+        </li>
+        <li>
+          <a href="https://facealinceste.fr" target="_blank" rel="noopener">Face à l'inceste</a>
+          <small>Association de victimes d'inceste</small>
+        </li>
+        <li>
+          <a href="https://www.memoiretraumatique.org" target="_blank" rel="noopener">Mémoire Traumatique et Victimologie</a>
+          <small>Informations sur le psychotraumatisme</small>
+        </li>
+      </ul>
+      <div class="note">
+        <h3>Prendre soin de soi</h3>
+        <p>Certains contenus peuvent faire remonter des souvenirs difficiles. Vous pouvez arrêter à tout moment. Faites une pause, respirez, parlez-en à une personne de confiance.</p>
+        <p>Le bouton <strong>Sortie rapide</strong> (ou deux appuis sur <kbd>Échap</kbd>) ferme l'application immédiatement.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Navigation principale">
+    <button class="tab active" data-view="library" type="button"><span aria-hidden="true">📚</span>Bibliothèque</button>
+    <button class="tab" data-view="favorites" type="button"><span aria-hidden="true">♡</span>Favoris</button>
+    <button class="tab" data-view="help" type="button"><span aria-hidden="true">☎</span>Aide</button>
+  </nav>
+
+  <!-- Fiche détaillée -->
+  <dialog id="detail" class="sheet" aria-labelledby="detail-title">
+    <div class="sheet-body"></div>
+  </dialog>
+
+  <!-- Avertissement à la première ouverture -->
+  <dialog id="welcome" class="sheet">
+    <div class="sheet-body">
+      <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
+      <h2>Avant de commencer</h2>
+      <p>Cette bibliothèque rassemble des œuvres et des ressources sur l'<strong>inceste</strong>, le <strong>viol</strong> et les <strong>violences sexuelles</strong>. Certains contenus peuvent être difficiles.</p>
+      <p>Chaque fiche indique un niveau d'intensité. Si vous avez besoin de parler, l'onglet <strong>Aide</strong> liste des numéros gratuits et anonymes.</p>
+      <button id="welcome-ok" class="btn primary" type="button">J'ai compris</button>
+    </div>
+  </dialog>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

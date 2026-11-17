@@ -1,0 +1,303 @@
+[
+  {
+    "id": "familia-grande",
+    "titre": "La Familia grande",
+    "auteur": "Camille Kouchner",
+    "annee": 2021,
+    "categorie": "livre",
+    "themes": ["inceste", "silence familial", "témoignage"],
+    "resume": "Récit de l'autrice sur l'inceste subi par son frère jumeau de la part de leur beau-père, et sur le silence qui a entouré la famille pendant des décennies. Le livre a déclenché le mouvement #MeTooInceste.",
+    "intensite": 2
+  },
+  {
+    "id": "triste-tigre",
+    "titre": "Triste tigre",
+    "auteur": "Neige Sinno",
+    "annee": 2023,
+    "categorie": "livre",
+    "themes": ["inceste", "témoignage", "reconstruction"],
+    "resume": "L'autrice revient sur les viols commis par son beau-père pendant son enfance et interroge la possibilité même de raconter. Prix Femina 2023.",
+    "intensite": 3
+  },
+  {
+    "id": "consentement",
+    "titre": "Le Consentement",
+    "auteur": "Vanessa Springora",
+    "annee": 2020,
+    "categorie": "livre",
+    "themes": ["pédocriminalité", "emprise", "consentement", "témoignage"],
+    "resume": "À 14 ans, l'autrice est tombée sous l'emprise d'un écrivain de cinquante ans. Elle analyse le mécanisme de l'emprise et la complaisance du milieu littéraire.",
+    "intensite": 2
+  },
+  {
+    "id": "inceste-angot",
+    "titre": "L'Inceste",
+    "auteur": "Christine Angot",
+    "annee": 1999,
+    "categorie": "livre",
+    "themes": ["inceste", "témoignage"],
+    "resume": "Texte autobiographique où l'autrice évoque l'inceste commis par son père et ses conséquences sur sa vie affective.",
+    "intensite": 3
+  },
+  {
+    "id": "memoire-de-fille",
+    "titre": "Mémoire de fille",
+    "auteur": "Annie Ernaux",
+    "annee": 2016,
+    "categorie": "livre",
+    "themes": ["consentement", "agression sexuelle", "mémoire"],
+    "resume": "Annie Ernaux revient sur sa première nuit avec un homme, en colonie de vacances en 1958, et sur la honte qui l'a suivie pendant des années.",
+    "intensite": 1
+  },
+  {
+    "id": "king-kong-theorie",
+    "titre": "King Kong Théorie",
+    "auteur": "Virginie Despentes",
+    "annee": 2006,
+    "categorie": "livre",
+    "themes": ["viol", "féminisme", "essai"],
+    "resume": "Essai où l'autrice part de son propre viol pour réfléchir à la place des femmes, à la sexualité et aux rapports de domination.",
+    "intensite": 2
+  },
+  {
+    "id": "choses-humaines-livre",
+    "titre": "Les Choses humaines",
+    "auteur": "Karine Tuil",
+    "annee": 2019,
+    "categorie": "livre",
+    "themes": ["viol", "consentement", "justice"],
+    "resume": "Roman autour d'une accusation de viol portée contre le fils d'une famille influente, jusqu'au procès. Prix Interallié et Goncourt des lycéens 2019.",
+    "intensite": 2
+  },
+  {
+    "id": "livre-noir-salmona",
+    "titre": "Le Livre noir des violences sexuelles",
+    "auteur": "Muriel Salmona",
+    "annee": 2013,
+    "categorie": "livre",
+    "themes": ["psychotraumatisme", "mémoire traumatique", "essai"],
+    "resume": "La psychiatre explique les mécanismes de la mémoire traumatique et de la dissociation, et pourquoi les victimes ont besoin d'être protégées et soignées.",
+    "intensite": 2
+  },
+  {
+    "id": "culture-du-viol",
+    "titre": "Une culture du viol à la française",
+    "auteur": "Valérie Rey-Robert",
+    "annee": 2019,
+    "categorie": "livre",
+    "themes": ["culture du viol", "essai"],
+    "resume": "Essai sur les idées reçues et les représentations culturelles qui minimisent les violences sexuelles en France.",
+    "intensite": 1
+  },
+  {
+    "id": "speak",
+    "titre": "Speak",
+    "auteur": "Laurie Halse Anderson",
+    "annee": 1999,
+    "categorie": "livre",
+    "themes": ["viol", "adolescence", "parole"],
+    "resume": "Roman jeunesse sur une lycéenne qui se mure dans le silence après avoir été violée lors d'une soirée, puis retrouve peu à peu sa voix.",
+    "intensite": 2
+  },
+  {
+    "id": "chanel-miller",
+    "titre": "Know My Name (Je m'appelle Chanel Miller)",
+    "auteur": "Chanel Miller",
+    "annee": 2019,
+    "categorie": "livre",
+    "themes": ["agression sexuelle", "justice", "témoignage"],
+    "resume": "Agressée sur le campus de Stanford, l'autrice, longtemps connue sous le nom d'« Emily Doe », raconte l'agression, le procès et sa reconstruction.",
+    "intensite": 2
+  },
+  {
+    "id": "crocodiles",
+    "titre": "Les Crocodiles",
+    "auteur": "Thomas Mathieu",
+    "annee": 2014,
+    "categorie": "bd",
+    "themes": ["harcèlement", "sexisme ordinaire"],
+    "resume": "Bande dessinée tirée de témoignages de harcèlement de rue et de sexisme ordinaire, où les hommes sont dessinés en crocodiles.",
+    "intensite": 1
+  },
+  {
+    "id": "chatouilles",
+    "titre": "Les Chatouilles",
+    "auteur": "Andréa Bescond, Éric Métayer",
+    "annee": 2018,
+    "categorie": "film",
+    "themes": ["pédocriminalité", "reconstruction", "danse"],
+    "resume": "Odette, danseuse, se reconstruit à l'âge adulte après les violences sexuelles subies enfant de la part d'un ami de ses parents. Inspiré de l'histoire de l'autrice.",
+    "intensite": 2
+  },
+  {
+    "id": "festen",
+    "titre": "Festen",
+    "auteur": "Thomas Vinterberg",
+    "annee": 1998,
+    "categorie": "film",
+    "themes": ["inceste", "silence familial"],
+    "resume": "Pendant le 60e anniversaire de son père, Christian révèle devant toute la famille les violences sexuelles que celui-ci leur a fait subir, à lui et à sa sœur.",
+    "intensite": 2
+  },
+  {
+    "id": "grace-a-dieu",
+    "titre": "Grâce à Dieu",
+    "auteur": "François Ozon",
+    "annee": 2019,
+    "categorie": "film",
+    "themes": ["pédocriminalité", "Église", "justice"],
+    "resume": "D'anciens scouts de Lyon s'unissent pour faire reconnaître les violences commises par un prêtre. Inspiré de l'affaire Preynat et de l'association La Parole libérée.",
+    "intensite": 2
+  },
+  {
+    "id": "spotlight",
+    "titre": "Spotlight",
+    "auteur": "Tom McCarthy",
+    "annee": 2015,
+    "categorie": "film",
+    "themes": ["pédocriminalité", "Église", "journalisme"],
+    "resume": "Des journalistes du Boston Globe enquêtent sur les violences sexuelles commises par des prêtres et couvertes par l'archidiocèse de Boston.",
+    "intensite": 1
+  },
+  {
+    "id": "she-said",
+    "titre": "She Said",
+    "auteur": "Maria Schrader",
+    "annee": 2022,
+    "categorie": "film",
+    "themes": ["agression sexuelle", "journalisme", "#MeToo"],
+    "resume": "Les journalistes du New York Times Jodi Kantor et Megan Twohey enquêtent sur Harvey Weinstein, une enquête qui a lancé le mouvement #MeToo.",
+    "intensite": 1
+  },
+  {
+    "id": "women-talking",
+    "titre": "Women Talking (Ce qu'elles disent)",
+    "auteur": "Sarah Polley",
+    "annee": 2022,
+    "categorie": "film",
+    "themes": ["viol", "communauté", "parole"],
+    "resume": "Dans une communauté religieuse isolée, des femmes qui ont été droguées et violées se réunissent pour décider si elles restent ou si elles partent.",
+    "intensite": 2
+  },
+  {
+    "id": "choses-humaines-film",
+    "titre": "Les Choses humaines",
+    "auteur": "Yvan Attal",
+    "annee": 2021,
+    "categorie": "film",
+    "themes": ["viol", "consentement", "justice"],
+    "resume": "Adaptation du roman de Karine Tuil : une accusation de viol et un procès, racontés du point de vue de chacune des parties.",
+    "intensite": 2
+  },
+  {
+    "id": "promising-young-woman",
+    "titre": "Promising Young Woman",
+    "auteur": "Emerald Fennell",
+    "annee": 2020,
+    "categorie": "film",
+    "themes": ["viol", "culture du viol", "vengeance"],
+    "resume": "Hantée par le viol de sa meilleure amie, Cassie piège les hommes qui profitent de femmes ivres. Le film met en lumière la complicité de l'entourage.",
+    "intensite": 2
+  },
+  {
+    "id": "unbelievable",
+    "titre": "Unbelievable",
+    "auteur": "Susannah Grant, Ayelet Waldman, Michael Chabon",
+    "annee": 2019,
+    "categorie": "serie",
+    "themes": ["viol", "justice", "parole"],
+    "resume": "Une adolescente qui a porté plainte pour viol n'est pas crue et finit poursuivie. Des années plus tard, deux enquêtrices font le lien entre plusieurs affaires. Tiré d'une histoire vraie.",
+    "intensite": 3
+  },
+  {
+    "id": "i-may-destroy-you",
+    "titre": "I May Destroy You",
+    "auteur": "Michaela Coel",
+    "annee": 2020,
+    "categorie": "serie",
+    "themes": ["viol", "soumission chimique", "consentement", "reconstruction"],
+    "resume": "Arabella, autrice à Londres, reconstitue la nuit où elle a été droguée et violée. La série explore les nombreuses formes de non-consentement.",
+    "intensite": 3
+  },
+  {
+    "id": "sexe-sans-consentement",
+    "titre": "Sexe sans consentement",
+    "auteur": "Delphine Dhilly, Blandine Grosjean",
+    "annee": 2018,
+    "categorie": "documentaire",
+    "themes": ["consentement", "zone grise", "témoignage"],
+    "resume": "Des jeunes femmes témoignent de rapports sexuels non consentis qu'elles ont longtemps eu du mal à qualifier de viol.",
+    "intensite": 2
+  },
+  {
+    "id": "hunting-ground",
+    "titre": "The Hunting Ground",
+    "auteur": "Kirby Dick",
+    "annee": 2015,
+    "categorie": "documentaire",
+    "themes": ["viol", "université", "institutions"],
+    "resume": "Enquête sur les viols commis sur les campus américains et sur la façon dont les universités étouffent les affaires.",
+    "intensite": 2
+  },
+  {
+    "id": "on-the-record",
+    "titre": "On the Record",
+    "auteur": "Kirby Dick, Amy Ziering",
+    "annee": 2020,
+    "categorie": "documentaire",
+    "themes": ["agression sexuelle", "#MeToo", "musique"],
+    "resume": "Des femmes accusent un magnat de l'industrie musicale de violences sexuelles. Le film aborde aussi les obstacles particuliers auxquels font face les femmes noires pour être entendues.",
+    "intensite": 2
+  },
+  {
+    "id": "leaving-neverland",
+    "titre": "Leaving Neverland",
+    "auteur": "Dan Reed",
+    "annee": 2019,
+    "categorie": "documentaire",
+    "themes": ["pédocriminalité", "emprise", "témoignage"],
+    "resume": "Deux hommes racontent les violences sexuelles qu'ils disent avoir subies enfants de la part de Michael Jackson, et leurs effets sur leur vie d'adulte.",
+    "intensite": 3
+  },
+  {
+    "id": "ou-peut-etre-une-nuit",
+    "titre": "Ou peut-être une nuit",
+    "auteur": "Charlotte Pudlowski (Louie Media)",
+    "annee": 2020,
+    "categorie": "podcast",
+    "themes": ["inceste", "silence familial", "enquête"],
+    "resume": "Série documentaire audio sur l'inceste et sur le silence qui l'entoure, à partir de l'histoire de la mère de l'autrice. Devenue un livre en 2021.",
+    "intensite": 2
+  },
+  {
+    "id": "rapport-ciivise",
+    "titre": "Violences sexuelles faites aux enfants : « On vous croit »",
+    "auteur": "CIIVISE (Commission indépendante sur l'inceste et les violences sexuelles faites aux enfants)",
+    "annee": 2023,
+    "categorie": "article",
+    "themes": ["inceste", "pédocriminalité", "rapport officiel"],
+    "resume": "Rapport public rédigé à partir de près de 30 000 témoignages, avec 82 recommandations pour protéger les enfants et accompagner les victimes.",
+    "intensite": 2,
+    "lien": "https://www.ciivise.fr"
+  },
+  {
+    "id": "rapport-ciase",
+    "titre": "Les violences sexuelles dans l'Église catholique (rapport Sauvé)",
+    "auteur": "CIASE",
+    "annee": 2021,
+    "categorie": "article",
+    "themes": ["pédocriminalité", "Église", "rapport officiel"],
+    "resume": "Rapport de la Commission indépendante sur les abus sexuels dans l'Église, qui estime à environ 330 000 le nombre de victimes mineures en France depuis 1950.",
+    "intensite": 2
+  },
+  {
+    "id": "nyt-weinstein",
+    "titre": "Harvey Weinstein Paid Off Sexual Harassment Accusers for Decades",
+    "auteur": "Jodi Kantor, Megan Twohey (The New York Times)",
+    "annee": 2017,
+    "categorie": "article",
+    "themes": ["agression sexuelle", "#MeToo", "journalisme"],
+    "resume": "L'enquête du 5 octobre 2017 qui a révélé des décennies d'accusations contre Harvey Weinstein et donné son élan au mouvement #MeToo. Prix Pulitzer 2018.",
+    "intensite": 1
+  }
+]
