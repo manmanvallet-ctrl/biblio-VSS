@@ -362,6 +362,27 @@
     "image_credit": "SensCritique"
   },
   {
+    "id": "mysterious-skin",
+    "titre": "Mysterious Skin",
+    "auteur": "Gregg Araki",
+    "annee": 2004,
+    "categorie": "film",
+    "themes": [
+      "pédocriminalité",
+      "mémoire traumatique",
+      "reconstruction"
+    ],
+    "resume": "Deux garçons ont subi des violences sexuelles de la part de leur entraîneur de baseball à l'âge de 8 ans. Dix ans plus tard, l'un se prostitue, l'autre est persuadé d'avoir été enlevé par des extraterrestres. Leurs chemins se croisent à nouveau. Adapté du roman de Scott Heim.",
+    "intensite": 3,
+    "senscritique": {
+      "note": 7.7,
+      "url": "https://www.senscritique.com/film/mysterious_skin/446549",
+      "releve": "2026-11"
+    },
+    "image": "images/mysterious-skin.jpg",
+    "image_credit": "SensCritique"
+  },
+  {
     "id": "unbelievable",
     "titre": "Unbelievable",
     "auteur": "Susannah Grant, Ayelet Waldman, Michael Chabon",

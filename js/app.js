@@ -88,17 +88,24 @@
   const safeImage = (u) => (/^(https:\/\/|images\/)[^"'<>\s]+$/i.test(u || "") ? u : null);
 
   // ---------- Sortie rapide ----------
+  // Remplace immédiatement l'écran par une page neutre (un bloc-notes vide),
+  // puis ouvre un site neutre sans laisser l'application dans l'historique
+  // (le bouton Retour ne ramène pas ici). Si la redirection est bloquée,
+  // l'écran reste neutre.
   function quickExit() {
-    document.body.innerHTML = "";
+    document.querySelectorAll("dialog[open]").forEach((d) => d.close());
+    document.title = "Notes";
+    document.body.className = "neutral";
+    document.body.innerHTML = '<div class="neutral-page"><h1>Notes</h1><textarea placeholder="Nouvelle note…" aria-label="Note"></textarea></div>';
+    try { sessionStorage.clear(); } catch { /* ignoré */ }
     if (isNative()) {
-      // Dans l'application : page neutre locale, puis fermeture sur Android
-      // (iOS n'autorise pas une application à se fermer elle-même).
-      window.location.replace("neutre.html");
+      // Dans l'application : fermeture sur Android (iOS n'autorise pas une
+      // application à se fermer elle-même : la page neutre reste affichée).
       const App = window.Capacitor.Plugins && window.Capacitor.Plugins.App;
       if (App && window.Capacitor.getPlatform() === "android") App.exitApp();
       return;
     }
-    window.location.replace(CONFIG.exitUrl);
+    try { window.location.replace(CONFIG.exitUrl); } catch { /* bloqué : la page neutre reste */ }
   }
   $("#quick-exit").addEventListener("click", quickExit);
   let lastEsc = 0;
