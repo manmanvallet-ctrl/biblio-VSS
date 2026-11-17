@@ -697,5 +697,101 @@
     "resume": "Diaporama présenté au réseau valaisan contre les violences domestiques (Sion, avril 2025) : pourquoi un enfant se tait, emprise violente et séductrice, les quatre mécanismes qui rendent les abus sexuels traumatisants, signes possibles chez l'enfant, et besoins des victimes.",
     "intensite": 2,
     "lien": "https://www.violences-domestiques.ch/files/S.-Stauffer-Consequences-psychologiques-des-abus-sexuels-pour-les-victimes-et-interstices-avec-la-justice.pdf"
+  },
+  {
+    "id": "art-salmona-sideration",
+    "titre": "La sidération traumatique lors de viols : mécanismes et conséquences",
+    "auteur": "Dre Muriel Salmona (Mémoire Traumatique et Victimologie)",
+    "annee": 2024,
+    "categorie": "article",
+    "themes": [
+      "sidération",
+      "psychotraumatisme",
+      "justice"
+    ],
+    "resume": "Ce qu'est la sidération, pourquoi elle survient, à quel point elle est fréquente lors des viols, et pourquoi elle ne doit jamais être interprétée comme un consentement, y compris par la justice.",
+    "intensite": 2,
+    "lien": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2024-sideration-traumatique-lors-du-viol-et-consequences.pdf"
+  },
+  {
+    "id": "podcast-carnets-sante-sideration",
+    "titre": "L'agression, la sidération (Trauma et violence sexuelle, épisode 1/6)",
+    "auteur": "Carnets de santé, France Culture, avec Muriel Salmona",
+    "annee": 2024,
+    "categorie": "podcast",
+    "themes": [
+      "sidération",
+      "psychotraumatisme",
+      "reconstruction"
+    ],
+    "resume": "Marina Carrère d'Encausse reçoit la psychiatre Muriel Salmona pour expliquer la sidération et ses effets sur le cerveau et le corps, avec des témoignages. Premier épisode d'une série en six épisodes, de l'agression à la réparation (19 min).",
+    "intensite": 2,
+    "lien": "https://www.radiofrance.fr/franceculture/podcasts/carnets-de-sante/l-agression-la-sideration-6420730"
+  },
+  {
+    "id": "etude-moller-immobilite",
+    "titre": "Tonic immobility during sexual assault: a common reaction predicting PTSD and severe depression",
+    "auteur": "Anna Möller, Hans Peter Söndergaard, Lotti Helström",
+    "annee": 2017,
+    "categorie": "article",
+    "themes": [
+      "sidération",
+      "recherche",
+      "en anglais"
+    ],
+    "resume": "Étude scientifique (en anglais) menée en Suède auprès de femmes reçues en urgence après un viol : la paralysie involontaire pendant l'agression est très fréquente et augmente le risque de stress post-traumatique et de dépression sévère.",
+    "intensite": 1,
+    "lien": "https://pubmed.ncbi.nlm.nih.gov/28589545/"
+  },
+  {
+    "id": "art-opq-honte",
+    "titre": "La honte",
+    "auteur": "Bruno Fortin, Ordre des psychologues du Québec",
+    "annee": 2016,
+    "categorie": "article",
+    "themes": [
+      "honte",
+      "culpabilité",
+      "reconstruction"
+    ],
+    "resume": "Court article d'un psychologue : la différence entre honte et culpabilité, d'où vient la honte (notamment après des traumatismes), et ce qui aide à s'en dégager, comme les groupes de parole et les approches fondées sur l'acceptation.",
+    "intensite": 1,
+    "lien": "https://www.ordrepsy.qc.ca/-/la-honte"
+  },
+  {
+    "id": "livre-cyrulnik-honte",
+    "titre": "Mourir de dire : la honte",
+    "auteur": "Boris Cyrulnik",
+    "annee": 2010,
+    "categorie": "livre",
+    "themes": [
+      "honte",
+      "silence",
+      "résilience"
+    ],
+    "resume": "Le psychiatre Boris Cyrulnik explore la honte qui suit un traumatisme : pourquoi elle pousse à se taire, comment elle s'installe et comment on peut s'en dégager. Un livre sur la honte en général, pas seulement après des violences sexuelles.",
+    "intensite": 1,
+    "lien": "https://www.odilejacob.fr/catalogue/psychologie/psychotherapie/mourir-de-dire_9782738125057.php",
+    "image_url": "https://www.senscritique.com/livre/mourir_de_dire/11302611",
+    "image": "images/livre-cyrulnik-honte.jpg",
+    "image_credit": "SensCritique"
+  },
+  {
+    "id": "livre-pelicot",
+    "titre": "Et la joie de vivre",
+    "auteur": "Gisèle Pelicot, avec Judith Perrignon",
+    "annee": 2026,
+    "categorie": "livre",
+    "themes": [
+      "soumission chimique",
+      "honte",
+      "justice",
+      "témoignage"
+    ],
+    "resume": "Le récit de Gisèle Pelicot, droguée et violée pendant des années à son insu par son mari et des dizaines d'hommes, qui a refusé le huis clos lors du procès de Mazan en 2024 pour que « la honte change de camp ».",
+    "intensite": 2,
+    "lien": "https://editions.flammarion.com/et-la-joie-de-vivre/9782080497260",
+    "image": "images/livre-pelicot.jpg",
+    "image_credit": "Open Library"
   }
 ]

@@ -16,6 +16,16 @@
       "reponse": "Oui. Depuis novembre 2025, la loi le dit clairement : le consentement « ne peut être déduit du seul silence ou de la seule absence de réaction de la victime ». Beaucoup de personnes restent figées, paralysées ou absentes pendant une agression : c'est une réaction du cerveau face au danger (la sidération), pas un accord.",
       "voir": [
         "consentement",
+        "sidération",
+        "honte"
+      ]
+    },
+    {
+      "id": "honte",
+      "question": "Pourquoi j'ai honte, alors que ce n'est pas moi qui ai fait du mal ?",
+      "reponse": "La honte est l'un des sentiments les plus fréquents après des violences sexuelles. Elle est souvent semée par l'agresseur et par les idées reçues, et nourrie par la sidération (« je n'ai rien fait »). Elle ne dit rien de votre valeur. Comprendre d'où elle vient, en parler en groupe de parole ou en thérapie aide à la déposer : elle appartient à l'agresseur.",
+      "voir": [
+        "honte",
         "sidération"
       ]
     },
@@ -163,10 +173,10 @@
       "id": "sidération",
       "terme": "Sidération",
       "court": "Rester figé·e, sans pouvoir bouger ni crier : une réaction automatique du cerveau.",
-      "texte": "Face à un danger extrême, le cerveau peut se « bloquer » : la personne ne peut plus bouger, crier ou se défendre. Ce n'est pas un choix et ce n'est pas un accord. La sidération est très fréquente pendant les violences sexuelles, et c'est l'une des raisons pour lesquelles beaucoup de victimes s'en veulent à tort de « ne pas avoir réagi ».",
+      "texte": "Face à un danger extrême, le cerveau peut se « bloquer » : la personne ne peut plus bouger, crier, dire non ni se défendre. Ce n'est pas un choix et ce n'est pas un accord. La sidération n'a rien à voir avec la personnalité ou le courage : elle est provoquée par la violence, la soudaineté et le non-sens de ce qui arrive.\n\nElle est très fréquente pendant les violences sexuelles. Une étude suédoise menée auprès de femmes reçues dans un centre d'urgence pour victimes de viol (Möller et al., 2017) montre qu'environ 70 % d'entre elles avaient vécu une paralysie importante (« immobilité tonique ») pendant l'agression. Chez les enfants, elle est presque systématique.\n\nLa sidération augmente le risque de stress post-traumatique, et elle nourrit souvent la culpabilité (« pourquoi je n'ai rien fait ? »). La loi le reconnaît désormais : le consentement ne peut pas être déduit du silence ou de l'absence de réaction.",
       "source": {
-        "label": "Mémoire Traumatique et Victimologie",
-        "url": "https://www.memoiretraumatique.org"
+        "label": "M. Salmona, « La sidération traumatique lors de viols » (2024)",
+        "url": "https://www.memoiretraumatique.org/assets/files/v1/Articles-Dr-MSalmona/2024-sideration-traumatique-lors-du-viol-et-consequences.pdf"
       },
       "rubrique": "cerveau"
     },
@@ -292,6 +302,18 @@
       },
       "rubrique": "quotidien",
       "icone": "oeil"
+    },
+    {
+      "id": "honte",
+      "terme": "La honte et la culpabilité",
+      "rubrique": "quotidien",
+      "icone": "honte",
+      "court": "« C'est de ma faute », « je suis sale » : des sentiments très fréquents, qui ne disent rien de vous.",
+      "texte": "La culpabilité porte sur ce qu'on a fait (« j'aurais dû me débattre », « je n'aurais pas dû y aller »). La honte porte sur ce qu'on est (« je suis sale », « je ne vaux rien », « il y a quelque chose qui cloche chez moi »). Après des violences sexuelles, les deux sont extrêmement fréquentes, et elles font souvent taire.\n\nElles ne viennent pas de nulle part : des paroles de l'agresseur (« tu l'as cherché », « c'est notre secret »), des idées reçues de la société sur le viol, de la sidération (« je n'ai rien fait »), ou de réactions du corps que l'on ne comprend pas. Des chercheurs rapprochent d'ailleurs la honte et la sidération : ce seraient deux réactions automatiques de soumission face au danger, pas des choix.\n\nCe qui aide à s'en dégager : comprendre ses réactions et savoir qu'elles sont partagées par énormément de victimes ; partager son histoire en groupe de parole ; travailler en thérapie sur les pensées laissées par les violences (« c'est de ma faute ») ; et apprendre à se traiter avec plus de douceur.\n\nComme l'a dit Gisèle Pelicot pendant son procès en 2024 : la honte doit changer de camp. Elle appartient à l'agresseur.",
+      "source": {
+        "label": "B. Fortin, « La honte », Ordre des psychologues du Québec (2016)",
+        "url": "https://www.ordrepsy.qc.ca/-/la-honte"
+      }
     },
     {
       "id": "consequences-corps",

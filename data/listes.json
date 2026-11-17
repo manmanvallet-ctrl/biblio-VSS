@@ -42,6 +42,22 @@
     ]
   },
   {
+    "id": "sideration-honte",
+    "titre": "Sidération, honte et culpabilité",
+    "description": "Comprendre pourquoi on n'a pas pu réagir, et déposer une honte qui ne vous appartient pas.",
+    "couleur": "#2d8a7a",
+    "ressources": [
+      "podcast-carnets-sante-sideration",
+      "art-salmona-sideration",
+      "art-opq-honte",
+      "livre-cyrulnik-honte",
+      "livre-pelicot",
+      "chanel-miller",
+      "speak",
+      "etude-moller-immobilite"
+    ]
+  },
+  {
     "id": "consentement",
     "titre": "Le consentement",
     "description": "Ce que veut dire consentir, et ce qui se passe quand il n'y a pas de consentement.",

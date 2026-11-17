@@ -474,6 +474,7 @@
     bouclier: '<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/>',
     fil: '<path d="M4 18c3-6 6 0 9-6s5-4 7-6"/><circle cx="4" cy="18" r="1.5"/><circle cx="20" cy="6" r="1.5"/>',
     cercle: '<path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"/>',
+    honte: '<circle cx="12" cy="10" r="6.5"/><path d="M9 9.5h1.5M13.5 9.5H15M10 13.2c1.2.6 2.8.6 4 0M7 20.5c1.5-1.6 3.2-2.4 5-2.4s3.5.8 5 2.4"/>',
   };
   const icon = (name, cls = "rub-icon") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ICONS.bulle}</svg>`;
 
