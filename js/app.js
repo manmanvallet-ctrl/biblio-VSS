@@ -33,6 +33,7 @@
     demarches: "Démarches & plainte",
     prevention: "Prévention",
     infos: "S'informer",
+    applis: "Applications utiles",
   };
   const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
 

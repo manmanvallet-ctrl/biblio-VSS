@@ -416,5 +416,61 @@
         "label": "Témoigner ou lire les témoignages"
       }
     ]
+  },
+  {
+    "id": "app-elles",
+    "nom": "App-Elles",
+    "categorie": "applis",
+    "description": "Application d'alerte : prévenir des proches en un geste, partager le son en temps réel, appeler les secours, trouver les ressources d'aide autour de soi. Gratuite. Portée par l'association Résonantes.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://app-elles.org/fr/",
+        "label": "Découvrir App-Elles"
+      }
+    ]
+  },
+  {
+    "id": "umay",
+    "nom": "UMAY",
+    "categorie": "applis",
+    "description": "Application pour se déplacer en sécurité : partager son trajet avec des proches, trouver l'un des 8 000 lieux refuges « Safe Places », signaler une situation de harcèlement. Gratuite et anonyme.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://umay.fr/",
+        "label": "Découvrir UMAY"
+      }
+    ]
+  },
+  {
+    "id": "the-sorority",
+    "nom": "The Sorority",
+    "categorie": "applis",
+    "description": "Application d'entraide entre femmes et personnes des minorités de genre : alerte envoyée aux utilisatrices les plus proches en cas de danger, carte d'aide, tchat. Gratuite.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.jointhesorority.com/app",
+        "label": "Découvrir The Sorority"
+      }
+    ]
+  },
+  {
+    "id": "memo-de-vie",
+    "nom": "Mémo de vie",
+    "categorie": "applis",
+    "description": "Espace personnel sécurisé pour noter ce qui se passe, garder des documents et des preuves, s'informer et trouver des contacts. Bouton « Vite je quitte ». Gratuit.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.memo-de-vie.org/",
+        "label": "Découvrir Mémo de vie"
+      }
+    ]
   }
 ]
