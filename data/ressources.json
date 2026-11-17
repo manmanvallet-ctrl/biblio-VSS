@@ -11,7 +11,9 @@
       "témoignage"
     ],
     "resume": "Récit de l'autrice sur l'inceste subi par son frère jumeau de la part de leur beau-père, et sur le silence qui a entouré la famille pendant des décennies. Le livre a déclenché le mouvement #MeTooInceste.",
-    "intensite": 2
+    "intensite": 2,
+    "image": "images/familia-grande.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "triste-tigre",
@@ -25,7 +27,10 @@
       "reconstruction"
     ],
     "resume": "L'autrice revient sur les viols commis par son beau-père pendant son enfance et interroge la possibilité même de raconter. Prix Femina 2023.",
-    "intensite": 3
+    "intensite": 3,
+    "image_url": "https://www.senscritique.com/livre/triste_tigre/56858154",
+    "image": "images/triste-tigre.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "consentement",
@@ -40,7 +45,9 @@
       "témoignage"
     ],
     "resume": "À 14 ans, l'autrice est tombée sous l'emprise d'un écrivain de cinquante ans. Elle analyse le mécanisme de l'emprise et la complaisance du milieu littéraire.",
-    "intensite": 2
+    "intensite": 2,
+    "image": "images/consentement.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "inceste-angot",
@@ -53,7 +60,9 @@
       "témoignage"
     ],
     "resume": "Texte autobiographique où l'autrice évoque l'inceste commis par son père et ses conséquences sur sa vie affective.",
-    "intensite": 3
+    "intensite": 3,
+    "image": "images/inceste-angot.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "memoire-de-fille",
@@ -67,7 +76,9 @@
       "mémoire"
     ],
     "resume": "Annie Ernaux revient sur sa première nuit avec un homme, en colonie de vacances en 1958, et sur la honte qui l'a suivie pendant des années.",
-    "intensite": 1
+    "intensite": 1,
+    "image": "images/memoire-de-fille.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "king-kong-theorie",
@@ -81,7 +92,10 @@
       "essai"
     ],
     "resume": "Essai où l'autrice part de son propre viol pour réfléchir à la place des femmes, à la sexualité et aux rapports de domination.",
-    "intensite": 2
+    "intensite": 2,
+    "image": "images/king-kong-theorie.jpg",
+    "image_credit": "SensCritique",
+    "image_url": "https://www.senscritique.com/livre/king_kong_theorie/272645"
   },
   {
     "id": "choses-humaines-livre",
@@ -95,7 +109,9 @@
       "justice"
     ],
     "resume": "Roman autour d'une accusation de viol portée contre le fils d'une famille influente, jusqu'au procès. Prix Interallié et Goncourt des lycéens 2019.",
-    "intensite": 2
+    "intensite": 2,
+    "image": "images/choses-humaines-livre.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "livre-noir-salmona",
@@ -109,7 +125,10 @@
       "essai"
     ],
     "resume": "La psychiatre explique les mécanismes de la mémoire traumatique et de la dissociation, et pourquoi les victimes ont besoin d'être protégées et soignées.",
-    "intensite": 2
+    "intensite": 2,
+    "image_url": "https://www.senscritique.com/livre/le_livre_noir_des_violences_sexuelles/10855697",
+    "image": "images/livre-noir-salmona.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "culture-du-viol",
@@ -122,11 +141,13 @@
       "essai"
     ],
     "resume": "Essai sur les idées reçues et les représentations culturelles qui minimisent les violences sexuelles en France.",
-    "intensite": 1
+    "intensite": 1,
+    "image": "images/culture-du-viol.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "speak",
-    "titre": "Speak",
+    "titre": "Speak (Vous parler de ça)",
     "auteur": "Laurie Halse Anderson",
     "annee": 1999,
     "categorie": "livre",
@@ -136,11 +157,14 @@
       "parole"
     ],
     "resume": "Roman jeunesse sur une lycéenne qui se mure dans le silence après avoir été violée lors d'une soirée, puis retrouve peu à peu sa voix.",
-    "intensite": 2
+    "intensite": 2,
+    "image_url": "https://www.senscritique.com/livre/vous_parler_de_ca/12219940",
+    "image": "images/speak.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "chanel-miller",
-    "titre": "Know My Name (Je m'appelle Chanel Miller)",
+    "titre": "Know My Name (J'ai un nom)",
     "auteur": "Chanel Miller",
     "annee": 2019,
     "categorie": "livre",
@@ -150,7 +174,10 @@
       "témoignage"
     ],
     "resume": "Agressée sur le campus de Stanford, l'autrice, longtemps connue sous le nom d'« Emily Doe », raconte l'agression, le procès et sa reconstruction.",
-    "intensite": 2
+    "intensite": 2,
+    "image_url": "https://www.senscritique.com/livre/j_ai_un_nom/61574036",
+    "image": "images/chanel-miller.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "crocodiles",
@@ -163,7 +190,9 @@
       "sexisme ordinaire"
     ],
     "resume": "Bande dessinée tirée de témoignages de harcèlement de rue et de sexisme ordinaire, où les hommes sont dessinés en crocodiles.",
-    "intensite": 1
+    "intensite": 1,
+    "image": "images/crocodiles.jpg",
+    "image_credit": "Open Library"
   },
   {
     "id": "chatouilles",
@@ -182,7 +211,9 @@
       "note": 7.2,
       "url": "https://www.senscritique.com/film/les_chatouilles/24687918",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/chatouilles.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "festen",
@@ -200,7 +231,9 @@
       "note": 7.8,
       "url": "https://www.senscritique.com/film/festen/475405",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/festen.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "grace-a-dieu",
@@ -219,7 +252,9 @@
       "note": 7.1,
       "url": "https://www.senscritique.com/film/grace_a_dieu/37713154",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/grace-a-dieu.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "spotlight",
@@ -238,7 +273,9 @@
       "note": 7.2,
       "url": "https://www.senscritique.com/film/spotlight/16001303",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/spotlight.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "she-said",
@@ -257,7 +294,9 @@
       "note": 6.8,
       "url": "https://www.senscritique.com/film/she_said/45250426",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/she-said.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "women-talking",
@@ -276,7 +315,9 @@
       "note": 6.3,
       "url": "https://www.senscritique.com/film/women_talking/44893709",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/women-talking.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "choses-humaines-film",
@@ -295,7 +336,9 @@
       "note": 6.7,
       "url": "https://www.senscritique.com/film/les_choses_humaines/496417",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/choses-humaines-film.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "promising-young-woman",
@@ -314,7 +357,9 @@
       "note": 6.7,
       "url": "https://www.senscritique.com/film/promising_young_woman/40934499",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/promising-young-woman.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "unbelievable",
@@ -333,7 +378,9 @@
       "note": 7.7,
       "url": "https://www.senscritique.com/serie/unbelievable/30397312",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/unbelievable.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "i-may-destroy-you",
@@ -353,7 +400,9 @@
       "note": 7.6,
       "url": "https://www.senscritique.com/serie/i_may_destroy_you/40606797",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/i-may-destroy-you.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "sexe-sans-consentement",
@@ -372,7 +421,9 @@
       "note": 7.8,
       "url": "https://www.senscritique.com/film/sexe_sans_consentement/31205967",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/sexe-sans-consentement.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "hunting-ground",
@@ -391,7 +442,9 @@
       "note": 8.2,
       "url": "https://www.senscritique.com/film/the_hunting_ground/13240598",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/hunting-ground.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "on-the-record",
@@ -408,7 +461,9 @@
     "intensite": 2,
     "senscritique": {
       "url": "https://www.senscritique.com/film/on_the_record/42259133"
-    }
+    },
+    "image": "images/on-the-record.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "leaving-neverland",
@@ -427,7 +482,9 @@
       "note": 5.3,
       "url": "https://www.senscritique.com/film/michael_jackson_leaving_neverland/38922905",
       "releve": "2026-11"
-    }
+    },
+    "image": "images/leaving-neverland.jpg",
+    "image_credit": "SensCritique"
   },
   {
     "id": "ou-peut-etre-une-nuit",
@@ -441,7 +498,9 @@
       "enquête"
     ],
     "resume": "Série documentaire audio sur l'inceste et sur le silence qui l'entoure, à partir de l'histoire de la mère de l'autrice. Devenue un livre en 2021.",
-    "intensite": 2
+    "intensite": 2,
+    "image": "images/ou-peut-etre-une-nuit.jpg",
+    "image_credit": "Apple Podcasts"
   },
   {
     "id": "rapport-ciivise",

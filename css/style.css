@@ -469,3 +469,4 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 .url-row input { flex: 1; min-width: 0; }
 .url-row .btn { flex: none; padding: 9px 14px; }
 .hint-small { color: var(--muted); font-size: .8rem; }
+.img-credit { color: var(--muted); font-size: .72rem; margin: 6px 0 0; }

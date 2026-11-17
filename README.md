@@ -81,13 +81,31 @@ Chaque semaine, une tâche planifiée cherche de nouveaux événements à partir
 
 ## Mettre à jour les notes SensCritique
 
-Elles se mettent à jour **automatiquement le 1er de chaque mois** (`.github/workflows/notes-senscritique.yml`, qui lance `scripts/maj-notes-senscritique.js`). Pour lancer une mise à jour tout de suite : onglet **Actions** du dépôt → **Notes SensCritique** → **Run workflow**. Ou en local :
+Elles se mettent à jour **automatiquement le 1er de chaque mois** (`.github/workflows/notes-senscritique.yml`, qui lance `scripts/maj-notes-senscritique.js`). Pour lancer une mise à jour tout de suite : onglet **Actions** du dépôt → **Notes et images** → **Run workflow**. Ou en local :
 
 ```bash
 node scripts/maj-notes-senscritique.js
 ```
 
 Pour ajouter une note à une nouvelle fiche, il suffit d'y mettre le lien de sa page : `"senscritique": { "url": "https://www.senscritique.com/film/…" }`. La note apparaîtra à la mise à jour suivante.
+
+## Images (affiches, couvertures, podcasts)
+
+Chaque fiche affiche l'image de l'œuvre, enregistrée dans `images/` en petite taille (pour que l'application reste légère et fonctionne hors-ligne). Elles sont récupérées par `scripts/recuperer-images.js` :
+
+- films, séries, documentaires : l'affiche de la page SensCritique ;
+- livres et BD : la couverture d'une **édition française** sur Open Library (sinon Google Livres) ;
+- podcasts : le visuel officiel sur Apple Podcasts.
+
+Les nouvelles fiches reçoivent leur image automatiquement lors de la tâche mensuelle. Pour le faire tout de suite :
+
+```bash
+node scripts/recuperer-images.js
+```
+
+Si l'image trouvée n'est pas la bonne (mauvaise édition…), ajoutez à la fiche `"image_url"` : une page SensCritique de l'œuvre ou le lien direct d'une image, puis relancez le script avec l'identifiant de la fiche (`node scripts/recuperer-images.js mon-id`). La source est indiquée sous l'image dans la fiche.
+
+Les affiches et couvertures restent la propriété de leurs auteurs et éditeurs. Leur usage en petite taille pour présenter une œuvre est courant, mais ce n'est pas un droit automatique : en cas de demande d'un ayant droit, retirez l'image (supprimez `image` de la fiche).
 
 ## Compléter l'annuaire d'aide
 

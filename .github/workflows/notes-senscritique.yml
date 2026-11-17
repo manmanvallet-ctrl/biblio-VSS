@@ -1,7 +1,9 @@
-# Met à jour les notes SensCritique une fois par mois (le 1er, vers 5h20 heure de Paris).
+# Une fois par mois (le 1er, vers 5h20 heure de Paris) :
+#  - met à jour les notes SensCritique ;
+#  - récupère l'image des ressources qui n'en ont pas encore (nouvelles fiches).
 # On peut aussi la lancer à la main : onglet « Actions » → « Notes SensCritique » → « Run workflow ».
 # Les notes modifiées sont enregistrées directement sur la branche principale.
-name: Notes SensCritique
+name: Notes et images
 
 on:
   schedule:
@@ -19,15 +21,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: npm ci
       - run: node scripts/maj-notes-senscritique.js
+      - run: node scripts/recuperer-images.js
       - name: Enregistrer les changements
         run: |
-          if git diff --quiet data/ressources.json; then
-            echo "Aucune note n'a changé."
+          if git diff --quiet data/ressources.json && [ -z "$(git status --porcelain images)" ]; then
+            echo "Rien n'a changé."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ressources.json
-          git commit -m "Mise à jour mensuelle des notes SensCritique"
+          git add data/ressources.json images
+          git commit -m "Mise à jour mensuelle : notes SensCritique et images"
           git push

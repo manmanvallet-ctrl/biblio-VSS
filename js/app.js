@@ -263,6 +263,7 @@
         </div>
       </div>
       ${scHtml}
+      ${it.image && it.image_credit ? `<p class="img-credit">Image : ${escapeHtml(it.image_credit)}</p>` : ""}
       <div class="warning">
         <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span><br>
         Thèmes abordés : ${it.themes.map(escapeHtml).join(", ")}.
