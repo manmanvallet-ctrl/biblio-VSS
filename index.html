@@ -44,6 +44,23 @@
       </div>
       <p id="count" class="count" aria-live="polite"></p>
       <ul id="list" class="cards"></ul>
+      <button class="btn suggest-cta" type="button" data-goto="suggest">＋ Proposer un livre, un film, un événement…</button>
+    </section>
+
+    <!-- Événements -->
+    <section id="view-events" class="view" aria-label="Événements">
+      <h2 class="view-title">Événements</h2>
+      <p class="hint">Groupes de parole, conférences, projections, marches… près de chez vous.</p>
+      <div class="filter-row">
+        <select id="event-city" aria-label="Filtrer par ville">
+          <option value="">Toutes les villes</option>
+        </select>
+        <select id="event-type" aria-label="Filtrer par type d'événement">
+          <option value="">Tous les types</option>
+        </select>
+      </div>
+      <p id="event-count" class="count" aria-live="polite"></p>
+      <ul id="event-list" class="cards"></ul>
     </section>
 
     <!-- Favoris -->
@@ -67,16 +84,24 @@
             <option value="podcast">Podcast</option>
             <option value="article">Article / rapport</option>
             <option value="bd">BD</option>
+            <option value="evenement">Événement</option>
+            <option value="association">Association / groupe de parole</option>
             <option value="autre">Autre</option>
           </select>
         </label>
-        <label>Titre <span class="req">*</span>
+        <label><span id="titre-label">Titre</span> <span class="req">*</span>
           <input name="titre" required maxlength="200" autocomplete="off">
         </label>
-        <label>Auteur·rice ou réalisateur·rice
+        <label data-only="evenement">Date
+          <input name="date" type="date">
+        </label>
+        <label data-only="evenement association">Ville
+          <input name="ville" maxlength="100" autocomplete="off">
+        </label>
+        <label data-not="evenement association">Auteur·rice ou réalisateur·rice
           <input name="auteur" maxlength="200" autocomplete="off">
         </label>
-        <label>Année
+        <label data-not="evenement association">Année
           <input name="annee" inputmode="numeric" maxlength="4" autocomplete="off">
         </label>
         <label>Lien (facultatif)
@@ -95,6 +120,7 @@
     <section id="view-help" class="view" aria-label="Aide">
       <h2 class="view-title">Besoin d'aide ?</h2>
       <p class="hint">Vous n'êtes pas seul·e. Ces services sont gratuits et confidentiels.</p>
+      <h3 class="section-title">En cas d'urgence</h3>
       <ul class="help-list">
         <li class="urgent">
           <a href="tel:17"><strong>17</strong> Police / Gendarmerie</a>
@@ -106,39 +132,40 @@
         </li>
         <li>
           <a href="tel:3919"><strong>3919</strong> Violences Femmes Info</a>
-          <small>Écoute anonyme, 24h/24, 7j/7</small>
+          <small>Écoute anonyme et gratuite, 24h/24, 7j/7</small>
         </li>
         <li>
           <a href="tel:119"><strong>119</strong> Allô Enfance en Danger</a>
           <small>Enfants, ados et adultes inquiets pour un enfant, 24h/24</small>
         </li>
-        <li>
-          <a href="tel:0800059595"><strong>0 800 05 95 95</strong> Viols Femmes Informations</a>
-          <small>Collectif Féministe Contre le Viol, appel gratuit</small>
-        </li>
-        <li>
-          <a href="https://arretonslesviolences.gouv.fr" target="_blank" rel="noopener">arretonslesviolences.gouv.fr</a>
-          <small>Signaler en ligne et discuter avec un·e policier·e ou un·e gendarme</small>
-        </li>
-        <li>
-          <a href="https://facealinceste.fr" target="_blank" rel="noopener">Face à l'inceste</a>
-          <small>Association de victimes d'inceste</small>
-        </li>
-        <li>
-          <a href="https://www.memoiretraumatique.org" target="_blank" rel="noopener">Mémoire Traumatique et Victimologie</a>
-          <small>Informations sur le psychotraumatisme</small>
-        </li>
       </ul>
+
+      <a class="testify" href="https://classes-sans-suite.com" target="_blank" rel="noopener">
+        <strong>Témoigner anonymement</strong>
+        <span>Votre plainte a été classée sans suite, refusée, ou vous n'avez pas porté plainte ? Vous pouvez déposer votre témoignage, anonymisé, sur la plateforme <em>Classés sans suite</em>.</span>
+        <span class="testify-cta">Déposer mon témoignage ↗</span>
+      </a>
+
+      <h3 class="section-title">Associations, écoute et groupes de parole</h3>
+      <div class="search-wrap">
+        <input id="aide-search" type="search" placeholder="Rechercher (ville, inceste, jeunes…)" autocomplete="off" aria-label="Rechercher dans l'annuaire">
+      </div>
+      <nav id="aide-cats" class="chips" aria-label="Types d'aide"></nav>
+      <ul id="aide-list" class="help-dir"></ul>
+      <p class="hint" style="margin-top:12px">Une association manque ? <button class="link-btn" type="button" data-goto="suggest" data-suggest-type="association">Proposez-la</button>.</p>
+
       <div class="note">
         <h3>Prendre soin de soi</h3>
         <p>Certains contenus peuvent faire remonter des souvenirs difficiles. Vous pouvez arrêter à tout moment. Faites une pause, respirez, parlez-en à une personne de confiance.</p>
         <p>Le bouton <strong>Sortie rapide</strong> (ou deux appuis sur <kbd>Échap</kbd>) ferme l'application immédiatement.</p>
       </div>
+      <p class="hint" style="margin-top:16px"><a href="confidentialite.html">Politique de confidentialité</a> · Aucune donnée collectée, aucun pistage.</p>
     </section>
   </main>
 
   <nav class="tabbar" aria-label="Navigation principale">
     <button class="tab active" data-view="library" type="button"><span aria-hidden="true">📚</span>Bibliothèque</button>
+    <button class="tab" data-view="events" type="button"><span aria-hidden="true">📅</span>Agenda</button>
     <button class="tab" data-view="favorites" type="button"><span aria-hidden="true">♡</span>Favoris</button>
     <button class="tab" data-view="suggest" type="button"><span aria-hidden="true">＋</span>Proposer</button>
     <button class="tab" data-view="help" type="button"><span aria-hidden="true">☎</span>Aide</button>

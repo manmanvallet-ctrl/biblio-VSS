@@ -23,10 +23,36 @@
     3: "Intensité très forte",
   };
 
+  const AIDE_CATEGORIES = {
+    tout: "Tout",
+    ecoute: "Lignes d'écoute",
+    jeunes: "Enfants & jeunes",
+    groupes: "Groupes de parole",
+    associations: "Associations",
+    soins: "Soins",
+    demarches: "Démarches & plainte",
+    prevention: "Prévention",
+    infos: "S'informer",
+  };
+  const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+
+  // Date du dernier relevé des notes SensCritique (mises à jour à la main).
+  const SC_DATE = "novembre 2026";
+  const scNote = (it) => it.senscritique && typeof it.senscritique.note === "number"
+    ? it.senscritique.note.toFixed(1).replace(".", ",") : null;
+  const scBadge = (it) => scNote(it)
+    ? `<span class="sc-badge" title="Note moyenne SensCritique">SC ${scNote(it)}</span>` : "";
+
   const FAV_KEY = "biblio-vss:favoris";
+  const CITY_KEY = "biblio-vss:ville";
   const WELCOME_KEY = "biblio-vss:accueil-vu";
 
-  const state = { items: [], lists: [], list: null, category: "tout", theme: "", query: "", gentle: false };
+  const state = {
+    items: [], lists: [], list: null, category: "tout", theme: "", query: "", gentle: false,
+    events: [], eventCity: store0("biblio-vss:ville"), eventType: "",
+    aide: [], aideCat: "tout", aideQuery: "",
+  };
+  function store0(key) { try { return JSON.parse(localStorage.getItem(key)) || ""; } catch { return ""; } }
 
   const $ = (sel) => document.querySelector(sel);
   const isNative = () => !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
@@ -130,6 +156,7 @@
           <p class="card-meta">${escapeHtml(cat.one || cat.label)} · ${escapeHtml(it.auteur)} · ${escapeHtml(it.annee)}</p>
           <div class="tags">
             <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span>
+            ${scBadge(it)}
           </div>
           <div class="tags tags-themes">
             ${it.themes.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("")}
@@ -199,6 +226,13 @@
     const strong = it.intensite >= 3;
     const link = safeUrl(it.lien);
     const inLists = state.lists.filter((l) => l.ressources.includes(it.id));
+    const sc = it.senscritique && safeUrl(it.senscritique.url);
+    const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
+        ${scNote(it) ? `<span class="sc-badge sc-badge-l">${scNote(it)}<small>/10</small></span>
+        <span>Note moyenne SensCritique${it.senscritique.votes ? ` · ${escapeHtml(it.senscritique.votes)} notes` : ""}<br>
+        <small>Relevée en ${SC_DATE} · Voir sur SensCritique ↗</small></span>`
+        : `<span>Pas encore assez de notes sur SensCritique<br><small>Voir la page ↗</small></span>`}
+      </a>` : "";
     const dlg = $("#detail");
     dlg.querySelector(".sheet-body").innerHTML = `
       <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
@@ -210,6 +244,7 @@
           <p class="card-meta">${escapeHtml(it.auteur)} · ${escapeHtml(it.annee)}</p>
         </div>
       </div>
+      ${scHtml}
       <div class="warning">
         <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span><br>
         Thèmes abordés : ${it.themes.map(escapeHtml).join(", ")}.
@@ -229,11 +264,173 @@
     if (!dlg.open) dlg.showModal();
   }
 
+  // ---------- Événements ----------
+  const todayIso = () => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  };
+  const validDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d || "");
+  const validTime = (t) => /^\d{2}:\d{2}$/.test(t || "");
+
+  function upcomingEvents() {
+    const today = todayIso();
+    return state.events
+      .filter((ev) => validDate(ev.date) && (ev.fin && validDate(ev.fin) ? ev.fin : ev.date) >= today)
+      .sort((a, b) => (a.date + (a.heure || "")).localeCompare(b.date + (b.heure || "")));
+  }
+
+  function formatDate(ev) {
+    const [y, m, d] = ev.date.split("-").map(Number);
+    const date = new Date(y, m - 1, d).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    return date + (validTime(ev.heure) ? ` à ${ev.heure.replace(":", "h")}` : "");
+  }
+
+  function renderEventFilters() {
+    const events = upcomingEvents();
+    const fill = (sel, values, current, first) => {
+      sel.innerHTML = `<option value="">${first}</option>` +
+        values.map((v) => `<option value="${escapeHtml(v)}"${v === current ? " selected" : ""}>${escapeHtml(v)}</option>`).join("");
+    };
+    const cities = [...new Set(events.map((ev) => ev.ville).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"));
+    const types = [...new Set(events.map((ev) => ev.type).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"));
+    if (state.eventCity && !cities.includes(state.eventCity)) state.eventCity = "";
+    fill($("#event-city"), cities, state.eventCity, "Toutes les villes");
+    fill($("#event-type"), types, state.eventType, "Tous les types");
+  }
+
+  function renderEvents() {
+    const events = upcomingEvents().filter((ev) =>
+      (!state.eventCity || ev.ville === state.eventCity) && (!state.eventType || ev.type === state.eventType));
+    $("#event-count").textContent = events.length ? `${events.length} événement${events.length > 1 ? "s" : ""} à venir` : "";
+    $("#event-list").innerHTML = events.length ? events.map((ev) => {
+      const [, m, d] = ev.date.split("-").map(Number);
+      return `<li class="card event-card" tabindex="0" data-event="${escapeHtml(ev.id)}">
+          <div class="date-badge" aria-hidden="true"><span>${d}</span>${MONTHS[m - 1]}</div>
+          <div class="card-main">
+            <p class="card-title">${escapeHtml(ev.titre)}</p>
+            <p class="card-meta">${escapeHtml(ev.type || "Événement")} · ${escapeHtml(ev.ville || "")}${validTime(ev.heure) ? " · " + ev.heure.replace(":", "h") : ""}</p>
+            ${ev.lieu ? `<p class="card-meta">📍 ${escapeHtml(ev.lieu)}</p>` : ""}
+            ${ev.gratuit ? `<div class="tags"><span class="tag">Gratuit</span></div>` : ""}
+          </div>
+        </li>`;
+    }).join("") : `<li class="empty">${state.events.length && (state.eventCity || state.eventType)
+      ? "Aucun événement à venir pour ce filtre."
+      : "Aucun événement à venir pour le moment."}<br><br>
+      Vous organisez un groupe de parole, une conférence, une projection ?<br>
+      <button class="btn" type="button" data-goto="suggest" data-suggest-type="evenement">Proposer un événement</button></li>`;
+  }
+
+  function openEvent(id) {
+    const ev = state.events.find((x) => x.id === id);
+    if (!ev) return;
+    const link = safeUrl(ev.lien);
+    const dlg = $("#detail");
+    dlg.querySelector(".sheet-body").innerHTML = `
+      <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
+      <p class="card-meta">📅 ${escapeHtml(ev.type || "Événement")}</p>
+      <h2 id="detail-title">${escapeHtml(ev.titre)}</h2>
+      <ul class="event-facts">
+        <li>🗓 ${escapeHtml(formatDate(ev))}</li>
+        <li>📍 ${escapeHtml([ev.lieu, ev.ville].filter(Boolean).join(", "))}</li>
+        ${ev.organisateur ? `<li>👥 ${escapeHtml(ev.organisateur)}</li>` : ""}
+        ${ev.gratuit ? "<li>💶 Gratuit</li>" : ""}
+      </ul>
+      ${ev.description ? `<p>${escapeHtml(ev.description)}</p>` : ""}
+      <div class="btn-row">
+        <button class="btn" type="button" data-ics="${escapeHtml(ev.id)}">Ajouter à mon agenda</button>
+        ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">En savoir plus ↗</a>` : ""}
+      </div>
+      <div class="btn-row">
+        <button class="btn primary" type="button" data-close>Fermer</button>
+      </div>`;
+    if (!dlg.open) dlg.showModal();
+  }
+
+  // Fichier .ics : s'ouvre dans l'agenda du téléphone.
+  function downloadIcs(id) {
+    const ev = state.events.find((x) => x.id === id);
+    if (!ev) return;
+    const esc = (t) => String(t || "").replace(/[\\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
+    const day = ev.date.replace(/-/g, "");
+    let start, end;
+    if (validTime(ev.heure)) {
+      const [h, mi] = ev.heure.split(":").map(Number);
+      start = `DTSTART:${day}T${String(h).padStart(2, "0")}${String(mi).padStart(2, "0")}00`;
+      end = `DTEND:${day}T${String(Math.min(h + 2, 23)).padStart(2, "0")}${String(mi).padStart(2, "0")}00`;
+    } else {
+      const [y, m, d] = ev.date.split("-").map(Number);
+      const next = new Date(y, m - 1, d + 1);
+      start = `DTSTART;VALUE=DATE:${day}`;
+      end = `DTEND;VALUE=DATE:${next.getFullYear()}${String(next.getMonth() + 1).padStart(2, "0")}${String(next.getDate()).padStart(2, "0")}`;
+    }
+    const ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Biblio VSS//FR", "BEGIN:VEVENT",
+      `UID:${esc(ev.id)}@biblio-vss`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z`,
+      start, end, `SUMMARY:${esc(ev.titre)}`,
+      `LOCATION:${esc([ev.lieu, ev.ville].filter(Boolean).join(", "))}`,
+      `DESCRIPTION:${esc([ev.description, ev.lien].filter(Boolean).join("\n"))}`,
+      "END:VEVENT", "END:VCALENDAR",
+    ].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar" }));
+    a.download = `${ev.id}.ics`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  // ---------- Annuaire d'aide ----------
+  function contactHtml(c) {
+    const label = c.label || c.valeur;
+    if (c.type === "tel" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="tel:${c.valeur}">📞 ${escapeHtml(label)}</a>`;
+    if (c.type === "sms" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="sms:${c.valeur}">✉️ SMS ${escapeHtml(label)}</a>`;
+    if (c.type === "email" && /^[^@\s"<>]+@[^@\s"<>]+\.[a-z]{2,}$/i.test(c.valeur))
+      return `<a class="contact" href="mailto:${escapeHtml(c.valeur)}">✉️ ${escapeHtml(label)}</a>`;
+    const url = safeUrl(c.valeur);
+    if (!url) return "";
+    const text = c.label || (c.type === "tchat" ? "Tchat" : "Site web");
+    return `<a class="contact" href="${escapeHtml(url)}" target="_blank" rel="noopener">${c.type === "tchat" ? "💬" : "🌐"} ${escapeHtml(text)}</a>`;
+  }
+
+  function renderAide() {
+    const present = new Set(state.aide.map((a) => a.categorie));
+    $("#aide-cats").innerHTML = Object.entries(AIDE_CATEGORIES)
+      .filter(([k]) => k === "tout" || present.has(k))
+      .map(([k, label]) => `<button class="chip${k === state.aideCat ? " active" : ""}" type="button" data-aide-cat="${k}">${label}</button>`)
+      .join("");
+    const q = normalize(state.aideQuery.trim());
+    const items = state.aide.filter((a) => {
+      if (state.aideCat !== "tout" && a.categorie !== state.aideCat) return false;
+      if (!q) return true;
+      const hay = normalize([a.nom, a.description, a.ville, a.horaires, AIDE_CATEGORIES[a.categorie]].join(" "));
+      return q.split(/\s+/).every((w) => hay.includes(w));
+    });
+    $("#aide-list").innerHTML = items.length ? items.map((a) => `
+      <li class="help-entry">
+        <p class="card-title">${escapeHtml(a.nom)}</p>
+        <p class="card-meta">📍 ${escapeHtml(a.ville || "")}${a.horaires ? ` · 🕒 ${escapeHtml(a.horaires)}` : ""}</p>
+        <p class="help-desc">${escapeHtml(a.description)}</p>
+        <div class="contacts">${(a.contacts || []).map(contactHtml).join("")}</div>
+      </li>`).join("") : `<li class="empty">Aucun résultat dans l'annuaire.</li>`;
+  }
+
   // ---------- Proposer une ressource ----------
+  const isPlaceType = (t) => t === "evenement" || t === "association";
+
   function setupSuggestForm() {
     const form = $("#suggest-form");
     const status = $("#suggest-status");
     const say = (msg, kind) => { status.textContent = msg; status.className = `form-status ${kind || ""}`; };
+
+    const syncFields = () => {
+      const type = form.categorie.value;
+      form.querySelectorAll("[data-only]").forEach((el) => { el.hidden = !el.dataset.only.split(" ").includes(type); });
+      form.querySelectorAll("[data-not]").forEach((el) => { el.hidden = el.dataset.not.split(" ").includes(type); });
+      $("#titre-label").textContent = type === "association" ? "Nom" : type === "evenement" ? "Nom de l'événement" : "Titre";
+    };
+    form.categorie.addEventListener("change", syncFields);
+    syncFields();
+    form.setType = (type) => { form.categorie.value = type; syncFields(); };
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -241,14 +438,16 @@
       for (const k of Object.keys(data)) data[k] = String(data[k]).trim();
       if (!data.titre) { say("Merci d'indiquer au moins le titre.", "error"); form.titre.focus(); return; }
       if (data.lien && !safeUrl(data.lien)) { say("Le lien doit commencer par https://", "error"); form.lien.focus(); return; }
-      if (data.annee && !/^\d{4}$/.test(data.annee)) { say("L'année doit comporter 4 chiffres.", "error"); form.annee.focus(); return; }
+      if (!isPlaceType(data.categorie) && data.annee && !/^\d{4}$/.test(data.annee)) { say("L'année doit comporter 4 chiffres.", "error"); form.annee.focus(); return; }
 
+      const isPlace = data.categorie === "evenement" || data.categorie === "association";
       const text = [
         "Nouvelle proposition pour Biblio VSS",
         `Type : ${data.categorie}`,
-        `Titre : ${data.titre}`,
-        `Auteur·rice : ${data.auteur || "-"}`,
-        `Année : ${data.annee || "-"}`,
+        `Titre / nom : ${data.titre}`,
+        ...(isPlace
+          ? [`Date : ${data.date || "-"}`, `Ville : ${data.ville || "-"}`]
+          : [`Auteur·rice : ${data.auteur || "-"}`, `Année : ${data.annee || "-"}`]),
         `Lien : ${data.lien || "-"}`,
         "",
         `Pourquoi : ${data.pourquoi || "-"}`,
@@ -266,6 +465,7 @@
           });
           if (!res.ok) throw new Error(res.status);
           form.reset();
+          syncFields();
           say("Merci ! Votre proposition a bien été envoyée.", "ok");
         } catch {
           say("L'envoi n'a pas fonctionné. Vérifiez votre connexion et réessayez.", "error");
@@ -307,6 +507,22 @@
     const fav = e.target.closest("[data-fav]");
     if (fav) { e.stopPropagation(); toggleFavorite(fav.dataset.fav); return; }
 
+    const evCard = e.target.closest("[data-event]");
+    if (evCard) { openEvent(evCard.dataset.event); return; }
+
+    const ics = e.target.closest("[data-ics]");
+    if (ics) { downloadIcs(ics.dataset.ics); return; }
+
+    const aideCat = e.target.closest("[data-aide-cat]");
+    if (aideCat) { state.aideCat = aideCat.dataset.aideCat; renderAide(); return; }
+
+    const go = e.target.closest("[data-goto]");
+    if (go) {
+      if (go.dataset.suggestType) $("#suggest-form").setType(go.dataset.suggestType);
+      showView(go.dataset.goto);
+      return;
+    }
+
     const list = e.target.closest("[data-list]");
     if (list) { openList(list.dataset.list); return; }
 
@@ -330,7 +546,10 @@
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Enter" && e.key !== " ") return;
     const card = e.target.closest && e.target.closest(".card");
-    if (card && e.target === card) { e.preventDefault(); openDetail(card.dataset.id); }
+    if (card && e.target === card) {
+      e.preventDefault();
+      card.dataset.event ? openEvent(card.dataset.event) : openDetail(card.dataset.id);
+    }
     if (e.target.classList && e.target.classList.contains("reveal")) e.target.classList.add("shown");
   });
 
@@ -340,6 +559,13 @@
   $("#search").addEventListener("input", (e) => { state.query = e.target.value; renderList(); });
   $("#theme-filter").addEventListener("change", (e) => { state.theme = e.target.value; renderList(); });
   $("#gentle").addEventListener("change", (e) => { state.gentle = e.target.checked; renderList(); });
+  $("#event-city").addEventListener("change", (e) => {
+    state.eventCity = e.target.value;
+    store.set(CITY_KEY, state.eventCity); // ville mémorisée sur l'appareil uniquement
+    renderEvents();
+  });
+  $("#event-type").addEventListener("change", (e) => { state.eventType = e.target.value; renderEvents(); });
+  $("#aide-search").addEventListener("input", (e) => { state.aideQuery = e.target.value; renderAide(); });
 
   function showView(name) {
     document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === `view-${name}`));
@@ -358,7 +584,17 @@
   }
 
   async function init() {
-    const [items, lists] = await Promise.all([loadJson("data/ressources.json", null), loadJson("data/listes.json", [])]);
+    const [items, lists, events, aide] = await Promise.all([
+      loadJson("data/ressources.json", null),
+      loadJson("data/listes.json", []),
+      loadJson("data/evenements.json", []),
+      loadJson("data/aide.json", []),
+    ]);
+    state.events = Array.isArray(events) ? events : [];
+    state.aide = Array.isArray(aide) ? aide : [];
+    renderEventFilters();
+    renderEvents();
+    renderAide();
     if (!items) {
       $("#list").innerHTML = `<li class="empty">Impossible de charger la bibliothèque. Vérifiez votre connexion.</li>`;
       return;

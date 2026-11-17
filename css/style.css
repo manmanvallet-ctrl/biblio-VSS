@@ -349,3 +349,91 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 .form-status.ok { color: var(--lvl1); }
 .form-status.error { color: var(--exit); }
 [hidden] { display: none !important; }
+
+/* Agenda */
+.date-badge {
+  flex: none;
+  width: 52px;
+  padding: 6px 0;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  font-size: .75rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.date-badge span { display: block; font-size: 1.4rem; font-weight: 700; }
+.event-facts { list-style: none; padding: 0; margin: 8px 0 12px; display: grid; gap: 6px; }
+.empty .btn { margin-top: 4px; }
+
+/* Annuaire d'aide */
+.help-dir { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 10px; }
+.help-entry {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.help-entry .card-meta { margin-bottom: 4px; }
+.help-desc { margin: 4px 0 10px; font-size: .92rem; }
+.contacts { display: flex; flex-wrap: wrap; gap: 6px; }
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.tab { font-size: .72rem; }
+
+/* Note SensCritique */
+.tags .level + .sc-badge { margin-left: 6px; }
+.sc-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+  font-size: .74rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #fff4c2;
+  color: #6b4e00;
+  border: 1px solid #f0d77a;
+}
+.sc-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  font-size: .9rem;
+}
+.sc-row small { color: var(--muted); }
+.sc-badge-l { font-size: 1.15rem; padding: 6px 10px; }
+.sc-badge-l small { font-size: .7rem; font-weight: 600; }
+.suggest-cta { width: 100%; margin-top: 14px; }
+
+/* Encart « Témoigner » */
+.testify {
+  display: grid; gap: 6px;
+  margin: 16px 0 4px; padding: 14px 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, #8c3a6b, #5b3a8c);
+  color: #fff; text-decoration: none;
+}
+.testify strong { font-size: 1.05rem; }
+.testify span { font-size: .9rem; opacity: .95; }
+.testify .testify-cta {
+  justify-self: start; margin-top: 4px; padding: 7px 12px;
+  border-radius: 999px; background: rgba(255,255,255,.18); font-weight: 600; opacity: 1;
+}
