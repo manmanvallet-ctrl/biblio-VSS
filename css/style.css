@@ -537,3 +537,4 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .form > * { min-width: 0; }
 .form textarea { resize: vertical; min-height: 96px; max-width: 100%; field-sizing: content; max-height: 60vh; }
 .form [type="submit"] { align-self: start; height: auto; }
+.acc { scroll-margin-top: 84px; }

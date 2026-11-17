@@ -165,7 +165,7 @@
         ${coverHtml(it, "s")}
         <div class="card-main">
           <p class="card-title">${escapeHtml(it.titre)}</p>
-          <p class="card-meta">${escapeHtml(cat.one || cat.label)} · ${escapeHtml(it.auteur)} · ${escapeHtml(it.annee)}</p>
+          <p class="card-meta">${[cat.one || cat.label, it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
           <div class="tags">
             <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span>
             ${scBadge(it)}
@@ -268,7 +268,7 @@
         <div>
           <p class="card-meta">${cat.icon} ${escapeHtml(cat.one || cat.label)}</p>
           <h2 id="detail-title">${escapeHtml(it.titre)}</h2>
-          <p class="card-meta">${escapeHtml(it.auteur)} · ${escapeHtml(it.annee)}</p>
+          <p class="card-meta">${[it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         </div>
       </div>
       ${scHtml}

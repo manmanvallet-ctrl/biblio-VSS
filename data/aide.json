@@ -33,6 +33,24 @@
     ]
   },
   {
+    "id": "3114",
+    "nom": "3114 – Numéro national de prévention du suicide",
+    "categorie": "ecoute",
+    "description": "Si vous avez des idées suicidaires ou êtes inquiet·e pour quelqu'un : des soignant·es répondent, gratuitement.",
+    "horaires": "24h/24, 7j/7",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "3114"
+      },
+      {
+        "type": "web",
+        "valeur": "https://3114.fr"
+      }
+    ]
+  },
+  {
     "id": "116006",
     "nom": "116 006 – France Victimes",
     "categorie": "ecoute",

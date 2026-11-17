@@ -565,5 +565,64 @@
     ],
     "resume": "L'enquête du 5 octobre 2017 qui a révélé des décennies d'accusations contre Harvey Weinstein et donné son élan au mouvement #MeToo. Prix Pulitzer 2018.",
     "intensite": 1
+  },
+  {
+    "id": "art-125-psychotrauma",
+    "titre": "Psychotrauma et viol : conséquences à long terme et revictimisation",
+    "auteur": "125 et après",
+    "annee": 2026,
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "revictimisation",
+      "reconstruction"
+    ],
+    "resume": "Ce que fait le psychotrauma dans le corps et l'esprit, les conséquences d'un viol qui n'est pas accompagné, et pourquoi le risque de subir à nouveau des violences est plus élevé. Un texte qui déculpabilise.",
+    "intensite": 2,
+    "lien": "https://www.125etapres.org/post/psychotrauma-viol-consequences-long-terme-revictimisation"
+  },
+  {
+    "id": "art-inspq-consequences",
+    "titre": "Conséquences des agressions sexuelles sur la santé",
+    "auteur": "Institut national de santé publique du Québec (INSPQ)",
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "santé",
+      "enfance"
+    ],
+    "resume": "Synthèse des recherches sur les effets des agressions sexuelles sur la santé mentale, physique et sexuelle, chez l'enfant, l'adolescent et l'adulte, et sur ce qui aide à s'en remettre.",
+    "intensite": 1,
+    "lien": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
+  },
+  {
+    "id": "art-infoaide-reactions",
+    "titre": "Les réactions possibles à la violence sexuelle",
+    "auteur": "Info-aide violence sexuelle (Québec)",
+    "annee": 2023,
+    "categorie": "article",
+    "themes": [
+      "psychotraumatisme",
+      "sexualité",
+      "relations"
+    ],
+    "resume": "Une page claire sur les réactions possibles après des violences sexuelles : émotions, santé, sexualité, relations. Pour comprendre que sa réaction, quelle qu'elle soit, est légitime.",
+    "intensite": 1,
+    "lien": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+  },
+  {
+    "id": "art-cn2r-inceste",
+    "titre": "Inceste et psychotraumatisme",
+    "auteur": "Cn2r (Centre national de ressources et de résilience)",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "inceste",
+      "psychotraumatisme",
+      "trauma complexe"
+    ],
+    "resume": "Dossier sur l'inceste : ce qu'il recouvre (y compris le climat incestuel et la famille élargie), le stress post-traumatique et le trauma complexe, pourquoi on parle souvent tard, et comment se rétablir.",
+    "intensite": 2,
+    "lien": "https://cn2r.fr/inceste-et-psychotraumatisme/"
   }
 ]

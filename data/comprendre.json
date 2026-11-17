@@ -20,6 +20,18 @@
       ]
     },
     {
+      "id": "normal",
+      "question": "J'ai des réactions que je ne comprends pas. Est-ce que je suis normal·e ?",
+      "reponse": "Oui. Après des violences sexuelles, il est fréquent d'avoir des cauchemars, des douleurs, des difficultés dans sa sexualité ou ses relations, de boire ou de manger différemment, de se sentir coupable ou déconnecté·e, parfois des années après. Ce sont des conséquences de ce que vous avez vécu, pas des défauts. Comprendre d'où elles viennent aide souvent à se sentir moins seul·e, et elles peuvent se soigner.",
+      "voir": [
+        "reactions-normales",
+        "tspt",
+        "trauma-complexe",
+        "consequences-corps",
+        "conduites-survie"
+      ]
+    },
+    {
       "id": "souvenirs-flous",
       "question": "Mes souvenirs sont flous ou reviennent par morceaux. Est-ce normal ?",
       "reponse": "C'est très fréquent après des violences, surtout dans l'enfance. Le cerveau peut mettre des souvenirs « de côté » pour survivre (on parle d'amnésie traumatique), et ils peuvent revenir des années plus tard. Cela ne veut pas dire que vous inventez. Un·e professionnel·le formé·e au psychotraumatisme peut vous accompagner.",
@@ -178,6 +190,127 @@
       "source": {
         "label": "Mémoire Traumatique et Victimologie",
         "url": "https://www.memoiretraumatique.org"
+      }
+    },
+    {
+      "id": "reactions-normales",
+      "terme": "Des réactions normales à une situation anormale",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Il n'y a pas de « bonne » façon de réagir. Vos réactions ont une cause.",
+      "texte": "Chaque personne réagit à sa façon. Beaucoup ne crient pas et ne se débattent pas : rester figé·e ou paraître calme est une réaction très fréquente face au danger.\n\nLes effets peuvent apparaître tout de suite, ou des années, voire des décennies plus tard. Ils dépendent de nombreux éléments : la forme des violences, leur durée, l'âge au moment des faits, le lien avec l'agresseur, et surtout la façon dont l'entourage a réagi.\n\nSi le corps a réagi (excitation, sensation agréable), ce n'est jamais un consentement : c'est une réaction physiologique automatique, y compris chez les enfants.\n\nComprendre d'où viennent certaines difficultés aide souvent à ne plus se sentir « anormal·e » : ce sont des conséquences de ce que vous avez subi, pas des défauts.",
+      "source": {
+        "label": "Info-aide violence sexuelle (Québec)",
+        "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+      }
+    },
+    {
+      "id": "tspt",
+      "terme": "Trouble de stress post-traumatique (TSPT)",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Revivre, éviter, être sans cesse en alerte, se sentir coupable ou déconnecté·e.",
+      "texte": "Le trouble de stress post-traumatique peut apparaître après une agression, parfois des mois ou des années plus tard. On le reconnaît à quatre grandes familles de signes :\n\n• Revivre : souvenirs qui s'imposent, flashbacks, cauchemars, avec les mêmes émotions qu'au moment des faits.\n• Éviter : des lieux, des personnes, des situations, ou même d'y penser et d'en parler.\n• Être en alerte : sursauter au moindre bruit, mal dormir, être irritable, avoir du mal à se concentrer.\n• Des pensées et émotions difficiles : honte, culpabilité, colère, se sentir détaché·e des autres, trous de mémoire.\n\nCe n'est pas une faiblesse. Seul·e un·e professionnel·le formé·e au psychotrauma peut poser le diagnostic, et il existe des soins efficaces.",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      }
+    },
+    {
+      "id": "trauma-complexe",
+      "terme": "Trauma complexe",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Quand les violences sont répétées et viennent d'un proche, comme dans l'inceste.",
+      "texte": "L'inceste est rarement un événement isolé : il se répète, dans un climat d'emprise et de secret, et il est commis par quelqu'un qui devait protéger. L'enfant grandit dans un danger quotidien dont il ne peut pas s'échapper.\n\nCela peut entraîner, en plus des signes du stress post-traumatique : des émotions difficiles à réguler, une dissociation fréquente, une image de soi abîmée (honte, culpabilité, sentiment de ne rien valoir) et des difficultés durables dans les relations (peur de l'intimité, relations instables, dépendance ou isolement). L'enfant finit aussi souvent par croire les phrases de l'agresseur (« c'est de ta faute »).",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      }
+    },
+    {
+      "id": "climat-incestuel",
+      "terme": "Climat incestuel",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Une famille où les limites entre adultes et enfants sont brouillées, même sans acte sexuel.",
+      "texte": "On parle de climat incestuel quand, sans passage à l'acte sexuel direct, les frontières entre adultes et enfants sont brouillées : regards ou paroles sexualisés, absence d'intimité pour la toilette, confidences d'un parent sur sa vie sexuelle, enfant qui dort dans le lit parental, enfant devenu le « confident » ou le soutien affectif d'un parent…\n\nCe climat est déjà une violence psychique : il empêche l'enfant de grandir en sécurité, mélange amour, sexualité et pouvoir, et peut laisser des traces à l'âge adulte.",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      }
+    },
+    {
+      "id": "consequences-corps",
+      "terme": "Les effets sur le corps",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Douleurs, fatigue, troubles du sommeil ou digestifs : le trauma s'inscrit aussi dans le corps.",
+      "texte": "Les violences sexuelles laissent souvent des traces physiques, parfois longtemps après : douleurs chroniques, maux de tête ou de ventre, troubles digestifs, troubles du sommeil, fatigue, douleurs gynécologiques. Les études menées au Québec et au Canada montrent aussi un risque plus élevé de plusieurs maladies chroniques chez les personnes agressées dans l'enfance.\n\nCes symptômes ne sont pas « dans la tête » : le stress traumatique agit sur tout l'organisme. Le dire à son médecin peut aider à mieux les comprendre et les soigner. Une grossesse, un accouchement ou un examen gynécologique peuvent aussi réveiller des souvenirs : on peut en parler à l'avance au soignant.",
+      "source": {
+        "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
+        "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
+      }
+    },
+    {
+      "id": "consequences-sexualite",
+      "terme": "Sexualité et intimité",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Douleurs, perte de désir ou au contraire hypersexualité, peur de l'intimité : c'est fréquent.",
+      "texte": "Une violence sexuelle est aussi une violence faite à l'intimité. Le rapport au corps et à la sexualité peut en être bouleversé : douleurs pendant les rapports, difficultés d'érection ou de lubrification, peur de l'intimité, baisse du désir ou au contraire hypersexualité, prises de risque, questions sur son orientation sexuelle ou son identité de genre.\n\nCela concerne les femmes, les hommes et les personnes non binaires. Les hommes victimes, en particulier, sont souvent confrontés à des troubles sexuels et à des questionnements sur leur orientation. Des sexologues et des psychologues formé·es au psychotrauma peuvent accompagner.",
+      "source": {
+        "label": "Info-aide violence sexuelle (Québec)",
+        "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+      }
+    },
+    {
+      "id": "consequences-relations",
+      "terme": "Les relations avec les autres",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Perte de confiance, difficulté à poser ses limites, peur du rejet ou isolement.",
+      "texte": "Avoir subi des violences, surtout de la part d'un proche, peut abîmer la confiance envers les autres. On peut avoir du mal à distinguer une relation saine d'une relation malsaine, à dire non, à poser ses limites ; chercher à plaire à tout prix par peur du rejet ; avoir du mal à s'attacher ; ou au contraire s'isoler et se sentir incompris·e.",
+      "source": {
+        "label": "Info-aide violence sexuelle (Québec)",
+        "url": "https://infoaideviolencesexuelle.ca/comprendre/reactions-possibles/"
+      }
+    },
+    {
+      "id": "conduites-survie",
+      "terme": "Addictions, troubles alimentaires, automutilation",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Des façons de survivre à une douleur trop forte, pas des preuves de faiblesse.",
+      "texte": "Alcool, drogues, troubles alimentaires (anorexie, boulimie, hyperphagie), automutilation, prises de risque… Ces comportements sont fréquents après des violences sexuelles, à l'adolescence comme à l'âge adulte. Ils servent souvent à calmer ou à anesthésier une souffrance et des souvenirs insupportables.\n\nIls ne disent rien de votre valeur, et ils peuvent diminuer quand le traumatisme est soigné. Si vous avez des idées suicidaires, appelez le 3114, numéro national de prévention du suicide, gratuit, 24h/24.",
+      "source": {
+        "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
+        "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
+      }
+    },
+    {
+      "id": "revictimisation",
+      "terme": "Revictimisation",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Subir à nouveau des violences plus tard n'est jamais de votre faute.",
+      "texte": "Les personnes qui ont subi des violences sexuelles, surtout dans l'enfance, ont plus de risques d'en subir à nouveau, y compris dans le couple. Ce n'est pas parce qu'elles « attirent » la violence.\n\nLe trauma peut abîmer l'estime de soi, brouiller la frontière entre amour et domination et rendre plus difficile de repérer le danger ou de poser ses limites. La responsabilité reste toujours celle de l'agresseur. Un accompagnement formé au psychotrauma aide à briser ce cercle.",
+      "source": {
+        "label": "125 et après : psychotrauma et conséquences à long terme",
+        "url": "https://www.125etapres.org/post/psychotrauma-viol-consequences-long-terme-revictimisation"
+      }
+    },
+    {
+      "id": "parler-tard",
+      "terme": "Pourquoi on parle souvent des années plus tard",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Peur, honte, secret de famille, manque de mots, amnésie : parler prend du temps.",
+      "texte": "Beaucoup de victimes, en particulier d'inceste, ne parlent que des années ou des décennies après. Les raisons sont nombreuses : la peur de l'agresseur, surtout quand on dépend de lui ; la honte et la culpabilité, souvent semées par l'agresseur (« personne ne te croira ») ; le poids du secret et la peur de « détruire » la famille ; le manque de mots quand on est enfant ; l'amnésie traumatique ; et parfois un premier dévoilement accueilli par le silence ou le déni.\n\nIl n'y a pas de « bon moment » pour parler, et il n'est jamais trop tard pour être aidé·e.",
+      "source": {
+        "label": "Cn2r : inceste et psychotraumatisme",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      }
+    },
+    {
+      "id": "ce-qui-aide",
+      "terme": "Ce qui aide à aller mieux",
+      "theme": "Après les violences : des réactions normales",
+      "court": "Être cru·e, être soutenu·e, et se faire soigner par des personnes formées.",
+      "texte": "Les recherches montrent qu'être cru·e et soutenu·e quand on parle est l'un des éléments qui protègent le plus, en particulier pour les enfants. Écouter ses besoins, prendre soin de soi et demander de l'aide sont des premiers pas.\n\nLe psychotraumatisme se soigne : les centres régionaux du psychotraumatisme, les associations et des professionnel·les formé·es peuvent accompagner (voir l'onglet Aide). Un traumatisme ne s'efface pas, mais il peut être apaisé et intégré.",
+      "source": {
+        "label": "INSPQ : conséquences des agressions sexuelles sur la santé",
+        "url": "https://www.inspq.qc.ca/rapport-quebecois-sur-la-violence-et-la-sante/les-agressions-sexuelles/consequences-des-agressions-sexuelles-sur-la-sante"
       }
     },
     {
