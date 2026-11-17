@@ -1,0 +1,108 @@
+[
+  {
+    "id": "commencer",
+    "titre": "Pour commencer",
+    "description": "Des œuvres accessibles pour aborder le sujet sans être submergé·e.",
+    "couleur": "#3c8d5a",
+    "ressources": [
+      "spotlight",
+      "she-said",
+      "memoire-de-fille",
+      "culture-du-viol",
+      "crocodiles",
+      "chatouilles"
+    ]
+  },
+  {
+    "id": "ados",
+    "titre": "Pour les ados",
+    "description": "À découvrir seul·e ou avec un adulte de confiance.",
+    "couleur": "#2f7fb5",
+    "ressources": [
+      "speak",
+      "crocodiles",
+      "sexe-sans-consentement",
+      "she-said"
+    ]
+  },
+  {
+    "id": "inceste",
+    "titre": "Comprendre l'inceste",
+    "description": "Témoignages, enquêtes et rapports sur l'inceste et le silence des familles.",
+    "couleur": "#8c3a6b",
+    "ressources": [
+      "familia-grande",
+      "ou-peut-etre-une-nuit",
+      "rapport-ciivise",
+      "festen",
+      "triste-tigre",
+      "inceste-angot",
+      "art-cn2r-inceste",
+      "art-stauffer-consequences"
+    ]
+  },
+  {
+    "id": "sideration-honte",
+    "titre": "Sidération, honte et culpabilité",
+    "description": "Comprendre pourquoi on n'a pas pu réagir, et déposer une honte qui ne vous appartient pas.",
+    "couleur": "#2d8a7a",
+    "ressources": [
+      "podcast-carnets-sante-sideration",
+      "art-salmona-sideration",
+      "art-opq-honte",
+      "livre-cyrulnik-honte",
+      "livre-pelicot",
+      "chanel-miller",
+      "speak",
+      "etude-moller-immobilite"
+    ]
+  },
+  {
+    "id": "consentement",
+    "titre": "Le consentement",
+    "description": "Ce que veut dire consentir, et ce qui se passe quand il n'y a pas de consentement.",
+    "couleur": "#c06a2b",
+    "ressources": [
+      "sexe-sans-consentement",
+      "memoire-de-fille",
+      "choses-humaines-livre",
+      "consentement",
+      "promising-young-woman",
+      "king-kong-theorie"
+    ]
+  },
+  {
+    "id": "reconstruction",
+    "titre": "Trauma et reconstruction",
+    "description": "Comprendre les effets des violences et le chemin pour aller mieux.",
+    "couleur": "#5b3a8c",
+    "ressources": [
+      "livre-noir-salmona",
+      "chatouilles",
+      "chanel-miller",
+      "i-may-destroy-you",
+      "triste-tigre",
+      "mysterious-skin",
+      "art-infoaide-reactions",
+      "art-125-psychotrauma",
+      "art-salmona-dissociation",
+      "art-salmona-mukwege",
+      "art-uqam-consequences"
+    ]
+  },
+  {
+    "id": "justice",
+    "titre": "Justice et institutions",
+    "description": "Enquêtes, procès et institutions qui ont protégé les agresseurs.",
+    "couleur": "#4a5568",
+    "ressources": [
+      "grace-a-dieu",
+      "spotlight",
+      "rapport-ciase",
+      "unbelievable",
+      "nyt-weinstein",
+      "hunting-ground",
+      "choses-humaines-film"
+    ]
+  }
+]

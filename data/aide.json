@@ -1,0 +1,476 @@
+[
+  {
+    "id": "3919",
+    "nom": "3919 – Violences Femmes Info",
+    "categorie": "ecoute",
+    "description": "Écoute, information et orientation des femmes victimes de violences (conjugales, sexuelles…) et de leur entourage.",
+    "horaires": "24h/24, 7j/7",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "3919"
+      }
+    ]
+  },
+  {
+    "id": "vfi",
+    "nom": "Viols Femmes Informations (CFCV)",
+    "categorie": "ecoute",
+    "description": "Ligne du Collectif Féministe Contre le Viol pour les victimes de viols et d'agressions sexuelles, leurs proches et les professionnel·les.",
+    "horaires": "Du lundi au vendredi, 10h–19h",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0800059595",
+        "label": "0 800 05 95 95"
+      },
+      {
+        "type": "web",
+        "valeur": "https://cfcv.asso.fr"
+      }
+    ]
+  },
+  {
+    "id": "3114",
+    "nom": "3114 – Numéro national de prévention du suicide",
+    "categorie": "ecoute",
+    "description": "Si vous avez des idées suicidaires ou êtes inquiet·e pour quelqu'un : des soignant·es répondent, gratuitement.",
+    "horaires": "24h/24, 7j/7",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "3114"
+      },
+      {
+        "type": "web",
+        "valeur": "https://3114.fr"
+      }
+    ]
+  },
+  {
+    "id": "116006",
+    "nom": "116 006 – France Victimes",
+    "categorie": "ecoute",
+    "description": "Numéro national d'aide aux victimes d'infractions : écoute et orientation vers l'une des 130 associations locales d'aide aux victimes (accompagnement juridique et psychologique). Accessible aux personnes sourdes et malentendantes.",
+    "horaires": "7j/7, 9h–19h",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "116006",
+        "label": "116 006"
+      },
+      {
+        "type": "tel",
+        "valeur": "+33180523376",
+        "label": "+33 1 80 52 33 76 (hors métropole)"
+      },
+      {
+        "type": "email",
+        "valeur": "victimes@france-victimes.fr"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.france-victimes.fr"
+      }
+    ]
+  },
+  {
+    "id": "119",
+    "nom": "119 – Allô Enfance en Danger",
+    "categorie": "jeunes",
+    "description": "Pour les enfants et ados en danger, et pour tout adulte inquiet pour un enfant. Anonyme et gratuit.",
+    "horaires": "24h/24, 7j/7",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "119"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.allo119.gouv.fr"
+      }
+    ]
+  },
+  {
+    "id": "fil-sante-jeunes",
+    "nom": "Fil Santé Jeunes",
+    "categorie": "jeunes",
+    "description": "Écoute anonyme et gratuite pour les 12-25 ans par des psychologues et médecins : sexualité, relations, mal-être, violences.",
+    "horaires": "Tous les jours, 9h–23h (tchat jusqu'à 22h)",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0800235236",
+        "label": "0 800 235 236"
+      },
+      {
+        "type": "tchat",
+        "valeur": "https://www.filsantejeunes.com"
+      }
+    ]
+  },
+  {
+    "id": "3018",
+    "nom": "3018 – e-Enfance",
+    "categorie": "jeunes",
+    "description": "Pour les jeunes victimes de violences numériques : cyberharcèlement, revenge porn, sextorsion, chantage à la webcam. Aide aussi à faire supprimer des contenus.",
+    "horaires": "7j/7, 9h–23h",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "3018"
+      },
+      {
+        "type": "web",
+        "valeur": "https://e-enfance.org/besoin-daide/"
+      }
+    ]
+  },
+  {
+    "id": "comment-on-saime",
+    "nom": "Comment on s'aime ? – En avant toute(s)",
+    "categorie": "jeunes",
+    "description": "Tchat anonyme et gratuit pour les jeunes, les femmes et les personnes LGBTQIA+ victimes ou témoins de violences dans leurs relations.",
+    "horaires": "Lundi–jeudi 10h–minuit, vendredi–samedi 10h–21h",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tchat",
+        "valeur": "https://commentonsaime.fr"
+      }
+    ]
+  },
+  {
+    "id": "planning-familial",
+    "nom": "Numéro vert Sexualités, Contraception, IVG (Planning familial)",
+    "categorie": "ecoute",
+    "description": "Écoute et orientation anonymes sur la sexualité, la contraception et l'IVG, y compris après des violences sexuelles.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0800081111",
+        "label": "0 800 08 11 11"
+      },
+      {
+        "type": "tchat",
+        "valeur": "https://ivg-contraception-sexualites.org"
+      }
+    ]
+  },
+  {
+    "id": "sos-homophobie",
+    "nom": "SOS homophobie",
+    "categorie": "ecoute",
+    "description": "Ligne d'écoute anonyme pour les personnes LGBTI victimes de violences ou de discriminations. Horaires sur le site.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0148064241",
+        "label": "01 48 06 42 41"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.sos-homophobie.org/ligne-ecoute"
+      }
+    ]
+  },
+  {
+    "id": "signalement",
+    "nom": "Plateforme de signalement des violences sexuelles et sexistes",
+    "categorie": "demarches",
+    "description": "Tchat anonyme avec des policier·es et gendarmes formé·es aux violences sexuelles. Pour être conseillé·e, préparer ou déposer une plainte. Victimes et témoins.",
+    "horaires": "24h/24, 7j/7",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tchat",
+        "valeur": "https://www.masecurite.interieur.gouv.fr/fr/demarches-en-ligne/portail-signalement-violences-sexuelles-sexistes"
+      },
+      {
+        "type": "web",
+        "valeur": "https://arretonslesviolences.gouv.fr"
+      }
+    ]
+  },
+  {
+    "id": "rpsp",
+    "nom": "Recueil de preuves sans plainte",
+    "categorie": "demarches",
+    "description": "Dans certains hôpitaux, un·e médecin peut constater les blessures et faire des prélèvements (ADN, toxicologie) sans que vous ayez porté plainte. Les preuves sont conservées environ 3 ans, le temps de décider. Proposé dans une trentaine de départements seulement (2026) : appelez le 116 006 pour savoir où. Les prélèvements doivent être faits rapidement après les faits.",
+    "ville": "Certains départements",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "116006",
+        "label": "116 006 : où est-ce possible ?"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.aphp.fr/actualites/violences-sexuelles-respecter-la-temporalite-des-victimes-grace-au-recueil-de-preuves",
+        "label": "Comment ça marche (AP-HP)"
+      }
+    ]
+  },
+  {
+    "id": "cidff",
+    "nom": "CIDFF – Centres d'information sur les droits des femmes et des familles",
+    "categorie": "demarches",
+    "description": "Plus de 100 centres en France : information juridique gratuite, accompagnement des victimes de violences sexistes et sexuelles.",
+    "ville": "Dans votre département",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://fncidff.info/trouver-mon-cidff/",
+        "label": "Trouver mon CIDFF"
+      }
+    ]
+  },
+  {
+    "id": "arevi",
+    "nom": "AREVI – Groupes de parole inceste",
+    "categorie": "groupes",
+    "description": "Groupes de parole entre personnes victimes d'inceste, animés par l'Association d'action/recherche et échange entre les victimes d'inceste.",
+    "ville": "Paris, Rouen et en visio",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://incestearevi.org/les-groupes-de-paroles/"
+      }
+    ]
+  },
+  {
+    "id": "maison-des-femmes",
+    "nom": "La Maison des Femmes de Saint-Denis",
+    "categorie": "groupes",
+    "description": "Lieu de soin et d'accompagnement des femmes victimes de violences. Groupes de parole sur l'inceste animés par une sage-femme et une psychologue, sur inscription.",
+    "ville": "Saint-Denis (Île-de-France)",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.lamaisondesfemmes.fr"
+      }
+    ]
+  },
+  {
+    "id": "crp",
+    "nom": "Centres régionaux du psychotraumatisme (CRP)",
+    "categorie": "soins",
+    "description": "Soins spécialisés pour les personnes victimes de violences, dans chaque région, par des équipes formées au psychotraumatisme. Certains proposent des parcours de soin en groupe.",
+    "ville": "Dans chaque région",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://cn2r.fr/jai-besoin-daide/localiser-les-structures-de-soin/",
+        "label": "Carte des centres"
+      }
+    ]
+  },
+  {
+    "id": "memoire-traumatique",
+    "nom": "Mémoire Traumatique et Victimologie",
+    "categorie": "soins",
+    "description": "Association de la Dre Muriel Salmona : informations, brochures et outils pour comprendre le psychotraumatisme et trouver de l'aide.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.memoiretraumatique.org"
+      }
+    ]
+  },
+  {
+    "id": "annuaires-therapeutes",
+    "nom": "Trouver un·e thérapeute formé·e au trauma",
+    "categorie": "soins",
+    "description": "Annuaires de praticien·nes formé·es à l'EMDR et aux thérapies cognitives et comportementales (TCC), les deux approches dont l'efficacité sur le stress post-traumatique est la mieux démontrée. Et l'annuaire des psychologues partenaires de Mon soutien psy (séances remboursées).",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.emdr-france.org",
+        "label": "EMDR France"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.aftcc.org",
+        "label": "AFTCC (TCC)"
+      },
+      {
+        "type": "web",
+        "valeur": "https://monsoutienpsy.ameli.fr/recherche-psychologue",
+        "label": "Mon soutien psy"
+      }
+    ]
+  },
+  {
+    "id": "face-a-linceste",
+    "nom": "Face à l'inceste",
+    "categorie": "associations",
+    "description": "Association de victimes d'inceste : prévention, entraide et plaidoyer pour changer les lois. Sa page « Obtenir de l'aide » recense lignes d'écoute et groupes de parole.",
+    "ville": "Paris et antennes régionales",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://facealinceste.fr"
+      },
+      {
+        "type": "web",
+        "valeur": "https://facealinceste.fr/nos-outils/obtenir-de-l-aide",
+        "label": "Obtenir de l'aide"
+      }
+    ]
+  },
+  {
+    "id": "colosse",
+    "nom": "Colosse aux pieds d'argile",
+    "categorie": "associations",
+    "description": "Lutte contre les violences sexuelles, le harcèlement et le bizutage dans le sport et l'éducation. Accompagne les victimes. Reconnue d'utilité publique.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "email",
+        "valeur": "contact@colosse.fr"
+      },
+      {
+        "type": "web",
+        "valeur": "https://colosse.fr"
+      }
+    ]
+  },
+  {
+    "id": "enfant-bleu",
+    "nom": "L'Enfant Bleu",
+    "categorie": "associations",
+    "description": "Accompagnement des enfants victimes de maltraitance et des adultes qui l'ont été enfants, prévention dans les écoles, constitution de partie civile.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://enfantbleu.org"
+      }
+    ]
+  },
+  {
+    "id": "fondation-enfance",
+    "nom": "Fondation pour l'Enfance",
+    "categorie": "associations",
+    "description": "Fondation de protection de l'enfance : information, prévention et soutien aux projets d'accompagnement des enfants victimes.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.fondation-enfance.org"
+      }
+    ]
+  },
+  {
+    "id": "stop",
+    "nom": "STOP – Ligne de prévention",
+    "categorie": "prevention",
+    "description": "Pour les personnes attirées sexuellement par des enfants qui veulent ne jamais passer à l'acte, et pour leurs proches : écoute confidentielle et orientation vers des soins. Protéger les enfants passe aussi par là.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0806231063",
+        "label": "0 806 23 10 63"
+      },
+      {
+        "type": "web",
+        "valeur": "https://dispositifstop.fr"
+      }
+    ]
+  },
+  {
+    "id": "ciivise",
+    "nom": "CIIVISE",
+    "categorie": "infos",
+    "description": "Commission indépendante sur l'inceste et les violences sexuelles faites aux enfants. Son site rassemble témoignages, rapports et ressources sur les violences subies pendant l'enfance.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.ciivise.fr"
+      }
+    ]
+  },
+  {
+    "id": "classes-sans-suite",
+    "nom": "Classés sans suite",
+    "categorie": "infos",
+    "description": "Plateforme où chacun·e peut déposer anonymement son témoignage de violences sexuelles : plainte classée sans suite, refusée, prescrite, ou pas de plainte du tout. Les témoignages sont anonymisés avant publication.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://classes-sans-suite.com",
+        "label": "Témoigner ou lire les témoignages"
+      }
+    ]
+  },
+  {
+    "id": "app-elles",
+    "nom": "App-Elles",
+    "categorie": "applis",
+    "description": "Application d'alerte : prévenir des proches en un geste, partager le son en temps réel, appeler les secours, trouver les ressources d'aide autour de soi. Gratuite. Portée par l'association Résonantes.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://app-elles.org/fr/",
+        "label": "Découvrir App-Elles"
+      }
+    ]
+  },
+  {
+    "id": "umay",
+    "nom": "UMAY",
+    "categorie": "applis",
+    "description": "Application pour se déplacer en sécurité : partager son trajet avec des proches, trouver l'un des 8 000 lieux refuges « Safe Places », signaler une situation de harcèlement. Gratuite et anonyme.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://umay.fr/",
+        "label": "Découvrir UMAY"
+      }
+    ]
+  },
+  {
+    "id": "the-sorority",
+    "nom": "The Sorority",
+    "categorie": "applis",
+    "description": "Application d'entraide entre femmes et personnes des minorités de genre : alerte envoyée aux utilisatrices les plus proches en cas de danger, carte d'aide, tchat. Gratuite.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.jointhesorority.com/app",
+        "label": "Découvrir The Sorority"
+      }
+    ]
+  },
+  {
+    "id": "memo-de-vie",
+    "nom": "Mémo de vie",
+    "categorie": "applis",
+    "description": "Espace personnel sécurisé pour noter ce qui se passe, garder des documents et des preuves, s'informer et trouver des contacts. Bouton « Vite je quitte ». Gratuit.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.memo-de-vie.org/",
+        "label": "Découvrir Mémo de vie"
+      }
+    ]
+  }
+]

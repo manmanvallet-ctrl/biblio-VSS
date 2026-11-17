@@ -1,0 +1,7 @@
+{
+  "appId": "fr.bibliovss.app",
+  "appName": "Biblio VSS",
+  "webDir": "www",
+  "android": { "backgroundColor": "#f7f5fa" },
+  "ios": { "backgroundColor": "#f7f5fa", "contentInset": "never" }
+}

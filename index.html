@@ -27,6 +27,11 @@
       <div class="search-wrap">
         <input id="search" type="search" placeholder="Rechercher un titre, un auteur, un thème…" autocomplete="off" aria-label="Rechercher">
       </div>
+      <section id="lists-section" class="lists-section" aria-labelledby="lists-title">
+        <h2 id="lists-title" class="section-title">Listes thématiques</h2>
+        <div id="lists" class="lists"></div>
+      </section>
+      <div id="list-banner" class="list-banner" hidden></div>
       <nav id="categories" class="chips" aria-label="Catégories"></nav>
       <div class="filter-row">
         <select id="theme-filter" aria-label="Filtrer par thème">
@@ -37,8 +42,52 @@
           <span>Contenus moins durs</span>
         </label>
       </div>
-      <p id="count" class="count" aria-live="polite"></p>
+      <div class="list-head">
+        <p id="count" class="count" aria-live="polite"></p>
+        <button class="btn btn-small suggest-cta" type="button" data-goto="suggest">＋ Proposer</button>
+      </div>
       <ul id="list" class="cards"></ul>
+    </section>
+
+    <!-- Événements -->
+    <section id="view-events" class="view" aria-label="Événements">
+      <h2 class="view-title">Événements</h2>
+      <p class="hint">Groupes de parole, conférences, projections, marches… près de chez vous.</p>
+      <div class="filter-row">
+        <select id="event-city" aria-label="Filtrer par ville">
+          <option value="">Toutes les villes</option>
+        </select>
+        <select id="event-type" aria-label="Filtrer par type d'événement">
+          <option value="">Tous les types</option>
+        </select>
+      </div>
+      <div class="list-head">
+        <p id="event-count" class="count" aria-live="polite"></p>
+        <button class="btn btn-small" type="button" data-goto="suggest" data-suggest-type="evenement">＋ Proposer un événement</button>
+      </div>
+      <ul id="event-list" class="cards"></ul>
+    </section>
+
+    <!-- Comprendre -->
+    <section id="view-learn" class="view" aria-label="Comprendre">
+      <h2 class="view-title">Comprendre</h2>
+      <p class="hint">Les mots pour dire ce qui s'est passé, ce que dit la loi, et les réactions du corps et de l'esprit.</p>
+      <div id="learn-top">
+      <button class="learn-cta" type="button" data-quiz-open>
+        <strong>Faire le point sur ce que j'ai vécu</strong>
+        <span>Quelques questions pour mettre des mots sur votre situation. Rien n'est enregistré.</span>
+      </button>
+      <div class="search-wrap">
+        <input id="learn-search" type="search" placeholder="Chercher un mot : inceste, consentement…" autocomplete="off" aria-label="Chercher une définition">
+      </div>
+      <h3 class="section-title">Questions fréquentes</h3>
+      <div id="faq-list" class="acc-list"></div>
+        <h3 class="section-title">Rubriques</h3>
+        <div id="learn-home" class="rub-grid"></div>
+      </div>
+      <div id="learn-rub" hidden></div>
+      <div id="def-list"></div>
+      <p class="hint small-print">Textes de loi vérifiés en <span id="learn-maj"></span>. Ces informations ne remplacent pas l'avis d'un·e professionnel·le.</p>
     </section>
 
     <!-- Favoris -->
@@ -48,10 +97,98 @@
       <ul id="fav-list" class="cards"></ul>
     </section>
 
+    <!-- Proposer -->
+    <section id="view-suggest" class="view" aria-label="Proposer une ressource">
+      <h2 class="view-title">Proposer une ressource</h2>
+      <p class="hint">Un livre, un film, un podcast ou un article qui vous a aidé·e ? Proposez-le : chaque proposition est relue avant d'être ajoutée.</p>
+      <form id="suggest-form" class="form" novalidate>
+        <label>Type
+          <select name="categorie" required>
+            <option value="livre">Livre</option>
+            <option value="film">Film</option>
+            <option value="serie">Série</option>
+            <option value="documentaire">Documentaire / reportage</option>
+            <option value="podcast">Podcast</option>
+            <option value="article">Article / rapport</option>
+            <option value="bd">BD</option>
+            <option value="evenement">Événement</option>
+            <option value="association">Association / groupe de parole</option>
+            <option value="autre">Autre</option>
+          </select>
+        </label>
+        <div class="url-fill">
+          <label for="suggest-lien">Lien de la page (facultatif)</label>
+          <div class="url-row">
+            <input id="suggest-lien" name="lien" type="url" inputmode="url" maxlength="500" autocomplete="off"
+              placeholder="Lien SensCritique, Spotify, billetterie…">
+            <button class="btn" type="button" id="url-fill-btn">Remplir</button>
+          </div>
+          <small class="hint-small">Collez un lien : l'application remplit ce qu'elle peut lire (titre, auteur, date, lieu…). Vérifiez avant d'envoyer.</small>
+        </div>
+        <div class="url-fill" data-only="livre bd">
+          <label for="suggest-isbn">Ou le code-barres du livre (ISBN)</label>
+          <div class="url-row">
+            <input id="suggest-isbn" name="isbn" inputmode="numeric" maxlength="17" autocomplete="off" placeholder="978…">
+            <button class="btn" type="button" id="isbn-scan-btn">Scanner</button>
+          </div>
+          <small class="hint-small">Scannez le code-barres au dos du livre, ou tapez les chiffres en dessous.</small>
+        </div>
+        <label><span id="titre-label">Titre</span> <span class="req">*</span>
+          <input name="titre" required maxlength="200" autocomplete="off">
+        </label>
+        <label data-only="evenement">Type d'événement
+          <select name="type_evenement">
+            <option value="">Choisir…</option>
+            <option>Groupe de parole</option>
+            <option>Conférence</option>
+            <option>Table ronde</option>
+            <option>Projection</option>
+            <option>Spectacle / théâtre</option>
+            <option>Marche</option>
+            <option>Rassemblement</option>
+            <option>Atelier</option>
+            <option>Exposition</option>
+            <option>Formation</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <div class="form-pair" data-only="evenement">
+          <label>Date
+            <input name="date" type="date">
+          </label>
+          <label>Heure
+            <input name="heure" type="time">
+          </label>
+        </div>
+        <label data-only="evenement">Lieu
+          <input name="lieu" maxlength="150" autocomplete="off" placeholder="Salle, adresse…">
+        </label>
+        <label data-only="evenement association">Ville
+          <input name="ville" maxlength="100" autocomplete="off">
+        </label>
+        <label data-only="evenement">Organisateur
+          <input name="organisateur" maxlength="150" autocomplete="off">
+        </label>
+        <label data-not="evenement association">Auteur·rice ou réalisateur·rice
+          <input name="auteur" maxlength="200" autocomplete="off">
+        </label>
+        <label data-not="evenement association">Année
+          <input name="annee" inputmode="numeric" maxlength="4" autocomplete="off">
+        </label>
+        <label>Pourquoi le recommandez-vous ?
+          <textarea name="pourquoi" rows="4" maxlength="2000"></textarea>
+        </label>
+        <p class="privacy">🔒 Merci de ne pas écrire d'informations personnelles (nom, adresse, votre histoire). Aucun compte n'est demandé.</p>
+        <button class="btn primary" type="submit">Envoyer la proposition</button>
+        <p id="suggest-status" class="form-status" role="status"></p>
+      </form>
+    </section>
+
     <!-- Aide -->
     <section id="view-help" class="view" aria-label="Aide">
       <h2 class="view-title">Besoin d'aide ?</h2>
       <p class="hint">Vous n'êtes pas seul·e. Ces services sont gratuits et confidentiels.</p>
+      <h3 class="section-title">En cas d'urgence</h3>
       <ul class="help-list">
         <li class="urgent">
           <a href="tel:17"><strong>17</strong> Police / Gendarmerie</a>
@@ -63,46 +200,78 @@
         </li>
         <li>
           <a href="tel:3919"><strong>3919</strong> Violences Femmes Info</a>
-          <small>Écoute anonyme, 24h/24, 7j/7</small>
+          <small>Écoute anonyme et gratuite, 24h/24, 7j/7</small>
         </li>
         <li>
           <a href="tel:119"><strong>119</strong> Allô Enfance en Danger</a>
           <small>Enfants, ados et adultes inquiets pour un enfant, 24h/24</small>
         </li>
-        <li>
-          <a href="tel:0800059595"><strong>0 800 05 95 95</strong> Viols Femmes Informations</a>
-          <small>Collectif Féministe Contre le Viol, appel gratuit</small>
-        </li>
-        <li>
-          <a href="https://arretonslesviolences.gouv.fr" target="_blank" rel="noopener">arretonslesviolences.gouv.fr</a>
-          <small>Signaler en ligne et discuter avec un·e policier·e ou un·e gendarme</small>
-        </li>
-        <li>
-          <a href="https://facealinceste.fr" target="_blank" rel="noopener">Face à l'inceste</a>
-          <small>Association de victimes d'inceste</small>
-        </li>
-        <li>
-          <a href="https://www.memoiretraumatique.org" target="_blank" rel="noopener">Mémoire Traumatique et Victimologie</a>
-          <small>Informations sur le psychotraumatisme</small>
-        </li>
       </ul>
+
+      <a class="testify" href="https://classes-sans-suite.com" target="_blank" rel="noopener">
+        <strong>Témoigner anonymement</strong>
+        <span>Votre plainte a été classée sans suite, refusée, ou vous n'avez pas porté plainte ? Vous pouvez déposer votre témoignage, anonymisé, sur la plateforme <em>Classés sans suite</em>.</span>
+        <span class="testify-cta">Déposer mon témoignage ↗</span>
+      </a>
+
+      <p class="hint apps-hint">Besoin d'alerter des proches, de sécuriser un trajet ou de garder des preuves ? Des applications gratuites le font très bien : voir <button class="link-btn" type="button" data-aide-cat="applis">Applications utiles</button>.</p>
+
+      <h3 class="section-title">Associations, écoute et groupes de parole</h3>
+      <div class="search-wrap">
+        <input id="aide-search" type="search" placeholder="Rechercher (ville, inceste, jeunes…)" autocomplete="off" aria-label="Rechercher dans l'annuaire">
+      </div>
+      <nav id="aide-cats" class="chips" aria-label="Types d'aide"></nav>
+      <ul id="aide-list" class="help-dir"></ul>
+      <p class="hint" style="margin-top:12px">Une association manque ? <button class="link-btn" type="button" data-goto="suggest" data-suggest-type="association">Proposez-la</button>.</p>
+
       <div class="note">
         <h3>Prendre soin de soi</h3>
         <p>Certains contenus peuvent faire remonter des souvenirs difficiles. Vous pouvez arrêter à tout moment. Faites une pause, respirez, parlez-en à une personne de confiance.</p>
         <p>Le bouton <strong>Sortie rapide</strong> (ou deux appuis sur <kbd>Échap</kbd>) ferme l'application immédiatement.</p>
       </div>
+      <p class="hint" style="margin-top:16px"><a href="confidentialite.html">Politique de confidentialité</a> · Aucune donnée collectée, aucun pistage.</p>
     </section>
   </main>
 
   <nav class="tabbar" aria-label="Navigation principale">
-    <button class="tab active" data-view="library" type="button"><span aria-hidden="true">📚</span>Bibliothèque</button>
-    <button class="tab" data-view="favorites" type="button"><span aria-hidden="true">♡</span>Favoris</button>
-    <button class="tab" data-view="help" type="button"><span aria-hidden="true">☎</span>Aide</button>
+    <button class="tab active" data-view="library" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 0 6 21h13"/><path d="M9 7h6"/></svg>Bibliothèque</button>
+    <button class="tab" data-view="events" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M8 13.5h2M14 13.5h2M8 17h2"/></svg>Agenda</button>
+    <button class="tab" data-view="favorites" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Favoris</button>
+    <button class="tab" data-view="learn" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.4v.6"/><path d="M12 16.6h.01"/></svg>Comprendre</button>
+    <button class="tab" data-view="help" type="button"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Aide</button>
   </nav>
 
   <!-- Fiche détaillée -->
   <dialog id="detail" class="sheet" aria-labelledby="detail-title">
     <div class="sheet-body"></div>
+  </dialog>
+
+  <!-- Questionnaire « Faire le point » -->
+  <dialog id="quiz" class="sheet" aria-labelledby="quiz-title">
+    <div class="sheet-body">
+      <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
+      <h2 id="quiz-title">Faire le point</h2>
+      <div id="quiz-body"></div>
+    </div>
+  </dialog>
+
+  <!-- Scan du code-barres -->
+  <dialog id="scan-dialog" class="sheet" aria-labelledby="scan-title">
+    <div class="sheet-body">
+      <h2 id="scan-title">Scanner un livre</h2>
+      <div class="scan-view" id="scan-view">
+        <video id="scan-video" playsinline muted></video>
+        <div class="scan-frame" aria-hidden="true"></div>
+      </div>
+      <p id="scan-status" class="hint" role="status">Placez le code-barres au dos du livre dans le cadre.</p>
+      <label class="btn scan-photo">
+        Prendre une photo du code-barres
+        <input id="scan-file" type="file" accept="image/*" capture="environment" hidden>
+      </label>
+      <div class="btn-row">
+        <button class="btn primary" type="button" data-scan-close>Fermer</button>
+      </div>
+    </div>
   </dialog>
 
   <!-- Avertissement à la première ouverture -->
@@ -112,10 +281,15 @@
       <h2>Avant de commencer</h2>
       <p>Cette bibliothèque rassemble des œuvres et des ressources sur l'<strong>inceste</strong>, le <strong>viol</strong> et les <strong>violences sexuelles</strong>. Certains contenus peuvent être difficiles.</p>
       <p>Chaque fiche indique un niveau d'intensité. Si vous avez besoin de parler, l'onglet <strong>Aide</strong> liste des numéros gratuits et anonymes.</p>
+      <div class="exit-explain">
+        <span class="quick-exit exit-sample" aria-hidden="true">Sortie rapide</span>
+        <p>Si quelqu'un arrive et que vous ne voulez pas qu'il voie l'application, appuyez sur ce bouton rouge, toujours en haut de l'écran. L'application disparaît aussitôt derrière une page neutre, et le bouton Retour ne permet pas d'y revenir.</p>
+      </div>
       <button id="welcome-ok" class="btn primary" type="button">J'ai compris</button>
     </div>
   </dialog>
 
+  <script src="js/config.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

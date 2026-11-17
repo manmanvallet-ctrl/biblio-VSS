@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Biblio VSS</string>
+    <string name="title_activity_main">Biblio VSS</string>
+    <string name="package_name">fr.bibliovss.app</string>
+    <string name="custom_url_scheme">fr.bibliovss.app</string>
+</resources>

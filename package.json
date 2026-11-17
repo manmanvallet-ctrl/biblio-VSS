@@ -1,0 +1,24 @@
+{
+  "name": "biblio-vss",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bibliothèque de ressources sur l'inceste, le viol et les violences sexuelles",
+  "scripts": {
+    "build": "node scripts/build-web.js",
+    "sync": "npm run build && npx cap sync",
+    "android": "npm run sync && npx cap open android",
+    "ios": "npm run sync && npx cap open ios",
+    "apk": "npm run sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.4",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "8.4",
+    "@capacitor/ios": "8.4",
+    "@zxing/library": "^0.21.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.4",
+    "sharp": "^0.34.5"
+  }
+}
