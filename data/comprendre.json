@@ -57,6 +57,17 @@
         "viol",
         "consentement"
       ]
+    },
+    {
+      "id": "quelle-therapie",
+      "question": "Quelle thérapie choisir pour soigner un traumatisme ?",
+      "reponse": "Les thérapies dont l'efficacité est la mieux démontrée sont les psychothérapies centrées sur le trauma : la TCC centrée sur le trauma et l'EMDR. Elles sont recommandées en premier choix par les recommandations internationales et l'Inserm. Cherchez un·e professionnel·le formé·e au psychotraumatisme. D'autres approches peuvent faire du bien, mais en complément.",
+      "voir": [
+        "soins-prouves",
+        "emdr",
+        "tcc-trauma",
+        "trouver-soins"
+      ]
     }
   ],
   "definitions": [
@@ -399,6 +410,83 @@
       "rubrique": "mieux"
     },
     {
+      "id": "soins-prouves",
+      "terme": "Les soins qui ont fait leurs preuves",
+      "rubrique": "mieux",
+      "court": "Deux familles de psychothérapies centrées sur le trauma : la TCC centrée sur le trauma et l'EMDR.",
+      "texte": "Toutes les approches ne se valent pas. Pour le stress post-traumatique, les recommandations internationales (ISTSS, Organisation mondiale de la santé, NICE au Royaume-Uni) et l'Inserm en France s'accordent : les traitements de premier choix sont des psychothérapies centrées sur le trauma, c'est-à-dire qui travaillent directement sur les souvenirs et leurs effets.\n\n• Les thérapies cognitives et comportementales centrées sur le trauma (TCC), dont la thérapie des processus cognitifs, la thérapie cognitive et l'exposition prolongée.\n• L'EMDR (désensibilisation et retraitement par les mouvements oculaires).\n\nChez les enfants et les adolescent·es, ce sont aussi la TCC centrée sur le trauma, souvent avec un parent protecteur, et l'EMDR.\n\nCes thérapies se font avec un·e psychologue, psychiatre ou médecin formé·e et expérimenté·e en psychotraumatisme. Elles demandent un engagement sur plusieurs mois, mais une grande partie des personnes voient leurs symptômes nettement diminuer.",
+      "source": {
+        "label": "ISTSS, recommandations de traitement du TSPT",
+        "url": "https://istss.org/clinical-resources/trauma-treatment/istss-prevention-and-treatment-guidelines/"
+      }
+    },
+    {
+      "id": "tcc-trauma",
+      "terme": "La TCC centrée sur le trauma",
+      "rubrique": "mieux",
+      "court": "Comprendre ses réactions, défaire les pensées comme « c'est ma faute », et revenir pas à pas sur ce qu'on évite.",
+      "texte": "La thérapie cognitive et comportementale centrée sur le trauma combine plusieurs éléments, dans un cadre sécurisant et à votre rythme :\n\n• Comprendre le psychotraumatisme et ses réactions, pour ne plus s'en vouloir.\n• Apprendre à apaiser l'angoisse et les émotions débordantes.\n• Travailler sur les pensées que les violences ont laissées (« c'est de ma faute », « je ne vaux rien », « le monde est dangereux »), souvent semées par l'agresseur.\n• Revenir progressivement sur le souvenir et sur les situations évitées, pour qu'ils perdent leur pouvoir de faire revivre les faits.\n\nLa thérapie des processus cognitifs et l'exposition prolongée sont deux formes de TCC parmi les plus étudiées.",
+      "source": {
+        "label": "Cochrane : psychothérapies du stress post-traumatique",
+        "url": "https://www.cochrane.org/fr/evidence/CD003388_psychological-therapies-chronic-post-traumatic-stress-disorder-ptsd-adults"
+      }
+    },
+    {
+      "id": "emdr",
+      "terme": "L'EMDR",
+      "rubrique": "mieux",
+      "court": "Repenser au souvenir tout en suivant des mouvements, pour que le cerveau le « range » enfin.",
+      "texte": "L'EMDR (de l'anglais « désensibilisation et retraitement par les mouvements oculaires ») est une psychothérapie reconnue pour le stress post-traumatique. Pendant que la personne pense à un souvenir difficile, le ou la thérapeute lui fait suivre des mouvements des yeux, ou utilise des sons ou des tapotements alternés à droite et à gauche.\n\nCela aide le cerveau à retraiter le souvenir traumatique : il reste un souvenir, mais il ne fait plus revivre les faits avec la même intensité. Ce n'est pas de l'hypnose, et on reste conscient·e tout le long. Une séance commence toujours par une préparation et des techniques pour se sentir en sécurité.\n\nPour trouver un·e praticien·ne formé·e : l'annuaire de l'association EMDR France.",
+      "source": {
+        "label": "Inserm : troubles du stress post-traumatique",
+        "url": "https://www.inserm.fr/dossier/troubles-stress-post-traumatique/"
+      }
+    },
+    {
+      "id": "medicaments",
+      "terme": "Les médicaments",
+      "rubrique": "mieux",
+      "court": "Certains antidépresseurs peuvent aider, en complément d'une psychothérapie, sur avis médical.",
+      "texte": "Certains antidépresseurs (de la famille des ISRS, comme la sertraline, la paroxétine ou la fluoxétine, ou la venlafaxine) peuvent diminuer les symptômes du stress post-traumatique, l'anxiété ou la dépression. Ils sont prescrits par un·e médecin, généralement en complément d'une psychothérapie, et non à sa place.\n\nD'autres médicaments peuvent être proposés pour le sommeil ou l'angoisse, sur une courte durée. Ne changez jamais un traitement et ne l'arrêtez jamais d'un coup sans en parler à votre médecin.",
+      "source": {
+        "label": "Revue des recommandations internationales (J. Clin. Med., 2021)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8471692/"
+      }
+    },
+    {
+      "id": "trauma-complexe-soins",
+      "terme": "Après des violences répétées : un soin par étapes",
+      "rubrique": "mieux",
+      "court": "Se stabiliser d'abord, travailler les souvenirs ensuite, puis reconstruire.",
+      "texte": "Quand les violences ont été répétées, par exemple en cas d'inceste (trauma complexe), le soin prend souvent plus de temps et se fait par étapes :\n\n1. Se stabiliser : se sentir en sécurité, apprendre à gérer les émotions débordantes, la dissociation, le sommeil.\n2. Travailler sur les souvenirs traumatiques, avec les thérapies centrées sur le trauma.\n3. Se reconstruire : relations, confiance, projets.\n\nCes étapes ne sont pas toujours dans cet ordre strict, et le ou la thérapeute les adapte à chaque personne.",
+      "source": {
+        "label": "ISTSS, recommandations de traitement du TSPT",
+        "url": "https://istss.org/clinical-resources/trauma-treatment/istss-prevention-and-treatment-guidelines/"
+      }
+    },
+    {
+      "id": "approches-complementaires",
+      "terme": "Les autres approches : en complément",
+      "rubrique": "mieux",
+      "court": "Hypnose, sophrologie, yoga, art-thérapie… peuvent faire du bien, mais ne remplacent pas un soin du trauma.",
+      "texte": "Beaucoup de personnes trouvent du réconfort dans d'autres approches : sophrologie, relaxation, yoga, méditation, art-thérapie, hypnose, activité physique, groupes de parole… Elles peuvent aider à se sentir mieux dans son corps, à mieux dormir ou à apaiser l'angoisse.\n\nMais leur efficacité sur le stress post-traumatique lui-même est moins bien démontrée que celle des thérapies centrées sur le trauma. Elles sont donc utiles en complément, pas à la place.\n\nMéfiez-vous des promesses de guérison rapide, des tarifs très élevés ou de toute pression. Un·e bon·ne thérapeute respecte votre rythme et vos limites, explique sa méthode, et vous laisse libre d'arrêter. Vous avez le droit de changer de thérapeute.",
+      "source": {
+        "label": "ISTSS, recommandations de traitement du TSPT",
+        "url": "https://istss.org/clinical-resources/trauma-treatment/istss-prevention-and-treatment-guidelines/"
+      }
+    },
+    {
+      "id": "trouver-soins",
+      "terme": "Trouver un·e professionnel·le et être remboursé·e",
+      "rubrique": "mieux",
+      "court": "Centres du psychotraumatisme, CMP, psychiatre, Mon soutien psy : plusieurs portes d'entrée.",
+      "texte": "• Votre médecin traitant peut vous orienter, et vous prescrire des séances si besoin.\n• Les centres régionaux du psychotraumatisme (CRP) sont spécialisés et rattachés à des hôpitaux (voir l'onglet Aide).\n• Les centres médico-psychologiques (CMP) sont des structures publiques, sans avance de frais, avec psychiatres et psychologues ; les délais peuvent être longs.\n• Les consultations chez un·e psychiatre sont remboursées par l'Assurance maladie.\n• Mon soutien psy : jusqu'à 12 séances par an chez un·e psychologue partenaire, dès 3 ans, à 50 € la séance, remboursées à 60 % par l'Assurance maladie (le reste par la mutuelle). On peut prendre rendez-vous directement, sans passer par un·e médecin. Ce dispositif vise une souffrance légère à modérée : pour un traumatisme important, un suivi plus long est souvent nécessaire.\n• Les étudiant·es ont aussi droit à des séances gratuites (Santé Psy Étudiant).\n\nDemandez au ou à la professionnel·le s'il ou elle est formé·e au psychotraumatisme (TCC centrée sur le trauma, EMDR). Les associations EMDR France et AFTCC proposent des annuaires.",
+      "source": {
+        "label": "Ameli : Mon soutien psy",
+        "url": "https://www.ameli.fr/assure/remboursements/rembourse/remboursement-seance-psychologue-mon-soutien-psy"
+      }
+    },
+    {
       "id": "plainte",
       "terme": "Porter plainte",
       "court": "Signaler les faits à la justice, au commissariat, à la gendarmerie ou par courrier au procureur.",
@@ -525,7 +613,7 @@
     {
       "id": "mieux",
       "titre": "Aller mieux",
-      "description": "Ce qui aide vraiment, et où trouver des soins.",
+      "description": "Ce qui aide vraiment, les soins qui ont fait leurs preuves, et comment y accéder.",
       "icone": "soleil",
       "format": "liste",
       "etapes": [
@@ -543,7 +631,7 @@
         },
         {
           "titre": "Se faire soigner",
-          "texte": "Le psychotraumatisme se soigne avec des professionnel·les formé·es : centres régionaux du psychotraumatisme, psychologues, médecins."
+          "texte": "Le psychotraumatisme se soigne. Les thérapies centrées sur le trauma (TCC centrée sur le trauma, EMDR) sont celles dont l'efficacité est la mieux démontrée."
         },
         {
           "titre": "Reprendre sa vie",

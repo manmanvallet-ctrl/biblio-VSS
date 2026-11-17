@@ -288,6 +288,30 @@
     ]
   },
   {
+    "id": "annuaires-therapeutes",
+    "nom": "Trouver un·e thérapeute formé·e au trauma",
+    "categorie": "soins",
+    "description": "Annuaires de praticien·nes formé·es à l'EMDR et aux thérapies cognitives et comportementales (TCC), les deux approches dont l'efficacité sur le stress post-traumatique est la mieux démontrée. Et l'annuaire des psychologues partenaires de Mon soutien psy (séances remboursées).",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.emdr-france.org",
+        "label": "EMDR France"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.aftcc.org",
+        "label": "AFTCC (TCC)"
+      },
+      {
+        "type": "web",
+        "valeur": "https://monsoutienpsy.ameli.fr/recherche-psychologue",
+        "label": "Mon soutien psy"
+      }
+    ]
+  },
+  {
     "id": "face-a-linceste",
     "nom": "Face à l'inceste",
     "categorie": "associations",
