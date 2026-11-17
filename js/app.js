@@ -216,13 +216,14 @@
   const libraryType = () => (state.category !== "tout" && CATEGORIES[state.category] ? state.category : "");
 
   function renderSuggestCta() {
-    const btn = $(".suggest-cta");
-    if (!btn) return;
     const t = libraryType();
     const art = { livre: "un", film: "un", serie: "une", documentaire: "un", podcast: "un", article: "un", bd: "une" };
-    btn.textContent = t
-      ? `＋ Proposer ${art[t]} ${CATEGORIES[t].one.toLowerCase()}`
-      : "＋ Proposer un livre, un film, un événement…";
+    document.querySelectorAll(".suggest-cta").forEach((btn) => {
+      const small = btn.classList.contains("btn-small");
+      btn.textContent = t
+        ? `＋ Proposer ${art[t]} ${CATEGORIES[t].one.toLowerCase()}`
+        : small ? "＋ Proposer" : "＋ Proposer un livre, un film, un événement…";
+    });
   }
 
   function renderCategories() {
@@ -646,6 +647,163 @@
     input.addEventListener("change", fill);
   }
 
+  // ---------- Code-barres et ISBN ----------
+  // Recherche d'un livre par son ISBN sur Open Library (sinon Google Livres).
+  const cleanIsbn = (v) => String(v || "").replace(/[^0-9Xx]/g, "").toUpperCase();
+  function validIsbn(isbn) {
+    if (/^97[89]\d{10}$/.test(isbn)) {
+      const sum = [...isbn].reduce((a, d, i) => a + (+d) * (i % 2 ? 3 : 1), 0);
+      return sum % 10 === 0;
+    }
+    if (/^\d{9}[\dX]$/.test(isbn)) {
+      const sum = [...isbn].reduce((a, d, i) => a + (d === "X" ? 10 : +d) * (10 - i), 0);
+      return sum % 11 === 0;
+    }
+    return false;
+  }
+
+  async function lookupIsbn(isbn) {
+    const ol = await getJson(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&jscmd=data&format=json`);
+    const b = ol && ol[`ISBN:${isbn}`];
+    if (b && b.title) {
+      const out = { titre: b.subtitle ? `${b.title} : ${b.subtitle}` : b.title };
+      if (b.authors && b.authors.length) out.auteur = b.authors.map((a) => a.name).join(", ");
+      const y = /(\d{4})/.exec(b.publish_date || "");
+      if (y) out.annee = y[1];
+      return out;
+    }
+    const gb = await getJson(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`);
+    const v = gb && gb.items && gb.items[0] && gb.items[0].volumeInfo;
+    if (v && v.title) {
+      const out = { titre: v.title };
+      if (v.authors) out.auteur = v.authors.join(", ");
+      const y = /(\d{4})/.exec(v.publishedDate || "");
+      if (y) out.annee = y[1];
+      return out;
+    }
+    return null;
+  }
+
+  // Lecture du code-barres : détecteur intégré du navigateur s'il existe,
+  // sinon la bibliothèque ZXing (chargée seulement à ce moment-là).
+  let zxingLoading = null;
+  function loadZxing() {
+    if (window.ZXing) return Promise.resolve(window.ZXing);
+    zxingLoading = zxingLoading || new Promise((resolve, reject) => {
+      const sc = document.createElement("script");
+      sc.src = "js/vendor/zxing.min.js";
+      sc.onload = () => resolve(window.ZXing);
+      sc.onerror = reject;
+      document.head.appendChild(sc);
+    });
+    return zxingLoading;
+  }
+
+  async function makeDecoder() {
+    if ("BarcodeDetector" in window) {
+      try {
+        const formats = await window.BarcodeDetector.getSupportedFormats();
+        if (formats.includes("ean_13")) {
+          const det = new window.BarcodeDetector({ formats: ["ean_13", "ean_8", "upc_a"] });
+          return async (source) => {
+            const codes = await det.detect(source);
+            return codes.length ? codes[0].rawValue : null;
+          };
+        }
+      } catch { /* on passe à ZXing */ }
+    }
+    const Z = await loadZxing();
+    const reader = new Z.MultiFormatReader();
+    const hints = new Map();
+    hints.set(Z.DecodeHintType.POSSIBLE_FORMATS, [Z.BarcodeFormat.EAN_13, Z.BarcodeFormat.EAN_8, Z.BarcodeFormat.UPC_A]);
+    hints.set(Z.DecodeHintType.TRY_HARDER, true);
+    reader.setHints(hints);
+    const canvas = document.createElement("canvas");
+    return async (source) => {
+      const w = source.videoWidth || source.naturalWidth || source.width;
+      const h = source.videoHeight || source.naturalHeight || source.height;
+      if (!w || !h) return null;
+      const scale = Math.min(1, 1280 / Math.max(w, h));
+      canvas.width = Math.round(w * scale);
+      canvas.height = Math.round(h * scale);
+      canvas.getContext("2d", { willReadFrequently: true }).drawImage(source, 0, 0, canvas.width, canvas.height);
+      try {
+        const bmp = new Z.BinaryBitmap(new Z.HybridBinarizer(new Z.HTMLCanvasElementLuminanceSource(canvas)));
+        return reader.decode(bmp).getText();
+      } catch { return null; }
+    };
+  }
+
+  function setupScanner(onIsbn) {
+    const dlg = $("#scan-dialog");
+    const video = $("#scan-video");
+    const status = $("#scan-status");
+    let stream = null, timer = null, decode = null, done = false;
+
+    const stop = () => {
+      clearTimeout(timer);
+      if (stream) stream.getTracks().forEach((t) => t.stop());
+      stream = null;
+      video.srcObject = null;
+    };
+    const found = (code) => {
+      const isbn = cleanIsbn(code);
+      if (!validIsbn(isbn)) return false;
+      done = true;
+      stop();
+      dlg.close();
+      onIsbn(isbn);
+      return true;
+    };
+    const loop = async () => {
+      if (done || !stream) return;
+      try { const code = await decode(video); if (code && found(code)) return; } catch { /* image suivante */ }
+      timer = setTimeout(loop, 250);
+    };
+
+    async function open() {
+      done = false;
+      status.textContent = "Placez le code-barres au dos du livre dans le cadre.";
+      $("#scan-view").hidden = false;
+      dlg.showModal();
+      try { decode = await makeDecoder(); } catch {
+        status.textContent = "La lecture de code-barres n'est pas disponible ici. Tapez l'ISBN à la main.";
+        return;
+      }
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false });
+        video.srcObject = stream;
+        await video.play();
+        loop();
+      } catch {
+        // Caméra refusée ou indisponible : on propose une photo à la place.
+        $("#scan-view").hidden = true;
+        status.textContent = "La caméra n'est pas accessible. Prenez une photo du code-barres, ou tapez l'ISBN.";
+      }
+    }
+
+    $("#scan-file").addEventListener("change", async (e) => {
+      const file = e.target.files && e.target.files[0];
+      e.target.value = "";
+      if (!file) return;
+      status.textContent = "Lecture de la photo…";
+      try {
+        decode = decode || await makeDecoder();
+        const img = new Image();
+        img.src = URL.createObjectURL(file);
+        await img.decode();
+        const code = await decode(img);
+        URL.revokeObjectURL(img.src);
+        if (!(code && found(code))) status.textContent = "Code-barres illisible. Réessayez de plus près, bien à plat, ou tapez l'ISBN.";
+      } catch {
+        status.textContent = "Code-barres illisible. Réessayez, ou tapez l'ISBN.";
+      }
+    });
+    dlg.addEventListener("close", stop);
+    dlg.addEventListener("click", (e) => { if (e.target.closest("[data-scan-close]") || e.target === dlg) dlg.close(); });
+    return open;
+  }
+
   // ---------- Proposer une ressource ----------
   const isPlaceType = (t) => t === "evenement" || t === "association";
 
@@ -665,6 +823,26 @@
     form.setType = (type) => { form.categorie.value = type; syncFields(); };
     setupUrlFill(form, say, syncFields);
 
+    // ISBN : saisi à la main ou scanné
+    const isbnInput = form.isbn;
+    async function fillFromIsbn(raw) {
+      const isbn = cleanIsbn(raw);
+      if (!isbn) return;
+      if (!validIsbn(isbn)) { say("Ce numéro ISBN ne semble pas valide. Vérifiez les chiffres.", "error"); return; }
+      isbnInput.value = isbn;
+      say("Recherche du livre…");
+      const b = await lookupIsbn(isbn);
+      if (!b) { say("Livre introuvable avec cet ISBN. Complétez les champs à la main.", "error"); return; }
+      const filled = [];
+      for (const [k, label] of [["titre", "titre"], ["auteur", "auteur"], ["annee", "année"]]) {
+        if (b[k] && !form[k].value.trim()) { form[k].value = b[k]; filled.push(label); }
+      }
+      say(filled.length ? `Livre trouvé : ${filled.join(", ")} rempli${filled.length > 1 ? "s" : ""}. Vérifiez avant d'envoyer.` : "Livre trouvé : les champs étaient déjà remplis.", "ok");
+    }
+    isbnInput.addEventListener("change", () => fillFromIsbn(isbnInput.value));
+    const openScanner = setupScanner(fillFromIsbn);
+    $("#isbn-scan-btn").addEventListener("click", openScanner);
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
@@ -680,7 +858,7 @@
         `Titre / nom : ${data.titre}`,
         ...(isPlace
           ? [`Date : ${data.date || "-"}`, `Ville : ${data.ville || "-"}`]
-          : [`Auteur·rice : ${data.auteur || "-"}`, `Année : ${data.annee || "-"}`]),
+          : [`Auteur·rice : ${data.auteur || "-"}`, `Année : ${data.annee || "-"}`, ...(data.isbn ? [`ISBN : ${data.isbn}`] : [])]),
         `Lien : ${data.lien || "-"}`,
         "",
         `Pourquoi : ${data.pourquoi || "-"}`,

@@ -47,5 +47,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>La caméra sert uniquement à scanner le code-barres d'un livre pour le proposer. Aucune image n'est enregistrée ni envoyée.</string>
 </dict>
 </plist>
