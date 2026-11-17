@@ -205,7 +205,21 @@
       : `<li class="empty">Aucun favori pour l'instant. Appuyez sur ♡ pour en ajouter.</li>`;
   }
 
+  // Catégorie ouverte dans la bibliothèque (pour pré-remplir « Proposer »)
+  const libraryType = () => (state.category !== "tout" && CATEGORIES[state.category] ? state.category : "");
+
+  function renderSuggestCta() {
+    const btn = $(".suggest-cta");
+    if (!btn) return;
+    const t = libraryType();
+    const art = { livre: "un", film: "un", serie: "une", documentaire: "un", podcast: "un", article: "un", bd: "une" };
+    btn.textContent = t
+      ? `＋ Proposer ${art[t]} ${CATEGORIES[t].one.toLowerCase()}`
+      : "＋ Proposer un livre, un film, un événement…";
+  }
+
   function renderCategories() {
+    renderSuggestCta();
     const counts = state.items.reduce((acc, it) => ((acc[it.categorie] = (acc[it.categorie] || 0) + 1), acc), {});
     $("#categories").innerHTML = Object.entries(CATEGORIES)
       .filter(([key]) => key === "tout" || counts[key])
@@ -418,6 +432,212 @@
       </li>`).join("") : `<li class="empty">Aucun résultat dans l'annuaire.</li>`;
   }
 
+  // ---------- Remplissage automatique depuis un lien ----------
+  // Les navigateurs interdisent de lire directement une autre page web : on passe
+  // par Microlink (service gratuit qui lit les métadonnées publiques d'une page).
+  // Seul le lien lui est envoyé. Si le service ne répond pas, on devine ce qu'on
+  // peut à partir de l'adresse elle-même.
+  const METADATA_API = "https://api.microlink.io/?url=";
+  const SC_TYPES = { film: "film", serie: "serie", livre: "livre", bd: "bd" };
+  const capitalize = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+
+  function guessFromUrl(url) {
+    let u;
+    try { u = new URL(url); } catch { return null; }
+    const host = u.hostname.replace(/^www\./, "");
+    const parts = u.pathname.split("/").filter(Boolean);
+    const out = {};
+    if (host === "senscritique.com" && SC_TYPES[parts[0]]) {
+      out.categorie = SC_TYPES[parts[0]];
+      if (parts[1]) out.titre = capitalize(decodeURIComponent(parts[1]).replace(/_/g, " "));
+    } else if (/(^|\.)(spotify\.com|ausha\.co|podcasters\.spotify\.com)$/.test(host) && /show|episode|podcast/.test(u.pathname)) {
+      out.categorie = "podcast";
+    } else if (host === "podcasts.apple.com" || (host === "deezer.com" && /show|episode/.test(u.pathname))) {
+      out.categorie = "podcast";
+    } else if (host === "radiofrance.fr" && parts.includes("podcasts")) {
+      out.categorie = "podcast";
+    } else if (host === "allocine.fr") {
+      if (parts[0] === "film") out.categorie = "film";
+      if (parts[0] === "series") out.categorie = "serie";
+    } else if (host === "babelio.com" && parts[0] === "livres") {
+      out.categorie = "livre";
+    }
+    return out;
+  }
+
+  function parseMetadata(url, d) {
+    const out = {};
+    const title = String(d.title || "").trim();
+    const desc = String(d.description || "").trim();
+    // SensCritique : « Festen - Film (1998) - SensCritique » et « … est un film de Thomas Vinterberg. »
+    const sc = /^(.*?) - (Film|Série|Livre|BD|Documentaire(?: TV)?|Court-métrage)(?: \((\d{4})\))? - SensCritique$/.exec(title);
+    if (sc) {
+      out.titre = sc[1];
+      if (sc[3]) out.annee = sc[3];
+      if (/^Documentaire/.test(sc[2])) out.categorie = "documentaire";
+      const by = /est une? (?:film|série|livre|bd|documentaire)[^.]*? de (.+?)\.(?:\s|$)/i.exec(desc);
+      if (by) out.auteur = by[1].replace(/ et /g, ", ");
+    } else if (title) {
+      // Retire le nom du site en fin de titre (« Titre | Site », « Titre - Site »)
+      let t = title;
+      const site = String(d.publisher || "").trim();
+      if (site) t = t.replace(new RegExp(`\\s*[|–—-]\\s*${site.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`, "i"), "");
+      const y = /\((19|20)\d{2}\)/.exec(t);
+      if (y) { out.annee = y[0].slice(1, 5); t = t.replace(y[0], "").trim(); }
+      out.titre = t;
+      if (d.author && !/^https?:/.test(d.author)) out.auteur = String(d.author);
+    }
+    return out;
+  }
+
+  async function getJson(url, ms = 8000, headers) {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), ms);
+    try {
+      const res = await fetch(url, { signal: ctrl.signal, headers });
+      return res.ok ? await res.json() : null;
+    } catch { return null; } finally { clearTimeout(timer); }
+  }
+
+  async function fetchMetadata(url) {
+    const json = await getJson(METADATA_API + encodeURIComponent(url));
+    return json && json.status === "success" ? json.data : null;
+  }
+
+  // Wikidata : base de données ouverte de Wikipédia (titre exact, auteur·rice, année).
+  const WD = "https://www.wikidata.org/w/api.php?format=json&origin=*&uselang=fr&";
+  // Identification demandée par Wikimedia aux applications web
+  const wdJson = (q) => getJson(WD + q, 8000, { "Api-User-Agent": "BiblioVSS/1.0 (application de ressources sur les violences sexuelles)" });
+  const WD_DESC = {
+    film: /film|documentaire|long métrage/i,
+    documentaire: /documentaire/i,
+    serie: /série|feuilleton|mini-série/i,
+    livre: /livre|roman|essai|récit|autobiograph|œuvre littéraire|ouvrage/i,
+    bd: /bande dessinée|roman graphique|\bBD\b|comics/i,
+    podcast: /podcast/i,
+  };
+  const WD_AUTHOR = { film: ["P57"], documentaire: ["P57"], serie: ["P170", "P57"], livre: ["P50"], bd: ["P50", "P170"], podcast: ["P170", "P50"] };
+  const claimIds = (ent, prop) => ((ent.claims || {})[prop] || [])
+    .map((c) => c.mainsnak && c.mainsnak.datavalue && c.mainsnak.datavalue.value)
+    .filter(Boolean);
+
+  async function fromWikidata(title, type) {
+    if (!title) return null;
+    const search = await wdJson(`action=wbsearchentities&type=item&language=fr&limit=8&search=${encodeURIComponent(title)}`);
+    const hits = (search && search.search) || [];
+    const re = WD_DESC[type] || /./;
+    const hit = hits.find((h) => re.test(h.description || ""));
+    if (!hit) return null;
+    const ents = await wdJson(`action=wbgetentities&props=labels|claims&languages=fr|en&ids=${hit.id}`);
+    const ent = ents && ents.entities && ents.entities[hit.id];
+    if (!ent) return null;
+    const out = { titre: (ent.labels.fr || ent.labels.en || {}).value || hit.label };
+    if (/documentaire/i.test(hit.description || "") && (type === "film" || type === "documentaire")) out.categorie = "documentaire";
+    // Année : date de sortie en France si elle est indiquée (qualificatif
+    // « lieu de publication » = France), sinon la plus ancienne date de
+    // publication (P577) ou de début (P580).
+    const yearOf = (v) => { const m = /([+-]\d{4})/.exec((v && v.time) || ""); return m ? +m[1] : null; };
+    const pub = (ent.claims && ent.claims.P577) || [];
+    const fr = pub.find((c) => ((c.qualifiers || {}).P291 || [])
+      .some((q) => q.datavalue && q.datavalue.value && q.datavalue.value.id === "Q142"));
+    const years = [...claimIds(ent, "P577"), ...claimIds(ent, "P580")].map(yearOf).filter(Boolean);
+    const frYear = fr && fr.mainsnak && fr.mainsnak.datavalue && yearOf(fr.mainsnak.datavalue.value);
+    if (frYear) out.annee = String(frYear);
+    else if (years.length) out.annee = String(Math.min(...years));
+    const peopleIds = [];
+    for (const prop of WD_AUTHOR[type] || ["P50", "P57"]) {
+      peopleIds.push(...claimIds(ent, prop).map((v) => v.id).filter(Boolean));
+      if (peopleIds.length) break;
+    }
+    if (peopleIds.length) {
+      const ppl = await wdJson(`action=wbgetentities&props=labels&languages=fr|en&ids=${peopleIds.slice(0, 4).join("|")}`);
+      const names = peopleIds.slice(0, 4).map((id) => {
+        const e = ppl && ppl.entities && ppl.entities[id];
+        return e && ((e.labels.fr || e.labels.en || {}).value);
+      }).filter(Boolean);
+      if (names.length) out.auteur = names.join(", ");
+    }
+    return out;
+  }
+
+  // Podcasts : services officiels de Spotify et d'Apple
+  async function fromPodcastUrl(url) {
+    const u = new URL(url);
+    const host = u.hostname.replace(/^www\./, "");
+    if (host === "open.spotify.com") {
+      const o = await getJson(`https://open.spotify.com/oembed?url=${encodeURIComponent(url)}`);
+      return o && o.title ? { titre: o.title, categorie: "podcast" } : null;
+    }
+    if (host === "podcasts.apple.com") {
+      const id = /\/id(\d+)/.exec(u.pathname);
+      if (!id) return null;
+      const r = await getJson(`https://itunes.apple.com/lookup?id=${id[1]}&entity=podcast`);
+      const x = r && r.results && r.results.find((it) => it.kind === "podcast" || it.wrapperType === "podcast");
+      if (!x) return null;
+      // Pas d'année : Apple donne la date du dernier épisode, pas celle du lancement.
+      return { titre: x.collectionName || x.trackName, auteur: x.artistName, categorie: "podcast" };
+    }
+    return null;
+  }
+
+  // Combine les sources, de la plus fiable à la plus générale.
+  async function resolveUrl(url) {
+    const guess = guessFromUrl(url) || {};
+    let found = { ...guess };
+    const podcast = await fromPodcastUrl(url);
+    if (podcast) found = { ...found, ...podcast };
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    if (!podcast && host !== "senscritique.com") {
+      // SensCritique bloque les lecteurs automatiques : on passe directement à Wikidata.
+      const meta = await fetchMetadata(url);
+      if (meta) found = { ...found, ...parseMetadata(url, meta) };
+    }
+    if (found.titre && found.categorie && (!found.auteur || !found.annee || host === "senscritique.com")) {
+      const wd = await fromWikidata(found.titre, found.categorie);
+      if (wd) {
+        // Le titre Wikidata a les accents corrects ; pour le reste, on complète.
+        found = { ...found, ...wd, ...(found.auteur ? { auteur: found.auteur } : {}), ...(found.annee ? { annee: found.annee } : {}) };
+        if (host === "senscritique.com") found.titre = wd.titre || found.titre;
+      }
+    }
+    return found;
+  }
+
+  function setupUrlFill(form, say, syncFields) {
+    const input = form.lien;
+    const btn = $("#url-fill-btn");
+    let lastUrl = "";
+    const LABELS = { categorie: "type", titre: "titre", auteur: "auteur", annee: "année" };
+
+    async function fill() {
+      const url = input.value.trim();
+      if (!safeUrl(url)) { say("Collez un lien complet qui commence par https://", "error"); return; }
+      if (url === lastUrl) return;
+      lastUrl = url;
+      btn.disabled = true;
+      say("Lecture de la page…");
+      let found = {};
+      try { found = await resolveUrl(url); } catch { found = guessFromUrl(url) || {}; }
+      const filled = [];
+      if (found.categorie && form.categorie.value !== found.categorie) {
+        form.categorie.value = found.categorie;
+        syncFields();
+      }
+      if (found.categorie) filled.push(LABELS.categorie);
+      for (const k of ["titre", "auteur", "annee"]) {
+        // On ne remplace jamais ce que la personne a déjà écrit.
+        if (found[k] && form[k] && !form[k].value.trim()) { form[k].value = found[k]; filled.push(LABELS[k]); }
+      }
+      btn.disabled = false;
+      if (filled.length) say(`Rempli à partir du lien : ${filled.join(", ")}. Vérifiez avant d'envoyer.`, "ok");
+      else say("Impossible de lire cette page. Complétez les champs à la main.", "error");
+    }
+
+    btn.addEventListener("click", () => { lastUrl = ""; fill(); });
+    input.addEventListener("paste", () => setTimeout(fill, 0));
+    input.addEventListener("change", fill);
+  }
+
   // ---------- Proposer une ressource ----------
   const isPlaceType = (t) => t === "evenement" || t === "association";
 
@@ -435,6 +655,7 @@
     form.categorie.addEventListener("change", syncFields);
     syncFields();
     form.setType = (type) => { form.categorie.value = type; syncFields(); };
+    setupUrlFill(form, say, syncFields);
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -470,6 +691,7 @@
           if (!res.ok) throw new Error(res.status);
           form.reset();
           syncFields();
+          renderSuggestCta();
           say("Merci ! Votre proposition a bien été envoyée.", "ok");
         } catch {
           say("L'envoi n'a pas fonctionné. Vérifiez votre connexion et réessayez.", "error");
@@ -522,7 +744,8 @@
 
     const go = e.target.closest("[data-goto]");
     if (go) {
-      if (go.dataset.suggestType) $("#suggest-form").setType(go.dataset.suggestType);
+      const type = go.dataset.suggestType || (go.dataset.goto === "suggest" ? libraryType() : "");
+      if (type) $("#suggest-form").setType(type);
       showView(go.dataset.goto);
       return;
     }
@@ -544,7 +767,10 @@
     if (reveal) reveal.classList.add("shown");
 
     const tab = e.target.closest(".tab");
-    if (tab) showView(tab.dataset.view);
+    if (tab) {
+      if (tab.dataset.view === "suggest" && libraryType()) $("#suggest-form").setType(libraryType());
+      showView(tab.dataset.view);
+    }
   });
 
   document.addEventListener("keydown", (e) => {

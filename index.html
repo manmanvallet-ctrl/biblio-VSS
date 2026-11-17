@@ -89,6 +89,15 @@
             <option value="autre">Autre</option>
           </select>
         </label>
+        <div class="url-fill">
+          <label for="suggest-lien">Lien de la page (facultatif)</label>
+          <div class="url-row">
+            <input id="suggest-lien" name="lien" type="url" inputmode="url" maxlength="500" autocomplete="off"
+              placeholder="Collez un lien SensCritique, Spotify, Babelio…">
+            <button class="btn" type="button" id="url-fill-btn">Remplir</button>
+          </div>
+          <small class="hint-small">Collez un lien : le titre, l'auteur et l'année se remplissent tout seuls. Vérifiez-les avant d'envoyer.</small>
+        </div>
         <label><span id="titre-label">Titre</span> <span class="req">*</span>
           <input name="titre" required maxlength="200" autocomplete="off">
         </label>
@@ -103,9 +112,6 @@
         </label>
         <label data-not="evenement association">Année
           <input name="annee" inputmode="numeric" maxlength="4" autocomplete="off">
-        </label>
-        <label>Lien (facultatif)
-          <input name="lien" type="url" maxlength="500" placeholder="https://…" autocomplete="off">
         </label>
         <label>Pourquoi le recommandez-vous ?
           <textarea name="pourquoi" rows="4" maxlength="2000"></textarea>
