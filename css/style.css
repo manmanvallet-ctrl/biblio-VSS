@@ -12,10 +12,15 @@
   --lvl3: #b23b3b;
   --radius: 14px;
   --tabbar-h: 64px;
+  --sc-bg: #fff4c2;
+  --sc-fg: #6b4e00;
+  --sc-border: #f0d77a;
+  --on-accent: #ffffff;
 }
 
+/* Thème sombre : suit le téléphone, sauf si un thème clair/sombre est imposé */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #16131b;
     --surface: #221e29;
     --text: #eee9f4;
@@ -23,7 +28,26 @@
     --border: #353040;
     --accent: #b596e6;
     --accent-soft: #33284a;
+    --sc-bg: #3a3214;
+    --sc-fg: #f3d873;
+    --sc-border: #5c4f1c;
+    --on-accent: #1b1325;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --bg: #16131b;
+  --surface: #221e29;
+  --text: #eee9f4;
+  --muted: #a49cb0;
+  --border: #353040;
+  --accent: #b596e6;
+  --accent-soft: #33284a;
+  --sc-bg: #3a3214;
+  --sc-fg: #f3d873;
+  --sc-border: #5c4f1c;
+  --on-accent: #1b1325;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -101,7 +125,7 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   font-size: .9rem;
   cursor: pointer;
 }
-.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.active { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
 .filter-row {
   display: flex;
@@ -230,7 +254,7 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   font-size: 1rem;
   cursor: pointer;
 }
-.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); width: 100%; }
+.btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); width: 100%; }
 .btn-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
 .btn-row .btn { flex: 1; text-align: center; text-decoration: none; }
 
@@ -357,7 +381,7 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   padding: 6px 0;
   border-radius: 10px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   text-align: center;
   font-size: .75rem;
   line-height: 1.1;
@@ -402,9 +426,9 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   font-weight: 700;
   padding: 2px 7px;
   border-radius: 999px;
-  background: #fff4c2;
-  color: #6b4e00;
-  border: 1px solid #f0d77a;
+  background: var(--sc-bg);
+  color: var(--sc-fg);
+  border: 1px solid var(--sc-border);
 }
 .sc-row {
   display: flex;

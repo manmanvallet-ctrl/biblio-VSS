@@ -36,8 +36,12 @@
   };
   const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
 
-  // Date du dernier relevé des notes SensCritique (mises à jour à la main).
-  const SC_DATE = "novembre 2026";
+  // Date du relevé SensCritique ("AAAA-MM"), mise à jour chaque mois par
+  // scripts/maj-notes-senscritique.js
+  const scDate = (it) => {
+    const m = /^(\d{4})-(\d{2})$/.exec((it.senscritique && it.senscritique.releve) || "");
+    return m ? new Date(+m[1], +m[2] - 1, 1).toLocaleDateString("fr-FR", { month: "long", year: "numeric" }) : "";
+  };
   const scNote = (it) => it.senscritique && typeof it.senscritique.note === "number"
     ? it.senscritique.note.toFixed(1).replace(".", ",") : null;
   const scBadge = (it) => scNote(it)
@@ -229,8 +233,8 @@
     const sc = it.senscritique && safeUrl(it.senscritique.url);
     const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
         ${scNote(it) ? `<span class="sc-badge sc-badge-l">${scNote(it)}<small>/10</small></span>
-        <span>Note moyenne SensCritique${it.senscritique.votes ? ` · ${escapeHtml(it.senscritique.votes)} notes` : ""}<br>
-        <small>Relevée en ${SC_DATE} · Voir sur SensCritique ↗</small></span>`
+        <span>Note moyenne SensCritique<br>
+        <small>${scDate(it) ? `Relevée en ${scDate(it)} · ` : ""}Voir sur SensCritique ↗</small></span>`
         : `<span>Pas encore assez de notes sur SensCritique<br><small>Voir la page ↗</small></span>`}
       </a>` : "";
     const dlg = $("#detail");

@@ -75,6 +75,20 @@ Dans `data/evenements.json` (vide au départ) :
 - Les événements passés disparaissent tout seuls. La liste des villes du filtre se construit automatiquement.
 - Écrivez toujours la ville de la même façon (« Lyon », pas « lyon »), sinon elle apparaîtra deux fois.
 
+### Veille automatique des événements
+
+Chaque semaine, une tâche planifiée cherche de nouveaux événements à partir des mots-clés de `veille/mots-cles.md`, vérifie chacun sur sa page d'origine, puis propose les nouveautés dans une **pull request** à relire avant publication. Pour changer les sujets, les villes ou les sources surveillées, modifiez simplement ce fichier.
+
+## Mettre à jour les notes SensCritique
+
+Elles se mettent à jour **automatiquement le 1er de chaque mois** (`.github/workflows/notes-senscritique.yml`, qui lance `scripts/maj-notes-senscritique.js`). Pour lancer une mise à jour tout de suite : onglet **Actions** du dépôt → **Notes SensCritique** → **Run workflow**. Ou en local :
+
+```bash
+node scripts/maj-notes-senscritique.js
+```
+
+Pour ajouter une note à une nouvelle fiche, il suffit d'y mettre le lien de sa page : `"senscritique": { "url": "https://www.senscritique.com/film/…" }`. La note apparaîtra à la mise à jour suivante.
+
 ## Compléter l'annuaire d'aide
 
 Il est dans `data/aide.json`. Chaque entrée a une catégorie (`ecoute`, `jeunes`, `groupes`, `associations`, `soins`, `demarches`, `prevention`, `infos`), une ville ou zone, une description, des horaires facultatifs et des contacts :
@@ -89,16 +103,6 @@ Il est dans `data/aide.json`. Chaque entrée a une catégorie (`ecoute`, `jeunes
 ```
 
 ⚠️ Vérifiez chaque numéro sur le site officiel de l'association avant de l'ajouter : une erreur peut empêcher quelqu'un d'obtenir de l'aide. Les urgences (17, 114, 3919, 119) sont écrites directement dans `index.html` pour toujours s'afficher.
-
-## Mettre à jour les notes SensCritique
-
-SensCritique n'a pas d'API publique : les notes sont relevées à la main (dernier relevé : novembre 2026) et stockées dans chaque fiche :
-
-```json
-"senscritique": { "note": 7.8, "votes": "10,1 k", "url": "https://www.senscritique.com/film/…" }
-```
-
-Pour une mise à jour, corrigez les notes puis la date `SC_DATE` en haut de `js/app.js`. Sans `note`, la fiche affiche seulement un lien vers la page SensCritique.
 
 ## Recevoir les propositions
 
@@ -119,4 +123,11 @@ Puis ouvrez http://localhost:8000.
 
 ## Mettre en ligne (gratuit)
 
-Sur GitHub : **Settings → Pages → Branch** : choisissez la branche et le dossier `/ (root)`. L'application sera disponible à l'adresse `https://<compte>.github.io/biblio-VSS/`. Sur le téléphone, ouvrez cette adresse puis « Ajouter à l'écran d'accueil ».
+La version navigateur est publiée automatiquement sur **GitHub Pages** à chaque modification de la branche `main` (`.github/workflows/site.yml`). À faire une seule fois :
+
+1. Sur GitHub : **Settings → Pages → Source** : choisissez **GitHub Actions**.
+2. L'application est alors disponible à l'adresse `https://<compte>.github.io/biblio-VSS/`.
+
+Sur le téléphone, ouvrez cette adresse puis « Ajouter à l'écran d'accueil » : elle s'installe comme une application et fonctionne hors-ligne.
+
+GitHub Pages gratuit demande un dépôt **public**. Si le dépôt doit rester privé, d'autres hébergeurs gratuits (Netlify, Cloudflare Pages) peuvent publier le dossier `www/` produit par `npm run build`.
