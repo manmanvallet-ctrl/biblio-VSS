@@ -530,3 +530,10 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .chips-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
 .help-list.compact li { padding: 10px 12px; }
 .chips-wrap .chip { flex: 0 1 auto; white-space: normal; text-align: left; max-width: 100%; }
+
+/* Formulaires : les lignes gardent leur taille naturelle (pas d'étirement),
+   les zones de texte ne se redimensionnent qu'en hauteur et grandissent avec le texte. */
+.form { align-content: start; align-items: start; }
+.form > * { min-width: 0; }
+.form textarea { resize: vertical; min-height: 96px; max-width: 100%; field-sizing: content; max-height: 60vh; }
+.form [type="submit"] { align-self: start; height: auto; }

@@ -292,6 +292,17 @@
     if (!dlg.open) dlg.showModal();
   }
 
+  // Zones de texte qui s'agrandissent avec le contenu (pour les navigateurs
+  // qui ne gèrent pas encore « field-sizing: content »).
+  if (!CSS.supports || !CSS.supports("field-sizing", "content")) {
+    document.addEventListener("input", (e) => {
+      const t = e.target;
+      if (t.tagName !== "TEXTAREA" || !t.closest(".form")) return;
+      t.style.height = "auto";
+      t.style.height = Math.min(t.scrollHeight + 2, window.innerHeight * 0.6) + "px";
+    });
+  }
+
   // ---------- Événements ----------
   const todayIso = () => {
     const d = new Date();
