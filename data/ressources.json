@@ -793,5 +793,117 @@
     "lien": "https://editions.flammarion.com/et-la-joie-de-vivre/9782080497260",
     "image": "images/livre-pelicot.jpg",
     "image_credit": "Open Library"
+  },
+  {
+    "id": "guide-fdfa-falc",
+    "titre": "Que faire en cas de violences ?",
+    "auteur": "Femmes pour le Dire, Femmes pour Agir (FDFA)",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "handicap",
+      "FALC",
+      "consentement",
+      "agression sexuelle"
+    ],
+    "resume": "Guide court (14 pages) en FALC, Facile à lire et à comprendre, pour les femmes en situation de handicap, leurs proches et les professionnel·les. Il aide à reconnaître les violences, y compris celles liées au handicap (moqueries, décisions prises à la place de la personne, privation d'aides ou d'outils), explique la dépendance à l'agresseur et le consentement, et donne les contacts utiles.",
+    "intensite": 1,
+    "lien": "https://fdfa.fr/wp-content/uploads/2025/08/Guide-violence-FSH-_FDFA.pdf",
+    "image": "images/guide-fdfa-falc.jpg",
+    "image_credit": "handicap.fr"
+  },
+  {
+    "id": "livret-creai-handicap",
+    "titre": "Violences sexistes et sexuelles & handicap",
+    "auteur": "CREAI Bourgogne-Franche-Comté",
+    "annee": 2026,
+    "categorie": "article",
+    "themes": [
+      "handicap",
+      "institutions",
+      "agression sexuelle",
+      "recherche"
+    ],
+    "resume": "Livret de sensibilisation tiré d'une étude menée dans quatre établissements médico-sociaux, avec des professionnel·les et des personnes accompagnées. Il rappelle que les femmes en situation de handicap déclarent deux fois plus de violences sexuelles (DREES, 2020) et montre comment ces violences restent souvent invisibles en institution.",
+    "intensite": 2,
+    "lien": "https://www.creaibfc.org/wp-content/uploads/2026_09_Livret_VSS.pdf"
+  },
+  {
+    "id": "violentometre-falc",
+    "titre": "Le violentomètre en FALC",
+    "auteur": "Centre de Ressources Handicaps et Sexualités (CRHS, Belgique)",
+    "categorie": "article",
+    "themes": [
+      "handicap",
+      "FALC",
+      "relations",
+      "emprise"
+    ],
+    "resume": "Le violentomètre réécrit en Facile à lire et à comprendre : une règle graduée, du vert au rouge, pour savoir si une relation amoureuse est saine ou dangereuse.",
+    "intensite": 1,
+    "lien": "https://violences-sexuelles.info/portfolio/violentometre-facile-a-lire-et-a-comprendre-falc/"
+  },
+  {
+    "id": "livre-domination-oubliee",
+    "titre": "La domination oubliée. Politiser les rapports adulte-enfant",
+    "auteur": "Tal Piterbraut-Merx",
+    "annee": 2024,
+    "categorie": "livre",
+    "themes": [
+      "adultisme",
+      "enfance",
+      "inceste",
+      "essai"
+    ],
+    "resume": "Essai de philosophie politique publié aux éditions Blast. L'auteur y montre que les violences faites aux enfants, dont l'inceste, ne sont pas des accidents isolés mais la partie visible d'une domination structurelle des adultes sur les enfants, dans la famille comme à l'école.",
+    "intensite": 1,
+    "image_url": "https://static1.squarespace.com/static/671935f69302aa03f9ea9334/671d5bbe52c1de70e13dfa98/671d5bbe52c1de70e13dfac1/1787923902976/1e_Tal_def.png?format=750w",
+    "image": "images/livre-domination-oubliee.jpg",
+    "image_credit": "static1.squarespace.com"
+  },
+  {
+    "id": "art-conversation-domination-enfants",
+    "titre": "La domination des enfants par les adultes selon le philosophe Tal Piterbraut-Merx",
+    "auteur": "The Conversation",
+    "annee": 2024,
+    "categorie": "article",
+    "themes": [
+      "adultisme",
+      "enfance",
+      "essai"
+    ],
+    "resume": "Une présentation accessible des idées de La domination oubliée : pourquoi parler de domination adulte, et ce que cela change pour comprendre les violences faites aux enfants et aux adolescent·es.",
+    "intensite": 1,
+    "lien": "https://theconversation.com/la-domination-des-enfants-par-les-adultes-selon-le-philosophe-tal-piterbraut-merx-242517"
+  },
+  {
+    "id": "art-lemonde-adultisme",
+    "titre": "L'« adultisme », le système de domination des enfants",
+    "auteur": "Le Monde",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "adultisme",
+      "enfance",
+      "inceste"
+    ],
+    "resume": "Enquête sur la notion d'adultisme, de plus en plus utilisée par les militant·es des droits de l'enfant : un système où l'enfant « appartient » à l'adulte, et qui, selon les personnes interrogées, ouvre la porte à toutes les violences, psychologiques, physiques et sexuelles. Article réservé aux abonné·es.",
+    "intensite": 1,
+    "lien": "https://www.lemonde.fr/idees/article/2025/06/18/l-adultisme-le-systeme-de-domination-des-enfants_6614155_3232.html"
+  },
+  {
+    "id": "livre-enfantisme-bourdille",
+    "titre": "Enfantisme, il est temps de respecter les enfants",
+    "auteur": "Claire Bourdille",
+    "categorie": "livre",
+    "themes": [
+      "adultisme",
+      "enfance",
+      "essai"
+    ],
+    "resume": "Essai paru aux éditions La Mer Salée, écrit par la fondatrice du Collectif Enfantiste, pour découvrir l'enfantisme, le mouvement qui lutte contre l'adultisme comme le féminisme lutte contre le sexisme : violences éducatives ordinaires, parole des enfants, place de l'enfant que l'on a été. L'autrice le présente dans le podcast Basilic (juillet 2026).",
+    "intensite": 1,
+    "lien": "https://basilicpodcast.com/enfantisme-une-lutte-encore-trop-meconnue/",
+    "annee": 2025
   }
 ]

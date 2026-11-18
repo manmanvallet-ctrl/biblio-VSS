@@ -104,5 +104,28 @@
       "hunting-ground",
       "choses-humaines-film"
     ]
+  },
+  {
+    "id": "handicap",
+    "titre": "Handicap et violences sexuelles",
+    "description": "Des guides faciles à lire et une étude pour reconnaître les violences faites aux personnes en situation de handicap.",
+    "couleur": "#3d6fa8",
+    "ressources": [
+      "guide-fdfa-falc",
+      "violentometre-falc",
+      "livret-creai-handicap"
+    ]
+  },
+  {
+    "id": "adultisme",
+    "titre": "Adultisme et enfantisme",
+    "description": "Comprendre la domination des adultes sur les enfants, et ce qu'elle dit du silence autour de l'inceste.",
+    "couleur": "#a0632b",
+    "ressources": [
+      "art-conversation-domination-enfants",
+      "livre-domination-oubliee",
+      "art-lemonde-adultisme",
+      "livre-enfantisme-bourdille"
+    ]
   }
 ]

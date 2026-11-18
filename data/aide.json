@@ -79,6 +79,30 @@
     ]
   },
   {
+    "id": "fdfa-ecoute",
+    "nom": "Écoute Violences Femmes Handicapées (FDFA)",
+    "categorie": "ecoute",
+    "description": "La seule ligne d'écoute en France dédiée aux femmes en situation de handicap victimes de violences, ouverte aussi à leurs proches et aux professionnel·les qui les accompagnent. Appel anonyme et non surtaxé. Les femmes sourdes ou malentendantes peuvent écrire par e-mail.",
+    "horaires": "Lundi 10h–13h et 14h30–17h30 ; mardi, mercredi et jeudi 10h–13h",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "tel",
+        "valeur": "0140470606",
+        "label": "01 40 47 06 06"
+      },
+      {
+        "type": "email",
+        "valeur": "ecoute@fdfa.fr"
+      },
+      {
+        "type": "web",
+        "valeur": "https://ecoute-violences-femmes-handicapees.fr/",
+        "label": "Site de la ligne d'écoute"
+      }
+    ]
+  },
+  {
     "id": "119",
     "nom": "119 – Allô Enfance en Danger",
     "categorie": "jeunes",
@@ -414,6 +438,20 @@
         "type": "web",
         "valeur": "https://classes-sans-suite.com",
         "label": "Témoigner ou lire les témoignages"
+      }
+    ]
+  },
+  {
+    "id": "collectif-enfantiste",
+    "nom": "Collectif Enfantiste",
+    "categorie": "infos",
+    "description": "Mouvement qui lutte contre l'adultisme, la domination des adultes sur les enfants et les adolescent·es, et pour leurs droits : violences, inceste, droit d'être écouté·e et cru·e.",
+    "ville": "Partout en France",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://collectifenfantiste.fr/le-mouvement-enfantiste/",
+        "label": "Découvrir le mouvement"
       }
     ]
   },
