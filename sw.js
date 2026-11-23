@@ -1,6 +1,6 @@
 // Service worker : met l'application en cache pour qu'elle fonctionne hors-ligne.
 // Pensez à changer VERSION à chaque mise à jour du contenu.
-const VERSION = "biblio-vss-v13";
+const VERSION = "biblio-vss-v14";
 const FILES = [
   "./",
   "index.html",
@@ -13,6 +13,7 @@ const FILES = [
   "data/comprendre.json",
   "confidentialite.html",
   "mentions-legales.html",
+  "securite.html",
   "data/ressources.json",
   "manifest.webmanifest",
   "icons/icon.svg",

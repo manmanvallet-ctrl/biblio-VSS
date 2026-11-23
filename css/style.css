@@ -7,8 +7,8 @@
   --accent: #5b3a8c;
   --accent-soft: #ece4f7;
   --exit: #c0392b;
-  --lvl1: #3c8d5a;
-  --lvl2: #c98a1a;
+  --lvl1: #2e7a4a; /* assombris pour un contraste ≥ 4,5:1 (WCAG AA) */
+  --lvl2: #9a6200;
   --lvl3: #b23b3b;
   --radius: 14px;
   --tabbar-h: 64px;
@@ -32,6 +32,9 @@
     --sc-fg: #f3d873;
     --sc-border: #5c4f1c;
     --on-accent: #1b1325;
+    --lvl1: #6cc28c; /* éclaircis pour rester lisibles sur fond sombre */
+    --lvl2: #e0a33c;
+    --lvl3: #f08080;
     color-scheme: dark;
   }
 }
@@ -47,6 +50,9 @@
   --sc-fg: #f3d873;
   --sc-border: #5c4f1c;
   --on-accent: #1b1325;
+  --lvl1: #6cc28c; /* éclaircis pour rester lisibles sur fond sombre */
+  --lvl2: #e0a33c;
+  --lvl3: #f08080;
   color-scheme: dark;
 }
 

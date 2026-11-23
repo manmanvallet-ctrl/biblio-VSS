@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naviguer en sécurité – Biblio VSS</title>
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="padding-bottom:0">
+  <button id="quick-exit" class="quick-exit" type="button" aria-label="Quitter rapidement la page">Sortie rapide</button>
+  <main>
+    <h1>Naviguer en sécurité</h1>
+    <p>Si une personne de votre entourage peut regarder votre téléphone ou votre ordinateur, ces conseils vous aident à consulter Biblio VSS sans laisser de traces. Prenez seulement ceux qui vous servent.</p>
+
+    <h2>Ce que fait la Sortie rapide, et ce qu'elle ne fait pas</h2>
+    <p>Le bouton rouge (ou deux appuis sur <kbd>Échap</kbd>) remplace aussitôt la page par une page neutre, et le bouton Retour ne ramène pas à Biblio VSS.</p>
+    <p>En revanche, il <strong>n'efface pas l'historique</strong> du navigateur : la visite y reste inscrite. Pour ne laisser aucune trace, utilisez la navigation privée ou effacez l'historique (ci-dessous).</p>
+
+    <h2>La navigation privée</h2>
+    <p>En navigation privée, le navigateur ne garde ni l'historique ni les données du site une fois l'onglet fermé.</p>
+    <ul>
+      <li><strong>Chrome (Android)</strong> : menu <strong>⋮</strong>, puis « Nouvel onglet de navigation privée ».</li>
+      <li><strong>Safari (iPhone)</strong> : bouton des onglets, puis « Privée ».</li>
+    </ul>
+    <p>Dans ce mode, vos favoris Biblio VSS disparaissent quand vous fermez l'onglet, et l'application ne peut pas être ajoutée à l'écran d'accueil.</p>
+
+    <h2>Effacer une visite de l'historique</h2>
+    <ul>
+      <li><strong>Chrome (Android)</strong> : menu <strong>⋮</strong>, puis « Historique », puis la croix à côté de chaque page Biblio VSS.</li>
+      <li><strong>Safari (iPhone)</strong> : icône en forme de livre ouvert, puis l'horloge ; faites glisser la ligne vers la gauche, puis « Supprimer ».</li>
+    </ul>
+    <p>Attention : si votre navigateur est connecté à un compte (Google, Apple) que l'autre personne utilise aussi, l'historique peut être copié sur ses appareils. Dans ce cas, préférez la navigation privée.</p>
+
+    <h2>L'icône sur l'écran d'accueil</h2>
+    <p>Installer Biblio VSS sur l'écran d'accueil est pratique, mais l'icône est visible par toute personne qui prend votre téléphone. Si c'est un risque, n'installez pas l'application : ouvrez-la en navigation privée quand vous en avez besoin. Sur iPhone, vous pouvez aussi changer le nom de l'icône au moment de l'ajouter.</p>
+
+    <h2>Les appels et les messages</h2>
+    <p>Les numéros d'aide comme le 3919 et le 119 sont gratuits. Les numéros composés restent pourtant dans le journal d'appels du téléphone : pensez à les en effacer si besoin. Il en va de même pour les SMS envoyés au 114.</p>
+
+    <h2>Si vous pensez être surveillé·e</h2>
+    <p>Si quelqu'un connaît vos mots de passe ou a pu installer une application sur votre téléphone, il vaut mieux utiliser un appareil auquel cette personne n'a pas accès : celui d'une personne de confiance, ou un ordinateur en accès libre (médiathèque, association). Le <a href="tel:3919">3919</a> peut vous conseiller, gratuitement et anonymement.</p>
+
+    <p style="margin-top:24px"><a href="index.html">← Retour à l'application</a></p>
+  </main>
+  <script>
+    // Même comportement que dans l'application : la page est remplacée, le bouton Retour n'y ramène pas.
+    function sortir() {
+      document.body.innerHTML = "";
+      location.replace((window.BIBLIO_CONFIG && window.BIBLIO_CONFIG.exitUrl) || "https://www.google.com/search?q=m%C3%A9t%C3%A9o");
+    }
+    document.getElementById("quick-exit").addEventListener("click", sortir);
+    let dernierEchap = 0;
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      if (Date.now() - dernierEchap < 600) sortir();
+      dernierEchap = Date.now();
+    });
+  </script>
+  <script src="js/config.js"></script>
+</body>
+</html>
