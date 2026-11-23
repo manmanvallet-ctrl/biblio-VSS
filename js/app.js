@@ -234,7 +234,7 @@
     $("#categories").innerHTML = Object.entries(CATEGORIES)
       .filter(([key]) => key === "tout" || counts[key])
       .map(([key, c]) =>
-        `<button class="chip${key === state.category ? " active" : ""}" type="button" data-cat="${key}">${c.icon} ${c.label}</button>`)
+        `<button class="chip${key === state.category ? " active" : ""}" type="button" aria-pressed="${key === state.category}" data-cat="${key}">${c.icon} ${c.label}</button>`)
       .join("");
   }
 
@@ -436,7 +436,7 @@
     const present = new Set(state.aide.map((a) => a.categorie));
     $("#aide-cats").innerHTML = Object.entries(AIDE_CATEGORIES)
       .filter(([k]) => k === "tout" || present.has(k))
-      .map(([k, label]) => `<button class="chip${k === state.aideCat ? " active" : ""}" type="button" data-aide-cat="${k}">${label}</button>`)
+      .map(([k, label]) => `<button class="chip${k === state.aideCat ? " active" : ""}" type="button" aria-pressed="${k === state.aideCat}" data-aide-cat="${k}">${label}</button>`)
       .join("");
     const q = normalize(state.aideQuery.trim());
     const items = state.aide.filter((a) => {
@@ -1373,10 +1373,19 @@
   $("#aide-search").addEventListener("input", (e) => { state.aideQuery = e.target.value; renderAide(); });
 
   function showView(name) {
-    document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === `view-${name}`));
-    document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.view === name));
-    if (name === "favorites") renderFavorites();
-    window.scrollTo(0, 0);
+    const update = () => {
+      document.querySelectorAll(".view").forEach((v) => v.classList.toggle("active", v.id === `view-${name}`));
+      document.querySelectorAll(".tab").forEach((t) => {
+        const on = t.dataset.view === name;
+        t.classList.toggle("active", on);
+        // aria-current : les lecteurs d'écran annoncent l'onglet affiché (la couleur seule ne suffit pas).
+        if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
+      });
+      if (name === "favorites") renderFavorites();
+      window.scrollTo(0, 0);
+    };
+    // Fondu entre les onglets si le navigateur sait le faire ; sinon changement immédiat.
+    if (document.startViewTransition) document.startViewTransition(update); else update();
   }
 
   // ---------- Démarrage ----------

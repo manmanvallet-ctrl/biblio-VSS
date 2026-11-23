@@ -574,3 +574,9 @@ body.neutral { background: #fffdf5; color: #222; padding: 0; }
 .reflexion-note { color: var(--muted); font-size: .8rem; margin: 10px 0 0 !important; }
 .reflexion-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
 .sheet-text p { margin: 0 0 10px; }
+
+/* Changement d'onglet : fondu court (View Transitions), désactivé si la personne limite les animations */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .18s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
