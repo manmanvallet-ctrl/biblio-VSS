@@ -618,6 +618,7 @@
     "categorie": "article",
     "themes": [
       "inceste",
+      "incestuel",
       "psychotraumatisme",
       "trauma complexe"
     ],
@@ -905,5 +906,84 @@
     "intensite": 1,
     "lien": "https://basilicpodcast.com/enfantisme-une-lutte-encore-trop-meconnue/",
     "annee": 2025
+  },
+  {
+    "id": "podcast-pieds-sur-terre-incestuel",
+    "titre": "Un climat incestuel (Les Pieds sur terre)",
+    "auteur": "Clémence Allezard, France Culture",
+    "annee": 2026,
+    "categorie": "podcast",
+    "themes": [
+      "incestuel",
+      "silence familial",
+      "témoignage"
+    ],
+    "resume": "Émilie, Elisabeth et Jeanne ont grandi dans des foyers où planait la menace de l'inceste : blagues graveleuses, sexualité exhibée, aucune intimité possible pour les enfants. Elles racontent les traces que cela a laissées dans leur vie d'adulte. 31 minutes.",
+    "intensite": 2,
+    "lien": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/un-climat-incestuel-6703431",
+    "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/9f/ab/b1/9fabb1e0-ef8c-d78b-cd79-13225e0c2aad/mza_12414803589752471015.jpg/600x600bb.jpg",
+    "image": "images/podcast-pieds-sur-terre-incestuel.jpg",
+    "image_credit": "is1-ssl.mzstatic.com"
+  },
+  {
+    "id": "podcast-a-soi-incestuel",
+    "titre": "Climat incestuel : grandir sous la menace",
+    "auteur": "Un podcast à soi, ARTE Radio",
+    "annee": 2025,
+    "categorie": "podcast",
+    "themes": [
+      "incestuel",
+      "témoignage",
+      "féminisme"
+    ],
+    "resume": "« C'est mon père, je l'aime mais je dois m'en méfier. » Des femmes racontent une enfance sans passage à l'acte mais sous la menace de l'inceste : regards, remarques sur le corps, blagues sexuelles, absence de limites. Un épisode pour mettre des mots sur ce que beaucoup ont vécu sans savoir le nommer.",
+    "intensite": 2,
+    "lien": "https://www.arteradio.com/son/climat-incestuel-grandir-sous-la-menace",
+    "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/0d/1d/00/0d1d00de-f77b-fc03-04d8-3426547acd32/mza_1193096093659043008.jpg/600x600bb.jpg",
+    "image": "images/podcast-a-soi-incestuel.jpg",
+    "image_credit": "is1-ssl.mzstatic.com"
+  },
+  {
+    "id": "art-colosse-incestuel",
+    "titre": "Le climat incestuel, une notion peu connue",
+    "auteur": "Colosse aux pieds d'argile",
+    "annee": 2024,
+    "categorie": "article",
+    "themes": [
+      "incestuel",
+      "enfance"
+    ],
+    "resume": "Article clair qui distingue l'inceste, un passage à l'acte, du climat incestuel, une ambiance familiale sans passage à l'acte. Il donne des exemples concrets (nudité imposée, enfant confident de la sexualité d'un parent, aucune intimité, remarques sur le corps) et décrit les doutes et la culpabilité qu'il laisse.",
+    "intensite": 1,
+    "lien": "https://colosse.fr/le-climat-incestuel-une-notion-peu-connue/"
+  },
+  {
+    "id": "yapaka-penser-incestuel",
+    "titre": "Penser l'incestuel, la confusion des places",
+    "auteur": "Dominique Klopfert (Yapaka, collection Temps d'Arrêt)",
+    "annee": 2022,
+    "categorie": "article",
+    "themes": [
+      "incestuel",
+      "psychotraumatisme",
+      "recherche"
+    ],
+    "resume": "Petit livre gratuit, destiné surtout aux professionnel·les de l'enfance, qui présente la notion d'incestuel : « un climat d'inceste et de confusion » où l'inceste n'est pas accompli, mais à travers des équivalents d'apparence banale. « L'incestuel n'est pas l'inceste, mais en fait le terreau. »",
+    "intensite": 1,
+    "lien": "https://www.yapaka.be/sites/yapaka.be/files/publication/ta-134bis-incestuel-web.pdf"
+  },
+  {
+    "id": "livre-racamier-incestuel",
+    "titre": "L'inceste et l'incestuel",
+    "auteur": "Paul-Claude Racamier",
+    "annee": 1995,
+    "categorie": "livre",
+    "themes": [
+      "incestuel",
+      "inceste",
+      "essai"
+    ],
+    "resume": "Le livre fondateur où le psychiatre et psychanalyste Paul-Claude Racamier nomme « l'incestuel ». Un ouvrage exigeant, écrit pour les cliniciens, réédité chez Dunod en 2010.",
+    "intensite": 1
   }
 ]

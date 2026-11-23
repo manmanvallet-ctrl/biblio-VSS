@@ -11,6 +11,15 @@
       ]
     },
     {
+      "id": "inceste-incestuel",
+      "question": "Inceste et incestuel : quelle différence ?",
+      "reponse": "L'inceste, ce sont des violences sexuelles (viol, agression sexuelle) commises par un membre de la famille. Il y a passage à l'acte, et c'est puni par la loi.\n\nL'incestuel, ou climat incestuel, c'est une ambiance familiale où les limites entre adultes et enfants sont brouillées, sans passage à l'acte sexuel : nudité imposée, pas d'intimité, remarques sur le corps, enfant confident de la sexualité d'un parent…\n\nL'incestuel n'est pas un mot de la loi, mais il fait souffrir et laisse des traces. Si vous avez grandi ainsi, votre ressenti est légitime, même si « rien ne s'est passé ».",
+      "voir": [
+        "inceste",
+        "climat-incestuel"
+      ]
+    },
+    {
       "id": "ne-pas-avoir-dit-non",
       "question": "Je n'ai pas dit non. Est-ce que ça compte quand même ?",
       "reponse": "Oui. Depuis novembre 2025, la loi le dit clairement : le consentement « ne peut être déduit du seul silence ou de la seule absence de réaction de la victime ». Beaucoup de personnes restent figées, paralysées ou absentes pendant une agression : c'est une réaction du cerveau face au danger (la sidération), pas un accord.",
@@ -137,7 +146,7 @@
       "id": "inceste",
       "terme": "Inceste",
       "court": "Des violences sexuelles commises par un membre de la famille.",
-      "texte": "La loi qualifie d'incestueux un viol ou une agression sexuelle commis par :\n• un ascendant (parent, grand-parent…) ;\n• un frère, une sœur, un oncle, une tante, un grand-oncle, une grand-tante, un neveu ou une nièce ;\n• le conjoint, concubin ou partenaire de PACS d'une de ces personnes, s'il a une autorité sur la victime (un beau-père, une belle-mère…).\n\nQuand la victime a moins de 18 ans et que l'agresseur est un adulte de cette liste, tout acte sexuel est un viol ou une agression sexuelle incestueux : il n'y a pas à prouver l'absence de consentement.\n\nLes cousin·es ne figurent pas dans cette liste. Des violences commises par un cousin restent des violences sexuelles, punies par la loi, même si le mot « incestueux » ne s'applique pas juridiquement.",
+      "texte": "La loi qualifie d'incestueux un viol ou une agression sexuelle commis par :\n• un ascendant (parent, grand-parent…) ;\n• un frère, une sœur, un oncle, une tante, un grand-oncle, une grand-tante, un neveu ou une nièce ;\n• le conjoint, concubin ou partenaire de PACS d'une de ces personnes, s'il a une autorité sur la victime (un beau-père, une belle-mère…).\n\nQuand la victime a moins de 18 ans et que l'agresseur est un adulte de cette liste, tout acte sexuel est un viol ou une agression sexuelle incestueux : il n'y a pas à prouver l'absence de consentement.\n\nLes cousin·es ne figurent pas dans cette liste. Des violences commises par un cousin restent des violences sexuelles, punies par la loi, même si le mot « incestueux » ne s'applique pas juridiquement.\n\nÀ ne pas confondre avec l'incestuel (ou climat incestuel) : une ambiance familiale où les limites sont brouillées, sans passage à l'acte sexuel.",
       "source": {
         "label": "Code pénal, articles 222-22-3 et 222-23-2",
         "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043405007"
@@ -430,12 +439,12 @@
     },
     {
       "id": "climat-incestuel",
-      "terme": "Climat incestuel",
-      "court": "Une famille où les limites entre adultes et enfants sont brouillées, même sans acte sexuel.",
-      "texte": "On parle de climat incestuel quand, sans passage à l'acte sexuel direct, les frontières entre adultes et enfants sont brouillées : regards ou paroles sexualisés, absence d'intimité pour la toilette, confidences d'un parent sur sa vie sexuelle, enfant qui dort dans le lit parental, enfant devenu le « confident » ou le soutien affectif d'un parent…\n\nCe climat est déjà une violence psychique : il empêche l'enfant de grandir en sécurité, mélange amour, sexualité et pouvoir, et peut laisser des traces à l'âge adulte.",
+      "terme": "Incestuel (climat incestuel)",
+      "court": "Une ambiance familiale où les limites entre adultes et enfants sont brouillées, sans passage à l'acte sexuel.",
+      "texte": "Le mot a été inventé par le psychiatre et psychanalyste Paul-Claude Racamier. L'incestuel n'est pas l'inceste : c'est « un climat d'inceste et de confusion » où l'inceste n'est pas accompli, mais vécu à travers des gestes, des paroles et des habitudes d'apparence banale. On parle aussi parfois d'« inceste moral ».\n\nQuelques exemples :\n• nudité imposée, intrusions dans la salle de bain, aucune porte fermée ;\n• enfant qui dort dans le lit parental à un âge avancé ;\n• regards, remarques ou blagues sexualisés sur le corps de l'enfant ;\n• enfant exposé à la vie sexuelle des parents ou à la pornographie ;\n• enfant devenu le confident d'un parent, notamment sur sa sexualité, ou qui tient le rôle d'un adulte.\n\nInceste ou incestuel ? L'inceste est un passage à l'acte : un viol ou une agression sexuelle commis par un membre de la famille, puni par la loi. L'incestuel n'est pas, en tant que tel, une infraction pénale. Mais certains de ces gestes peuvent en être une : exhibition sexuelle, corruption de mineur, exposition d'un enfant à la pornographie.\n\nCe climat est déjà une violence psychique. Il empêche l'enfant de grandir en sécurité et mélange amour, sexualité et pouvoir. Ceux qui l'ont vécu doutent souvent : « Est-ce que c'était grave ? Est-ce que j'exagère ? » Il n'y a pas besoin d'un acte sexuel pour que ce soit une souffrance légitime. Pour l'auteur, « l'incestuel n'est pas l'inceste, mais en fait le terreau ».",
       "source": {
-        "label": "Cn2r : inceste et psychotraumatisme",
-        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+        "label": "D. Klopfert, « Penser l'incestuel », Yapaka (2022)",
+        "url": "https://www.yapaka.be/sites/yapaka.be/files/publication/ta-134bis-incestuel-web.pdf"
       },
       "rubrique": "enfants"
     },

@@ -42,6 +42,19 @@
     ]
   },
   {
+    "id": "incestuel",
+    "titre": "Le climat incestuel",
+    "description": "Quand il n'y a pas eu d'acte, mais une ambiance où les limites entre adultes et enfants étaient brouillées.",
+    "couleur": "#8a4f7d",
+    "ressources": [
+      "art-colosse-incestuel",
+      "podcast-a-soi-incestuel",
+      "podcast-pieds-sur-terre-incestuel",
+      "yapaka-penser-incestuel",
+      "livre-racamier-incestuel"
+    ]
+  },
+  {
     "id": "sideration-honte",
     "titre": "Sidération, honte et culpabilité",
     "description": "Comprendre pourquoi on n'a pas pu réagir, et déposer une honte qui ne vous appartient pas.",
