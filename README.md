@@ -78,6 +78,8 @@ Dans `data/evenements.json` (vide au départ) :
 
 ### Veille automatique des événements
 
+Les groupes de parole du **CAIIP**, d'**En Parler** et de **Pas de Secret** sont relevés automatiquement **chaque lundi** sur leurs sites (`.github/workflows/releve-evenements.yml`, qui lance `scripts/releve-evenements.js`) : nouvelles dates, mention « Complet », dates passées retirées. Chaque événement garde sa source et sa date de relevé, affichées dans sa fiche. Si un site change de présentation, le script le signale dans le journal de la tâche et garde les dates déjà connues. Pour lancer un relevé tout de suite : onglet **Actions** → **Relevé de l'agenda** → **Run workflow**, ou en local `node scripts/releve-evenements.js`.
+
 Chaque semaine, une tâche planifiée cherche de nouveaux événements à partir des mots-clés de `veille/mots-cles.md`, vérifie chacun sur sa page d'origine, puis propose les nouveautés dans une **pull request** à relire avant publication. Pour changer les sujets, les villes ou les sources surveillées, modifiez simplement ce fichier.
 
 ## Mettre à jour les notes SensCritique

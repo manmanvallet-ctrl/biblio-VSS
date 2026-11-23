@@ -36,9 +36,8 @@ Modifiez librement les listes ci-dessous (une ligne = un élément).
 
 ## Sources à surveiller en priorité
 
-- https://caiip.group/groupes-de-parole/ (groupes de parole CAIIP : dates, villes, places)
-- https://www.associationenparler.com/les-rendez-vous (rendez-vous En Parler : dates sans année ni heure ; l'année se déduit du jour de la semaine)
-- https://www.pas-de-secret.fr/agenda/ (groupe de parole mensuel à Nîmes)
+Déjà relevés automatiquement chaque lundi par `scripts/releve-evenements.js` (inutile de les chercher ici, ni de modifier leurs événements, dont l'identifiant commence par `caiip-`, `enparler-` ou `pas-de-secret-`) : CAIIP, En Parler, Pas de Secret.
+
 - https://collectifmetoolyon.com/nos-evenements/ et https://collectifmetoolyon.com/permanences-et-groupes-de-parole/ (événements ponctuels ; permanences du jeudi déjà dans l'annuaire d'Aide)
 - https://facealinceste.fr
 - https://www.noustoutes.org

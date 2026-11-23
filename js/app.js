@@ -347,9 +347,10 @@
       return `<li class="card event-card" tabindex="0" data-event="${escapeHtml(ev.id)}">
           <div class="date-badge" aria-hidden="true"><span>${d}</span>${MONTHS[m - 1]}</div>
           <div class="card-main">
+            ${ev.ville ? `<p class="event-city">📍 ${escapeHtml(ev.ville)}</p>` : ""}
             <p class="card-title">${escapeHtml(ev.titre)}</p>
-            <p class="card-meta">${escapeHtml(ev.type || "Événement")} · ${escapeHtml(ev.ville || "")}${validTime(ev.heure) ? " · " + ev.heure.replace(":", "h") : ""}</p>
-            ${ev.lieu ? `<p class="card-meta">📍 ${escapeHtml(ev.lieu)}</p>` : ""}
+            <p class="card-meta">${escapeHtml(ev.type || "Événement")}${validTime(ev.heure) ? " · " + ev.heure.replace(":", "h") : ""}</p>
+            ${ev.lieu ? `<p class="card-meta">${escapeHtml(ev.lieu)}</p>` : ""}
             ${ev.gratuit ? `<div class="tags"><span class="tag">Gratuit</span></div>` : ""}
           </div>
         </li>`;

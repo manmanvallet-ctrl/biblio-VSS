@@ -1,0 +1,43 @@
+# Chaque lundi (vers 6h40 heure de Paris), relève les groupes de parole publiés par
+# le CAIIP, En Parler et Pas de Secret, et met à jour l'agenda (data/evenements.json) :
+#  - ajoute les nouvelles dates, met à jour « Complet » et retire les dates passées ;
+#  - garde les événements ajoutés à la main ou par la veille ;
+#  - si un site ne répond pas, ses dates déjà connues sont conservées.
+# On peut aussi la lancer à la main : onglet « Actions » → « Relevé de l'agenda » → « Run workflow ».
+# Les changements sont enregistrés directement sur la branche principale, puis le site est republié.
+name: Relevé de l'agenda
+
+on:
+  schedule:
+    - cron: "37 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write # pour relancer la publication du site après l'enregistrement
+
+jobs:
+  releve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/releve-evenements.js
+      - name: Enregistrer les changements
+        run: |
+          if git diff --quiet data/evenements.json; then
+            echo "Rien n'a changé."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/evenements.json
+          git commit -m "Relevé automatique de l'agenda"
+          git push
+          # Un enregistrement fait par une tâche automatique ne relance pas les autres tâches :
+          # on relance donc nous-mêmes la publication du site web.
+          gh workflow run site.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
