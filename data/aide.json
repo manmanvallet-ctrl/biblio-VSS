@@ -285,6 +285,70 @@
     ]
   },
   {
+    "id": "caiip",
+    "nom": "CAIIP – groupes de parole",
+    "categorie": "groupes",
+    "description": "Groupes de parole mensuels pour les personnes majeures victimes d'inceste ou de pédocriminalité, et leurs proches, animés par des bénévoles formé·es. Gratuit, après une adhésion gratuite. Inscription en ligne : les créneaux ouvrent le 1er du mois précédent.",
+    "ville": "Lyon, Bron, Tassin, Paris, Antony, Rennes, Lille, Nevers et en ligne",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://caiip.group/groupes-de-parole/",
+        "label": "Dates et inscription"
+      }
+    ]
+  },
+  {
+    "id": "en-parler",
+    "nom": "En Parler – les rendez-vous",
+    "categorie": "groupes",
+    "description": "Groupes de parole pour les victimes de violences sexuelles, de septembre à juin, animés par des bénévoles souvent anciennes victimes. On peut aussi s'y informer avant de porter plainte. Pas besoin de donner son identité. Inscription par e-mail auprès de l'antenne de sa ville.",
+    "ville": "Bordeaux, Grenoble, Lille, Lyon, Marseille, Paris, Poitiers, Rennes, Rouen et en visio",
+    "contacts": [
+      {
+        "type": "email",
+        "valeur": "contact@enparler.org"
+      },
+      {
+        "type": "web",
+        "valeur": "https://www.associationenparler.com/les-rendez-vous",
+        "label": "Dates et antennes"
+      }
+    ]
+  },
+  {
+    "id": "pas-de-secret",
+    "nom": "Pas de Secret",
+    "categorie": "groupes",
+    "description": "Association d'aide aux victimes d'inceste et de prévention. Groupe de parole mensuel et gratuit pour les adultes victimes, ateliers et outils pour parler de l'intimité avec les enfants.",
+    "ville": "Nîmes et alentours",
+    "contacts": [
+      {
+        "type": "web",
+        "valeur": "https://www.pas-de-secret.fr/agenda/",
+        "label": "Agenda des ateliers"
+      }
+    ]
+  },
+  {
+    "id": "metoo-lyon",
+    "nom": "Collectif MeToo Lyon",
+    "categorie": "groupes",
+    "description": "Permanences d'écoute individuelle et groupes de parole gratuits et anonymes, le jeudi de 18h30 à 20h30, sur inscription par e-mail. Pour les femmes et les personnes trans ou non-binaires majeures (les hommes cisgenres sont reçus en écoute individuelle). Écoutantes formées, dont des psychologues.",
+    "ville": "Lyon",
+    "contacts": [
+      {
+        "type": "email",
+        "valeur": "collectifmetoolyon@gmail.com"
+      },
+      {
+        "type": "web",
+        "valeur": "https://collectifmetoolyon.com/permanences-et-groupes-de-parole/",
+        "label": "En savoir plus"
+      }
+    ]
+  },
+  {
     "id": "crp",
     "nom": "Centres régionaux du psychotraumatisme (CRP)",
     "categorie": "soins",
