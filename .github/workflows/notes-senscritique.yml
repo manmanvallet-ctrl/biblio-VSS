@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # pour relancer la publication du site après l'enregistrement
 
 jobs:
   notes:
@@ -35,3 +36,8 @@ jobs:
           git add data/ressources.json images
           git commit -m "Mise à jour mensuelle : notes SensCritique et images"
           git push
+          # Un enregistrement fait par une tâche automatique ne relance pas les autres tâches :
+          # on relance donc nous-mêmes la publication du site web.
+          gh workflow run site.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
