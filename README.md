@@ -114,7 +114,7 @@ Le contenu est dans `data/comprendre.json` :
 
 - `questions_frequentes` : questions et réponses (par exemple « Inceste et pédocriminalité : quelle différence ? ») ;
 - `definitions` : chaque terme avec un résumé, un texte et sa **source officielle** (Légifrance, service-public…) ;
-- `questionnaire` : le texte des questions de « Faire le point ».
+- `questionnaire` : le texte des questions de « Faire le point » (bandeau masqué pour l'instant, à retravailler).
 - `rubriques` : les 7 rubriques du sommaire et leur format : `liste` (fiches dépliables), `tuiles` (grille d'icônes, la fiche s'ouvre en panneau), `reflexion` (questions d'atelier). Une rubrique peut avoir des `etapes` (schéma à faire défiler).
 - Chaque fiche a une `rubrique`, et peut avoir une `icone` (format tuiles) et une `reflexion` : des questions pour réfléchir ou en parler, en une ou plusieurs parties. Elles s'affichent dans la fiche et dans la rubrique « Pour réfléchir ensemble ». Les réponses ne sont jamais enregistrées.
 
