@@ -360,6 +360,16 @@
       <button class="btn" type="button" data-goto="suggest" data-suggest-type="evenement">Proposer un événement</button></li>`;
   }
 
+  // « Relevé le 23 novembre 2026 sur caiip.group » : d'où vient l'information, et de quand.
+  function sourceLine(ev) {
+    const src = safeUrl(ev.source);
+    if (!src || !validDate(ev.releve)) return "";
+    const [y, m, d] = ev.releve.split("-").map(Number);
+    const when = new Date(y, m - 1, d).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const host = new URL(src).hostname.replace(/^www\./, "");
+    return `<p class="hint small-print">Relevé le ${escapeHtml(when)} sur ${escapeHtml(host)}. Vérifiez auprès de l'organisateur avant de vous déplacer.</p>`;
+  }
+
   function openEvent(id) {
     const ev = state.events.find((x) => x.id === id);
     if (!ev) return;
@@ -376,6 +386,7 @@
         ${ev.gratuit ? "<li>💶 Gratuit</li>" : ""}
       </ul>
       ${ev.description ? `<p>${escapeHtml(ev.description)}</p>` : ""}
+      ${sourceLine(ev)}
       <div class="btn-row">
         <button class="btn" type="button" data-ics="${escapeHtml(ev.id)}">Ajouter à mon agenda</button>
         ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">En savoir plus ↗</a>` : ""}
