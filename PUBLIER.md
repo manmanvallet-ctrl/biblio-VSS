@@ -8,7 +8,7 @@ L'application web est emballée dans de vraies applications Android (`android/`)
 
 - **Identifiant de l'application** : `fr.bibliovss.app` (dans `capacitor.config.json`). Il est **définitif** une fois l'application publiée. Si vous avez un nom de domaine, prenez-le à l'envers (ex. `org.monasso.bibliovss`).
 - **Compte personnel ou compte d'organisation** : si le projet est porté par une association, créez les comptes au nom de l'association. Sur Google Play, un compte d'organisation évite la phase de test obligatoire décrite plus bas. Chez Apple, les associations à but non lucratif peuvent demander une exonération des frais annuels.
-- **Adresse de contact** : à ajouter dans `confidentialite.html` et dans les fiches des stores.
+- **Adresse de contact** : à ajouter dans `confidentialite.html`, `mentions-legales.html` et dans les fiches des stores.
 - **Envoi des propositions** : à configurer dans `js/config.js`.
 
 ## 1. Mettre à jour les applications après une modification
