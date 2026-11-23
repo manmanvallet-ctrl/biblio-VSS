@@ -1,0 +1,32 @@
+# Lance les tests automatiques :
+#  - à chaque envoi sur une autre branche que main, et sur chaque pull request ;
+#  - sur main, c'est la publication du site (site.yml) qui les lance avant de mettre en ligne.
+# Résultat visible dans l'onglet « Actions » du dépôt (coche verte ou croix rouge).
+name: Tests
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Données et fichiers
+        run: npm test
+      - name: Installer le navigateur de test
+        run: |
+          npm install --no-save playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - name: Parcours dans un vrai navigateur
+        run: npm run test:parcours
