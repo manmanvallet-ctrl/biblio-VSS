@@ -327,6 +327,9 @@
     const listen = catsOf(it).includes("podcast") && it.categorie !== "podcast";
     // Un livre qu'on peut acheter en librairie n'a pas besoin, en plus, du lien vers la page de l'éditeur.
     const showLink = link && (!buy || listen);
+    // « Afficher plus » : texte officiel (éditeur, distributeur, radio), cité tel quel avec sa source.
+    const pres = it.presentation && it.presentation.texte ? it.presentation : null;
+    const presUrl = pres && safeUrl(pres.url);
     const inLists = state.lists.filter((l) => l.ressources.includes(it.id));
     const sc = it.senscritique && safeUrl(it.senscritique.url);
     const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
@@ -359,6 +362,11 @@
         ${strong ? "<br>Ce contenu peut être particulièrement éprouvant. Le résumé est masqué : appuyez dessus pour l'afficher." : ""}
       </div>
       <p class="reveal${strong ? "" : " shown"}" id="detail-resume" tabindex="0">${escapeHtml(it.resume)}</p>
+      ${pres ? `<button class="link-btn more-btn" type="button" aria-expanded="false" aria-controls="detail-more">Afficher plus</button>
+      <div id="detail-more" class="more" hidden>
+        <blockquote class="presentation${strong ? " reveal" : ""}">${paragraphs(pres.texte)}</blockquote>
+        <p class="presentation-source">${presUrl ? `<a href="${escapeHtml(presUrl)}" target="_blank" rel="noopener">${escapeHtml(pres.source)} ↗</a>` : escapeHtml(pres.source)}</p>
+      </div>` : ""}
       ${inLists.length ? `<p class="card-meta">Dans les listes : ${inLists
         .map((l) => `<button class="link-btn" type="button" data-list="${escapeHtml(l.id)}">${escapeHtml(l.titre)}</button>`)
         .join(", ")}</p>` : ""}
@@ -1437,6 +1445,16 @@
     if (card) { openDetail(card.dataset.id); return; }
 
     if (e.target.closest("[data-close]")) { $("#detail").close(); return; }
+
+    const more = e.target.closest(".more-btn");
+    if (more) {
+      const box = document.getElementById(more.getAttribute("aria-controls"));
+      const open = more.getAttribute("aria-expanded") !== "true";
+      more.setAttribute("aria-expanded", String(open));
+      more.textContent = open ? "Afficher moins" : "Afficher plus";
+      if (box) box.hidden = !open;
+      return;
+    }
 
     const reveal = e.target.closest(".reveal");
     if (reveal) reveal.classList.add("shown");
