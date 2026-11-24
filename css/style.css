@@ -434,6 +434,10 @@ a { color: var(--accent); }
 }
 .note h3 { margin-top: 0; }
 .sheet-exit { float: right; margin-left: 12px; }
+/* Une fenêtre (fiche, questionnaire…) est ouverte : le bouton du haut est derrière le voile
+   et n'est plus cliquable. On le masque pour qu'un seul « Sortie rapide » soit visible,
+   celui de la fenêtre. */
+body:has(dialog[open]) .topbar .quick-exit { visibility: hidden; }
 
 /* Couvertures */
 .cover {
