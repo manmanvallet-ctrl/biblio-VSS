@@ -97,11 +97,21 @@ async function fromApplePodcasts(it) {
   return x && x.artworkUrl600 ? { url: x.artworkUrl600, credit: "Apple Podcasts" } : null;
 }
 
+// Crédit lisible pour une image directe : le nom du service plutôt que l'adresse technique
+// du serveur d'images (ex. « is1-ssl.mzstatic.com » est le serveur d'images d'Apple).
+// Pour un site qui n'est pas dans la liste, renseignez « image_credit_source » dans la fiche.
+const CREDIT_HOSTS = { "mzstatic.com": "Apple Podcasts", "senscritique.com": "SensCritique", "openlibrary.org": "Open Library", "handicap.fr": "Handicap.fr" };
+function creditFromHost(url) {
+  const host = new URL(url).hostname.replace(/^www\./, "");
+  const known = Object.keys(CREDIT_HOSTS).find((h) => host === h || host.endsWith("." + h));
+  return known ? CREDIT_HOSTS[known] : host;
+}
+
 async function findSource(it) {
   // Source indiquée à la main : une page SensCritique ou une image directe
   if (it.image_url) {
     if (/^https:\/\/www\.senscritique\.com\//.test(it.image_url)) return fromSensCritique(it.image_url);
-    if (/^https:\/\//.test(it.image_url)) return { url: it.image_url, credit: new URL(it.image_url).hostname.replace(/^www\./, "") };
+    if (/^https:\/\//.test(it.image_url)) return { url: it.image_url, credit: it.image_credit_source || creditFromHost(it.image_url) };
   }
   if (it.senscritique && it.senscritique.url) return fromSensCritique(it.senscritique.url);
   if (it.categorie === "livre" || it.categorie === "bd") {

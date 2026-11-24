@@ -811,7 +811,7 @@
     "intensite": 1,
     "lien": "https://fdfa.fr/wp-content/uploads/2025/08/Guide-violence-FSH-_FDFA.pdf",
     "image": "images/guide-fdfa-falc.jpg",
-    "image_credit": "handicap.fr"
+    "image_credit": "Handicap.fr"
   },
   {
     "id": "livret-creai-handicap",
@@ -860,7 +860,8 @@
     "intensite": 1,
     "image_url": "https://static1.squarespace.com/static/671935f69302aa03f9ea9334/671d5bbe52c1de70e13dfa98/671d5bbe52c1de70e13dfac1/1787923902976/1e_Tal_def.png?format=750w",
     "image": "images/livre-domination-oubliee.jpg",
-    "image_credit": "static1.squarespace.com"
+    "image_credit_source": "Éditions Blast",
+    "image_credit": "Éditions Blast"
   },
   {
     "id": "art-conversation-domination-enfants",
@@ -923,7 +924,7 @@
     "lien": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/un-climat-incestuel-6703431",
     "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/9f/ab/b1/9fabb1e0-ef8c-d78b-cd79-13225e0c2aad/mza_12414803589752471015.jpg/600x600bb.jpg",
     "image": "images/podcast-pieds-sur-terre-incestuel.jpg",
-    "image_credit": "is1-ssl.mzstatic.com"
+    "image_credit": "Apple Podcasts"
   },
   {
     "id": "podcast-a-soi-incestuel",
@@ -941,7 +942,7 @@
     "lien": "https://www.arteradio.com/son/climat-incestuel-grandir-sous-la-menace",
     "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/0d/1d/00/0d1d00de-f77b-fc03-04d8-3426547acd32/mza_1193096093659043008.jpg/600x600bb.jpg",
     "image": "images/podcast-a-soi-incestuel.jpg",
-    "image_credit": "is1-ssl.mzstatic.com"
+    "image_credit": "Apple Podcasts"
   },
   {
     "id": "art-colosse-incestuel",
