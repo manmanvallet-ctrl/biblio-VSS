@@ -36,6 +36,8 @@
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
     web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
     heure: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    // Même tracé que l'onglet « Favoris » de la navigation : un seul cœur dans toute l'appli.
+    coeur: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
   };
   const ui = (name) => UI_ICONS[name]
     ? `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${UI_ICONS[name]}</svg>`
@@ -205,7 +207,7 @@
           </div>
         </div>
         <button class="fav-btn" type="button" data-fav="${escapeHtml(it.id)}"
-          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${isFav ? "♥" : "♡"}</button>
+          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${ui("coeur")}</button>
       </li>`;
   }
 
@@ -241,7 +243,7 @@
     const items = state.items.filter((it) => favorites.has(it.id));
     $("#fav-list").innerHTML = items.length
       ? items.map(cardHtml).join("")
-      : `<li class="empty">Aucun favori pour l'instant. Appuyez sur ♡ pour en ajouter.</li>`;
+      : `<li class="empty">Aucun favori pour l'instant. Appuyez sur ${ui("coeur")} pour en ajouter.</li>`;
   }
 
   // Catégorie ouverte dans la bibliothèque (pour pré-remplir « Proposer »)
@@ -314,7 +316,7 @@
         .map((l) => `<button class="link-btn" type="button" data-list="${escapeHtml(l.id)}">${escapeHtml(l.titre)}</button>`)
         .join(", ")}</p>` : ""}
       <div class="btn-row">
-        <button class="btn" type="button" data-fav="${escapeHtml(it.id)}">${isFav ? "♥ Retirer des favoris" : "♡ Ajouter aux favoris"}</button>
+        <button class="btn btn-fav" type="button" data-fav="${escapeHtml(it.id)}" aria-pressed="${isFav}">${ui("coeur")} ${isFav ? "Retirer des favoris" : "Ajouter aux favoris"}</button>
         ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">Consulter ↗</a>` : ""}
       </div>
       <div class="btn-row">
