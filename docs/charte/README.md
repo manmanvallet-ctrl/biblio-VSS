@@ -91,3 +91,4 @@ La charte ci-dessus est pensée pour Instagram (visuels de 1080 px). Dans l'appl
 - 24/11/2026 : vert d'eau foncé de `#5e9c98` à `#4f8783` (le premier n'atteignait pas 3:1 sur papier pour un pictogramme).
 - 24/11/2026 : 3 niveaux d'intensité au lieu de 4, pour garder la notation des 58 ressources existantes (`data/ressources.json`) et les règles de floutage et de « Contenus moins durs » (niveau 3).
 - 24/11/2026 : pastille à barres, pour que le niveau se lise sans la couleur.
+- 24/11/2026 : navigation selon l'écran. Téléphone et tablette en portrait : onglets en bas, à portée de pouce. À partir de 960 px de large (ordinateur, tablette en paysage) : onglets dans la barre du haut, entre le nom et la Sortie rapide, onglet actif souligné d'un trait violet.
