@@ -348,6 +348,8 @@
           <h2 id="detail-title">${escapeHtml(it.titre)}</h2>
           <p class="card-meta">${[it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         </div>
+        <button class="fav-btn detail-fav" type="button" data-fav="${escapeHtml(it.id)}"
+          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris" title="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${ui("coeur")}</button>
       </div>
       ${scHtml}
       ${it.image && it.image_credit ? `<p class="img-credit">Image : ${escapeHtml(it.image_credit)}</p>` : ""}
@@ -360,10 +362,9 @@
       ${inLists.length ? `<p class="card-meta">Dans les listes : ${inLists
         .map((l) => `<button class="link-btn" type="button" data-list="${escapeHtml(l.id)}">${escapeHtml(l.titre)}</button>`)
         .join(", ")}</p>` : ""}
-      <div class="btn-row">
-        <button class="btn btn-fav" type="button" data-fav="${escapeHtml(it.id)}" aria-pressed="${isFav}">${ui("coeur")} ${isFav ? "Retirer des favoris" : "Ajouter aux favoris"}</button>
-        ${showLink ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${listen ? "Écouter le podcast" : "Consulter"} ↗</a>` : ""}
-      </div>
+      ${showLink ? `<div class="btn-row">
+        <a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${listen ? "Écouter le podcast" : "Consulter"} ↗</a>
+      </div>` : ""}
       ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
       <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}
       <div class="btn-row">
@@ -1361,7 +1362,10 @@
     saveFavorites();
     renderList();
     renderFavorites();
-    if ($("#detail").open) openDetail(id);
+    if ($("#detail").open) {
+      openDetail(id);
+      $("#detail .detail-fav")?.focus(); // garder le focus clavier sur le cœur
+    }
   }
 
   function openList(id) {
