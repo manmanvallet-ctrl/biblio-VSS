@@ -285,6 +285,9 @@
     const isFav = favorites.has(it.id);
     const strong = it.intensite >= 3;
     const link = safeUrl(it.lien);
+    // Livres et BD : achat chez un libraire indépendant, page du livre trouvée par son ISBN.
+    const isbn = /^97[89]\d{10}$/.test(it.isbn || "") ? it.isbn : null;
+    const buy = isbn ? `https://www.librairiesindependantes.com/product/${isbn}/` : null;
     const inLists = state.lists.filter((l) => l.ressources.includes(it.id));
     const sc = it.senscritique && safeUrl(it.senscritique.url);
     const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
@@ -319,6 +322,8 @@
         <button class="btn btn-fav" type="button" data-fav="${escapeHtml(it.id)}" aria-pressed="${isFav}">${ui("coeur")} ${isFav ? "Retirer des favoris" : "Ajouter aux favoris"}</button>
         ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">Consulter ↗</a>` : ""}
       </div>
+      ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
+      <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}
       <div class="btn-row">
         <button class="btn primary" type="button" data-close>Fermer</button>
       </div>`;

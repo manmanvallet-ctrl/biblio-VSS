@@ -3,6 +3,7 @@
     "id": "familia-grande",
     "titre": "La Familia grande",
     "auteur": "Camille Kouchner",
+    "isbn": "9782757892831",
     "annee": 2021,
     "categorie": "livre",
     "themes": [
@@ -19,6 +20,7 @@
     "id": "triste-tigre",
     "titre": "Triste tigre",
     "auteur": "Neige Sinno",
+    "isbn": "9782073115799",
     "annee": 2023,
     "categorie": "livre",
     "themes": [
@@ -36,6 +38,7 @@
     "id": "consentement",
     "titre": "Le Consentement",
     "auteur": "Vanessa Springora",
+    "isbn": "9782253101567",
     "annee": 2020,
     "categorie": "livre",
     "themes": [
@@ -53,6 +56,7 @@
     "id": "inceste-angot",
     "titre": "L'Inceste",
     "auteur": "Christine Angot",
+    "isbn": "9782290238615",
     "annee": 1999,
     "categorie": "livre",
     "themes": [
@@ -68,6 +72,7 @@
     "id": "memoire-de-fille",
     "titre": "Mémoire de fille",
     "auteur": "Annie Ernaux",
+    "isbn": "9782073129345",
     "annee": 2016,
     "categorie": "livre",
     "themes": [
@@ -84,6 +89,7 @@
     "id": "king-kong-theorie",
     "titre": "King Kong Théorie",
     "auteur": "Virginie Despentes",
+    "isbn": "9782253122111",
     "annee": 2006,
     "categorie": "livre",
     "themes": [
@@ -101,6 +107,7 @@
     "id": "choses-humaines-livre",
     "titre": "Les Choses humaines",
     "auteur": "Karine Tuil",
+    "isbn": "9782072921117",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -117,6 +124,7 @@
     "id": "livre-noir-salmona",
     "titre": "Le Livre noir des violences sexuelles",
     "auteur": "Muriel Salmona",
+    "isbn": "9782100825837",
     "annee": 2013,
     "categorie": "livre",
     "themes": [
@@ -134,6 +142,7 @@
     "id": "culture-du-viol",
     "titre": "Une culture du viol à la française",
     "auteur": "Valérie Rey-Robert",
+    "isbn": "9782377291397",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -781,6 +790,7 @@
     "id": "livre-pelicot",
     "titre": "Et la joie de vivre",
     "auteur": "Gisèle Pelicot, avec Judith Perrignon",
+    "isbn": "9782080497260",
     "annee": 2026,
     "categorie": "livre",
     "themes": [
@@ -848,6 +858,7 @@
     "id": "livre-domination-oubliee",
     "titre": "La domination oubliée. Politiser les rapports adulte-enfant",
     "auteur": "Tal Piterbraut-Merx",
+    "isbn": "9782492642234",
     "annee": 2024,
     "categorie": "livre",
     "themes": [
@@ -897,6 +908,7 @@
     "id": "livre-enfantisme-bourdille",
     "titre": "Enfantisme, il est temps de respecter les enfants",
     "auteur": "Claire Bourdille",
+    "isbn": "9791092636642",
     "categorie": "livre",
     "themes": [
       "adultisme",
@@ -977,6 +989,7 @@
     "id": "livre-racamier-incestuel",
     "titre": "L'inceste et l'incestuel",
     "auteur": "Paul-Claude Racamier",
+    "isbn": "9782100810352",
     "annee": 1995,
     "categorie": "livre",
     "themes": [

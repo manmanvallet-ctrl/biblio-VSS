@@ -44,6 +44,7 @@ Tout le contenu est dans `data/ressources.json`. Ajoutez un bloc comme celui-ci 
 ```
 
 - `categorie` : `livre`, `film`, `serie`, `documentaire`, `podcast`, `article` ou `bd`
+- `isbn` (livres et BD, facultatif) : les 13 chiffres de l'ISBN, sans tiret. La fiche affiche alors « Acheter en librairie indépendante », qui ouvre la page du livre sur librairiesindependantes.com. Choisissez une édition disponible (souvent la version poche) : vérifiez que `https://www.librairiesindependantes.com/product/<isbn>/` montre bien le livre.
 - `intensite` : `1` (modérée), `2` (forte) ou `3` (très forte, résumé flouté)
 - `image` : une affiche ou couverture placée dans le dossier `images/` (ou un lien `https://`). Sans image, une couverture colorée est générée. Vérifiez que vous avez le droit d'utiliser l'image.
 
