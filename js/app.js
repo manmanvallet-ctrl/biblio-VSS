@@ -615,13 +615,27 @@
     $("#learn-rub").hidden = !rub || !!q;
     if (rub && !q) { renderRubrique(rub); $("#def-list").innerHTML = ""; return; }
 
+    // Sources d'une réponse : celles indiquées dans la question (« sources »), sinon celles
+    // des articles vers lesquels elle renvoie (« voir »), sans doublon.
+    const faqSourcesHtml = (f, byId) => {
+      const list = Array.isArray(f.sources) ? f.sources
+        : (f.voir || []).map((id) => byId.get(id) && byId.get(id).source).filter(Boolean);
+      const seen = new Set();
+      const uniq = list.filter((src) => src && src.label && !seen.has(src.url || src.label) && seen.add(src.url || src.label));
+      if (!uniq.length) return "";
+      return `<p class="acc-source">Sources : ${uniq.map((src) => safeUrl(src.url)
+        ? `<a href="${escapeHtml(src.url)}" target="_blank" rel="noopener">${escapeHtml(src.label)}</a>`
+        : escapeHtml(src.label)).join(" · ")}</p>`;
+    };
+
     // Questions fréquentes
     const faqs = L.questions_frequentes.filter((f) => match(f.question, f.reponse));
     $("#faq-list").innerHTML = faqs.length ? faqs.map((f) => `<details class="acc">
         <summary><strong>${escapeHtml(f.question)}</strong></summary>
         <div class="acc-body">${paragraphs(f.reponse)}
-          ${(f.voir || []).filter((id) => byId.has(id)).length ? `<p class="acc-source">Voir aussi : ${f.voir.filter((id) => byId.has(id))
+          ${(f.voir || []).filter((id) => byId.has(id)).length ? `<p class="acc-source">Lire les articles : ${f.voir.filter((id) => byId.has(id))
             .map((id) => `<button class="link-btn" type="button" data-def-open="${escapeHtml(id)}">${escapeHtml(byId.get(id).terme)}</button>`).join(", ")}</p>` : ""}
+          ${faqSourcesHtml(f, byId)}
         </div>
       </details>`).join("") : `<p class="hint">Aucune question ne correspond.</p>`;
 
