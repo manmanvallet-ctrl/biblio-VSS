@@ -1,0 +1,85 @@
+/* Biblio VSS — generated from tokens.json */
+:root, [data-theme="light"] {
+  --papier: #f6f1e9; /* Fond principal des posts, stories et pages. Effet papier, chaleureux. */
+  --papier-clair: #fffdf9; /* Cartes et encadrés posés sur papier. Aussi texte sur prune. */
+  --ink: #2b2433; /* Texte courant sur papier, papier-clair, lavande, vert-eau-clair et intensite-3 (contraste ≥ 4,5:1). */
+  --ink-muted: #5e5566; /* Texte secondaire (auteur, année, légendes) sur papier et papier-clair uniquement. */
+  --prune: #4a2f6b; /* Couleur principale : titres, logo, aplats forts. Texte en papier-clair dessus. */
+  --violet: #5b3a8c; /* Violet du site actuel : liens, boutons, rappel de cohérence site ↔ Insta. Texte en papier-clair dessus. */
+  --lavande: #dcd0ec; /* Encadrés, fonds de slides secondaires. Texte en ink dessus. */
+  --vert-eau: #4f8783; /* Accent : badges, pictos, reliures, série « Pour commencer en douceur ». Aplat ou pictogramme uniquement (3,6:1 sur papier), jamais de texte dessus. */
+  --vert-eau-clair: #d6eae7; /* Fond doux des contenus « moins durs ». Texte en ink dessus. */
+  --intensite-1: #d6eae7; /* Niveau 1 (modérée). Texte ink. */
+  --intensite-2: #dcd0ec; /* Niveau 2 (forte). Texte ink. */
+  --intensite-3: #4a2f6b; /* Niveau 3 (très forte). Texte papier-clair. */
+  --trait: #e2d9cc; /* Filets fins, séparateurs, bordures de cartes sur papier. */
+  --sortie: #b3261e; /* RÉSERVÉ au bouton « Sortie rapide » du site. Jamais ailleurs, ni sur Insta. */
+}
+:root {
+  --space-2: 8px; /* Écart entre badge et texte. */
+  --space-4: 16px; /* Écart entre lignes d'une fiche (titre / auteur). */
+  --space-6: 24px; /* Padding interne des encadrés. */
+  --space-10: 40px; /* Écart entre blocs d'une slide. */
+  --space-20: 80px; /* Marge de sécurité autour de chaque post 1080 px. */
+  --radius-sm: 4px; /* Tranches de livres, petits éléments. */
+  --radius-md: 12px; /* Cartes, encadrés, photos. */
+  --radius-lg: 24px; /* Badges d'intensité et pastilles (moitié de leur hauteur de 48 px). */
+  --font-serif: "Fraunces", "DM Serif Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --text-display: 600 72px/76px var(--font-serif);
+  --text-titre-1: 600 48px/54px var(--font-serif);
+  --text-titre-2: 500 32px/38px var(--font-serif);
+  --text-citation: 400 28px/36px var(--font-serif);
+  --text-corps: 400 24px/34px var(--font-sans);
+  --text-petit: 400 20px/28px var(--font-sans);
+  --text-etiquette: 600 18px/24px var(--font-sans);
+}
+.display {
+  font-family: var(--font-serif);
+  font-size: 72px;
+  line-height: 76px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.titre-1 {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  line-height: 54px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.titre-2 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.citation {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.corps {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.petit {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.etiquette {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
