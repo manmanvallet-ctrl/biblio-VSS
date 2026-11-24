@@ -6,22 +6,50 @@
     window.BIBLIO_CONFIG || {}
   );
 
+  // Les couleurs des couvertures sont dans css/style.css (.cover-livre…), selon la charte.
   const CATEGORIES = {
-    tout: { label: "Tout", icon: "✦" },
-    livre: { label: "Livres", one: "Livre", icon: "📖", color: "#7a4fb5" },
-    film: { label: "Films", one: "Film", icon: "🎬", color: "#b23b5a" },
-    serie: { label: "Séries", one: "Série", icon: "📺", color: "#2f7fb5" },
-    documentaire: { label: "Documentaires", one: "Documentaire", icon: "🎥", color: "#2d8a7a" },
-    podcast: { label: "Podcasts", one: "Podcast", icon: "🎧", color: "#c06a2b" },
-    article: { label: "Articles & rapports", one: "Article / rapport", icon: "📰", color: "#4a5568" },
-    bd: { label: "BD", one: "BD", icon: "💬", color: "#b5892f" },
+    tout: { label: "Tout" },
+    livre: { label: "Livres", one: "Livre", icon: "livre" },
+    film: { label: "Films", one: "Film", icon: "film" },
+    serie: { label: "Séries", one: "Série", icon: "serie" },
+    documentaire: { label: "Documentaires", one: "Documentaire", icon: "documentaire" },
+    podcast: { label: "Podcasts", one: "Podcast", icon: "podcast" },
+    article: { label: "Articles & rapports", one: "Article / rapport", icon: "article" },
+    bd: { label: "BD", one: "BD", icon: "bulle" },
   };
+
+  // Petites icônes dessinées (traits), à la place des émojis : la charte les interdit,
+  // et un émoji s'affiche différemment sur chaque téléphone.
+  const UI_ICONS = {
+    livre: '<path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/>',
+    film: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9.5h4M3 14.5h4M17 9.5h4M17 14.5h4"/>',
+    serie: '<rect x="3" y="7" width="18" height="12" rx="2"/><path d="m8 3 4 4 4-4"/>',
+    documentaire: '<rect x="3" y="7" width="13" height="11" rx="2"/><path d="m16 11 5-3v9l-5-3"/>',
+    podcast: '<path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/>',
+    article: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/>',
+    bulle: '<path d="M4 5h16v11H10l-5 4v-4H4z"/>',
+    lieu: '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    date: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    groupe: '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/>',
+    euro: '<path d="M17 6.5a6.5 6.5 0 1 0 0 11"/><path d="M4 10h9M4 14h9"/>',
+    tel: '<path d="M6 3h3l1.5 4.5-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2L21 15v3a2 2 0 0 1-2 2A17 17 0 0 1 4 5a2 2 0 0 1 2-2z"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+    heure: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  };
+  const ui = (name) => UI_ICONS[name]
+    ? `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${UI_ICONS[name]}</svg>`
+    : "";
 
   const LEVELS = {
     1: "Intensité modérée",
     2: "Intensité forte",
     3: "Intensité très forte",
   };
+  // Pastille d'intensité : 3 barres, dont 1, 2 ou 3 pleines (le niveau se lit sans la couleur).
+  const levelHtml = (n) => LEVELS[n]
+    ? `<span class="level level-${n}"><span class="level-bars" aria-hidden="true"><i></i><i></i><i></i></span>${LEVELS[n]}</span>`
+    : "";
 
   const AIDE_CATEGORIES = {
     tout: "Tout",
@@ -122,14 +150,15 @@
   // Si la ressource a un champ "image", on l'affiche ; sinon on génère
   // une couverture typographique (aucune requête externe, aucun droit d'image).
   function coverHtml(it, size) {
-    const cat = CATEGORIES[it.categorie] || { icon: "•", color: "#5b3a8c" };
+    const cat = CATEGORIES[it.categorie] || {};
     const img = safeImage(it.image);
     if (img) {
       return `<div class="cover cover-${size}"><img src="${escapeHtml(img)}" alt="" loading="lazy"
         onerror="this.parentNode.classList.add('cover-fallback');this.remove()"></div>`;
     }
-    return `<div class="cover cover-${size} cover-gen" style="--c:${cat.color}" aria-hidden="true">
-        <span class="cover-icon">${cat.icon}</span>
+    const catClass = CATEGORIES[it.categorie] ? ` cover-${it.categorie}` : "";
+    return `<div class="cover cover-${size} cover-gen${catClass}" aria-hidden="true">
+        <span class="cover-icon">${ui(cat.icon)}</span>
         ${size === "s" ? "" : `<span class="cover-title">${escapeHtml(it.titre)}</span>
         <span class="cover-author">${escapeHtml(it.auteur)}</span>`}
       </div>`;
@@ -168,7 +197,7 @@
           <p class="card-title">${escapeHtml(it.titre)}</p>
           <p class="card-meta">${[cat.one || cat.label, it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
           <div class="tags">
-            <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span>
+            ${levelHtml(it.intensite)}
             ${scBadge(it)}
           </div>
           <div class="tags tags-themes">
@@ -181,9 +210,10 @@
   }
 
   function renderLists() {
-    $("#lists").innerHTML = state.lists.map((l) => {
+    // 3 tons qui alternent : vert d'eau (la première liste, « Pour commencer »), lavande, prune.
+    $("#lists").innerHTML = state.lists.map((l, i) => {
       const n = l.ressources.filter((id) => state.items.some((it) => it.id === id)).length;
-      return `<button class="list-card" type="button" data-list="${escapeHtml(l.id)}" style="--c:${escapeHtml(l.couleur || "#5b3a8c")}">
+      return `<button class="list-card list-tone-${i % 3}" type="button" data-list="${escapeHtml(l.id)}">
           <span class="list-name">${escapeHtml(l.titre)}</span>
           <span class="list-desc">${escapeHtml(l.description)}</span>
           <span class="list-count">${n} ressource${n > 1 ? "s" : ""}</span>
@@ -234,7 +264,7 @@
     $("#categories").innerHTML = Object.entries(CATEGORIES)
       .filter(([key]) => key === "tout" || counts[key])
       .map(([key, c]) =>
-        `<button class="chip${key === state.category ? " active" : ""}" type="button" aria-pressed="${key === state.category}" data-cat="${key}">${c.icon} ${c.label}</button>`)
+        `<button class="chip${key === state.category ? " active" : ""}" type="button" aria-pressed="${key === state.category}" data-cat="${key}">${ui(c.icon)}${c.label}</button>`)
       .join("");
   }
 
@@ -249,7 +279,7 @@
   function openDetail(id) {
     const it = state.items.find((x) => x.id === id);
     if (!it) return;
-    const cat = CATEGORIES[it.categorie] || { icon: "•", label: it.categorie };
+    const cat = CATEGORIES[it.categorie] || { label: it.categorie };
     const isFav = favorites.has(it.id);
     const strong = it.intensite >= 3;
     const link = safeUrl(it.lien);
@@ -267,7 +297,7 @@
       <div class="detail-head">
         ${coverHtml(it, "l")}
         <div>
-          <p class="card-meta">${cat.icon} ${escapeHtml(cat.one || cat.label)}</p>
+          <p class="card-meta">${ui(cat.icon)} ${escapeHtml(cat.one || cat.label)}</p>
           <h2 id="detail-title">${escapeHtml(it.titre)}</h2>
           <p class="card-meta">${[it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         </div>
@@ -275,7 +305,7 @@
       ${scHtml}
       ${it.image && it.image_credit ? `<p class="img-credit">Image : ${escapeHtml(it.image_credit)}</p>` : ""}
       <div class="warning">
-        <span class="level level-${it.intensite}">${LEVELS[it.intensite] || ""}</span><br>
+        ${levelHtml(it.intensite)}<br>
         Thèmes abordés : ${it.themes.map(escapeHtml).join(", ")}.
         ${strong ? "<br>Ce contenu peut être particulièrement éprouvant. Le résumé est masqué : appuyez dessus pour l'afficher." : ""}
       </div>
@@ -347,7 +377,7 @@
       return `<li class="card event-card" tabindex="0" data-event="${escapeHtml(ev.id)}">
           <div class="date-badge" aria-hidden="true"><span>${d}</span>${MONTHS[m - 1]}</div>
           <div class="card-main">
-            ${ev.ville ? `<p class="event-city">📍 ${escapeHtml(ev.ville)}</p>` : ""}
+            ${ev.ville ? `<p class="event-city">${ui("lieu")} ${escapeHtml(ev.ville)}</p>` : ""}
             <p class="card-title">${escapeHtml(ev.titre)}</p>
             <p class="card-meta">${escapeHtml(ev.type || "Événement")}${validTime(ev.heure) ? " · " + ev.heure.replace(":", "h") : ""}</p>
             ${ev.lieu ? `<p class="card-meta">${escapeHtml(ev.lieu)}</p>` : ""}
@@ -378,13 +408,13 @@
     const dlg = $("#detail");
     dlg.querySelector(".sheet-body").innerHTML = `
       <button class="quick-exit sheet-exit" type="button" data-exit>Sortie rapide</button>
-      <p class="card-meta">📅 ${escapeHtml(ev.type || "Événement")}</p>
+      <p class="card-meta">${ui("date")} ${escapeHtml(ev.type || "Événement")}</p>
       <h2 id="detail-title">${escapeHtml(ev.titre)}</h2>
       <ul class="event-facts">
-        <li>🗓 ${escapeHtml(formatDate(ev))}</li>
-        <li>📍 ${escapeHtml([ev.lieu, ev.ville].filter(Boolean).join(", "))}</li>
-        ${ev.organisateur ? `<li>👥 ${escapeHtml(ev.organisateur)}</li>` : ""}
-        ${ev.gratuit ? "<li>💶 Gratuit</li>" : ""}
+        <li>${ui("date")} ${escapeHtml(formatDate(ev))}</li>
+        <li>${ui("lieu")} ${escapeHtml([ev.lieu, ev.ville].filter(Boolean).join(", "))}</li>
+        ${ev.organisateur ? `<li>${ui("groupe")} ${escapeHtml(ev.organisateur)}</li>` : ""}
+        ${ev.gratuit ? `<li>${ui("euro")} Gratuit</li>` : ""}
       </ul>
       ${ev.description ? `<p>${escapeHtml(ev.description)}</p>` : ""}
       ${sourceLine(ev)}
@@ -434,14 +464,14 @@
   // ---------- Annuaire d'aide ----------
   function contactHtml(c) {
     const label = c.label || c.valeur;
-    if (c.type === "tel" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="tel:${c.valeur}">📞 ${escapeHtml(label)}</a>`;
-    if (c.type === "sms" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="sms:${c.valeur}">✉️ SMS ${escapeHtml(label)}</a>`;
+    if (c.type === "tel" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="tel:${c.valeur}">${ui("tel")} ${escapeHtml(label)}</a>`;
+    if (c.type === "sms" && /^\+?\d{3,15}$/.test(c.valeur)) return `<a class="contact" href="sms:${c.valeur}">${ui("bulle")} SMS ${escapeHtml(label)}</a>`;
     if (c.type === "email" && /^[^@\s"<>]+@[^@\s"<>]+\.[a-z]{2,}$/i.test(c.valeur))
-      return `<a class="contact" href="mailto:${escapeHtml(c.valeur)}">✉️ ${escapeHtml(label)}</a>`;
+      return `<a class="contact" href="mailto:${escapeHtml(c.valeur)}">${ui("mail")} ${escapeHtml(label)}</a>`;
     const url = safeUrl(c.valeur);
     if (!url) return "";
     const text = c.label || (c.type === "tchat" ? "Tchat" : "Site web");
-    return `<a class="contact" href="${escapeHtml(url)}" target="_blank" rel="noopener">${c.type === "tchat" ? "💬" : "🌐"} ${escapeHtml(text)}</a>`;
+    return `<a class="contact" href="${escapeHtml(url)}" target="_blank" rel="noopener">${ui(c.type === "tchat" ? "bulle" : "web")} ${escapeHtml(text)}</a>`;
   }
 
   function renderAide() {
@@ -460,7 +490,7 @@
     $("#aide-list").innerHTML = items.length ? items.map((a) => `
       <li class="help-entry">
         <p class="card-title">${escapeHtml(a.nom)}</p>
-        <p class="card-meta">📍 ${escapeHtml(a.ville || "")}${a.horaires ? ` · 🕒 ${escapeHtml(a.horaires)}` : ""}</p>
+        <p class="card-meta">${ui("lieu")} ${escapeHtml(a.ville || "")}${a.horaires ? ` · ${ui("heure")} ${escapeHtml(a.horaires)}` : ""}</p>
         <p class="help-desc">${escapeHtml(a.description)}</p>
         <div class="contacts">${(a.contacts || []).map(contactHtml).join("")}</div>
       </li>`).join("") : `<li class="empty">Aucun résultat dans l'annuaire.</li>`;

@@ -1,58 +1,112 @@
+/* Polices hébergées dans l'appli (licence OFL, voir fonts/) :
+   aucune requête vers Google, rien ne sort du téléphone. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Charte graphique Biblio VSS : voir docs/charte/README.md.
+   Les noms de gauche (--bg, --text…) sont utilisés partout dans ce fichier ;
+   leurs valeurs viennent des couleurs de la charte (papier, ink, prune…). */
 :root {
-  --bg: #f7f5fa;
-  --surface: #ffffff;
-  --text: #24202b;
-  --muted: #6b6475;
-  --border: #e4dfeb;
-  --accent: #5b3a8c;
-  --accent-soft: #ece4f7;
-  --exit: #c0392b;
-  --lvl1: #2e7a4a; /* assombris pour un contraste ≥ 4,5:1 (WCAG AA) */
-  --lvl2: #9a6200;
-  --lvl3: #b23b3b;
-  --radius: 14px;
+  --font-serif: "Fraunces", "DM Serif Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --bg: #f6f1e9;          /* papier */
+  --surface: #fffdf9;     /* papier-clair */
+  --text: #2b2433;        /* ink */
+  --muted: #5e5566;       /* ink-muted */
+  --border: #e2d9cc;      /* trait */
+  --heading: #4a2f6b;     /* prune : titres, logo */
+  --accent: #5b3a8c;      /* violet : liens, boutons */
+  --accent-soft: #dcd0ec; /* lavande : encadrés */
+  --on-accent: #fffdf9;
+  --vert-eau: #4f8783;    /* accent en aplat uniquement, jamais en texte */
+  --vert-eau-clair: #d6eae7;
+  --ok: #3f7672;          /* message de succès (texte, contraste 4,6) */
+  --exit: #b3261e;        /* sortie : RÉSERVÉ au bouton « Sortie rapide » */
+
+  /* Niveaux d'intensité : une seule famille, du vert d'eau au prune */
+  --lvl1-bg: #d6eae7; --lvl1-fg: #2b2433;
+  --lvl2-bg: #dcd0ec; --lvl2-fg: #2b2433;
+  --lvl3-bg: #4a2f6b; --lvl3-fg: #fffdf9;
+
+  /* Listes thématiques et couvertures générées */
+  --tone-douceur-bg: #d6eae7; --tone-douceur-fg: #2b2433;
+  --tone-lavande-bg: #dcd0ec; --tone-lavande-fg: #2b2433;
+  --tone-prune-bg: #4a2f6b;   --tone-prune-fg: #fffdf9;
+
+  --radius: 12px;         /* radius-md */
+  --radius-sm: 4px;
   --tabbar-h: 64px;
   --sc-bg: #fff4c2;
   --sc-fg: #6b4e00;
   --sc-border: #f0d77a;
-  --on-accent: #ffffff;
+
+  /* Motif étagère : 5 couleurs de la charte au maximum */
+  --shelf-1: #4a2f6b; --shelf-2: #5b3a8c; --shelf-3: #dcd0ec; --shelf-4: #4f8783; --shelf-5: #d6eae7;
 }
 
-/* Thème sombre : suit le téléphone, sauf si un thème clair/sombre est imposé */
+/* Thème sombre (absent de la charte Instagram, créé pour l'appli) :
+   suit le téléphone, sauf si un thème clair/sombre est imposé. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #16131b;
-    --surface: #221e29;
-    --text: #eee9f4;
-    --muted: #a49cb0;
-    --border: #353040;
-    --accent: #b596e6;
-    --accent-soft: #33284a;
+    --bg: #1a1520;
+    --surface: #241d2c;
+    --text: #f2edf7;
+    --muted: #b8aec4;
+    --border: #3a3146;
+    --heading: #dcd0ec;
+    --accent: #c9b3ec;
+    --accent-soft: #352a47;
+    --on-accent: #1f1729;
+    --vert-eau: #6fa9a4;
+    --vert-eau-clair: #2d4c49;
+    --ok: #9fd3cc;
+    --lvl1-bg: #2d4c49; --lvl1-fg: #e3f2ef;
+    --lvl2-bg: #41345a; --lvl2-fg: #ede5f8;
+    --lvl3-bg: #c9b3ec; --lvl3-fg: #1f1729;
+    --tone-douceur-bg: #2d4c49; --tone-douceur-fg: #e3f2ef;
+    --tone-lavande-bg: #41345a; --tone-lavande-fg: #ede5f8;
+    --tone-prune-bg: #c9b3ec;   --tone-prune-fg: #1f1729;
     --sc-bg: #3a3214;
     --sc-fg: #f3d873;
     --sc-border: #5c4f1c;
-    --on-accent: #1b1325;
-    --lvl1: #6cc28c; /* éclaircis pour rester lisibles sur fond sombre */
-    --lvl2: #e0a33c;
-    --lvl3: #f08080;
+    --shelf-1: #c9b3ec; --shelf-2: #8f74bf; --shelf-3: #41345a; --shelf-4: #6fa9a4; --shelf-5: #2d4c49;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #16131b;
-  --surface: #221e29;
-  --text: #eee9f4;
-  --muted: #a49cb0;
-  --border: #353040;
-  --accent: #b596e6;
-  --accent-soft: #33284a;
+  --bg: #1a1520;
+  --surface: #241d2c;
+  --text: #f2edf7;
+  --muted: #b8aec4;
+  --border: #3a3146;
+  --heading: #dcd0ec;
+  --accent: #c9b3ec;
+  --accent-soft: #352a47;
+  --on-accent: #1f1729;
+  --vert-eau: #6fa9a4;
+  --vert-eau-clair: #2d4c49;
+  --ok: #9fd3cc;
+  --lvl1-bg: #2d4c49; --lvl1-fg: #e3f2ef;
+  --lvl2-bg: #41345a; --lvl2-fg: #ede5f8;
+  --lvl3-bg: #c9b3ec; --lvl3-fg: #1f1729;
+  --tone-douceur-bg: #2d4c49; --tone-douceur-fg: #e3f2ef;
+  --tone-lavande-bg: #41345a; --tone-lavande-fg: #ede5f8;
+  --tone-prune-bg: #c9b3ec;   --tone-prune-fg: #1f1729;
   --sc-bg: #3a3214;
   --sc-fg: #f3d873;
   --sc-border: #5c4f1c;
-  --on-accent: #1b1325;
-  --lvl1: #6cc28c; /* éclaircis pour rester lisibles sur fond sombre */
-  --lvl2: #e0a33c;
-  --lvl3: #f08080;
+  --shelf-1: #c9b3ec; --shelf-2: #8f74bf; --shelf-3: #41345a; --shelf-4: #6fa9a4; --shelf-5: #2d4c49;
   color-scheme: dark;
 }
 
@@ -61,7 +115,7 @@
 html, body { margin: 0; }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.45;
@@ -81,10 +135,20 @@ body {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
-.brand { font-size: 1.25rem; margin: 0; }
+/* Titres : Fraunces (serif), couleur prune */
+h1, h2, h3, .brand, .card-title, .list-name, .section-title, .view-title {
+  font-family: var(--font-serif);
+  color: var(--heading);
+}
+h1, h2, h3, .brand { font-weight: 600; letter-spacing: -0.01em; }
+.brand { font-size: 1.35rem; margin: 0; }
 .brand span { color: var(--accent); }
 
+/* Icônes dessinées (remplacent les émojis, interdits par la charte) */
+.ui-icon { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; }
+
 .quick-exit {
+  min-height: 44px;
   background: var(--exit);
   color: #fff;
   border: 0;
@@ -101,6 +165,33 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 .view.active { display: block; }
 .view-title { margin: 8px 0 4px; }
 .hint { color: var(--muted); margin: 0 0 16px; font-size: .92rem; }
+
+/* Bandeau d'accueil : phrase repère + motif étagère (charte) */
+.shelf-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 14px;
+}
+.shelf-text { min-width: 0; padding-bottom: 4px; }
+.shelf-tagline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--heading);
+}
+.shelf-sub { margin: 4px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.35; }
+.shelf-art { flex: none; width: 128px; height: auto; overflow: visible; }
+.shelf-art .s1 { fill: var(--shelf-1); }
+.shelf-art .s2 { fill: var(--shelf-2); }
+.shelf-art .s3 { fill: var(--shelf-3); }
+.shelf-art .s4 { fill: var(--shelf-4); }
+.shelf-art .s5 { fill: var(--shelf-5); }
+.shelf-art .groove { stroke: var(--bg); stroke-width: 1.5; }
+.shelf-art .shelf-line { stroke: var(--text); stroke-width: 1.5; }
 
 /* Recherche & filtres */
 .search-wrap input {
@@ -123,6 +214,8 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 .chips::-webkit-scrollbar { display: none; }
 .chip {
   flex: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 40px;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
@@ -167,7 +260,7 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 }
 .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .card-main { flex: 1; min-width: 0; }
-.card-title { font-weight: 600; margin: 0 0 2px; }
+.card-title { font-weight: 600; font-size: 1.08rem; line-height: 1.25; margin: 0 0 4px; }
 .card-meta { color: var(--muted); font-size: .85rem; margin: 0 0 6px; }
 .tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .tag {
@@ -187,11 +280,26 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   padding: 4px;
 }
 
-.level { display: inline-flex; align-items: center; gap: 5px; font-size: .78rem; font-weight: 600; }
-.level::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-.level-1 { color: var(--lvl1); }
-.level-2 { color: var(--lvl2); }
-.level-3 { color: var(--lvl3); }
+/* Pastille d'intensité : couleur + nombre de barres pleines (1 à 3).
+   Les barres disent le niveau par la forme : lisible sans distinguer les couleurs. */
+.level {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  font-size: .78rem; font-weight: 600; line-height: 1.3;
+  background: var(--lvl-bg); color: var(--lvl-fg);
+}
+.level-1 { --lvl-bg: var(--lvl1-bg); --lvl-fg: var(--lvl1-fg); }
+.level-2 { --lvl-bg: var(--lvl2-bg); --lvl-fg: var(--lvl2-fg); }
+.level-3 { --lvl-bg: var(--lvl3-bg); --lvl-fg: var(--lvl3-fg); }
+.level-bars { display: inline-flex; align-items: flex-end; gap: 2px; height: 11px; }
+.level-bars i { width: 3px; border-radius: 1px; background: currentColor; opacity: .3; }
+.level-bars i:nth-child(1) { height: 5px; }
+.level-bars i:nth-child(2) { height: 8px; }
+.level-bars i:nth-child(3) { height: 11px; }
+.level-1 .level-bars i:nth-child(-n+1),
+.level-2 .level-bars i:nth-child(-n+2),
+.level-3 .level-bars i { opacity: 1; }
 
 .empty { text-align: center; color: var(--muted); padding: 32px 0; }
 
@@ -275,7 +383,7 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   border-radius: var(--radius);
   padding: 12px 14px;
 }
-.help-list li.urgent { border-left: 4px solid var(--exit); }
+.help-list li.urgent { border-left: 4px solid var(--heading); }
 .help-list a { color: var(--text); text-decoration: none; display: block; font-size: 1.02rem; }
 .help-list strong { color: var(--accent); margin-right: 6px; }
 .help-list small { color: var(--muted); }
@@ -296,19 +404,31 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   background: var(--accent-soft);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
 }
 .cover img { width: 100%; height: 100%; object-fit: cover; }
 .cover-s { width: 52px; height: 74px; align-items: center; justify-content: center; }
 .cover-l { width: 104px; height: 150px; }
+/* Couverture générée : un aplat de la charte + une reliure à gauche,
+   comme la tranche d'un livre (motif « étagère » de la charte). */
 .cover-gen {
-  background: linear-gradient(160deg, var(--c), color-mix(in srgb, var(--c) 55%, #000));
-  color: #fff;
+  --cv-bg: #4a2f6b; --cv-fg: #fffdf9; --cv-spine: #34204d;
+  background: var(--cv-bg);
+  color: var(--cv-fg);
+  border-left: 5px solid var(--cv-spine);
   padding: 8px;
 }
+.cover-livre        { --cv-bg: #4a2f6b; --cv-fg: #fffdf9; --cv-spine: #34204d; }
+.cover-film         { --cv-bg: #5b3a8c; --cv-fg: #fffdf9; --cv-spine: #4a2f6b; }
+.cover-serie        { --cv-bg: #dcd0ec; --cv-fg: #2b2433; --cv-spine: #9a84be; }
+.cover-documentaire { --cv-bg: #d6eae7; --cv-fg: #2b2433; --cv-spine: #4f8783; }
+.cover-podcast      { --cv-bg: #e2d9cc; --cv-fg: #2b2433; --cv-spine: #4f8783; }
+.cover-article      { --cv-bg: #dcd0ec; --cv-fg: #2b2433; --cv-spine: #4a2f6b; }
+.cover-bd           { --cv-bg: #9a84be; --cv-fg: #2b2433; --cv-spine: #4a2f6b; }
 .cover-s.cover-gen { padding: 0; }
-.cover-icon { font-size: 1.4rem; }
-.cover-l .cover-icon { font-size: 1.2rem; margin-bottom: auto; }
+.cover-icon { display: flex; }
+.cover-icon .ui-icon { width: 24px; height: 24px; }
+.cover-l .cover-icon { margin-bottom: auto; }
+.cover-title { font-family: var(--font-serif); }
 .cover-title { font-weight: 700; font-size: .82rem; line-height: 1.2; overflow-wrap: anywhere; }
 .cover-author { font-size: .65rem; opacity: .85; margin-top: 4px; }
 .cover-fallback { background: var(--accent-soft); }
@@ -336,17 +456,20 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   border: 0;
   border-radius: var(--radius);
   padding: 14px;
-  color: #fff;
-  background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 60%, #000));
+  color: var(--tone-fg);
+  background: var(--tone-bg);
   display: flex;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
   font: inherit;
 }
-.list-name { font-weight: 700; font-size: 1.02rem; }
-.list-desc { font-size: .8rem; opacity: .9; flex: 1; }
-.list-count { font-size: .75rem; opacity: .8; }
+.list-tone-0 { --tone-bg: var(--tone-douceur-bg); --tone-fg: var(--tone-douceur-fg); border-top: 6px solid var(--vert-eau); }
+.list-tone-1 { --tone-bg: var(--tone-lavande-bg); --tone-fg: var(--tone-lavande-fg); }
+.list-tone-2 { --tone-bg: var(--tone-prune-bg);   --tone-fg: var(--tone-prune-fg); }
+.list-name { font-weight: 600; font-size: 1.15rem; line-height: 1.2; color: inherit; }
+.list-desc { font-size: .82rem; flex: 1; }
+.list-count { font-size: .78rem; font-weight: 600; }
 .list-banner {
   display: flex;
   justify-content: space-between;
@@ -376,11 +499,11 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   color: var(--text);
   width: 100%;
 }
-.req { color: var(--exit); }
+.req { color: var(--heading); }
 .privacy { font-size: .85rem; color: var(--muted); margin: 0; }
 .form-status { margin: 0; font-size: .92rem; min-height: 1.2em; }
-.form-status.ok { color: var(--lvl1); }
-.form-status.error { color: var(--exit); }
+.form-status.ok { color: var(--ok); }
+.form-status.error { color: var(--text); font-weight: 600; } /* le rouge est réservé à « Sortie rapide » */
 [hidden] { display: none !important; }
 
 /* Agenda */
@@ -461,14 +584,14 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
   display: grid; gap: 6px;
   margin: 16px 0 4px; padding: 14px 16px;
   border-radius: var(--radius);
-  background: linear-gradient(150deg, #8c3a6b, #5b3a8c);
-  color: #fff; text-decoration: none;
+  background: var(--tone-prune-bg);
+  color: var(--tone-prune-fg); text-decoration: none;
 }
 .testify strong { font-size: 1.05rem; }
 .testify span { font-size: .9rem; opacity: .95; }
 .testify .testify-cta {
   justify-self: start; margin-top: 4px; padding: 7px 12px;
-  border-radius: 999px; background: rgba(255,255,255,.18); font-weight: 600; opacity: 1;
+  border-radius: 999px; border: 1.5px solid currentColor; font-weight: 600; opacity: 1;
 }
 
 /* Lien + remplissage automatique */
