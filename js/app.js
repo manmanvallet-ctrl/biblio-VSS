@@ -292,6 +292,10 @@
     // Livres et BD : achat chez un libraire indépendant, page du livre trouvée par son ISBN.
     const isbn = /^97[89]\d{10}$/.test(it.isbn || "") ? it.isbn : null;
     const buy = isbn ? `https://www.librairiesindependantes.com/product/${isbn}/` : null;
+    // Le lien mène à un autre format (ex. le podcast où l'autrice présente son livre) ?
+    const listen = catsOf(it).includes("podcast") && it.categorie !== "podcast";
+    // Un livre qu'on peut acheter en librairie n'a pas besoin, en plus, du lien vers la page de l'éditeur.
+    const showLink = link && (!buy || listen);
     const inLists = state.lists.filter((l) => l.ressources.includes(it.id));
     const sc = it.senscritique && safeUrl(it.senscritique.url);
     const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
@@ -327,7 +331,7 @@
         .join(", ")}</p>` : ""}
       <div class="btn-row">
         <button class="btn btn-fav" type="button" data-fav="${escapeHtml(it.id)}" aria-pressed="${isFav}">${ui("coeur")} ${isFav ? "Retirer des favoris" : "Ajouter aux favoris"}</button>
-        ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${catsOf(it).includes("podcast") && it.categorie !== "podcast" ? "Écouter le podcast" : "Consulter"} ↗</a>` : ""}
+        ${showLink ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${listen ? "Écouter le podcast" : "Consulter"} ↗</a>` : ""}
       </div>
       ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
       <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}
