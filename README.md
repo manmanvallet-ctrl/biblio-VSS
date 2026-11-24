@@ -154,6 +154,24 @@ python3 -m http.server 8000
 
 Puis ouvrez http://localhost:8000.
 
+## Tests automatiques
+
+```bash
+npm test
+```
+
+Vérifie en quelques secondes, sans navigateur :
+- **les données** (`tests/donnees.test.js`) : champs obligatoires, catégories et intensités autorisées, liens en `https://`, images présentes et créditées, listes et définitions qui pointent vers des fiches existantes, dates de l'agenda, téléphones et e-mails de l'annuaire, présence du 3919 et du 119 ;
+- **les fichiers** (`tests/fichiers.test.js`) : tout ce que le service worker met en cache existe (un seul fichier manquant casse le mode hors-ligne), rien n'est oublié dans `sw.js` ni dans la copie vers les applis, aucun lien vers un fichier absent.
+
+```bash
+npm run test:parcours
+```
+
+Un robot utilise l'appli dans un vrai navigateur (Chromium, avec [Playwright](https://playwright.dev)) : avertissement à la première visite, recherche sans accents, catégories, « Contenus moins durs », résumé flouté, favoris conservés, numéros d'urgence, **sortie rapide** (bouton et double Échap, sans retour possible) et **mode hors-ligne**. `CAPTURES=dossier npm run test:parcours` enregistre une capture de chaque étape.
+
+Sur GitHub, les tests tournent à chaque envoi (onglet **Actions**). Sur `main`, le site n'est mis en ligne **que si tous les tests passent** : sinon la version en ligne reste inchangée.
+
 ## Mettre en ligne (gratuit)
 
 La version navigateur est publiée automatiquement sur **GitHub Pages** à chaque modification de la branche `main` (`.github/workflows/site.yml`). À faire une seule fois :

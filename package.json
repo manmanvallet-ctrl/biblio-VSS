@@ -4,6 +4,8 @@
   "private": true,
   "description": "Bibliothèque de ressources sur l'inceste, le viol et les violences sexuelles",
   "scripts": {
+    "test": "node --test \"tests/*.test.js\"",
+    "test:parcours": "node --test tests/parcours.e2e.js",
     "build": "node scripts/build-web.js",
     "sync": "npm run build && npx cap sync",
     "android": "npm run sync && npx cap open android",
