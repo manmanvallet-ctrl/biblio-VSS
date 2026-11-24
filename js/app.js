@@ -368,7 +368,7 @@
       ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
       <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}
       <div class="btn-row">
-        <button class="btn primary" type="button" data-close>Fermer</button>
+        <button class="btn" type="button" data-close>Fermer</button>
       </div>`;
     if (!dlg.open) dlg.showModal();
   }
@@ -473,7 +473,7 @@
         ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">En savoir plus ↗</a>` : ""}
       </div>
       <div class="btn-row">
-        <button class="btn primary" type="button" data-close>Fermer</button>
+        <button class="btn" type="button" data-close>Fermer</button>
       </div>`;
     if (!dlg.open) dlg.showModal();
   }
@@ -707,7 +707,7 @@
       <div class="rub-head">${icon(d.icone || "coeur")}<h2 id="detail-title">${escapeHtml(d.terme)}</h2></div>
       <p class="hint">${escapeHtml(d.court)}</p>
       <div class="sheet-text">${defBody(d)}</div>
-      <div class="btn-row"><button class="btn primary" type="button" data-close>Fermer</button></div>`;
+      <div class="btn-row"><button class="btn" type="button" data-close>Fermer</button></div>`;
     if (!dlg.open) dlg.showModal();
   }
 
