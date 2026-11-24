@@ -38,6 +38,28 @@
   <main id="app">
     <!-- Bibliothèque -->
     <section id="view-library" class="view active" aria-label="Bibliothèque">
+      <!-- Motif « étagère » de la charte (docs/charte) : décoratif, ignoré par les lecteurs d'écran -->
+      <div class="shelf-hero">
+        <div class="shelf-text">
+          <p class="shelf-tagline">Vous n'êtes pas&nbsp;seul·e.</p>
+          <p class="shelf-sub">Des livres, des films, des voix pour comprendre.</p>
+        </div>
+        <svg class="shelf-art" viewBox="0 0 168 74" aria-hidden="true" focusable="false">
+          <rect class="s3" x="0" y="24" width="16" height="48" rx="3"/>
+          <rect class="s1" x="18" y="6" width="24" height="66" rx="3"/>
+          <line class="groove" x1="18" y1="14" x2="42" y2="14"/>
+          <line class="groove" x1="18" y1="18" x2="42" y2="18"/>
+          <rect class="s5" x="44" y="30" width="16" height="42" rx="3"/>
+          <rect class="s4" x="62" y="14" width="24" height="58" rx="3"/>
+          <line class="groove" x1="62" y1="62" x2="86" y2="62"/>
+          <rect class="s2" x="88" y="24" width="8" height="48" rx="3"/>
+          <rect class="s3" x="98" y="10" width="24" height="62" rx="3"/>
+          <line class="groove" x1="98" y1="22" x2="122" y2="22"/>
+          <rect class="s5" x="124" y="26" width="16" height="46" rx="3"/>
+          <rect class="s1" x="142" y="22" width="16" height="50" rx="3" transform="rotate(12 142 72)"/>
+          <line class="shelf-line" x1="0" y1="72.75" x2="168" y2="72.75"/>
+        </svg>
+      </div>
       <div class="search-wrap">
         <input id="search" type="search" placeholder="Rechercher un titre, un auteur, un thème…" autocomplete="off" aria-label="Rechercher">
       </div>

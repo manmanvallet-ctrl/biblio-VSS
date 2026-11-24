@@ -50,6 +50,9 @@
   --sc-bg: #fff4c2;
   --sc-fg: #6b4e00;
   --sc-border: #f0d77a;
+
+  /* Motif étagère : 5 couleurs de la charte au maximum */
+  --shelf-1: #4a2f6b; --shelf-2: #5b3a8c; --shelf-3: #dcd0ec; --shelf-4: #4f8783; --shelf-5: #d6eae7;
 }
 
 /* Thème sombre (absent de la charte Instagram, créé pour l'appli) :
@@ -77,6 +80,7 @@
     --sc-bg: #3a3214;
     --sc-fg: #f3d873;
     --sc-border: #5c4f1c;
+    --shelf-1: #c9b3ec; --shelf-2: #8f74bf; --shelf-3: #41345a; --shelf-4: #6fa9a4; --shelf-5: #2d4c49;
     color-scheme: dark;
   }
 }
@@ -102,6 +106,7 @@
   --sc-bg: #3a3214;
   --sc-fg: #f3d873;
   --sc-border: #5c4f1c;
+  --shelf-1: #c9b3ec; --shelf-2: #8f74bf; --shelf-3: #41345a; --shelf-4: #6fa9a4; --shelf-5: #2d4c49;
   color-scheme: dark;
 }
 
@@ -160,6 +165,33 @@ main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
 .view.active { display: block; }
 .view-title { margin: 8px 0 4px; }
 .hint { color: var(--muted); margin: 0 0 16px; font-size: .92rem; }
+
+/* Bandeau d'accueil : phrase repère + motif étagère (charte) */
+.shelf-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0 14px;
+}
+.shelf-text { min-width: 0; padding-bottom: 4px; }
+.shelf-tagline {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--heading);
+}
+.shelf-sub { margin: 4px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.35; }
+.shelf-art { flex: none; width: 128px; height: auto; overflow: visible; }
+.shelf-art .s1 { fill: var(--shelf-1); }
+.shelf-art .s2 { fill: var(--shelf-2); }
+.shelf-art .s3 { fill: var(--shelf-3); }
+.shelf-art .s4 { fill: var(--shelf-4); }
+.shelf-art .s5 { fill: var(--shelf-5); }
+.shelf-art .groove { stroke: var(--bg); stroke-width: 1.5; }
+.shelf-art .shelf-line { stroke: var(--text); stroke-width: 1.5; }
 
 /* Recherche & filtres */
 .search-wrap input {
