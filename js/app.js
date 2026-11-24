@@ -177,7 +177,7 @@
       items = state.list.ressources.map((id) => byId.get(id)).filter(Boolean);
     }
     return items.filter((it) => {
-      if (state.category !== "tout" && it.categorie !== state.category) return false;
+      if (state.category !== "tout" && !catsOf(it).includes(state.category)) return false;
       if (state.theme && !it.themes.includes(state.theme)) return false;
       if (state.gentle && it.intensite >= 3) return false;
       if (q) {
@@ -197,7 +197,7 @@
         ${coverHtml(it, "s")}
         <div class="card-main">
           <p class="card-title">${escapeHtml(it.titre)}</p>
-          <p class="card-meta">${[cat.one || cat.label, it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
+          <p class="card-meta">${[...catsOf(it).map((c) => CATEGORIES[c].one || CATEGORIES[c].label), it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
           <div class="tags">
             ${levelHtml(it.intensite)}
             ${scBadge(it)}
@@ -260,9 +260,13 @@
     });
   }
 
+  // Une ressource peut avoir plusieurs formats : « categorie » (le principal) + « aussi »
+  // (ex. un livre que l'autrice présente dans un podcast). Elle apparaît sous chaque filtre.
+  const catsOf = (it) => [it.categorie, ...(Array.isArray(it.aussi) ? it.aussi : [])].filter((c, i, a) => CATEGORIES[c] && a.indexOf(c) === i);
+
   function renderCategories() {
     renderSuggestCta();
-    const counts = state.items.reduce((acc, it) => ((acc[it.categorie] = (acc[it.categorie] || 0) + 1), acc), {});
+    const counts = state.items.reduce((acc, it) => (catsOf(it).forEach((c) => (acc[c] = (acc[c] || 0) + 1)), acc), {});
     $("#categories").innerHTML = Object.entries(CATEGORIES)
       .filter(([key]) => key === "tout" || counts[key])
       .map(([key, c]) =>
@@ -302,7 +306,10 @@
       <div class="detail-head">
         ${coverHtml(it, "l")}
         <div>
-          <p class="card-meta">${ui(cat.icon)} ${escapeHtml(cat.one || cat.label)}</p>
+          <p class="card-meta cat-line">${(catsOf(it).length ? catsOf(it) : [it.categorie]).map((c) => {
+            const k = CATEGORIES[c] || { label: c };
+            return `<span>${ui(k.icon)} ${escapeHtml(k.one || k.label)}</span>`;
+          }).join("")}</p>
           <h2 id="detail-title">${escapeHtml(it.titre)}</h2>
           <p class="card-meta">${[it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         </div>
@@ -320,7 +327,7 @@
         .join(", ")}</p>` : ""}
       <div class="btn-row">
         <button class="btn btn-fav" type="button" data-fav="${escapeHtml(it.id)}" aria-pressed="${isFav}">${ui("coeur")} ${isFav ? "Retirer des favoris" : "Ajouter aux favoris"}</button>
-        ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">Consulter ↗</a>` : ""}
+        ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${catsOf(it).includes("podcast") && it.categorie !== "podcast" ? "Écouter le podcast" : "Consulter"} ↗</a>` : ""}
       </div>
       ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
       <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}

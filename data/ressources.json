@@ -910,6 +910,7 @@
     "auteur": "Claire Bourdille",
     "isbn": "9791092636642",
     "categorie": "livre",
+    "aussi": ["podcast"],
     "themes": [
       "adultisme",
       "enfance",
