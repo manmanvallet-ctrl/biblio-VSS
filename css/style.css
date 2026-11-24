@@ -17,6 +17,7 @@
    Les noms de gauche (--bg, --text…) sont utilisés partout dans ce fichier ;
    leurs valeurs viennent des couleurs de la charte (papier, ink, prune…). */
 :root {
+  color-scheme: light;
   --font-serif: "Fraunces", "DM Serif Display", Georgia, serif;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
@@ -84,6 +85,7 @@
     color-scheme: dark;
   }
 }
+:root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] {
   --bg: #1a1520;
   --surface: #241d2c;
@@ -147,6 +149,17 @@ h1, h2, h3, .brand { font-weight: 600; letter-spacing: -0.01em; }
 /* Icônes dessinées (remplacent les émojis, interdits par la charte) */
 .ui-icon { width: 1.1em; height: 1.1em; flex: none; vertical-align: -0.18em; }
 
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+/* Interrupteur clair / sombre : bouton rond discret, zone tactile de 44 px */
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0;
+  background: none; color: var(--accent);
+  border: 1px solid var(--border); border-radius: 999px;
+  cursor: pointer;
+}
+.icon-btn .ui-icon { width: 20px; height: 20px; }
+.icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .quick-exit {
   min-height: 44px;
   background: var(--exit);
@@ -244,7 +257,24 @@ a { color: var(--accent); }
   color: var(--text);
   font-size: .95rem;
 }
-.toggle { display: flex; gap: 6px; align-items: center; font-size: .9rem; color: var(--muted); }
+.toggle { display: flex; gap: 8px; min-height: 44px; align-items: center; font-size: .9rem; color: var(--muted); }
+/* Case à cocher dessinée par l'appli : certains téléphones ignorent la couleur demandée
+   et la remplissent en noir. Vide : contour gris sur fond clair ; cochée : violet + coche. */
+.toggle input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  flex: none; display: inline-grid; place-content: center;
+  width: 18px; height: 18px; margin: 0;
+  border: 1.5px solid var(--muted); border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+}
+.toggle input[type="checkbox"]:checked { background: var(--accent); border-color: var(--accent); }
+.toggle input[type="checkbox"]:checked::after {
+  content: ""; width: 9px; height: 5px;
+  border: solid var(--on-accent); border-width: 0 0 2px 2px;
+  transform: translateY(-1px) rotate(-45deg);
+}
+.toggle input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .count { color: var(--muted); font-size: .85rem; margin: 8px 0; }
 
@@ -274,13 +304,17 @@ a { color: var(--accent); }
 }
 .fav-btn {
   flex: none;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; margin: -8px -8px 0 0;
   background: none;
   border: 0;
-  font-size: 1.3rem;
   color: var(--accent);
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
 }
+.fav-btn .ui-icon { width: 22px; height: 22px; }
+/* Cœur : contour quand ce n'est pas un favori, plein quand c'en est un (même tracé que l'onglet). */
+[data-fav][aria-pressed="true"] .ui-icon path { fill: currentColor; }
 
 /* Pastille d'intensité : couleur + nombre de barres pleines (1 à 3).
    Les barres disent le niveau par la forme : lisible sans distinguer les couleurs. */
@@ -363,6 +397,13 @@ a { color: var(--accent); }
 }
 .reveal { filter: blur(6px); user-select: none; transition: filter .2s; }
 .reveal.shown { filter: none; user-select: auto; }
+/* « Afficher plus » : présentation officielle, citée entre filets, avec sa source */
+.more-btn { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.presentation { margin: 4px 0 0; padding: 2px 0 2px 14px; border-left: 3px solid var(--accent-soft); color: var(--text); }
+.presentation p { margin: 0 0 10px; }
+.presentation-source { color: var(--muted); font-size: .82rem; margin: 6px 0 0; }
+.presentation-source a { color: var(--accent); }
+.more { margin-bottom: 14px; }
 
 .btn {
   border: 1px solid var(--border);
@@ -376,6 +417,9 @@ a { color: var(--accent); }
 .btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); width: 100%; }
 .btn-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
 .btn-row .btn { flex: 1; text-align: center; text-decoration: none; }
+.cat-line { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.btn-buy { display: block; margin-top: 8px; text-align: center; text-decoration: none; }
+.buy-note { color: var(--muted); font-size: .8rem; margin: 6px 0 0; text-align: center; }
 
 /* Aide */
 .help-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
@@ -397,6 +441,10 @@ a { color: var(--accent); }
 }
 .note h3 { margin-top: 0; }
 .sheet-exit { float: right; margin-left: 12px; }
+/* Une fenêtre (fiche, questionnaire…) est ouverte : le bouton du haut est derrière le voile
+   et n'est plus cliquable. On le masque pour qu'un seul « Sortie rapide » soit visible,
+   celui de la fenêtre. */
+body:has(dialog[open]) .topbar .quick-exit { visibility: hidden; }
 
 /* Couvertures */
 .cover {
@@ -437,6 +485,9 @@ a { color: var(--accent); }
 .tags-themes { margin-top: 6px; }
 .detail-head { display: flex; gap: 14px; align-items: flex-end; margin-bottom: 4px; clear: both; }
 .detail-head h2 { margin: 2px 0; font-size: 1.25rem; }
+.detail-head > div:not(.cover) { flex: 1; min-width: 0; }
+/* Cœur de la fiche : même bouton discret que sur les cartes, en bout de titre */
+.detail-fav { align-self: flex-end; margin: 0 -8px -6px 0; }
 
 /* Listes thématiques */
 .section-title { font-size: 1rem; margin: 16px 0 8px; }
@@ -466,9 +517,12 @@ a { color: var(--accent); }
   cursor: pointer;
   font: inherit;
 }
-.list-tone-0 { --tone-bg: var(--tone-douceur-bg); --tone-fg: var(--tone-douceur-fg); border-top: 6px solid var(--vert-eau); }
-.list-tone-1 { --tone-bg: var(--tone-lavande-bg); --tone-fg: var(--tone-lavande-fg); }
-.list-tone-2 { --tone-bg: var(--tone-prune-bg);   --tone-fg: var(--tone-prune-fg); }
+/* Chaque carte a un bandeau en haut, en aplat (comme la tranche d'un livre), d'une teinte
+   plus marquée que son fond. Pas de dégradé : la charte les exclut. */
+.list-card { border-top: 6px solid var(--tone-band); }
+.list-tone-0 { --tone-bg: var(--tone-douceur-bg); --tone-fg: var(--tone-douceur-fg); --tone-band: var(--vert-eau); }
+.list-tone-1 { --tone-bg: var(--tone-lavande-bg); --tone-fg: var(--tone-lavande-fg); --tone-band: var(--accent); }
+.list-tone-2 { --tone-bg: var(--tone-prune-bg);   --tone-fg: var(--tone-prune-fg);   --tone-band: var(--accent-soft); }
 .list-name { font-weight: 600; font-size: 1.15rem; line-height: 1.2; color: inherit; }
 .list-desc { font-size: .82rem; flex: 1; }
 .list-count { font-size: .78rem; font-weight: 600; }

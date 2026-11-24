@@ -3,6 +3,7 @@
     "id": "familia-grande",
     "titre": "La Familia grande",
     "auteur": "Camille Kouchner",
+    "isbn": "9782757892831",
     "annee": 2021,
     "categorie": "livre",
     "themes": [
@@ -11,6 +12,7 @@
       "témoignage"
     ],
     "resume": "Récit de l'autrice sur l'inceste subi par son frère jumeau de la part de leur beau-père, et sur le silence qui a entouré la famille pendant des décennies. Le livre a déclenché le mouvement #MeTooInceste.",
+    "presentation": {"texte": "Le livre événement. La libération de la parole sur l’inceste.\n\nLa familia grande c’est l’histoire d’une famille qui aime débattre, rire et danser, qui aime le soleil et l’été. Mais que faire face au poids du secret ? Que faire quand on sait ? Que faire quand son jumeau est victime, qu'il dit et qu'il demande le secret. Que l'on est jeune. Que l'on aime sa mère et son beau-père. Que la famille éclatera si l'on dit. Que l'on a personne à qui dire. Quand la mère refuse d'entendre. Que l'on admire et que l'on aime. Que l'emprise s'exerce. Ecrire. La familia grande c’est la famille de Camille Kouchner. Le récit incandescent d’une femme qui ose enfin raconter ce qui a longtemps fait taire la Familia grande. Camille Kouchner écrit le silence, et parle pour tous ceux qui n’osent pas.\n\nCamille Kouchner est née en 1975. Elle est maître de conférences en droit. La Familia grande est son premier livre.", "source": "Présentation de l'éditeur (Points)", "url": "https://www.librairiesindependantes.com/product/9782757892831/"},
     "intensite": 2,
     "image": "images/familia-grande.jpg",
     "image_credit": "Open Library"
@@ -19,6 +21,7 @@
     "id": "triste-tigre",
     "titre": "Triste tigre",
     "auteur": "Neige Sinno",
+    "isbn": "9782073115799",
     "annee": 2023,
     "categorie": "livre",
     "themes": [
@@ -27,6 +30,7 @@
       "reconstruction"
     ],
     "resume": "L'autrice revient sur les viols commis par son beau-père pendant son enfance et interroge la possibilité même de raconter. Prix Femina 2023.",
+    "presentation": {"texte": "\"J'ai voulu y croire, j'ai voulu rêver que le royaume de la littérature m'accueillerait comme n'importe lequel des orphelins qui y trouvent refuge, mais même à travers l'art, on ne peut pas sortir vainqueur de l'abjection. La littérature ne m'a pas sauvée. Je ne suis pas sauvée.\"", "source": "Présentation de l'éditeur (Folio)", "url": "https://www.librairiesindependantes.com/product/9782073115799/"},
     "intensite": 3,
     "image_url": "https://www.senscritique.com/livre/triste_tigre/56858154",
     "image": "images/triste-tigre.jpg",
@@ -36,6 +40,7 @@
     "id": "consentement",
     "titre": "Le Consentement",
     "auteur": "Vanessa Springora",
+    "isbn": "9782253101567",
     "annee": 2020,
     "categorie": "livre",
     "themes": [
@@ -45,6 +50,7 @@
       "témoignage"
     ],
     "resume": "À 14 ans, l'autrice est tombée sous l'emprise d'un écrivain de cinquante ans. Elle analyse le mécanisme de l'emprise et la complaisance du milieu littéraire.",
+    "presentation": {"texte": "« Depuis tant d'années, je tourne en rond dans ma cage, mes rêves sont peuplés de meurtre et de vengeance. Jusqu'au jour où la solution se présente enfin, là, sous mes yeux, comme une évidence : prendre le chasseur à son propre piège, l'enfermer dans un livre. » Séduite à l'âge de quatorze ans par un célèbre écrivain quinquagénaire, Vanessa Springora dépeint, trois décennies plus tard, l'emprise qui fut exercée sur elle et la trace durable de cette relation tout au long de sa vie de femme. Au-delà de son histoire intime, elle questionne dans ce récit les dérives d'une époque et d'un microcosme littéraire aveuglé par le talent et la notoriété.", "source": "Présentation de l'éditeur (Le Livre de Poche)", "url": "https://www.librairiesindependantes.com/product/9782253101567/"},
     "intensite": 2,
     "image": "images/consentement.jpg",
     "image_credit": "Open Library"
@@ -53,6 +59,7 @@
     "id": "inceste-angot",
     "titre": "L'Inceste",
     "auteur": "Christine Angot",
+    "isbn": "9782290238615",
     "annee": 1999,
     "categorie": "livre",
     "themes": [
@@ -60,6 +67,7 @@
       "témoignage"
     ],
     "resume": "Texte autobiographique où l'autrice évoque l'inceste commis par son père et ses conséquences sur sa vie affective.",
+    "presentation": {"texte": "\"Faut se calmer, essayer d'être ce qu'on est c'est-à-dire pas grand-chose. Mettre tout ça à peu près en ordre, déjà, déjà ce serait pas mal. Tout sera dans le bon ordre à partir de là, et dans le bonheur peut-être un jour. Et puis je vais essayer d'être polie. Précise, logique et claire pour une fois.\"", "source": "Présentation de l'éditeur (J'ai lu)", "url": "https://www.librairiesindependantes.com/product/9782290238615/"},
     "intensite": 3,
     "image": "images/inceste-angot.jpg",
     "image_credit": "Open Library"
@@ -68,6 +76,7 @@
     "id": "memoire-de-fille",
     "titre": "Mémoire de fille",
     "auteur": "Annie Ernaux",
+    "isbn": "9782073129345",
     "annee": 2016,
     "categorie": "livre",
     "themes": [
@@ -76,6 +85,7 @@
       "mémoire"
     ],
     "resume": "Annie Ernaux revient sur sa première nuit avec un homme, en colonie de vacances en 1958, et sur la honte qui l'a suivie pendant des années.",
+    "presentation": {"texte": "\"J'ai voulu l'oublier cette fille. L'oublier vraiment, c'est-à-dire ne plus avoir envie d'écrire sur elle. Ne plus penser que je dois écrire sur elle, son désir, sa folie, son idiotie et son orgueil, sa faim et son sang tari. Je n'y suis jamais parvenue.\" Annie Ernaux replonge dans l'été 1958, celui de sa première nuit avec un homme, à la colonie de S dans l'Orne. Nuit dont l'onde de choc s'est propagée violemment dans son corps et sur son existence durant deux années. S'appuyant sur des images indélébiles de sa mémoire, des photos et des lettres écrites à ses amies, elle interroge cette fille qu'elle a été dans un va-et-vient entre hier et aujourd'hui.", "source": "Présentation de l'éditeur (Folio)", "url": "https://www.librairiesindependantes.com/product/9782073129345/"},
     "intensite": 1,
     "image": "images/memoire-de-fille.jpg",
     "image_credit": "Open Library"
@@ -84,6 +94,7 @@
     "id": "king-kong-theorie",
     "titre": "King Kong Théorie",
     "auteur": "Virginie Despentes",
+    "isbn": "9782253122111",
     "annee": 2006,
     "categorie": "livre",
     "themes": [
@@ -92,6 +103,7 @@
       "essai"
     ],
     "resume": "Essai où l'autrice part de son propre viol pour réfléchir à la place des femmes, à la sexualité et aux rapports de domination.",
+    "presentation": {"texte": "J’écris de chez les moches, pour les moches, les frigides, les mal baisées, les imbaisables, toutes les exclues du grand marché à la bonne meuf, aussi bien que pour les hommes qui n’ont pas envie d’être protecteurs, ceux qui voudraient l’être mais ne savent pas s’y prendre, ceux qui ne sont pas ambitieux, ni compétitifs, ni bien membrés.\n\nParce que l’idéal de la femme blanche séduisante qu’on nous brandit tout le temps sous le nez, je crois bien qu’il n’existe pas.\n\nV.D.\n\nEn racontant pour la première fois comment elle est devenue Virginie Despentes, l’auteur de Baise-moi conteste les discours bien-pensants sur le viol, la prostitution, la pornographie. Manifeste pour un nouveau féminisme.", "source": "Présentation de l'éditeur (Le Livre de Poche)", "url": "https://www.librairiesindependantes.com/product/9782253122111/"},
     "intensite": 2,
     "image": "images/king-kong-theorie.jpg",
     "image_credit": "SensCritique",
@@ -101,6 +113,7 @@
     "id": "choses-humaines-livre",
     "titre": "Les Choses humaines",
     "auteur": "Karine Tuil",
+    "isbn": "9782072921117",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -109,6 +122,7 @@
       "justice"
     ],
     "resume": "Roman autour d'une accusation de viol portée contre le fils d'une famille influente, jusqu'au procès. Prix Interallié et Goncourt des lycéens 2019.",
+    "presentation": {"texte": "\"Tu sais ce qui arrive à ceux qui pensent qu'on peut survivre en respectant des lois morales ? Tôt ou tard, ils finissent piétinés.\" Les Farel forment un couple de pouvoir. Jean est un célèbre journaliste politique ; son épouse Claire est connue pour ses engagements féministes. Leur fils, Alexandre, étudie dans une prestigieuse université américaine. Mais alors que tout semble leur réussir, une accusation de viol fait voler en éclats ce qu'ils avaient si chèrement acquis. Ce roman puissant interroge la violence du monde contemporain et nous confronte à nos peurs : qui est à l'abri de se retrouver un jour piégé dans un redoutable engrenage ?", "source": "Présentation de l'éditeur (Folio)", "url": "https://www.librairiesindependantes.com/product/9782072921117/"},
     "intensite": 2,
     "image": "images/choses-humaines-livre.jpg",
     "image_credit": "Open Library"
@@ -117,6 +131,7 @@
     "id": "livre-noir-salmona",
     "titre": "Le Livre noir des violences sexuelles",
     "auteur": "Muriel Salmona",
+    "isbn": "9782100825837",
     "annee": 2013,
     "categorie": "livre",
     "themes": [
@@ -125,6 +140,7 @@
       "essai"
     ],
     "resume": "La psychiatre explique les mécanismes de la mémoire traumatique et de la dissociation, et pourquoi les victimes ont besoin d'être protégées et soignées.",
+    "presentation": {"texte": "Presque 10 ans se sont écoulés depuis la première édition de ce livre. Entre-temps, une révolution s’est produite, avec les mouvements #MeToo, puis #MeTooInceste, qui ont libéré et légitimé la parole des victimes de violences sexuelles. Ces mouvements, associés à nos combats acharnés, ont permis une prise de conscience inédite de l’ampleur et de la gravité des violences sexuelles que subissent principalement les femmes et les personnes les plus vulnérables, et ce dès leur plus jeune âge. Pourtant, les chiffres des violences sexuelles ne baissent pas, l’impunité s’aggrave, et la plupart des victimes de violences sexuelles restent toujours abandonnées, privées de protection, de soins spécifiques, de justice et de réparations. Le déni, la loi du silence et la culture du viol continuent de régner. Or, si on souhaite que le monde soit enfin plus solidaire et plus juste pour les victimes de ces graves violations des droits humains, que la vérité sur ces crimes et délits sexuels ne soit plus niée, la prise en compte du psychotraumatisme est un préalable. Reconnaître le psychotraumatisme comme la conséquence logique et universelle des violences est une priorité absolue. Informer le grand public et former tous les professionnels sur ses mécanismes (la sidération, la dissociation, la mémoire traumatique), sur ses lourdes répercussions sur la santé et la vie des victimes, et sur les soins efficaces à leur donner, permettra de leur éviter des pertes de chances considérables, et de leur rendre justice. C’est le combat que je mène avec le Dr Denis Mukwege, prix Nobel de la paix 2018, et ce que ce livre s’emploie à faire.", "source": "Présentation de l'éditeur (Dunod)", "url": "https://www.librairiesindependantes.com/product/9782100825837/"},
     "intensite": 2,
     "image_url": "https://www.senscritique.com/livre/le_livre_noir_des_violences_sexuelles/10855697",
     "image": "images/livre-noir-salmona.jpg",
@@ -134,6 +150,7 @@
     "id": "culture-du-viol",
     "titre": "Une culture du viol à la française",
     "auteur": "Valérie Rey-Robert",
+    "isbn": "9782377291397",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -166,6 +183,7 @@
     "id": "chanel-miller",
     "titre": "Know My Name (J'ai un nom)",
     "auteur": "Chanel Miller",
+    "isbn": "9782266327336",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -174,6 +192,7 @@
       "témoignage"
     ],
     "resume": "Agressée sur le campus de Stanford, l'autrice, longtemps connue sous le nom d'« Emily Doe », raconte l'agression, le procès et sa reconstruction.",
+    "presentation": {"texte": "Le 17 janvier 2015, Chanel et sa sœur assistent à une fête sur le campus de Stanford. Quelques heures plus tard, Chanel se réveille dans une chambre d'hôpital : on lui explique qu'elle a sans doute été violée – ce que de pénibles examens confirment.\n\nSon agresseur présumé, Brock Turner, est un athlète prometteur soutenu par ses parents et dont la ligne de défense ne variera pas : la victime était consentante. Lors du verdict, Chanel, jusque-là sidérée et mutique, lit une déclaration qui restera dans les mémoires et contribuera à faire changer la loi.\n\nCe récit, qui questionne lourdement un système pénal conçu pour protéger les plus forts, marque surtout par le courage de la victime qui, grâce à lui, réussit à se réapproprier son identité. Entrelaçant douleur, résilience et humour, il est en passe de devenir un classique moderne.", "source": "Présentation de l'éditeur (Pocket)", "url": "https://www.librairiesindependantes.com/product/9782266327336/"},
     "intensite": 2,
     "image_url": "https://www.senscritique.com/livre/j_ai_un_nom/61574036",
     "image": "images/chanel-miller.jpg",
@@ -183,6 +202,7 @@
     "id": "crocodiles",
     "titre": "Les Crocodiles",
     "auteur": "Thomas Mathieu",
+    "isbn": "9782803634651",
     "annee": 2014,
     "categorie": "bd",
     "themes": [
@@ -190,6 +210,7 @@
       "sexisme ordinaire"
     ],
     "resume": "Bande dessinée tirée de témoignages de harcèlement de rue et de sexisme ordinaire, où les hommes sont dessinés en crocodiles.",
+    "presentation": {"texte": "Thomas Mathieu illustre des témoignages de femmes liés aux problématiques comme le harcèlement de rue, le machisme et le sexisme ordinaire. Son travail s'inscrit dans un mouvement plus large de prise de conscience et d'une nouvelle génération de féministes qui utilisent internet pour réfléchir et informer sur des concepts tels le \"slut-shaming\" ou le \"privilège masculin\". Dans ses planches, les décors et les personnages féminins sont traités en noir et blanc de manière réaliste tandis que les hommes sont représentés sous la forme de crocodiles verts. Le lecteur ou la lectrice est invité à épouser le point de vue de la femme qui témoigne et à questionner le comportement des crocodiles particulièrement quand ils endossent le rôle stéréotypé de dragueurs/ prédateurs/dominants.", "source": "Présentation de l'éditeur (Le Lombard)", "url": "https://www.librairiesindependantes.com/product/9782803634651/"},
     "intensite": 1,
     "image": "images/crocodiles.jpg",
     "image_credit": "Open Library"
@@ -206,6 +227,7 @@
       "danse"
     ],
     "resume": "Odette, danseuse, se reconstruit à l'âge adulte après les violences sexuelles subies enfant de la part d'un ami de ses parents. Inspiré de l'histoire de l'autrice.",
+    "presentation": {"texte": "Odette a huit ans, elle aime danser et dessiner. Pourquoi se méfierait-elle d’un ami de ses parents qui lui propose de « jouer aux chatouilles » ? Adulte, Odette danse sa colère, libère sa parole et embrasse la vie…", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/les_chatouilles/24687918"},
     "intensite": 2,
     "senscritique": {
       "note": 7.2,
@@ -247,6 +269,7 @@
       "justice"
     ],
     "resume": "D'anciens scouts de Lyon s'unissent pour faire reconnaître les violences commises par un prêtre. Inspiré de l'affaire Preynat et de l'association La Parole libérée.",
+    "presentation": {"texte": "Alexandre vit à Lyon avec sa femme et ses enfants. Un jour, il découvre par hasard que le prêtre qui a abusé de lui aux scouts officie toujours auprès d’enfants. Il se lance alors dans un combat, très vite rejoint par François et Emmanuel, également victimes du prêtre, pour « libérer leur parole » sur ce qu’ils ont subi.\r\nMais les répercussions et conséquences de ces aveux ne laisseront personne indemne.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/grace_a_dieu/37713154"},
     "intensite": 2,
     "senscritique": {
       "note": 7.1,
@@ -288,7 +311,8 @@
       "journalisme",
       "#MeToo"
     ],
-    "resume": "Les journalistes du New York Times Jodi Kantor et Megan Twohey enquêtent sur Harvey Weinstein, une enquête qui a lancé le mouvement #MeToo.",
+    "resume": "Les journalistes du New York Times Jodi Kantor et Megan Twohey enquêtent sur Harvey Weinstein, une enquête qui a déclenché la vague #MeToo de 2017.",
+    "presentation": {"texte": "Deux journalistes du New York Times, Megan Twohey et Jodi Kantor, ont de concert mis en lumière un des scandales les plus importants de leur génération. À l’origine du mouvement #Metoo leur investigation a brisé des décennies de silence autour du problème des agressions sexuelles dans le milieu du cinéma hollywoodien, changeant à jamais la société américaine et le monde de la culture...", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/she_said/45250426"},
     "intensite": 1,
     "senscritique": {
       "note": 6.8,
@@ -309,7 +333,7 @@
       "communauté",
       "parole"
     ],
-    "resume": "Dans une communauté religieuse isolée, des femmes qui ont été droguées et violées se réunissent pour décider si elles restent ou si elles partent.",
+    "resume": "Dans une communauté religieuse isolée, des femmes qui ont été droguées et violées se réunissent pour décider ensemble : ne rien faire, rester et se battre, ou partir.",
     "intensite": 2,
     "senscritique": {
       "note": 6.3,
@@ -331,6 +355,7 @@
       "justice"
     ],
     "resume": "Adaptation du roman de Karine Tuil : une accusation de viol et un procès, racontés du point de vue de chacune des parties.",
+    "presentation": {"texte": "Un jeune homme est accusé d’avoir violé une jeune femme. Qui est ce jeune homme et qui est cette jeune femme ? Est-il coupable ou est-il innocent ? Est-elle victime ou uniquement dans un désir de vengeance, comme l’affirme l’accusé ? Les deux jeunes protagonistes et leurs proches vont voir leur vie, leurs convictions et leurs certitudes voler en éclat mais… N’y a-t-il qu’une seule vérité ?", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/les_choses_humaines/496417"},
     "intensite": 2,
     "senscritique": {
       "note": 6.7,
@@ -352,6 +377,7 @@
       "vengeance"
     ],
     "resume": "Hantée par le viol de sa meilleure amie, Cassie piège les hommes qui profitent de femmes ivres. Le film met en lumière la complicité de l'entourage.",
+    "presentation": {"texte": "Tout le monde s’entendait pour dire que Cassie était une jeune femme pleine d’avenir…jusqu’à ce qu’un évènement inattendu ne vienne tout bouleverser. Mais rien dans la vie de Cassie n’est en fait conforme aux apparences : elle est aussi intelligente que rusée, séduisante que calculatrice et mène une double vie dès la nuit tombée. Au cours de cette aventure passionnante, une rencontre inattendue va donner l’opportunité à Cassie de racheter les erreurs de son passé.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/promising_young_woman/40934499"},
     "intensite": 2,
     "senscritique": {
       "note": 6.7,
@@ -373,6 +399,7 @@
       "reconstruction"
     ],
     "resume": "Deux garçons ont subi des violences sexuelles de la part de leur entraîneur de baseball à l'âge de 8 ans. Dix ans plus tard, l'un se prostitue, l'autre est persuadé d'avoir été enlevé par des extraterrestres. Leurs chemins se croisent à nouveau. Adapté du roman de Scott Heim.",
+    "presentation": {"texte": "À huit ans, Brian se réveille dans la cave de sa maison, le nez en sang, sans souvenir de ce qui lui est arrivé. Dix ans plus tard, convaincu d’avoir été enlevé par des extraterrestres, il tente de retrouver Neil, un garçon de son ancienne équipe de baseball devenu un jeune homme magnétique et insaisissable. Avec lui, Brian cherche à dénouer le mystère de leur enfance, qui les empêche encore de vivre.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/mysterious_skin/446549"},
     "intensite": 3,
     "senscritique": {
       "note": 7.7,
@@ -416,6 +443,7 @@
       "reconstruction"
     ],
     "resume": "Arabella, autrice à Londres, reconstitue la nuit où elle a été droguée et violée. La série explore les nombreuses formes de non-consentement.",
+    "presentation": {"texte": "Après le triomphe d’un papier sur Internet, Arabella Essiuedu – facilement distraite, insouciante et qui ne s’engage pas – se retrouve honorée comme la « voix de sa génération », avec un agent, une commande de livre et une sacrée pression. Après avoir été agressée sexuellement dans une boîte de nuit, sa vie change de manière irréversible et Arabella est obligée de tout remettre en question : sa carrière, ses amis et même sa famille. Alors qu’Arabella peine à comprendre ce qui s’est passé, elle commence une introspection.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/serie/i_may_destroy_you/40606797"},
     "intensite": 3,
     "senscritique": {
       "note": 7.6,
@@ -437,6 +465,7 @@
       "témoignage"
     ],
     "resume": "Des jeunes femmes témoignent de rapports sexuels non consentis qu'elles ont longtemps eu du mal à qualifier de viol.",
+    "presentation": {"texte": "Elles ont cédé. Ou capitulé. Ce rapport sexuel, elles n’en voulaient pas. Elles n’ont pas réussi à le repousser, à lui faire comprendre que non, elles n’avaient pas envie. Elles se sont dit, après, que ce n’était pas un viol puisqu’il n’y avait pas eu de violences physiques. Certaines ont rangé ça au rayon des expériences désagréables, mais inévitables, de la jeunesse. D’autres n’ont pas digéré. Pour la première fois, un film aborde cette zone “grise” de la sexualité sans consentement. Des jeunes femmes et d’autres moins jeunes racontent.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/sexe_sans_consentement/31205967"},
     "intensite": 2,
     "senscritique": {
       "note": 7.8,
@@ -458,6 +487,7 @@
       "institutions"
     ],
     "resume": "Enquête sur les viols commis sur les campus américains et sur la façon dont les universités étouffent les affaires.",
+    "presentation": {"texte": "Les créateurs de \"The invisible war\" s'interrogent sur l'importance des crimes sexuels sur les campus universitaires américains, leur dissimulation par les institutions et les ravages qu'ils créent chez les étudiants et leurs familles. Le film suit plusieurs victimes d'agression qui tentent de poursuivre leur lutte pour la reconnaissance et la justice tout en continuant leur cursus, malgré une incroyable pression de l'institution, le harcèlement et les conséquences traumatiques.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/the_hunting_ground/13240598"},
     "intensite": 2,
     "senscritique": {
       "note": 8.2,
@@ -498,6 +528,7 @@
       "témoignage"
     ],
     "resume": "Deux hommes racontent les violences sexuelles qu'ils disent avoir subies enfants de la part de Michael Jackson, et leurs effets sur leur vie d'adulte.",
+    "presentation": {"texte": "À l'apogée de sa célébrité, Michael Jackson, la plus grande pop star du monde, a noué de longues relations avec deux garçons de 7 et 10 ans et leurs familles. Ils allèguent maintenant qu'il les a agressés sexuellement.", "source": "Synopsis publié sur SensCritique", "url": "https://www.senscritique.com/film/michael_jackson_leaving_neverland/38922905"},
     "intensite": 3,
     "senscritique": {
       "note": 5.3,
@@ -549,7 +580,7 @@
       "Église",
       "rapport officiel"
     ],
-    "resume": "Rapport de la Commission indépendante sur les abus sexuels dans l'Église, qui estime à environ 330 000 le nombre de victimes mineures en France depuis 1950.",
+    "resume": "Rapport de la Commission indépendante sur les abus sexuels dans l'Église, qui estime à environ 330 000 le nombre de personnes victimes, enfants ou adolescentes, au sein de l'Église en France depuis 1950, dont environ 216 000 par des prêtres et des religieux.",
     "intensite": 2
   },
   {
@@ -726,6 +757,7 @@
       "reconstruction"
     ],
     "resume": "Marina Carrère d'Encausse reçoit la psychiatre Muriel Salmona pour expliquer la sidération et ses effets sur le cerveau et le corps, avec des témoignages. Premier épisode d'une série en six épisodes, de l'agression à la réparation (19 min).",
+    "presentation": {"texte": "Dans ce hors série « Trauma et violence sexuelle » de Carnets de Santé, Marina Carrère d'Encausse reçoit la psychiatre Muriel Salmona pour explorer les conséquences de ces agressions sur le cerveau et l'organisme des victimes, en lien avec des témoignages livrés sur France Culture. Dans ce premier épisode, l'accent est mis sur la sidération, ce choc psychologique typique des événements traumatiques.", "source": "Présentation de France Culture", "url": "https://www.radiofrance.fr/franceculture/podcasts/carnets-de-sante/l-agression-la-sideration-6420730"},
     "intensite": 2,
     "lien": "https://www.radiofrance.fr/franceculture/podcasts/carnets-de-sante/l-agression-la-sideration-6420730"
   },
@@ -763,6 +795,7 @@
     "id": "livre-cyrulnik-honte",
     "titre": "Mourir de dire : la honte",
     "auteur": "Boris Cyrulnik",
+    "isbn": "9782738125057",
     "annee": 2010,
     "categorie": "livre",
     "themes": [
@@ -771,6 +804,7 @@
       "résilience"
     ],
     "resume": "Le psychiatre Boris Cyrulnik explore la honte qui suit un traumatisme : pourquoi elle pousse à se taire, comment elle s'installe et comment on peut s'en dégager. Un livre sur la honte en général, pas seulement après des violences sexuelles.",
+    "presentation": {"texte": "\"Si vous voulez comprendre pourquoi je n'ai rien dit, il vous suffit de chercher ce qui m'a forcé à me taire. Je vais donc me taire pour me protéger. Le honteux aspire à parler, mais ne peut rien vous dire tant il craint votre regard. Alors il raconte l'histoire d'un autre qui, comme lui, a connu un fracas incroyable. À la honte qui me fait me taire s'ajoute, si je parle, la culpabilité de vous entraîner dans mon malheur. Chacun de nous a connu la honte, que ce soit deux heures ou vingt ans. Mais ce poison de l'existence ne crée pas un destin inexorable\", B. C. Un nouveau visage de la honte, inédit, émouvant et profond, nourri par les acquis les plus récents des neurosciences et de la psychologie. Un livre qui aide à dépasser la culpabilité et à retrouver force, fierté et liberté.", "source": "Présentation de l'éditeur (Odile Jacob)", "url": "https://www.librairiesindependantes.com/product/9782738125057/"},
     "intensite": 1,
     "lien": "https://www.odilejacob.fr/catalogue/psychologie/psychotherapie/mourir-de-dire_9782738125057.php",
     "image_url": "https://www.senscritique.com/livre/mourir_de_dire/11302611",
@@ -781,6 +815,7 @@
     "id": "livre-pelicot",
     "titre": "Et la joie de vivre",
     "auteur": "Gisèle Pelicot, avec Judith Perrignon",
+    "isbn": "9782080497260",
     "annee": 2026,
     "categorie": "livre",
     "themes": [
@@ -790,6 +825,7 @@
       "témoignage"
     ],
     "resume": "Le récit de Gisèle Pelicot, droguée et violée pendant des années à son insu par son mari et des dizaines d'hommes, qui a refusé le huis clos lors du procès de Mazan en 2024 pour que « la honte change de camp ».",
+    "presentation": {"texte": "\"Cette histoire ne m'appartient plus totalement. Elle a réveillé une douleur muette et profonde, montée de la nuit des temps. Elle a suscité la sidération. Comment comprendre ce qui m'est arrivé, ce que mon calvaire a ensuite déclenché ? Il m'a fallu marcher le long d'une faille, la mienne. Comme le funambule sur la corde raide, je dois avancer. Je voudrais par ce livre mettre des mots sur ce que j'ai traversé. Dire que je n'ai plus peur d'être seule, que j'ai retrouvé la joie de vivre. Dire que je suis vivante.\" Ce récit bouleversant, écrit avec la romancière Judith Perrignon, raconte l'histoire exceptionnelle de Gisèle Pelicot et celle de sa courageuse décision de rendre public le procès de ses agresseurs, encourageant par son geste toutes les victimes à ne plus jamais avoir honte.", "source": "Présentation de l'éditeur (Flammarion)", "url": "https://www.librairiesindependantes.com/product/9782080497260/"},
     "intensite": 2,
     "lien": "https://editions.flammarion.com/et-la-joie-de-vivre/9782080497260",
     "image": "images/livre-pelicot.jpg",
@@ -807,11 +843,11 @@
       "consentement",
       "agression sexuelle"
     ],
-    "resume": "Guide court (14 pages) en FALC, Facile à lire et à comprendre, pour les femmes en situation de handicap, leurs proches et les professionnel·les. Il aide à reconnaître les violences, y compris celles liées au handicap (moqueries, décisions prises à la place de la personne, privation d'aides ou d'outils), explique la dépendance à l'agresseur et le consentement, et donne les contacts utiles.",
+    "resume": "Guide court (16 pages) en FALC, Facile à lire et à comprendre, pour les femmes en situation de handicap, leurs proches et les professionnel·les. Il aide à reconnaître les violences, y compris celles liées au handicap (moqueries, décisions prises à la place de la personne, privation d'aides ou d'outils), explique la dépendance à l'agresseur et le consentement, et donne les contacts utiles.",
     "intensite": 1,
     "lien": "https://fdfa.fr/wp-content/uploads/2025/08/Guide-violence-FSH-_FDFA.pdf",
     "image": "images/guide-fdfa-falc.jpg",
-    "image_credit": "handicap.fr"
+    "image_credit": "Handicap.fr"
   },
   {
     "id": "livret-creai-handicap",
@@ -848,6 +884,7 @@
     "id": "livre-domination-oubliee",
     "titre": "La domination oubliée. Politiser les rapports adulte-enfant",
     "auteur": "Tal Piterbraut-Merx",
+    "isbn": "9782492642234",
     "annee": 2024,
     "categorie": "livre",
     "themes": [
@@ -857,10 +894,12 @@
       "essai"
     ],
     "resume": "Essai de philosophie politique publié aux éditions Blast. L'auteur y montre que les violences faites aux enfants, dont l'inceste, ne sont pas des accidents isolés mais la partie visible d'une domination structurelle des adultes sur les enfants, dans la famille comme à l'école.",
+    "presentation": {"texte": "Dans cet ouvrage, Tal Piterbraut-Merx critique l'idée selon laquelle l'enfance serait une condition naturelle : au contraire, le statut de minorité et l'institution familiale ont une histoire et se fondent sur des rapports socio-économiques et sur un système juridique et symbolique. En s'appuyant sur des travaux issus de la philosophie classique puis de la théorie féministe, il propose de dénaturaliser et repolitiser la domination adulte, en relation avec les autres rapports de pouvoir. Il ouvre des pistes pour lutter contre l'oppression des enfants et notamment la culture de l'inceste. Suite au suicide de l'auteur, un collectif d'ami·es a établi cet ouvrage à partir du manuscrit inachevé de sa thèse.", "source": "Présentation de l'éditeur (Blast)", "url": "https://www.librairiesindependantes.com/product/9782492642234/"},
     "intensite": 1,
     "image_url": "https://static1.squarespace.com/static/671935f69302aa03f9ea9334/671d5bbe52c1de70e13dfa98/671d5bbe52c1de70e13dfac1/1787923902976/1e_Tal_def.png?format=750w",
     "image": "images/livre-domination-oubliee.jpg",
-    "image_credit": "static1.squarespace.com"
+    "image_credit_source": "Éditions Blast",
+    "image_credit": "Éditions Blast"
   },
   {
     "id": "art-conversation-domination-enfants",
@@ -896,13 +935,16 @@
     "id": "livre-enfantisme-bourdille",
     "titre": "Enfantisme, il est temps de respecter les enfants",
     "auteur": "Claire Bourdille",
+    "isbn": "9791092636642",
     "categorie": "livre",
+    "aussi": ["podcast"],
     "themes": [
       "adultisme",
       "enfance",
       "essai"
     ],
     "resume": "Essai paru aux éditions La Mer Salée, écrit par la fondatrice du Collectif Enfantiste, pour découvrir l'enfantisme, le mouvement qui lutte contre l'adultisme comme le féminisme lutte contre le sexisme : violences éducatives ordinaires, parole des enfants, place de l'enfant que l'on a été. L'autrice le présente dans le podcast Basilic (juillet 2026).",
+    "presentation": {"texte": "Tout part de l’idée qu’un enfant, un ado serait inférieur à l’adulte : un sous-citoyen, à « dresser». Tout part d’un mépris banal, de préjugés à la peau dure sur “l’enfant roi”. Des affaires Bétharram, Le Scouarnec aux espaces “no-kids”, la maltraitance et l’intolérance envers les enfants sont partout. Physiques et psychologiques, les violences sont tues, minimisées, justifiées.\n\nMais la violence ne tombe pas du ciel, elle se nourrit du manque de considération pour les enfants, pour leur parole, leur corps, leurs besoins.\n\nDans ce livre choc, Claire Bourdille, fondatrice du Collectif Enfantiste, lance un appel à la lutte pour leurs droits et leur place, contre leur domination systématique et silencieuse, à la racine de toutes les autres.\n\nAprès les révolutions féministes et #MeToo, l’enfantisme s’impose comme le nouveau combat fondamental, pour bâtir le socle d’une société réellement juste et humaine. L’autrice propose des pistes concrètes pour agir dans notre rapport aux enfants au quotidien, dans l’éducation, la justice, la ville, leur représentation.\n\nLa révolution enfantiste est en marche — elle concerne les adultes que nous sommes, les enfants que nous avons été, et les enfants et adolescents d’aujourd’hui, ici et maintenant.", "source": "Présentation de l'éditeur (La Mer salée)", "url": "https://www.librairiesindependantes.com/product/9791092636642/"},
     "intensite": 1,
     "lien": "https://basilicpodcast.com/enfantisme-une-lutte-encore-trop-meconnue/",
     "annee": 2025
@@ -919,11 +961,12 @@
       "témoignage"
     ],
     "resume": "Émilie, Elisabeth et Jeanne ont grandi dans des foyers où planait la menace de l'inceste : blagues graveleuses, sexualité exhibée, aucune intimité possible pour les enfants. Elles racontent les traces que cela a laissées dans leur vie d'adulte. 31 minutes.",
+    "presentation": {"texte": "Émilie, Elisabeth et Jeanne n’ont jamais été à l’aise, enfants, chez elles. Elles ont grandi dans des foyers où plane la menace de l'inceste. Blagues graveleuses, sexualité exhibée et impossible intimité des enfants. Elles racontent les traces profondes que ça a laissées dans leur vie d’adulte.", "source": "Présentation de France Culture", "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/un-climat-incestuel-6703431"},
     "intensite": 2,
     "lien": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/un-climat-incestuel-6703431",
     "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/9f/ab/b1/9fabb1e0-ef8c-d78b-cd79-13225e0c2aad/mza_12414803589752471015.jpg/600x600bb.jpg",
     "image": "images/podcast-pieds-sur-terre-incestuel.jpg",
-    "image_credit": "is1-ssl.mzstatic.com"
+    "image_credit": "Apple Podcasts"
   },
   {
     "id": "podcast-a-soi-incestuel",
@@ -937,11 +980,12 @@
       "féminisme"
     ],
     "resume": "« C'est mon père, je l'aime mais je dois m'en méfier. » Des femmes racontent une enfance sans passage à l'acte mais sous la menace de l'inceste : regards, remarques sur le corps, blagues sexuelles, absence de limites. Un épisode pour mettre des mots sur ce que beaucoup ont vécu sans savoir le nommer.",
+    "presentation": {"texte": "« C'est mon père, je l'aime mais je dois m'en méfier. »\n\nDes blagues salaces devant les enfants ou destinées aux adolescent.e.s, des remarques répétées sur leurs corps, des attouchements sous couvert de soin ou « d'affection », des regards déplacés, des confidences autour de la sexualité de la part d'un parent à son enfant, une parentification sexualisée... Le climat incestuel, c'est cette ambiance générale qui a le parfum de l'inceste, mais sans viol ou agressions sexuelles, sans passage à l'acte pénalement répréhensible. Un harcèlement sexuel au sein de la maison en quelque sorte. Si en France, trois enfants par classe d'école sont victimes d'inceste, combien grandissent dans un climat incestuel ? Combien sommes-nous à avoir besoin de mots pour mieux appréhender cette atmosphère ? Comprendre nos histoires ? Décrypter les souvenirs ? Dans cet épisode, les voix de celles qui ont le courage de raconter nous guident.", "source": "Présentation d'ARTE Radio", "url": "https://www.arteradio.com/son/climat-incestuel-grandir-sous-la-menace"},
     "intensite": 2,
     "lien": "https://www.arteradio.com/son/climat-incestuel-grandir-sous-la-menace",
     "image_url": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/0d/1d/00/0d1d00de-f77b-fc03-04d8-3426547acd32/mza_1193096093659043008.jpg/600x600bb.jpg",
     "image": "images/podcast-a-soi-incestuel.jpg",
-    "image_credit": "is1-ssl.mzstatic.com"
+    "image_credit": "Apple Podcasts"
   },
   {
     "id": "art-colosse-incestuel",
@@ -976,6 +1020,7 @@
     "id": "livre-racamier-incestuel",
     "titre": "L'inceste et l'incestuel",
     "auteur": "Paul-Claude Racamier",
+    "isbn": "9782100810352",
     "annee": 1995,
     "categorie": "livre",
     "themes": [
@@ -984,6 +1029,7 @@
       "essai"
     ],
     "resume": "Le livre fondateur où le psychiatre et psychanalyste Paul-Claude Racamier nomme « l'incestuel ». Un ouvrage exigeant, écrit pour les cliniciens, réédité chez Dunod en 2010.",
+    "presentation": {"texte": "Au terme d'un long parcours de recherche et jusqu'à ses plus récents travaux, Paul-Claude Racamier propose l'exploration d'un domaine clinique ancien comme le monde et cependant nouveau : l'inceste. Inverse de l'oedipe, dérivé malencontreux de la séduction narcissique et de l'antoedipe, charnière entre psychose et perversion, et secret de tant de pathologies troublantes et mal comprises, l'incestuel complète les avancées originales de l'auteur dans la clinique et la théorie psychanalytique de l'individu et de la famille. « L'incestuel, c'est un climat : un climat où souffle le vent de l'inceste, sans qu'il y ait inceste. Le vent souffle chez les individus ; il souffle entre eux et dans les familles. Partout où il souffle, il fait le vide ; il instille du soupçon, du silence et du secret ; il disperse la végétation, laissant cependant pousser quelques plantes apparemment banales, qui se révèlent urticantes.»", "source": "Présentation de l'éditeur (Dunod)", "url": "https://www.librairiesindependantes.com/product/9782100810352/"},
     "intensite": 1
   }
 ]

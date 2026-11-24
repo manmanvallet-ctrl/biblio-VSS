@@ -30,9 +30,12 @@
 <body>
   <header class="topbar">
     <h1 class="brand">Biblio <span>VSS</span></h1>
-    <button id="quick-exit" class="quick-exit" type="button" aria-label="Quitter rapidement l'application">
-      Sortie rapide
-    </button>
+    <div class="topbar-actions">
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Passer en mode sombre"></button>
+      <button id="quick-exit" class="quick-exit" type="button" aria-label="Quitter rapidement l'application">
+        Sortie rapide
+      </button>
+    </div>
   </header>
 
   <main id="app">
@@ -112,10 +115,10 @@
       <div class="search-wrap">
         <input id="learn-search" type="search" placeholder="Chercher un mot : inceste, consentement…" autocomplete="off" aria-label="Chercher une définition">
       </div>
+      <h3 class="section-title">Rubriques</h3>
+      <div id="learn-home" class="rub-grid"></div>
       <h3 class="section-title">Questions fréquentes</h3>
       <div id="faq-list" class="acc-list"></div>
-        <h3 class="section-title">Rubriques</h3>
-        <div id="learn-home" class="rub-grid"></div>
       </div>
       <div id="learn-rub" hidden></div>
       <div id="def-list"></div>

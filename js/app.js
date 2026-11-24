@@ -36,6 +36,8 @@
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
     web: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
     heure: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    // Même tracé que l'onglet « Favoris » de la navigation : un seul cœur dans toute l'appli.
+    coeur: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
   };
   const ui = (name) => UI_ICONS[name]
     ? `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${UI_ICONS[name]}</svg>`
@@ -138,6 +140,37 @@
     try { window.location.replace(CONFIG.exitUrl); } catch { /* bloqué : la page neutre reste */ }
   }
   $("#quick-exit").addEventListener("click", quickExit);
+
+  // ---------- Mode clair / sombre ----------
+  // Par défaut, l'appli suit le réglage du téléphone. L'interrupteur impose l'autre mode,
+  // et ce choix est retenu sur cet appareil uniquement.
+  const THEME_KEY = "biblio-vss:theme";
+  const darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : { matches: false };
+  const THEME_ICONS = {
+    // Soleil : affiché en mode sombre, pour revenir au clair
+    light: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
+    // Lune : affichée en mode clair, pour passer au sombre
+    dark: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
+  };
+  const currentTheme = () => document.documentElement.dataset.theme || (darkQuery.matches ? "dark" : "light");
+  function renderThemeToggle() {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    const btn = $("#theme-toggle");
+    if (!btn) return;
+    btn.innerHTML = `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${THEME_ICONS[next]}</svg>`;
+    btn.setAttribute("aria-label", next === "dark" ? "Passer en mode sombre" : "Passer en mode clair");
+    btn.title = btn.getAttribute("aria-label");
+  }
+  const savedTheme = store.get(THEME_KEY, null);
+  if (savedTheme === "light" || savedTheme === "dark") document.documentElement.dataset.theme = savedTheme;
+  renderThemeToggle();
+  $("#theme-toggle")?.addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    store.set(THEME_KEY, next);
+    renderThemeToggle();
+  });
+  if (darkQuery.addEventListener) darkQuery.addEventListener("change", renderThemeToggle);
   let lastEsc = 0;
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
@@ -175,7 +208,7 @@
       items = state.list.ressources.map((id) => byId.get(id)).filter(Boolean);
     }
     return items.filter((it) => {
-      if (state.category !== "tout" && it.categorie !== state.category) return false;
+      if (state.category !== "tout" && !catsOf(it).includes(state.category)) return false;
       if (state.theme && !it.themes.includes(state.theme)) return false;
       if (state.gentle && it.intensite >= 3) return false;
       if (q) {
@@ -195,7 +228,7 @@
         ${coverHtml(it, "s")}
         <div class="card-main">
           <p class="card-title">${escapeHtml(it.titre)}</p>
-          <p class="card-meta">${[cat.one || cat.label, it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
+          <p class="card-meta">${[...catsOf(it).map((c) => CATEGORIES[c].one || CATEGORIES[c].label), it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
           <div class="tags">
             ${levelHtml(it.intensite)}
             ${scBadge(it)}
@@ -205,7 +238,7 @@
           </div>
         </div>
         <button class="fav-btn" type="button" data-fav="${escapeHtml(it.id)}"
-          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${isFav ? "♥" : "♡"}</button>
+          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${ui("coeur")}</button>
       </li>`;
   }
 
@@ -241,7 +274,7 @@
     const items = state.items.filter((it) => favorites.has(it.id));
     $("#fav-list").innerHTML = items.length
       ? items.map(cardHtml).join("")
-      : `<li class="empty">Aucun favori pour l'instant. Appuyez sur ♡ pour en ajouter.</li>`;
+      : `<li class="empty">Aucun favori pour l'instant. Appuyez sur ${ui("coeur")} pour en ajouter.</li>`;
   }
 
   // Catégorie ouverte dans la bibliothèque (pour pré-remplir « Proposer »)
@@ -258,9 +291,13 @@
     });
   }
 
+  // Une ressource peut avoir plusieurs formats : « categorie » (le principal) + « aussi »
+  // (ex. un livre que l'autrice présente dans un podcast). Elle apparaît sous chaque filtre.
+  const catsOf = (it) => [it.categorie, ...(Array.isArray(it.aussi) ? it.aussi : [])].filter((c, i, a) => CATEGORIES[c] && a.indexOf(c) === i);
+
   function renderCategories() {
     renderSuggestCta();
-    const counts = state.items.reduce((acc, it) => ((acc[it.categorie] = (acc[it.categorie] || 0) + 1), acc), {});
+    const counts = state.items.reduce((acc, it) => (catsOf(it).forEach((c) => (acc[c] = (acc[c] || 0) + 1)), acc), {});
     $("#categories").innerHTML = Object.entries(CATEGORIES)
       .filter(([key]) => key === "tout" || counts[key])
       .map(([key, c]) =>
@@ -283,6 +320,16 @@
     const isFav = favorites.has(it.id);
     const strong = it.intensite >= 3;
     const link = safeUrl(it.lien);
+    // Livres et BD : achat chez un libraire indépendant, page du livre trouvée par son ISBN.
+    const isbn = /^97[89]\d{10}$/.test(it.isbn || "") ? it.isbn : null;
+    const buy = isbn ? `https://www.librairiesindependantes.com/product/${isbn}/` : null;
+    // Le lien mène à un autre format (ex. le podcast où l'autrice présente son livre) ?
+    const listen = catsOf(it).includes("podcast") && it.categorie !== "podcast";
+    // Un livre qu'on peut acheter en librairie n'a pas besoin, en plus, du lien vers la page de l'éditeur.
+    const showLink = link && (!buy || listen);
+    // « Afficher plus » : texte officiel (éditeur, distributeur, radio), cité tel quel avec sa source.
+    const pres = it.presentation && it.presentation.texte ? it.presentation : null;
+    const presUrl = pres && safeUrl(pres.url);
     const inLists = state.lists.filter((l) => l.ressources.includes(it.id));
     const sc = it.senscritique && safeUrl(it.senscritique.url);
     const scHtml = sc ? `<a class="sc-row" href="${escapeHtml(sc)}" target="_blank" rel="noopener">
@@ -297,10 +344,15 @@
       <div class="detail-head">
         ${coverHtml(it, "l")}
         <div>
-          <p class="card-meta">${ui(cat.icon)} ${escapeHtml(cat.one || cat.label)}</p>
+          <p class="card-meta cat-line">${(catsOf(it).length ? catsOf(it) : [it.categorie]).map((c) => {
+            const k = CATEGORIES[c] || { label: c };
+            return `<span>${ui(k.icon)} ${escapeHtml(k.one || k.label)}</span>`;
+          }).join("")}</p>
           <h2 id="detail-title">${escapeHtml(it.titre)}</h2>
           <p class="card-meta">${[it.auteur, it.annee].filter(Boolean).map(escapeHtml).join(" · ")}</p>
         </div>
+        <button class="fav-btn detail-fav" type="button" data-fav="${escapeHtml(it.id)}"
+          aria-pressed="${isFav}" aria-label="${isFav ? "Retirer des" : "Ajouter aux"} favoris" title="${isFav ? "Retirer des" : "Ajouter aux"} favoris">${ui("coeur")}</button>
       </div>
       ${scHtml}
       ${it.image && it.image_credit ? `<p class="img-credit">Image : ${escapeHtml(it.image_credit)}</p>` : ""}
@@ -310,15 +362,21 @@
         ${strong ? "<br>Ce contenu peut être particulièrement éprouvant. Le résumé est masqué : appuyez dessus pour l'afficher." : ""}
       </div>
       <p class="reveal${strong ? "" : " shown"}" id="detail-resume" tabindex="0">${escapeHtml(it.resume)}</p>
+      ${pres ? `<button class="link-btn more-btn" type="button" aria-expanded="false" aria-controls="detail-more">Afficher plus</button>
+      <div id="detail-more" class="more" hidden>
+        <blockquote class="presentation${strong ? " reveal" : ""}">${paragraphs(pres.texte)}</blockquote>
+        <p class="presentation-source">${presUrl ? `<a href="${escapeHtml(presUrl)}" target="_blank" rel="noopener">${escapeHtml(pres.source)} ↗</a>` : escapeHtml(pres.source)}</p>
+      </div>` : ""}
       ${inLists.length ? `<p class="card-meta">Dans les listes : ${inLists
         .map((l) => `<button class="link-btn" type="button" data-list="${escapeHtml(l.id)}">${escapeHtml(l.titre)}</button>`)
         .join(", ")}</p>` : ""}
+      ${showLink ? `<div class="btn-row">
+        <a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">${listen ? "Écouter le podcast" : "Consulter"} ↗</a>
+      </div>` : ""}
+      ${buy ? `<a class="btn btn-buy" href="${buy}" target="_blank" rel="noopener">Acheter en librairie indépendante ↗</a>
+      <p class="buy-note">Sur librairiesindependantes.com : vous choisissez une librairie près de chez vous. Aucun lien commercial avec Biblio VSS.</p>` : ""}
       <div class="btn-row">
-        <button class="btn" type="button" data-fav="${escapeHtml(it.id)}">${isFav ? "♥ Retirer des favoris" : "♡ Ajouter aux favoris"}</button>
-        ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">Consulter ↗</a>` : ""}
-      </div>
-      <div class="btn-row">
-        <button class="btn primary" type="button" data-close>Fermer</button>
+        <button class="btn" type="button" data-close>Fermer</button>
       </div>`;
     if (!dlg.open) dlg.showModal();
   }
@@ -423,7 +481,7 @@
         ${link ? `<a class="btn" href="${escapeHtml(link)}" target="_blank" rel="noopener">En savoir plus ↗</a>` : ""}
       </div>
       <div class="btn-row">
-        <button class="btn primary" type="button" data-close>Fermer</button>
+        <button class="btn" type="button" data-close>Fermer</button>
       </div>`;
     if (!dlg.open) dlg.showModal();
   }
@@ -597,13 +655,27 @@
     $("#learn-rub").hidden = !rub || !!q;
     if (rub && !q) { renderRubrique(rub); $("#def-list").innerHTML = ""; return; }
 
+    // Sources d'une réponse : celles indiquées dans la question (« sources »), sinon celles
+    // des articles vers lesquels elle renvoie (« voir »), sans doublon.
+    const faqSourcesHtml = (f, byId) => {
+      const list = Array.isArray(f.sources) ? f.sources
+        : (f.voir || []).map((id) => byId.get(id) && byId.get(id).source).filter(Boolean);
+      const seen = new Set();
+      const uniq = list.filter((src) => src && src.label && !seen.has(src.url || src.label) && seen.add(src.url || src.label));
+      if (!uniq.length) return "";
+      return `<p class="acc-source">Sources : ${uniq.map((src) => safeUrl(src.url)
+        ? `<a href="${escapeHtml(src.url)}" target="_blank" rel="noopener">${escapeHtml(src.label)}</a>`
+        : escapeHtml(src.label)).join(" · ")}</p>`;
+    };
+
     // Questions fréquentes
     const faqs = L.questions_frequentes.filter((f) => match(f.question, f.reponse));
     $("#faq-list").innerHTML = faqs.length ? faqs.map((f) => `<details class="acc">
         <summary><strong>${escapeHtml(f.question)}</strong></summary>
         <div class="acc-body">${paragraphs(f.reponse)}
-          ${(f.voir || []).filter((id) => byId.has(id)).length ? `<p class="acc-source">Voir aussi : ${f.voir.filter((id) => byId.has(id))
+          ${(f.voir || []).filter((id) => byId.has(id)).length ? `<p class="acc-source">Lire les articles : ${f.voir.filter((id) => byId.has(id))
             .map((id) => `<button class="link-btn" type="button" data-def-open="${escapeHtml(id)}">${escapeHtml(byId.get(id).terme)}</button>`).join(", ")}</p>` : ""}
+          ${faqSourcesHtml(f, byId)}
         </div>
       </details>`).join("") : `<p class="hint">Aucune question ne correspond.</p>`;
 
@@ -643,7 +715,7 @@
       <div class="rub-head">${icon(d.icone || "coeur")}<h2 id="detail-title">${escapeHtml(d.terme)}</h2></div>
       <p class="hint">${escapeHtml(d.court)}</p>
       <div class="sheet-text">${defBody(d)}</div>
-      <div class="btn-row"><button class="btn primary" type="button" data-close>Fermer</button></div>`;
+      <div class="btn-row"><button class="btn" type="button" data-close>Fermer</button></div>`;
     if (!dlg.open) dlg.showModal();
   }
 
@@ -1298,7 +1370,10 @@
     saveFavorites();
     renderList();
     renderFavorites();
-    if ($("#detail").open) openDetail(id);
+    if ($("#detail").open) {
+      openDetail(id);
+      $("#detail .detail-fav")?.focus(); // garder le focus clavier sur le cœur
+    }
   }
 
   function openList(id) {
@@ -1370,6 +1445,16 @@
     if (card) { openDetail(card.dataset.id); return; }
 
     if (e.target.closest("[data-close]")) { $("#detail").close(); return; }
+
+    const more = e.target.closest(".more-btn");
+    if (more) {
+      const box = document.getElementById(more.getAttribute("aria-controls"));
+      const open = more.getAttribute("aria-expanded") !== "true";
+      more.setAttribute("aria-expanded", String(open));
+      more.textContent = open ? "Afficher moins" : "Afficher plus";
+      if (box) box.hidden = !open;
+      return;
+    }
 
     const reveal = e.target.closest(".reveal");
     if (reveal) reveal.classList.add("shown");
