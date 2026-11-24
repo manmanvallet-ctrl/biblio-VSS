@@ -175,6 +175,7 @@
     "id": "chanel-miller",
     "titre": "Know My Name (J'ai un nom)",
     "auteur": "Chanel Miller",
+    "isbn": "9782266327336",
     "annee": 2019,
     "categorie": "livre",
     "themes": [
@@ -192,6 +193,7 @@
     "id": "crocodiles",
     "titre": "Les Crocodiles",
     "auteur": "Thomas Mathieu",
+    "isbn": "9782803634651",
     "annee": 2014,
     "categorie": "bd",
     "themes": [
@@ -772,6 +774,7 @@
     "id": "livre-cyrulnik-honte",
     "titre": "Mourir de dire : la honte",
     "auteur": "Boris Cyrulnik",
+    "isbn": "9782738125057",
     "annee": 2010,
     "categorie": "livre",
     "themes": [
