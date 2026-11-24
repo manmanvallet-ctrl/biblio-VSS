@@ -134,6 +134,8 @@
       <h2 class="view-title">Proposer une ressource</h2>
       <p class="hint">Un livre, un film, un podcast ou un article qui vous a aidé·e ? Proposez-le : chaque proposition est relue avant d'être ajoutée.</p>
       <form id="suggest-form" class="form" novalidate>
+        <!-- Piège à robots (anti-spam Formspree) : invisible pour les personnes, les robots le remplissent et leur envoi est ignoré. -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <label>Type
           <select name="categorie" required>
             <option value="livre">Livre</option>
