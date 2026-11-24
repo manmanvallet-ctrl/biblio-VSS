@@ -258,8 +258,23 @@ a { color: var(--accent); }
   font-size: .95rem;
 }
 .toggle { display: flex; gap: 8px; min-height: 44px; align-items: center; font-size: .9rem; color: var(--muted); }
-/* Case à cocher aux couleurs de l'appli (violet coché) plutôt que la couleur du système */
-.toggle input[type="checkbox"] { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); }
+/* Case à cocher dessinée par l'appli : certains téléphones ignorent la couleur demandée
+   et la remplissent en noir. Vide : contour gris sur fond clair ; cochée : violet + coche. */
+.toggle input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none;
+  flex: none; display: inline-grid; place-content: center;
+  width: 18px; height: 18px; margin: 0;
+  border: 1.5px solid var(--muted); border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+}
+.toggle input[type="checkbox"]:checked { background: var(--accent); border-color: var(--accent); }
+.toggle input[type="checkbox"]:checked::after {
+  content: ""; width: 9px; height: 5px;
+  border: solid var(--on-accent); border-width: 0 0 2px 2px;
+  transform: translateY(-1px) rotate(-45deg);
+}
+.toggle input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .count { color: var(--muted); font-size: .85rem; margin: 8px 0; }
 
