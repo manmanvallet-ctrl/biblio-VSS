@@ -473,9 +473,12 @@ a { color: var(--accent); }
   cursor: pointer;
   font: inherit;
 }
-.list-tone-0 { --tone-bg: var(--tone-douceur-bg); --tone-fg: var(--tone-douceur-fg); border-top: 6px solid var(--vert-eau); }
-.list-tone-1 { --tone-bg: var(--tone-lavande-bg); --tone-fg: var(--tone-lavande-fg); }
-.list-tone-2 { --tone-bg: var(--tone-prune-bg);   --tone-fg: var(--tone-prune-fg); }
+/* Chaque carte a un bandeau en haut, en aplat (comme la tranche d'un livre), d'une teinte
+   plus marquée que son fond. Pas de dégradé : la charte les exclut. */
+.list-card { border-top: 6px solid var(--tone-band); }
+.list-tone-0 { --tone-bg: var(--tone-douceur-bg); --tone-fg: var(--tone-douceur-fg); --tone-band: var(--vert-eau); }
+.list-tone-1 { --tone-bg: var(--tone-lavande-bg); --tone-fg: var(--tone-lavande-fg); --tone-band: var(--accent); }
+.list-tone-2 { --tone-bg: var(--tone-prune-bg);   --tone-fg: var(--tone-prune-fg);   --tone-band: var(--accent-soft); }
 .list-name { font-weight: 600; font-size: 1.15rem; line-height: 1.2; color: inherit; }
 .list-desc { font-size: .82rem; flex: 1; }
 .list-count { font-size: .78rem; font-weight: 600; }
