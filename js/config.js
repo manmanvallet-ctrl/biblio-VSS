@@ -5,7 +5,7 @@ window.BIBLIO_CONFIG = {
   //
   // 1. Un service de formulaires qui accepte du JSON (Formspree, Getform, Basin…).
   //    Exemple : "https://formspree.io/f/abcdwxyz"
-  suggestionEndpoint: "",
+  suggestionEndpoint: "https://formspree.io/f/meagpwwy",
   //
   // 2. Une adresse e-mail : le formulaire ouvre alors l'application mail du téléphone,
   //    avec le message déjà rempli. Exemple : "contact@exemple.fr"

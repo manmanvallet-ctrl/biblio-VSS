@@ -159,7 +159,15 @@ Puis ouvrez http://localhost:8000.
 La version navigateur est publiée automatiquement sur **GitHub Pages** à chaque modification de la branche `main` (`.github/workflows/site.yml`). À faire une seule fois :
 
 1. Sur GitHub : **Settings → Pages → Source** : choisissez **GitHub Actions**.
-2. L'application est alors disponible à l'adresse `https://<compte>.github.io/biblio-VSS/`.
+2. L'application est alors disponible à l'adresse **https://biblio-vss.fr** (nom de domaine OVH branché sur GitHub Pages, voir ci-dessous).
+
+### Nom de domaine biblio-vss.fr
+
+Le domaine est acheté chez OVH ; GitHub Pages sert le site à cette adresse.
+
+- **Zone DNS (OVH)** : 4 enregistrements `A` sur `biblio-vss.fr` vers `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, 4 enregistrements `AAAA` vers `2606:50c0:8000::153` à `2606:50c0:8003::153`, et `www` en `CNAME` vers `manmanvallet-ctrl.github.io.`. Ne pas toucher aux enregistrements `MX` et au `TXT` SPF : ils font marcher la boîte `contact@biblio-vss.fr`.
+- **GitHub** : Settings → Pages → Custom domain : `biblio-vss.fr`, puis cocher **Enforce HTTPS**. Le domaine est aussi vérifié dans les réglages du compte (Settings → Pages → Add a domain), pour que personne d'autre ne puisse l'utiliser sur GitHub.
+- Le site étant servi à la racine du domaine, `404.html` utilise des liens qui partent de `/`, et les balises Open Graph de `index.html` pointent vers `https://biblio-vss.fr/`.
 
 Sur le téléphone, ouvrez cette adresse puis « Ajouter à l'écran d'accueil » : elle s'installe comme une application et fonctionne hors-ligne.
 

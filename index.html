@@ -12,8 +12,8 @@
   <meta property="og:site_name" content="Biblio VSS">
   <meta property="og:title" content="Biblio VSS">
   <meta property="og:description" content="Livres, films, podcasts et ressources d'aide sur l'inceste, le viol et les violences sexuelles.">
-  <meta property="og:url" content="https://manmanvallet-ctrl.github.io/biblio-VSS/">
-  <meta property="og:image" content="https://manmanvallet-ctrl.github.io/biblio-VSS/icons/partage.png">
+  <meta property="og:url" content="https://biblio-vss.fr/">
+  <meta property="og:image" content="https://biblio-vss.fr/icons/partage.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Biblio VSS : livres, films, podcasts et ressources d'aide sur l'inceste, le viol et les violences sexuelles">
@@ -134,6 +134,8 @@
       <h2 class="view-title">Proposer une ressource</h2>
       <p class="hint">Un livre, un film, un podcast ou un article qui vous a aidé·e ? Proposez-le : chaque proposition est relue avant d'être ajoutée.</p>
       <form id="suggest-form" class="form" novalidate>
+        <!-- Piège à robots (anti-spam Formspree) : invisible pour les personnes, les robots le remplissent et leur envoi est ignoré. -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <label>Type
           <select name="categorie" required>
             <option value="livre">Livre</option>
