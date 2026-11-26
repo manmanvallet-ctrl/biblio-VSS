@@ -43,6 +43,42 @@ Merci pour votre travail, et à bientôt j'espère,
 [prénom nom]
 [moyen de contact]
 
+## Message à l'animatrice d'un groupe de parole
+
+À envoyer à une personne que l'on a déjà rencontrée, pour lui demander son accord avant de partager le site. Remplacez les passages entre crochets.
+
+**Objet :** Un site né après le groupe de parole, et une question pour vous
+
+Bonjour [prénom],
+
+Je participais au groupe de parole du [date] et je voulais d'abord vous remercier. Ce moment m'a beaucoup apporté.
+
+En sortant, j'ai repensé à une question posée ce jour-là, la différence entre inceste et pédocriminalité, et au fait qu'il est difficile de trouver des réponses claires, des livres ou des films adaptés, et des groupes de parole près de chez soi. J'ai donc construit un site, Biblio VSS, pour rassembler tout cela au même endroit : https://biblio-vss.fr
+
+Le site propose :
+
+- une bibliothèque de livres, films, séries, documentaires, podcasts et articles sur l'inceste, le viol et les violences sexuelles. Chaque œuvre indique un niveau d'intensité, pour choisir ce qu'on se sent capable de lire ou de regarder ;
+- une partie « Comprendre », avec des définitions vérifiées dans les textes de loi, des explications sur la sidération, la dissociation ou la honte, et les soins dont l'efficacité est démontrée ;
+- un agenda des groupes de parole, filtrable par ville. Les dates sont reprises des sites publics des associations, avec la source citée sur chaque fiche ;
+- un annuaire d'aide : lignes d'écoute, associations, groupes de parole, démarches.
+
+Le site est gratuit, sans publicité et sans compte, et ne garde aucune trace de ce qu'on consulte. Un bouton « Sortie rapide » permet de le quitter en une seconde si quelqu'un arrive.
+
+Avant d'en parler autour de moi, j'aimerais avoir votre avis. Seriez-vous d'accord pour que je le partage, par exemple avec les personnes du groupe ? Et si vos groupes de parole y figurent, est-ce que cela vous convient, ou préférez-vous que je les retire ou que j'en change la présentation ?
+
+Je ne veux pas faire ce projet seule, ni à côté des associations qui font ce travail depuis longtemps. Je souhaite le construire avec elles : tout peut être relu, corrigé, complété ou retiré. Vos remarques, sur le fond comme sur le ton, me seraient très précieuses, y compris si quelque chose vous semble maladroit ou pas à sa place.
+
+Si vous avez un peu de temps, je serais heureuse d'en parler par téléphone ou avant un prochain groupe. Et si ce n'est pas le moment, je le comprendrai tout à fait.
+
+Merci encore pour ce que vous faites,
+
+[prénom]
+[moyen de contact]
+
+### Version courte (SMS ou message privé)
+
+Bonjour [prénom], c'est [prénom], du groupe de parole du [date]. Merci encore pour ce moment. Depuis, j'ai créé un site qui rassemble livres, films, définitions, groupes de parole et contacts d'aide sur l'inceste et les violences sexuelles : https://biblio-vss.fr. Il est gratuit, sans compte et sans pistage. Avant de le partager, j'aimerais savoir si vous êtes d'accord, et avoir votre regard : je veux le construire avec les associations, tout peut être corrigé ou retiré. Je vous envoie plus de détails par e-mail si vous le souhaitez.
+
 ## Paragraphes propres à chaque association
 
 ### SOS Inceste pour Revivre
