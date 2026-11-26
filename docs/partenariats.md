@@ -43,6 +43,72 @@ Merci pour votre travail, et à bientôt j'espère,
 [prénom nom]
 [moyen de contact]
 
+## Version pour les formulaires de contact
+
+Texte commun, à compléter par le paragraphe propre à chaque association (à la place de [paragraphe]). Chaque message complet fait moins de 1 400 caractères : il passe dans tous les formulaires (celui de Pas de Secret est limité à 2 000).
+
+**Objet :** Biblio VSS, un site de ressources sur l'inceste et les violences sexuelles
+
+| Association | Où écrire |
+|---|---|
+| CAIIP | Formulaire : https://caiip.group/contactez-nous |
+| Pas de Secret | Formulaire : https://www.pas-de-secret.fr/nous-contacter/ (2 000 caractères max) |
+| SOS Inceste pour Revivre | Formulaire : https://sos-inceste-grenoble.org/nous-contacter/ |
+| Face à l'inceste | Formulaire : https://facealinceste.fr/notre-association/nous-contacter |
+| En Parler | Pas de formulaire : contact@enparler.org |
+| Collectif MeToo Lyon | Pas de formulaire : collectifmetoolyon@gmail.com |
+| Association EVA | contact@association-eva.org (site injoignable le 26/11/2026) |
+| Mouv'Enfants | Pas de formulaire : contact@mouvenfants.fr |
+
+```
+Bonjour,
+
+Je m'appelle [prénom] et [je suis moi-même concernée / je participe à des groupes de parole]. J'ai créé Biblio VSS, un site gratuit qui rassemble des ressources sur l'inceste, le viol et les violences sexuelles : https://biblio-vss.fr
+
+On y trouve une bibliothèque de livres, films, podcasts et articles, avec un niveau d'intensité pour chaque œuvre ; des définitions vérifiées dans la loi et des explications sur le psychotraumatisme ; un agenda des groupes de parole par ville ; et les contacts d'aide. Pas de compte, pas de publicité, aucun pistage, et un bouton de sortie rapide.
+
+[paragraphe]
+
+Je ne veux pas faire ce projet à côté des associations, mais avec elles. Tout peut être relu, corrigé, complété ou retiré, et vos remarques, sur le fond comme sur le ton, me seraient précieuses. Seriez-vous d'accord pour un échange, par téléphone ou en visio, quand cela vous convient ?
+
+Le projet n'a aucun but commercial, et votre association est citée pour chaque contenu repris.
+
+Merci pour votre travail,
+[prénom]
+```
+
+### CAIIP
+
+> Vos groupes de parole figurent dans l'agenda du site : les dates, les lieux et la mention « Complet » sont repris chaque semaine de votre page publique, avec un lien vers votre site pour adhérer et s'inscrire. Êtes-vous d'accord avec ce relais ? Si vous préférez une autre présentation, ou que je les retire, je le fais tout de suite.
+
+### Pas de Secret
+
+> Votre groupe de parole mensuel pour adultes victimes d'inceste figure dans l'agenda du site, repris de votre page publique, avec un lien vers votre agenda. Êtes-vous d'accord avec ce relais ? Si vous préférez une autre présentation, ou que je le retire, je le fais tout de suite. Vos outils de prévention, comme les cartes des secrets, pourraient aussi avoir leur place dans le site.
+
+### En Parler
+
+> Vos rendez-vous figurent dans l'agenda du site, ville par ville, repris chaque semaine de votre page publique, avec l'adresse de l'antenne à qui écrire pour s'inscrire. Êtes-vous d'accord avec ce relais ? Si vous préférez une autre présentation, ou que je les retire, je le fais tout de suite.
+
+### Collectif MeToo Lyon
+
+> Vos permanences d'écoute et groupes de parole du jeudi figurent dans l'annuaire d'aide du site, avec votre adresse e-mail pour s'inscrire. Êtes-vous d'accord avec cette présentation ? Je peux la corriger ou la retirer, et relayer vos prochains événements si vous le souhaitez.
+
+### SOS Inceste pour Revivre
+
+> Votre médiathèque de livres, films et podcasts sur l'inceste est l'une des plus riches que j'ai trouvées. Avec votre accord, j'aimerais m'en inspirer en vous citant, et relayer dans l'agenda vos groupes de parole et ciné-échanges.
+
+### Face à l'inceste
+
+> Votre page « Obtenir de l'aide » a beaucoup inspiré la partie Aide du site. Accepteriez-vous de relire les définitions sur l'inceste, en particulier la question des cousin·es, absents de la définition légale ? J'aimerais aussi relayer vos événements, comme vos Assises nationales.
+
+### Association EVA
+
+> Votre annuaire des associations et groupes de parole, région par région, est le plus complet que j'ai trouvé. Avec votre accord, j'aimerais m'en inspirer pour que chacun·e trouve un groupe près de chez soi, en renvoyant vers votre site, et relayer vos groupes de parole mensuels.
+
+### Mouv'Enfants
+
+> Votre sélection de podcasts sur l'inceste et vos mobilisations rejoignent ce que je veux rendre accessible. J'aimerais relayer vos sélections et vos événements en vous citant, et avoir votre regard sur les contenus consacrés aux violences faites aux enfants.
+
 ## Message à l'animatrice d'un groupe de parole
 
 À envoyer à une personne que l'on a déjà rencontrée, pour lui demander son accord avant de partager le site. Remplacez les passages entre crochets.
