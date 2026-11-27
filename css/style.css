@@ -556,6 +556,12 @@ body:has(dialog[open]) .topbar .quick-exit { visibility: hidden; }
 
 /* Annuaire d'aide */
 .help-dir { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 10px; }
+/* Annuaire d'aide : accueil en tuiles par catégorie */
+.aide-home { margin-top: 10px; }
+.aide-home .tile-count { color: var(--accent); font-weight: 600; }
+.aide-all { grid-column: 1 / -1; justify-self: start; margin-top: 4px; min-height: 44px; }
+#aide-title { scroll-margin-top: 84px; }
+#aide-back { min-height: 44px; margin: 4px 0 0; }
 .help-entry {
   background: var(--surface);
   border: 1px solid var(--border);

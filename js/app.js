@@ -65,6 +65,18 @@
     infos: "S'informer",
     applis: "Applications utiles",
   };
+  // Sous-titre de chaque tuile de l'annuaire (accueil de l'onglet Aide)
+  const AIDE_CAT_DESC = {
+    ecoute: "Parler à quelqu'un, au téléphone ou par tchat",
+    jeunes: "Pour les enfants, les ados, et les adultes inquiets pour eux",
+    groupes: "Partager avec d'autres personnes concernées",
+    associations: "Soutenir et défendre les victimes",
+    soins: "Trouver des soins et un·e thérapeute formé·e au trauma",
+    demarches: "Signaler, garder des preuves, connaître ses droits",
+    prevention: "Pour ne jamais passer à l'acte",
+    infos: "Comprendre, témoigner, s'informer",
+    applis: "Alerter des proches, sécuriser un trajet, garder des preuves",
+  };
   const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
 
   // Date du relevé SensCritique ("AAAA-MM"), mise à jour chaque mois par
@@ -85,7 +97,7 @@
   const state = {
     items: [], lists: [], list: null, category: "tout", theme: "", query: "", gentle: false,
     events: [], eventCity: store0("biblio-vss:ville"), eventType: "",
-    aide: [], aideCat: "tout", aideQuery: "",
+    aide: [], aideCat: "accueil", aideQuery: "",
     learn: null, learnQuery: "", learnRub: "",
   };
   function store0(key) { try { return JSON.parse(localStorage.getItem(key)) || ""; } catch { return ""; } }
@@ -534,13 +546,33 @@
 
   function renderAide() {
     const present = new Set(state.aide.map((a) => a.categorie));
+    const q = normalize(state.aideQuery.trim());
+    // Accueil de l'annuaire : des tuiles par catégorie, avec leur nombre de fiches.
+    // Les fiches n'apparaissent qu'après avoir choisi une catégorie ou tapé une recherche,
+    // pour ne pas empiler les 35 fiches dès l'ouverture de l'onglet.
+    const home = state.aideCat === "accueil" && !q;
+    $("#aide-home").hidden = !home;
+    $("#aide-cats").hidden = home;
+    $("#aide-back").hidden = home;
+    $("#aide-list").hidden = home;
+    if (home) {
+      const count = (k) => state.aide.filter((a) => a.categorie === k).length;
+      $("#aide-home").innerHTML = Object.keys(AIDE_CATEGORIES).filter((k) => present.has(k)).map((k) => {
+        const n = count(k);
+        return `<button class="rub-tile" type="button" data-aide-cat="${k}">
+          <strong>${escapeHtml(AIDE_CATEGORIES[k])}</strong>
+          <span>${escapeHtml(AIDE_CAT_DESC[k] || "")}</span>
+          <span class="tile-count">${n} fiche${n > 1 ? "s" : ""}</span>
+        </button>`;
+      }).join("") + `<button class="link-btn aide-all" type="button" data-aide-cat="tout">Voir les ${state.aide.length} fiches</button>`;
+      return;
+    }
     $("#aide-cats").innerHTML = Object.entries(AIDE_CATEGORIES)
       .filter(([k]) => k === "tout" || present.has(k))
       .map(([k, label]) => `<button class="chip${k === state.aideCat ? " active" : ""}" type="button" aria-pressed="${k === state.aideCat}" data-aide-cat="${k}">${label}</button>`)
       .join("");
-    const q = normalize(state.aideQuery.trim());
     const items = state.aide.filter((a) => {
-      if (state.aideCat !== "tout" && a.categorie !== state.aideCat) return false;
+      if (state.aideCat !== "tout" && state.aideCat !== "accueil" && a.categorie !== state.aideCat) return false;
       if (!q) return true;
       const hay = normalize([a.nom, a.description, a.ville, a.horaires, AIDE_CATEGORIES[a.categorie]].join(" "));
       return q.split(/\s+/).every((w) => hay.includes(w));
@@ -1422,7 +1454,16 @@
     if (ics) { downloadIcs(ics.dataset.ics); return; }
 
     const aideCat = e.target.closest("[data-aide-cat]");
-    if (aideCat) { state.aideCat = aideCat.dataset.aideCat; renderAide(); return; }
+    if (aideCat) {
+      const fromHome = !!aideCat.closest("#aide-home");
+      const fromOutside = !aideCat.closest("#view-help .aide-dir");
+      state.aideCat = aideCat.dataset.aideCat;
+      renderAide();
+      // Après un choix sur l'accueil (ou depuis un lien plus haut), on remonte au titre de l'annuaire
+      // pour voir les fiches depuis le début.
+      if (fromHome || fromOutside) $("#aide-title")?.scrollIntoView({ block: "start" });
+      return;
+    }
 
     const go = e.target.closest("[data-goto]");
     if (go) {
