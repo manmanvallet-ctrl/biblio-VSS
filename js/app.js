@@ -142,20 +142,21 @@
   $("#quick-exit").addEventListener("click", quickExit);
 
   // ---------- Mode clair / sombre ----------
-  // Par défaut, l'appli suit le réglage du téléphone. L'interrupteur impose l'autre mode,
-  // et ce choix est retenu sur cet appareil uniquement.
+  // Par défaut, l'appli s'ouvre en mode clair, même si le téléphone est réglé en sombre.
+  // L'interrupteur passe en mode sombre, et ce choix est retenu sur cet appareil uniquement.
   const THEME_KEY = "biblio-vss:theme";
-  const darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : { matches: false };
   const THEME_ICONS = {
     // Soleil : affiché en mode sombre, pour revenir au clair
     light: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>',
     // Lune : affichée en mode clair, pour passer au sombre
     dark: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',
   };
-  const currentTheme = () => document.documentElement.dataset.theme || (darkQuery.matches ? "dark" : "light");
+  const currentTheme = () => (document.documentElement.dataset.theme === "dark" ? "dark" : "light");
   function renderThemeToggle() {
     const next = currentTheme() === "dark" ? "light" : "dark";
     const btn = $("#theme-toggle");
+    // Couleur de la barre d'état du téléphone, assortie au fond
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", currentTheme() === "dark" ? "#1a1520" : "#f6f1e9");
     if (!btn) return;
     btn.innerHTML = `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${THEME_ICONS[next]}</svg>`;
     btn.setAttribute("aria-label", next === "dark" ? "Passer en mode sombre" : "Passer en mode clair");
@@ -170,7 +171,6 @@
     store.set(THEME_KEY, next);
     renderThemeToggle();
   });
-  if (darkQuery.addEventListener) darkQuery.addEventListener("change", renderThemeToggle);
   let lastEsc = 0;
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;

@@ -79,7 +79,7 @@ La charte ci-dessus est pensée pour Instagram (visuels de 1080 px). Dans l'appl
 
 - **Polices** : Fraunces pour les titres (en prune), Inter pour le texte. Elles sont **hébergées dans l'appli** (`fonts/`, licence OFL) : aucune requête vers Google Fonts, donc rien n'est envoyé à un tiers à l'ouverture.
 - **Tailles** : échelle web, environ la taille Instagram divisée par 2,5 (texte courant 16 px, titres de fiche 17 px, pastilles 12,5 px).
-- **Thème sombre** (créé pour l'appli, la charte n'en avait pas) : fond `#1a1520`, cartes `#241d2c`, texte `#f2edf7`, texte secondaire `#b8aec4`, titres en lavande `#dcd0ec`, liens et boutons `#c9b3ec`. Niveaux : `#2d4c49`, `#41345a`, `#c9b3ec`. Tous les textes dépassent 4,5:1.
+- **Thème sombre** (créé pour l'appli, la charte n'en avait pas) : l'appli s'ouvre toujours en mode clair, même si le téléphone est réglé en sombre ; le sombre ne s'active qu'avec le bouton lune, et ce choix est retenu sur l'appareil. Couleurs : fond `#1a1520`, cartes `#241d2c`, texte `#f2edf7`, texte secondaire `#b8aec4`, titres en lavande `#dcd0ec`, liens et boutons `#c9b3ec`. Niveaux : `#2d4c49`, `#41345a`, `#c9b3ec`. Tous les textes dépassent 4,5:1.
 - **Couvertures générées** : un aplat de la palette par type de ressource, avec une reliure à gauche (rappel du motif étagère), sans dégradé ni ombre.
 - **Listes thématiques** : trois tons qui alternent (vert-eau-clair avec bandeau vert-eau pour la première, « Pour commencer », puis lavande, puis prune).
 - **Icônes** : dessinées au trait (SVG), jamais d'émoji.
@@ -92,3 +92,4 @@ La charte ci-dessus est pensée pour Instagram (visuels de 1080 px). Dans l'appl
 - 24/11/2026 : 3 niveaux d'intensité au lieu de 4, pour garder la notation des 58 ressources existantes (`data/ressources.json`) et les règles de floutage et de « Contenus moins durs » (niveau 3).
 - 24/11/2026 : pastille à barres, pour que le niveau se lise sans la couleur.
 - 24/11/2026 : navigation selon l'écran. Téléphone et tablette en portrait : onglets en bas, à portée de pouce. À partir de 960 px de large (ordinateur, tablette en paysage) : onglets dans la barre du haut, entre le nom et la Sortie rapide, onglet actif souligné d'un trait violet.
+- 27/11/2026 : mode clair par défaut. Le fond papier est le cœur de l'identité ; le mode sombre reste proposé par le bouton lune, sans suivre automatiquement le réglage du téléphone.
