@@ -266,14 +266,6 @@
 
       <p class="hint apps-hint">Besoin d'alerter des proches, de sécuriser un trajet ou de garder des preuves ? Des applications gratuites le font très bien : voir <button class="link-btn" type="button" data-aide-cat="applis">Applications utiles</button>.</p>
 
-      <h3 class="section-title">Associations, écoute et groupes de parole</h3>
-      <div class="search-wrap">
-        <input id="aide-search" type="search" placeholder="Rechercher (ville, inceste, jeunes…)" autocomplete="off" aria-label="Rechercher dans l'annuaire">
-      </div>
-      <nav id="aide-cats" class="chips" aria-label="Types d'aide"></nav>
-      <ul id="aide-list" class="help-dir"></ul>
-      <p class="hint" style="margin-top:12px">Une association manque ? <button class="link-btn" type="button" data-goto="suggest" data-suggest-type="association">Proposez-la</button>.</p>
-
       <div class="note">
         <h3>Pour aller plus loin</h3>
         <p>L'association SOS Inceste pour Revivre (Grenoble) rassemble dans sa médiathèque des livres, des podcasts, des vidéos et de la documentation sur l'inceste : <a href="https://sos-inceste-grenoble.org/notre-mediatheque/" target="_blank" rel="noopener">voir la médiathèque ↗</a>.</p>
@@ -284,6 +276,18 @@
         <p>Certains contenus peuvent faire remonter des souvenirs difficiles. Vous pouvez arrêter à tout moment. Faites une pause, respirez, parlez-en à une personne de confiance.</p>
         <p>Le bouton <strong>Sortie rapide</strong> (ou deux appuis sur <kbd>Échap</kbd>) ferme l'application immédiatement. Elle n'efface pas l'historique du navigateur : voir <a href="securite.html">Naviguer en sécurité</a>.</p>
       </div>
+      <div class="aide-dir">
+      <h3 class="section-title" id="aide-title">Associations, écoute et groupes de parole</h3>
+      <div class="search-wrap">
+        <input id="aide-search" type="search" placeholder="Rechercher (ville, inceste, jeunes…)" autocomplete="off" aria-label="Rechercher dans l'annuaire">
+      </div>
+      <div id="aide-home" class="rub-grid aide-home"></div>
+      <button id="aide-back" class="link-btn back-link" type="button" data-aide-cat="accueil" hidden>← Toutes les catégories</button>
+      <nav id="aide-cats" class="chips" aria-label="Types d'aide" hidden></nav>
+      <ul id="aide-list" class="help-dir" hidden></ul>
+      </div>
+      <p class="hint" style="margin-top:12px">Une association manque ? <button class="link-btn" type="button" data-goto="suggest" data-suggest-type="association">Proposez-la</button>.</p>
+
       <p class="hint" style="margin-top:16px"><a href="securite.html">Naviguer en sécurité</a> · <a href="confidentialite.html">Politique de confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a> · <a href="https://www.instagram.com/biblio.vss/" target="_blank" rel="noopener">Instagram</a> · Aucune donnée collectée, aucun pistage.</p>
     </section>
   </main>
