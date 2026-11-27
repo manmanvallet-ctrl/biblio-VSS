@@ -7,6 +7,7 @@
     "annee": 2021,
     "categorie": "livre",
     "themes": [
+      "proches",
       "inceste",
       "silence familial",
       "témoignage"
@@ -1177,5 +1178,93 @@
     "resume": "Étude chiffrée pour les professionnel·les : 15 700 mineur·es mis en cause pour des infractions sexuelles en 2024, en forte hausse depuis 2017 ; près d'un sur trois a moins de 13 ans. Elle décrit aussi la réponse de la justice des mineurs.",
     "intensite": 1,
     "lien": "https://www.justice.gouv.fr/sites/default/files/2025-06/Rapport_mineurs_violences%20sexuelles.pdf"
+  },
+  {
+    "id": "livre-serero-nos-survivantes",
+    "titre": "Nos sur-vivantes. Violences sexuelles : le pouvoir des proches",
+    "auteur": "Lisa Serero",
+    "isbn": "9791028530853",
+    "annee": 2024,
+    "categorie": "livre",
+    "themes": [
+      "proches",
+      "essai",
+      "témoignage"
+    ],
+    "resume": "Essai écrit pour l'entourage par une autrice elle-même victime de violences sexuelles : comment écouter, croire, rompre l'isolement et accompagner la reconstruction, avec des témoignages et des éclairages d'expert·es. Préface de la gynécologue Ghada Hatem-Gantzer, fondatrice de la Maison des femmes de Saint-Denis. Éditions Leduc.",
+    "presentation": {
+      "texte": "En France, 1 femme sur 2 a déjà subi des violences sexuelles, pourtant seulement 10 % déposent plainte. Face à un système judiciaire et de santé défaillant, vers qui les victimes peuvent-elles se tourner ?\n\nLes proches, souvent victimes par ricochet, deviennent alors les acteur·rice·s majeur·e·s de cette libération de la parole. Mais sommes-nous bien armé·e·s pour soutenir nos femmes, nos mères, nos filles, nos soeurs ou nos amies ?\n\nÀ travers cet essai riche en témoignages et en éclairages d’expert·e·s, Lisa Serero démontre le pouvoir de l’entourage dans la reconstruction des victimes, et nous donne les outils pour briser le silence, rompre l’isolement, comprendre les victimes et les accompagner.\n\nUN LIVRE INDISPENSABLE POUR APPRENDRE À ÉCOUTER NOS SURVIVANTES.\n\nLisa Serero, autrice et défenseuse des droits humains, a débuté sa carrière en tant que journaliste spécialisée dans les questions d’identité. Victime de violences sexuelles, elle revient sur son expérience et partage avec nous les mots qu’elle aurait aimé entendre de ses proches à travers cet essai puissant.\n\nPréface de Ghada Hatem-Gantzer, gynécologue-obstétricienne, fondatrice de la Maison des femmes de Saint-Denis.",
+      "source": "Présentation de l'éditeur (Leduc)",
+      "url": "https://www.editionsleduc.com/produit/3516/9791028528775/nos-sur-vivantes"
+    },
+    "image": "images/livre-serero-nos-survivantes.jpg",
+    "image_credit": "Éditions Leduc",
+    "intensite": 1
+  },
+  {
+    "id": "dossier-cn2r-inceste",
+    "titre": "Inceste et psychotraumatisme",
+    "auteur": "Cn2r (Centre national de ressources et de résilience)",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "proches",
+      "inceste",
+      "psychotraumatisme"
+    ],
+    "resume": "Dossier de référence, long et complet, sur l'inceste et ses effets. Sa partie « Protéger et soutenir » s'adresse aux proches : veiller à la sécurité de la personne, l'aider par des gestes concrets, ne jamais la forcer à porter plainte, et préserver son propre équilibre.",
+    "intensite": 2,
+    "lien": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+  },
+  {
+    "id": "guide-canada-conjoints",
+    "titre": "Lorsque notre conjoint ou conjointe a été victime de violence sexuelle durant l'enfance",
+    "auteur": "Agence de la santé publique du Canada",
+    "annee": 2008,
+    "categorie": "article",
+    "themes": [
+      "proches",
+      "relations",
+      "sexualité"
+    ],
+    "resume": "Guide gratuit de 11 pages pour les partenaires : comment les violences subies dans l'enfance pèsent sur la confiance, l'intimité et la sexualité du couple, les étapes de la guérison, vos propres réactions, et comment soutenir sans vous oublier. Les numéros cités sont canadiens.",
+    "intensite": 1,
+    "lien": "https://www.canada.ca/content/dam/phac-aspc/migration/phac-aspc/sfv-avf/sources/nfnts/nfnts-visac-partnr/assets/pdf/nfntsx-visac-partn_f.pdf"
+  },
+  {
+    "id": "guide-paris-parents",
+    "titre": "Violences sexuelles faites aux enfants : prévenir, repérer, agir",
+    "auteur": "Ville de Paris",
+    "annee": 2026,
+    "categorie": "article",
+    "themes": [
+      "proches",
+      "enfance"
+    ],
+    "resume": "Guide gratuit pour les parents : repérer les signes possibles chez un enfant, réagir quand il se confie, le protéger, et se faire accompagner soi-même, car le choc est réel aussi pour les parents. Utile partout en France, au-delà de sa partie sur les services de la Ville de Paris.",
+    "intensite": 1,
+    "lien": "https://cdn.paris.fr/paris/2026/04/28/guide_parent_vsm_a5_vdp-LepQ.pdf"
+  },
+  {
+    "id": "podcast-pieds-sur-terre-intimite",
+    "titre": "Ce que les violences sexuelles font à l'intimité",
+    "auteur": "Les Pieds sur terre, France Culture",
+    "annee": 2026,
+    "categorie": "podcast",
+    "themes": [
+      "proches",
+      "sexualité",
+      "relations"
+    ],
+    "resume": "Deux femmes et un homme racontent comment les violences subies, souvent dans l'enfance, ont pesé sur leur vie intime, et comment en parler à un·e psy ou à leur partenaire les a aidé·es. On y entend ce que change la réaction d'un·e partenaire qui croit et soutient. 31 minutes.",
+    "presentation": {
+      "texte": "Deux femmes et un homme racontent la mémoire traumatique, les symptômes physiques en lien avec les agressions subies, et comment la parole avec un.e psy ou un.e partenaire les a menés sur le chemin d'une intimité plus apaisée.",
+      "source": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/les-pieds-sur-terre-emission-du-lundi-09-mars-2026-6534825"
+    },
+    "image": "images/podcast-pieds-sur-terre-incestuel.jpg",
+    "image_credit": "Apple Podcasts",
+    "intensite": 2,
+    "lien": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/les-pieds-sur-terre-emission-du-lundi-09-mars-2026-6534825"
   }
 ]

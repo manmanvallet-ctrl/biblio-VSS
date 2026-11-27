@@ -157,5 +157,19 @@
       "site-genant-surtout-violent",
       "rapport-justice-mineurs-auteurs"
     ]
+  },
+  {
+    "id": "proches",
+    "titre": "Pour les proches",
+    "description": "Pour les conjoint·es, parents, frères, sœurs et ami·es : comprendre, soutenir, et prendre soin de soi.",
+    "couleur": "#5b3a8c",
+    "ressources": [
+      "livre-serero-nos-survivantes",
+      "dossier-cn2r-inceste",
+      "guide-canada-conjoints",
+      "guide-paris-parents",
+      "podcast-pieds-sur-terre-intimite",
+      "familia-grande"
+    ]
   }
 ]

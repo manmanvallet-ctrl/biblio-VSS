@@ -579,6 +579,61 @@
         "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31982"
       },
       "rubrique": "demarches"
+    },
+    {
+      "id": "proche-confidence",
+      "terme": "Quand quelqu'un vous confie des violences",
+      "court": "Croire, écouter, ne pas décider à sa place : ce qui aide, et ce qui blesse sans le vouloir.",
+      "texte": "La façon dont l'entourage réagit à une première confidence compte beaucoup pour la suite. Une réaction qui soutient aide à aller mieux. Une réaction de doute ou de reproche peut enfermer dans le silence pendant des années.\n\nCe qui aide :\n• Croire, et le dire : « Je te crois. »\n• Remercier : « Merci de me l'avoir dit. Ça a dû être difficile. »\n• Rappeler que ce n'est pas sa faute : « Le seul responsable, c'est celui qui l'a fait. »\n• Écouter sans interroger : laisser la personne dire ce qu'elle veut, à son rythme.\n• Lui demander de quoi elle a besoin, plutôt que décider pour elle.\n\nCe qui blesse, même avec de bonnes intentions :\n• Mettre en doute : « Tu es sûr·e ? », « Il n'aurait jamais fait ça. »\n• Chercher ce que la victime aurait dû faire : « Pourquoi tu n'as rien dit ? »\n• Minimiser : « C'était il y a longtemps, il faut passer à autre chose. »\n• Pousser à porter plainte, ou au contraire l'en dissuader : c'est à elle de choisir, quand elle sera prête.\n• Confronter l'agresseur ou chercher à se venger sans son accord : cela peut la mettre en danger et lui retirer la main sur son histoire.\n\nSi c'est un enfant qui se confie, une règle change : ne promettez pas de garder le secret, car un enfant doit être protégé. Dites-lui que vous allez demander de l'aide à des personnes dont c'est le métier, et appelez le 119 (Allô Enfance en Danger), gratuit, 24h/24, pour savoir quoi faire.",
+      "source": {
+        "label": "Cn2r, « Inceste et psychotraumatisme » (2025)",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      },
+      "rubrique": "proches"
+    },
+    {
+      "id": "proche-comprendre",
+      "terme": "Comprendre ce que la personne traverse",
+      "court": "Parler des années après, ne pas porter plainte, garder le contact avec l'agresseur : des réactions fréquentes.",
+      "texte": "Certaines réactions d'une personne qui a subi des violences peuvent surprendre ses proches, ou leur faire de la peine. Elles ont presque toujours une explication.\n\n• Elle a parlé des années après : la honte, la peur de ne pas être crue, l'emprise ou l'amnésie traumatique retardent souvent la parole. Ce n'est pas un manque de confiance en vous.\n• Elle ne s'est pas défendue : face à une violence, le cerveau peut se bloquer complètement (la sidération). Ce n'est ni un choix, ni un accord.\n• Elle ne veut pas porter plainte, ou garde le contact avec l'agresseur, surtout s'il fait partie de la famille : la peur, la loyauté, la crainte de faire éclater la famille pèsent lourd.\n• Elle dort mal, sursaute, s'isole, évite certains lieux ou certaines personnes : ce sont des effets connus du psychotraumatisme, et ils se soignent.\n• Elle va bien un jour et mal le lendemain : la reconstruction n'est pas une ligne droite.\n\nLes rubriques « Ce qui se passe dans le cerveau » et « Les effets au quotidien » expliquent ces réactions plus en détail. Elles sont écrites pour les victimes, mais peuvent aussi vous aider à comprendre.",
+      "source": {
+        "label": "Cn2r, « Inceste et psychotraumatisme » (2025)",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      },
+      "rubrique": "proches"
+    },
+    {
+      "id": "proche-couple",
+      "terme": "En couple avec une personne qui a subi des violences",
+      "court": "L'intimité, les souvenirs qui reviennent, le consentement : avancer à deux sans s'oublier.",
+      "texte": "Les violences sexuelles, surtout dans l'enfance, peuvent peser sur la vie de couple des années plus tard, y compris dans une relation heureuse et sûre.\n\nDans l'intimité, un geste, une odeur ou une position peut faire revenir un souvenir : la personne se fige, pleure, ou semble ailleurs. Le désir peut disparaître pendant un temps. À l'inverse, la sexualité peut parfois servir à se rassurer ou à garder l'autre, plus qu'à se faire plaisir.\n\nCe qui aide :\n• Ne pas le prendre pour vous : ce n'est pas un rejet de votre personne.\n• Demander, à chaque fois : le consentement se donne pour chaque acte et peut se retirer, même en cours de route. Vous pouvez convenir ensemble d'un mot ou d'un geste pour tout arrêter.\n• S'arrêter sans reproche quand quelque chose ne va pas, et en reparler plus tard, au calme.\n• Laisser la personne choisir ce qu'elle raconte : vous n'avez pas besoin de tout savoir pour la soutenir.\n\nVotre patience compte, mais vos besoins aussi. Si la situation vous pèse, vous pouvez en parler à un·e psychologue, seul·e ou en couple. Des thérapeutes formé·es au trauma accompagnent aussi les partenaires.",
+      "source": {
+        "label": "Agence de la santé publique du Canada, guide à l'intention des conjoints (2008)",
+        "url": "https://www.canada.ca/content/dam/phac-aspc/migration/phac-aspc/sfv-avf/sources/nfnts/nfnts-visac-partnr/assets/pdf/nfntsx-visac-partn_f.pdf"
+      },
+      "rubrique": "proches"
+    },
+    {
+      "id": "proche-famille",
+      "terme": "Quand c'est votre enfant, votre frère ou votre sœur",
+      "court": "Le choc pour la famille, et les loyautés déchirées quand l'agresseur est un proche.",
+      "texte": "Apprendre que son enfant, son frère ou sa sœur a subi des violences est un choc. Beaucoup de proches ressentent de la colère, de la tristesse, et souvent de la culpabilité : « Comment n'ai-je rien vu ? » Ces émotions sont normales. Elles méritent d'être entendues, mais ailleurs qu'auprès de la victime, pour ne pas prendre la place des siennes.\n\nSi c'est votre enfant :\n• Mettez-le à l'abri de l'agresseur, et appelez le 119 pour savoir comment le protéger et faire un signalement.\n• Faites-vous accompagner vous aussi : le choc est réel pour les parents, et un parent soutenu protège mieux son enfant.\n\nSi l'agresseur fait partie de la famille, comme dans l'inceste, la famille se divise souvent : certain·es croient la victime, d'autres défendent l'agresseur ou demandent de « ne pas faire d'histoires ». Se ranger du côté de la victime a un coût, mais c'est ce qui l'aide le plus. Vous n'avez pas à faire comme si rien ne s'était passé.\n\nLes frères et sœurs d'une victime sont parfois oublié·es. Eux aussi peuvent avoir besoin d'un espace pour parler, d'autant qu'ils et elles ont parfois été témoins, ou exposé·es au même agresseur.",
+      "source": {
+        "label": "Ville de Paris, « Violences sexuelles faites aux enfants : prévenir, repérer, agir » (2026)",
+        "url": "https://cdn.paris.fr/paris/2026/04/28/guide_parent_vsm_a5_vdp-LepQ.pdf"
+      },
+      "rubrique": "proches"
+    },
+    {
+      "id": "proche-soi",
+      "terme": "Prendre soin de vous",
+      "court": "Accompagner peut être lourd. Vous avez le droit d'être aidé·e, vous aussi.",
+      "texte": "On parle parfois de victimes « par ricochet » : entendre ce qu'a subi quelqu'un qu'on aime peut secouer profondément. Sommeil perturbé, pensées qui tournent en boucle, colère, sentiment d'impuissance : c'est fréquent.\n\n• Parlez-en à une personne de confiance, à votre médecin ou à un·e psychologue, en gardant pour vous ce que la victime vous a confié en détail.\n• Autorisez-vous à ressentir de la colère, de la tristesse, de l'impuissance.\n• Rappelez-vous que vous ne pouvez pas « réparer » à la place de la victime. Votre rôle est d'être là, pas de tout porter.\n\nDes services sont ouverts aux proches : la ligne Viols Femmes Informations (0 800 05 95 95, gratuite), le 3919 pour l'entourage des femmes victimes de violences, et les groupes de parole du CAIIP pour les proches de victimes d'inceste. Vous les trouverez dans l'onglet Aide.",
+      "source": {
+        "label": "Cn2r, « Inceste et psychotraumatisme » (2025)",
+        "url": "https://cn2r.fr/inceste-et-psychotraumatisme/"
+      },
+      "rubrique": "proches"
     }
   ],
   "questionnaire": {
@@ -720,6 +775,13 @@
       "titre": "Les démarches",
       "description": "Porter plainte, délais de prescription.",
       "icone": "document",
+      "format": "liste"
+    },
+    {
+      "id": "proches",
+      "titre": "Vous êtes un proche",
+      "description": "Conjoint·e, parent, frère, sœur, ami·e : réagir à une confidence, comprendre, et prendre soin de vous.",
+      "icone": "liens",
       "format": "liste"
     },
     {
