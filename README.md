@@ -50,6 +50,18 @@ Tout le contenu est dans `data/ressources.json`. Ajoutez un bloc comme celui-ci 
 - `presentation` (facultatif) : texte officiel affiché sous « Afficher plus », `{ "texte": "…", "source": "Présentation de l'éditeur (Folio)", "url": "https://…" }`. Recopié tel quel, jamais réécrit (ni par une IA). Sources utilisées : la fiche du livre sur librairiesindependantes.com (présentation de l'éditeur), le synopsis SensCritique pour les films et séries, la page de la radio pour les podcasts. En cas de demande d'un ayant droit, retirer le texte (voir les mentions légales).
 - `intensite` : `1` (modérée), `2` (forte) ou `3` (très forte, résumé flouté)
 - `image` : une affiche ou couverture placée dans le dossier `images/` (ou un lien `https://`). Sans image, une couverture colorée est générée. Vérifiez que vous avez le droit d'utiliser l'image.
+- `image_credit` : d'où vient l'image (« Open Library », « SensCritique », « Librairie Mollat »…), affiché sous l'image dans la fiche.
+
+### Couverture : à chercher à chaque ajout
+
+À chaque nouvelle ressource, chercher la vraie couverture ou affiche, sans attendre qu'on le demande :
+
+1. **Où chercher**, dans cet ordre : Open Library (`https://covers.openlibrary.org/b/isbn/<isbn>-L.jpg?default=false`), puis la page du livre chez l'éditeur, un libraire (Mollat…) ou un catalogue de bibliothèque ; SensCritique pour les films et séries ; la page de la radio ou Apple Podcasts pour les podcasts.
+2. **Respecter les refus** : si un site bloque le téléchargement automatique, passer à une autre source, sans contourner le blocage.
+3. **Vérifier à l'œil** que l'image est bien celle de l'œuvre (titre, auteur·rice, édition).
+4. **Charte** : pas d'image qui montre une personne en détresse (enfant recroquevillé, visage en larmes, mains qui se protègent), même si c'est la vraie couverture, car ces images ne sont pas floutées. Garder alors la couverture générée et le signaler.
+5. **Format** : JPEG de 360 px de large au plus (ne pas agrandir une petite image), nommé `images/<id>.jpg`, avec `image_credit`.
+6. Ne rien trouver n'est pas bloquant : la couverture générée prend le relais. Le dire dans le compte rendu.
 
 ## Modifier les listes thématiques
 
