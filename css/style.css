@@ -251,6 +251,14 @@ a { color: var(--accent); }
 .toggle input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .count { color: var(--muted); font-size: .85rem; margin: 8px 0; }
+/* Filtres appliqués : rappel visible au-dessus des résultats */
+.active-filters { margin: 8px 0 0; padding: 10px 12px; border: 1px solid var(--accent); border-radius: var(--radius); }
+.active-title { margin: 0 0 6px; font-size: .85rem; font-weight: 600; }
+.active-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.chip-remove { background: var(--accent-soft); min-height: 44px; }
+.active-filters .link-btn { min-height: 44px; }
+.hidden-note .link-btn { display: block; text-align: left; }
+.hidden-note { margin: 8px 0 0; font-size: .92rem; }
 
 /* Cartes */
 .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -531,6 +539,14 @@ body:has(dialog[open]) .topbar .quick-exit { visibility: hidden; }
 }
 .req { color: var(--heading); }
 .privacy { font-size: .85rem; color: var(--muted); margin: 0; }
+/* Proposition déjà présente : encadré calme, couleur d'accent (pas de rouge, réservé à « Sortie rapide ») */
+.doublon-note {
+  margin: -4px 0 0; padding: 10px 12px; font-size: .92rem;
+  border-left: 3px solid var(--accent); border-radius: var(--radius); background: var(--accent-soft);
+}
+.doublon-note:empty { display: none; }
+.doublon-note .link-btn { display: block; min-height: 44px; text-align: left; }
+.doublon-note small { color: var(--muted); }
 .form-status { margin: 0; font-size: .92rem; min-height: 1.2em; }
 .form-status.ok { color: var(--ok); }
 .form-status.error { color: var(--text); font-weight: 600; } /* le rouge est réservé à « Sortie rapide » */

@@ -277,9 +277,52 @@
         <button class="btn" type="button" data-list-close aria-label="Fermer la liste">✕</button>`;
     }
     $("#count").textContent = `${items.length} ressource${items.length > 1 ? "s" : ""}`;
+    renderActiveFilters(items);
     $("#list").innerHTML = items.length
       ? items.map(cardHtml).join("")
-      : `<li class="empty">Aucun résultat. Essayez un autre mot-clé ou une autre catégorie.</li>`;
+      : `<li class="empty">Aucun résultat avec ces filtres.</li>`;
+  }
+
+  // Résumé des filtres actifs : on voit d'un coup d'œil ce qui est appliqué, et on peut tout retirer.
+  // Sans lui, une ressource pouvait sembler absente alors qu'elle était seulement masquée.
+  function renderActiveFilters(items) {
+    const box = $("#active-filters");
+    const q = state.query.trim();
+    const active = [
+      state.list && { key: "list", label: `Liste : ${state.list.titre}` },
+      state.category !== "tout" && { key: "category", label: CATEGORIES[state.category]?.label || state.category },
+      state.theme && { key: "theme", label: `Thème : ${state.theme}` },
+      state.gentle && { key: "gentle", label: "Contenus moins durs" },
+    ].filter(Boolean);
+    // Ce que la recherche seule trouverait, sans les autres filtres
+    let hidden = [];
+    if (q && active.length) {
+      const nq = normalize(q);
+      const shown = new Set(items.map((it) => it.id));
+      hidden = state.items.filter((it) => !shown.has(it.id) &&
+        nq.split(/\s+/).every((w) => normalize([it.titre, it.auteur, it.annee, it.resume, ...it.themes].join(" ")).includes(w)));
+    }
+    box.hidden = !active.length;
+    if (!active.length) { box.innerHTML = ""; return; }
+    const hard = hidden.filter((it) => it.intensite >= 3).length;
+    box.innerHTML = `
+      <p class="active-title">Filtres appliqués</p>
+      <div class="active-chips">
+        ${active.map((f) => `<button class="chip chip-remove" type="button" data-clear="${f.key}" aria-label="Retirer le filtre ${escapeHtml(f.label)}">${escapeHtml(f.label)} <span aria-hidden="true">✕</span></button>`).join("")}
+        ${active.length > 1 ? `<button class="link-btn" type="button" data-clear="all">Tout retirer</button>` : ""}
+      </div>
+      ${hidden.length ? `<p class="hidden-note">${hidden.length} autre${hidden.length > 1 ? "s" : ""} ressource${hidden.length > 1 ? "s" : ""} correspond${hidden.length > 1 ? "ent" : ""} à « ${escapeHtml(q)} » mais ${hidden.length > 1 ? "sont masquées" : "est masquée"} par ces filtres${hard ? ` (dont ${hard} au contenu très dur)` : ""}.
+        <button class="link-btn" type="button" data-clear="all">Les afficher</button></p>` : ""}`;
+  }
+
+  function clearFilter(key) {
+    if (key === "list" || key === "all") state.list = null;
+    if (key === "category" || key === "all") { state.category = "tout"; renderCategories(); }
+    if (key === "theme" || key === "all") { state.theme = ""; $("#theme-filter").value = ""; }
+    if (key === "gentle" || key === "all") { state.gentle = false; $("#gentle").checked = false; }
+    renderList();
+    // Le focus clavier ne doit pas se perdre quand le bouton cliqué disparaît
+    ($("#active-filters [data-clear]") || $("#count")).focus?.();
   }
 
   function renderFavorites() {
@@ -1133,6 +1176,7 @@
         if (found[k] && form[k] && !form[k].value.trim()) { form[k].value = found[k]; filled.push(LABELS[k]); }
       }
       btn.disabled = false;
+      form.checkDuplicate?.();
       const past = form.categorie.value === "evenement" && validDate(form.date.value) && form.date.value < todayIso();
       if (filled.length && past) say(`Rempli à partir du lien, mais attention : cet événement semble déjà passé (${form.date.value.split("-").reverse().join("/")}).`, "error");
       else if (filled.length) say(`Rempli à partir du lien : ${filled.join(", ")}. Vérifiez avant d'envoyer.`, "ok");
@@ -1320,6 +1364,7 @@
     syncFields();
     form.setType = (type) => { form.categorie.value = type; syncFields(); };
     setupUrlFill(form, say, syncFields);
+    setupDuplicateCheck(form);
 
     // ISBN : saisi à la main ou scanné
     const isbnInput = form.isbn;
@@ -1335,6 +1380,7 @@
       for (const [k, label] of [["titre", "titre"], ["auteur", "auteur"], ["annee", "année"]]) {
         if (b[k] && !form[k].value.trim()) { form[k].value = b[k]; filled.push(label); }
       }
+      form.checkDuplicate?.();
       say(filled.length ? `Livre trouvé : ${filled.join(", ")} rempli${filled.length > 1 ? "s" : ""}. Vérifiez avant d'envoyer.` : "Livre trouvé : les champs étaient déjà remplis.", "ok");
     }
     isbnInput.addEventListener("change", () => fillFromIsbn(isbnInput.value));
@@ -1392,6 +1438,58 @@
         say("Votre application mail va s'ouvrir avec le message prêt à envoyer.", "ok");
       } else {
         say("L'envoi des propositions n'est pas encore configuré (voir js/config.js).", "error");
+      }
+    });
+  }
+
+  // ---------- Doublons : prévenir si la proposition est déjà dans l'application ----------
+  // Clé de comparaison : minuscules, sans accents, sans ponctuation ni espaces.
+  const titleKey = (s) => normalize(s).replace(/[^a-z0-9]/g, "");
+  // « Women Talking (Ce qu'elles disent) » se compare aussi à « Women Talking » et à « Ce qu'elles disent ».
+  const titleKeys = (s) => [s, ...String(s).split(/[()\[\]:–—]/)].map(titleKey).filter((k) => k.length >= 3);
+  const urlKey = (u) => String(u || "").trim().toLowerCase().replace(/^https?:\/\/(www\.)?/, "").replace(/[?#].*$/, "").replace(/\/+$/, "");
+
+  function findDuplicate(type, titre, lien) {
+    const link = urlKey(lien);
+    const typed = titleKey(titre);
+    const sameTitle = (name) => typed.length >= 3 && titleKeys(name).some((k) => k === typed || (typed.length >= 6 && k.startsWith(typed)));
+    if (type === "association") {
+      const a = state.aide.find((x) => sameTitle(x.nom));
+      return a && { kind: "aide", name: a.nom };
+    }
+    if (type === "evenement") return null; // chaque date est un nouvel événement
+    const it = state.items.find((x) =>
+      (link && [x.lien, x.senscritique?.url].some((u) => u && urlKey(u) === link)) || sameTitle(x.titre));
+    return it && { kind: "item", id: it.id, name: it.titre };
+  }
+
+  function setupDuplicateCheck(form) {
+    const note = $("#suggest-doublon");
+    const check = () => {
+      const d = findDuplicate(form.categorie.value, form.titre.value, form.lien.value);
+      if (!d) { note.innerHTML = ""; return; }
+      note.innerHTML = d.kind === "item"
+        ? `« ${escapeHtml(d.name)} » est déjà dans la bibliothèque. <button class="link-btn" type="button" data-open-dup="${escapeHtml(d.id)}">Voir la fiche</button><small>Vous pouvez quand même envoyer la proposition pour ajouter une précision.</small>`
+        : `« ${escapeHtml(d.name)} » est déjà dans l'annuaire d'aide. <button class="link-btn" type="button" data-open-aide="${escapeHtml(d.name)}">Voir la fiche</button><small>Vous pouvez quand même envoyer la proposition pour signaler un changement.</small>`;
+    };
+    // On attend une courte pause dans la frappe pour ne pas annoncer un message à chaque lettre.
+    let timer;
+    const later = () => { clearTimeout(timer); timer = setTimeout(check, 400); };
+    form.titre.addEventListener("input", later);
+    form.lien.addEventListener("input", later);
+    form.categorie.addEventListener("change", check);
+    form.addEventListener("reset", () => { note.innerHTML = ""; });
+    form.checkDuplicate = check; // appelé après un remplissage automatique (lien, ISBN)
+    note.addEventListener("click", (e) => {
+      const item = e.target.closest("[data-open-dup]");
+      if (item) { openDetail(item.dataset.openDup); return; }
+      const aide = e.target.closest("[data-open-aide]");
+      if (aide) {
+        state.aideCat = "tout";
+        state.aideQuery = aide.dataset.openAide;
+        $("#aide-search").value = state.aideQuery;
+        renderAide();
+        showView("help");
       }
     });
   }
@@ -1478,6 +1576,9 @@
     if (list) { openList(list.dataset.list); return; }
 
     if (e.target.closest("[data-list-close]")) { state.list = null; renderList(); return; }
+
+    const clear = e.target.closest("[data-clear]");
+    if (clear) { clearFilter(clear.dataset.clear); return; }
 
     const chip = e.target.closest("[data-cat]");
     if (chip) { state.category = chip.dataset.cat; renderCategories(); renderList(); return; }

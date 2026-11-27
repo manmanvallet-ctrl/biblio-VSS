@@ -82,6 +82,7 @@
           <span>Contenus moins durs</span>
         </label>
       </div>
+      <div id="active-filters" class="active-filters" hidden></div>
       <div class="list-head">
         <p id="count" class="count" aria-live="polite"></p>
         <button class="btn btn-small suggest-cta" type="button" data-goto="suggest">＋ Proposer</button>
@@ -174,6 +175,7 @@
         <label><span id="titre-label">Titre</span> <span class="req">*</span>
           <input name="titre" required maxlength="200" autocomplete="off">
         </label>
+        <p id="suggest-doublon" class="doublon-note" role="status" aria-live="polite"></p>
         <label data-only="evenement">Type d'événement
           <select name="type_evenement">
             <option value="">Choisir…</option>
