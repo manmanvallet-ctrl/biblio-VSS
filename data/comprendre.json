@@ -460,6 +460,17 @@
       "rubrique": "enfants"
     },
     {
+      "id": "entre-enfants",
+      "terme": "Violences sexuelles entre enfants",
+      "court": "Quand l'agresseur est lui aussi un enfant ou un adolescent : un frère, une sœur, un cousin, un camarade.",
+      "texte": "Les violences sexuelles ne sont pas toujours commises par des adultes. Un frère ou une sœur plus âgé·e, un cousin, un·e baby-sitter adolescent·e, un camarade d'école, de colonie, de club ou de scoutisme peuvent aussi en commettre. Selon les centres spécialisés (CRIAVS), environ 30 % des agressions sexuelles sur des mineur·es sont le fait d'autres mineur·es. Dans les familles, l'inceste entre frères et sœurs serait l'une des formes d'inceste les plus fréquentes, et l'une des plus tues.\n\nJeu ou violence ? Les enfants peuvent avoir entre eux des jeux de découverte du corps, entre enfants du même âge, qui sont d'accord et qui s'arrêtent quand l'un ne veut plus. Ce qui fait basculer vers la violence, c'est un rapport de force :\n• un écart d'âge, de taille ou de maturité ;\n• une autorité : l'aîné·e qui garde les plus petits, le ou la chef·fe d'équipe, le plus populaire de la classe ;\n• la force, les menaces, le chantage, une récompense promise ;\n• un secret imposé (« ne le dis pas ») ;\n• des actes qui se répètent, ou qui ne sont pas de son âge.\nLe rapport de force peut aussi venir du groupe (plusieurs contre un) ou des rapports entre filles et garçons.\n\nCe que dit la loi : même entre mineur·es, les violences sexuelles sont interdites et punies. Le Code pénal précise que, lorsque la victime est mineure, la contrainte peut résulter de la différence d'âge et de l'autorité, « de droit ou de fait », que l'auteur a sur elle. Quand l'auteur est un frère ou une sœur, les faits sont qualifiés d'incestueux.\n\nCe n'est pas moins grave parce que l'auteur était un enfant. Les conséquences peuvent être aussi lourdes qu'après des violences commises par un adulte, d'autant que l'entourage parle souvent de « jeux d'enfants » et que la victime n'est pas crue. Si c'est votre histoire, vous avez le droit de la nommer.\n\nUn enfant qui agresse doit être arrêté, et aidé : des professionnel·les savent l'accompagner pour que cela ne se reproduise pas. Si vous êtes inquiet·e pour un enfant, qu'il soit victime ou auteur, le 119 (Allô Enfance en Danger) répond gratuitement, 24h/24.",
+      "source": {
+        "label": "Code pénal, article 222-22-1",
+        "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000052535578"
+      },
+      "rubrique": "enfants"
+    },
+    {
       "id": "ce-qui-aide",
       "terme": "Ce qui aide à aller mieux",
       "court": "Être cru·e, être soutenu·e, et se faire soigner par des personnes formées.",
@@ -667,7 +678,7 @@
     {
       "id": "enfants",
       "titre": "Les enfants",
-      "description": "Pourquoi un enfant se tait, le climat incestuel, parler des années après, l'adultisme.",
+      "description": "Pourquoi un enfant se tait, le climat incestuel, parler des années après, l'adultisme, les violences entre enfants.",
       "icone": "enfant",
       "format": "liste"
     },
