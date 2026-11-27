@@ -57,34 +57,8 @@
 }
 
 /* Thème sombre (absent de la charte Instagram, créé pour l'appli) :
-   suit le téléphone, sauf si un thème clair/sombre est imposé. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1a1520;
-    --surface: #241d2c;
-    --text: #f2edf7;
-    --muted: #b8aec4;
-    --border: #3a3146;
-    --heading: #dcd0ec;
-    --accent: #c9b3ec;
-    --accent-soft: #352a47;
-    --on-accent: #1f1729;
-    --vert-eau: #6fa9a4;
-    --vert-eau-clair: #2d4c49;
-    --ok: #9fd3cc;
-    --lvl1-bg: #2d4c49; --lvl1-fg: #e3f2ef;
-    --lvl2-bg: #41345a; --lvl2-fg: #ede5f8;
-    --lvl3-bg: #c9b3ec; --lvl3-fg: #1f1729;
-    --tone-douceur-bg: #2d4c49; --tone-douceur-fg: #e3f2ef;
-    --tone-lavande-bg: #41345a; --tone-lavande-fg: #ede5f8;
-    --tone-prune-bg: #c9b3ec;   --tone-prune-fg: #1f1729;
-    --sc-bg: #3a3214;
-    --sc-fg: #f3d873;
-    --sc-border: #5c4f1c;
-    --shelf-1: #c9b3ec; --shelf-2: #8f74bf; --shelf-3: #41345a; --shelf-4: #6fa9a4; --shelf-5: #2d4c49;
-    color-scheme: dark;
-  }
-}
+   l'appli s'ouvre toujours en mode clair ; le sombre ne s'applique que si la personne
+   le choisit avec le bouton lune (data-theme="dark"). */
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] {
   --bg: #1a1520;
