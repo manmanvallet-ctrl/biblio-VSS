@@ -22,7 +22,8 @@
       "speak",
       "crocodiles",
       "sexe-sans-consentement",
-      "she-said"
+      "she-said",
+      "site-genant-surtout-violent"
     ]
   },
   {
@@ -139,6 +140,22 @@
       "livre-domination-oubliee",
       "art-lemonde-adultisme",
       "livre-enfantisme-bourdille"
+    ]
+  },
+  {
+    "id": "entre-enfants",
+    "titre": "Entre enfants",
+    "description": "Quand l'agresseur était lui aussi un enfant : un frère, une sœur, un cousin, un camarade d'école, de colo ou de club.",
+    "couleur": "#4f8783",
+    "ressources": [
+      "guide-criavs-comportements-sexuels",
+      "livre-thiery-freres-soeurs",
+      "livre-boyet-freres",
+      "livre-mask-aine",
+      "livre-lauret-inceste-fraternel",
+      "art-conversation-violences-college",
+      "site-genant-surtout-violent",
+      "rapport-justice-mineurs-auteurs"
     ]
   }
 ]

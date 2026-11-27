@@ -1031,5 +1031,145 @@
     "resume": "Le livre fondateur où le psychiatre et psychanalyste Paul-Claude Racamier nomme « l'incestuel ». Un ouvrage exigeant, écrit pour les cliniciens, réédité chez Dunod en 2010.",
     "presentation": {"texte": "Au terme d'un long parcours de recherche et jusqu'à ses plus récents travaux, Paul-Claude Racamier propose l'exploration d'un domaine clinique ancien comme le monde et cependant nouveau : l'inceste. Inverse de l'oedipe, dérivé malencontreux de la séduction narcissique et de l'antoedipe, charnière entre psychose et perversion, et secret de tant de pathologies troublantes et mal comprises, l'incestuel complète les avancées originales de l'auteur dans la clinique et la théorie psychanalytique de l'individu et de la famille. « L'incestuel, c'est un climat : un climat où souffle le vent de l'inceste, sans qu'il y ait inceste. Le vent souffle chez les individus ; il souffle entre eux et dans les familles. Partout où il souffle, il fait le vide ; il instille du soupçon, du silence et du secret ; il disperse la végétation, laissant cependant pousser quelques plantes apparemment banales, qui se révèlent urticantes.»", "source": "Présentation de l'éditeur (Dunod)", "url": "https://www.librairiesindependantes.com/product/9782100810352/"},
     "intensite": 1
+  },
+  {
+    "id": "guide-criavs-comportements-sexuels",
+    "titre": "Les comportements sexuels des enfants et des adolescents",
+    "auteur": "CRIAVS Île-de-France",
+    "annee": 2021,
+    "categorie": "article",
+    "themes": [
+      "entre enfants",
+      "enfance",
+      "adolescence"
+    ],
+    "resume": "Guide gratuit pour les parents et les professionnel·les, âge par âge : quels comportements font partie du développement normal d'un enfant, lesquels doivent alerter, et comment réagir. Utile pour faire la différence entre un jeu de découverte et une violence entre enfants.",
+    "intensite": 1,
+    "lien": "https://criavs.fr/commande/"
+  },
+  {
+    "id": "livre-thiery-freres-soeurs",
+    "titre": "Frères et sœurs. Incestes sous silence",
+    "auteur": "Dominique Thiéry (dir.)",
+    "isbn": "9782356875853",
+    "annee": 2018,
+    "categorie": "livre",
+    "themes": [
+      "entre enfants",
+      "inceste",
+      "essai"
+    ],
+    "resume": "Ouvrage collectif réalisé avec l'Association Docteurs Bru : juristes, psychologues, juge des enfants, sociologue et éducatrices expliquent ce qu'a de particulier l'inceste entre frères et sœurs, souvent pris pour des « jeux », et comment accompagner les victimes comme les auteurs. Avec deux témoignages.",
+    "presentation": {
+      "texte": "L’inceste commis entre les membres d’une même fratrie est non seulement un sujet tabou dans la société, mais également voué à rester caché dans le secret des familles. Assimilé le plus souvent à des jeux sexuels sans conséquence, voire à une découverte de la sexualité, le traumatisme subi par l’enfant est nié ou sous estimé par le cercle familial. Pourtant, en gommant l’interdit de l’inceste, ces actes sexuels transgressifs, consentis ou contraints, ont des conséquences traumatiques comparables aux abus sexuels commis par un père, une mère, un grand-père ou un oncle.\n\nMais en quoi l’inceste dans les fratries est-il spécifique ? Comment prendre en compte, prendre en charge et adopter les mesures nécessaires face aux abus sexuels commis entre frères et sœurs ou entre frères ?\n\nLes témoignages rares d’inceste fraternel, celui de Natacha, fleuriste, et celui de Laurent, policier, rappellent avec force qu’il peut se commettre dans toutes les familles et dans toutes les fratries et qu’il faut briser ce silence assourdissant.",
+      "source": "Présentation de l'éditeur (Le Bord de l'eau)",
+      "url": "https://www.editionsbdl.com/produit/freres-et-soeurs-incestes-sous-silence/"
+    },
+    "intensite": 2
+  },
+  {
+    "id": "livre-boyet-freres",
+    "titre": "Tous les frères font comme ça…",
+    "auteur": "Laurent Boyet",
+    "isbn": "9782755635904",
+    "annee": 2017,
+    "categorie": "livre",
+    "themes": [
+      "entre enfants",
+      "inceste",
+      "témoignage"
+    ],
+    "resume": "Laurent Boyet, capitaine de police, avait 6 ans quand son grand frère, de dix ans son aîné, l'a violé. Les violences ont duré trois ans, puis le silence près de quarante. Il raconte la honte, l'aveuglement de sa famille et sa reconstruction, pour que « la honte change de camp ».",
+    "presentation": {
+      "texte": "Violé par son frère pendant 3 ans, Laurent Boyet a décidé, 37 ans plus tard, de briser le silence pour libérer la parole des victimes.\n\nPetit dernier de la famille, Laurent, 6 ans, se réjouit de retrouver son grand-frère de retour de l'internat pour les vacances. Malgré leurs 10 ans d'écart, l'entente est parfaite. Un matin pourtant, tout bascule : l'adolescent viole le petit garçon. C'est le début d'un long cauchemar pour Laurent, condamné au silence. Ce que sa famille a refusé de voir, ce que son frère l'a obligé à taire, ce qui est resté comme une vive blessure chez l'homme qu'il est devenu, aujourd'hui Laurent Boyet le raconte.\n\n« Le voyage fût long pour arriver jusqu'à vous. Un voyage de quarante ans, dans le silence et la honte ; quarante années à me penser plus coupable que victime. »",
+      "source": "Présentation de l'éditeur (Hugo Doc)",
+      "url": "https://www.fnac.com/a10827237/Laurent-Boyet-Tous-les-freres-font-comme-ca"
+    },
+    "intensite": 3
+  },
+  {
+    "id": "livre-mask-aine",
+    "titre": "L'aîné. Histoire d'un inceste fraternel",
+    "auteur": "Elise Mask",
+    "isbn": "9782940515998",
+    "annee": 2026,
+    "categorie": "livre",
+    "themes": [
+      "entre enfants",
+      "inceste",
+      "témoignage"
+    ],
+    "resume": "Une psychiatre raconte, sous pseudonyme et sous une forme romancée, l'inceste que lui a fait subir son frère aîné, des abus « déguisés en jeux d'enfants » restés trente ans sous silence, et leurs conséquences. Son double regard, de victime et de soignante, éclaire ce que l'on tait. Préface de Boris Cyrulnik, éditions Balland.",
+    "presentation": {
+      "texte": "Professionnelle expérimentée dans la santé mentale, l'auteure raconte sous couvert d'anonymat et de fiction le récit de l'inceste fraternel qu'elle a subi. Sorti soudainement de sa léthargie à cause de la colère d'un autre, le souvenir s'extrait d'un silence de trente ans pour témoigner de ces abus tabous et de leurs conséquences cliniques.",
+      "source": "Présentation de l'éditeur (Balland)",
+      "url": "https://www.mollat.com/livres/3409951/elise-mask-l-aine-histoire-d-un-inceste"
+    },
+    "intensite": 3
+  },
+  {
+    "id": "livre-lauret-inceste-fraternel",
+    "titre": "L'inceste fraternel",
+    "auteur": "Monique Lauret (dir.)",
+    "isbn": "9782749282305",
+    "annee": 2025,
+    "categorie": "livre",
+    "themes": [
+      "entre enfants",
+      "inceste",
+      "essai"
+    ],
+    "resume": "Ouvrage collectif de psychanalystes, plus exigeant, sur l'inceste dans la fratrie : la prise de pouvoir et la domination d'un aîné sur un plus jeune, ses effets sur la vie psychique, affective et sexuelle de la victime, et sur les générations suivantes. Éditions Érès.",
+    "presentation": {
+      "texte": "Bien que fréquente dans les situations d’abus sexuels intra-familiaux, la problématique de l’inceste fraternel demeure encore taboue et rarement pensée en psychanalyse.\n\nÀ partir du mythe, de la littérature et de la clinique, les auteurs déplient les différents aspects de ce « système-inceste » qui traduit une défaillance parentale et filiale dans la transgression de l’interdit fondamental des rapports sexuels entre parents et enfants comme entre frères et sœurs.\n\nCe livre propose des clés pour saisir la volonté de prise de pouvoir et de domination d’un aîné sur un plus jeune, avec des répercussions dévastatrices sur le fonctionnement psychique et la vie psycho-affective et sexuelle de la victime, mais également des conséquences sur les générations suivantes dans la déstructuration de la filiation et la transmission du « poison » incestueux.",
+      "source": "Présentation de l'éditeur (Érès)",
+      "url": "https://shs.cairn.info/l-inceste-fraternel--9782749282305"
+    },
+    "intensite": 2
+  },
+  {
+    "id": "art-conversation-violences-college",
+    "titre": "Violences sexuelles au collège : ce que ne disent pas les chiffres officiels",
+    "auteur": "Margot Déage, The Conversation",
+    "annee": 2026,
+    "categorie": "article",
+    "themes": [
+      "entre enfants",
+      "adolescence",
+      "harcèlement"
+    ],
+    "resume": "Une sociologue a interrogé près de 1 700 collégien·nes d'Île-de-France : 43 % disent avoir subi au moins une forme de violence sexuelle dans l'année, le plus souvent au collège, et dans 71 % des cas de la part de garçons mineurs, seuls ou en groupe. Elle explique pourquoi les chiffres officiels sous-estiment ces violences. Accès libre.",
+    "intensite": 1,
+    "lien": "https://theconversation.com/violences-sexuelles-au-college-ce-que-ne-disent-pas-les-chiffres-officiels-278024"
+  },
+  {
+    "id": "site-genant-surtout-violent",
+    "titre": "Gênant ? Surtout violent !",
+    "auteur": "Centre Hubertine Auclert",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "entre enfants",
+      "adolescence",
+      "harcèlement"
+    ],
+    "resume": "Site pour les 11-18 ans et les adultes qui les entourent : il aide à reconnaître les violences sexistes et sexuelles entre jeunes, au collège, au lycée et en ligne (gestes imposés, photos partagées, rumeurs), avec un quiz, un glossaire et des pistes pour agir, que l'on soit victime ou témoin.",
+    "intensite": 1,
+    "lien": "https://genant-surtout-violent.com/"
+  },
+  {
+    "id": "rapport-justice-mineurs-auteurs",
+    "titre": "Les mineurs auteurs d'infractions sexuelles",
+    "auteur": "Ministère de la Justice (service statistique)",
+    "annee": 2025,
+    "categorie": "article",
+    "themes": [
+      "entre enfants",
+      "justice",
+      "rapport officiel"
+    ],
+    "resume": "Étude chiffrée pour les professionnel·les : 15 700 mineur·es mis en cause pour des infractions sexuelles en 2024, en forte hausse depuis 2017 ; près d'un sur trois a moins de 13 ans. Elle décrit aussi la réponse de la justice des mineurs.",
+    "intensite": 1,
+    "lien": "https://www.justice.gouv.fr/sites/default/files/2025-06/Rapport_mineurs_violences%20sexuelles.pdf"
   }
 ]
